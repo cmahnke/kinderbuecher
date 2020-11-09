@@ -1,0 +1,107 @@
+{{- if .Params.iiifManifest -}}
+{{- $contextPath := path.Dir .File.Path -}}
+{{- $urlBase := substr .Permalink 0 (sub (len .Permalink) 1) -}}
+{
+    "@context":"http://iiif.io/api/presentation/2/context.json",
+    "@type":"sc:Manifest",
+    "@id":"{{ .Permalink }}",
+    "viewingDirection":"left-to-right",
+    "viewingHint":"paged",
+
+    "label":"{{ .Title }}",
+    {{- if isset .Params "iiifMetadata" -}}
+        {{- jsonify .Params.iiifMetadata -}}
+    {{- end -}}
+    {{- if .Description -}}
+        "description": "{{ .Description }}",
+    {{- end -}}
+
+    {{- $canvases := dict -}}
+    {{- $firstCanvasId := "" -}}
+    {{- $counter := 0 -}}
+
+    {{- range  .Params.resources -}}
+      {{- if isset .params "canvas" -}}
+
+        {{- $canvas := .params.canvas -}}
+        {{- if eq $counter 0 -}}
+            {{- $firstCanvasId = $counter -}}
+        {{- end -}}
+        {{- $image := newScratch -}}
+        {{- if .name -}}
+          {{- $image.Set "previewImg" ($.Resources.GetMatch .name) -}}
+        {{ else }}
+          {{- $image.Set "previewImg" ($.Resources.GetMatch .src) -}}
+        {{- end -}}
+        {{- if eq ($image.Get "previewImg") nil -}}
+            {{- warnf "Can't find image %s" ($image.Get "previewLoc") -}}
+        {{- end -}}
+        {{- $manifest := .params.iiif -}}
+        {{- $manifestDir := path.Dir .params.iiif -}}
+        {{- $baseURL := printf "/%s/%s/" $contextPath (path.Dir .params.iiif) -}}
+
+        {{- if ne (index $canvases $canvas) nil -}}
+            {{- $existingCanvas := (index $canvases $canvas)  -}}
+            {{- $existingCanvas = $existingCanvas | append (dict "manifest" $manifest "baseURL" $baseURL "contextPath" $contextPath) -}}
+            {{- $canvases = merge $canvases (dict $canvas $existingCanvas) -}}
+        {{- else -}}
+            {{- $canvases = merge $canvases (dict $canvas (slice (dict "manifest" $manifest "manifestDir" $manifestDir "baseURL" $baseURL "contextPath" $contextPath) ) ) -}}
+        {{- end -}}
+        {{- $counter = add $counter 1 -}}
+      {{- end -}}
+    {{- end -}}
+  "sequences":[
+      {
+         "@id":"{{ $urlBase }}/sequence/normal",
+         "@type":"sc:Sequence",
+         "label":"Current Page Order",
+         "viewingDirection":"left-to-right",
+         "viewingHint":"paged",
+         "startCanvas":"{{ .Permalink }}canvas/{{ printf "%d" $firstCanvasId }}",
+         "canvases":[
+            {{ range $k, $v :=  $canvases }}
+                 {{- $canvasId := printf "%s/canvas/%s" $urlBase $k -}}
+                 {
+                   "@id":"{{ $canvasId }}",
+                   "@type":"sc:Canvas",
+                   "label":"uncounted",
+                   "height":400,
+                   "width":300,
+                   "images":[
+                       {{ range $v }}
+                            {{- $imageId := printf "%s/%s" $urlBase .manifestDir -}}
+                            {{- $annnotationId := printf "%s/annotation/%s" $urlBase .manifestDir -}}
+                            {
+                                 "@context":"http://iiif.io/api/presentation/2/context.json",
+                                 "@id":"{{ $annnotationId }}",
+                                 "@type":"oa:Annotation",
+                                 "motivation":"sc:painting",
+                                 "resource":{
+                                    "@id":"{{ $imageId }}",
+                                    "@type":"dctypes:Image",
+                                    "format":"image/jpeg",
+                                    "service":{
+                                       "@context":"http://iiif.io/api/image/2/context.json",
+                                       "@id":"{{ $imageId }}",
+                                       "profile":"http://iiif.io/api/image/2/level1.json"
+                                    },
+                                    "height":400,
+                                    "width":300
+                                 },
+                                 "on":"{{ $canvasId }}"
+                            },
+                      {{ end }}
+                   ]
+               },
+             {{- end -}}
+
+         ]
+     }
+  ],
+
+  {{- if isset .Params "iiifStructure" -}}
+      {{- jsonify .Params.iiifStructure -}}
+  {{- end -}}
+
+}
+{{- end -}}

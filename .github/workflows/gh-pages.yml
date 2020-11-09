@@ -1,0 +1,91 @@
+name: github pages
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+#    - cron:  '0 7 * * */2'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: true  # Fetch Hugo themes (true OR recursive)
+
+      - name: Login to GitHub Packages Docker Registry
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.CR_PAT }}
+          logout: false
+
+      - name: Setup dependencies
+        run: |
+          sudo apt-get install imagemagick
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 10.22.0
+
+#      - name: Create IIIF derivates
+#        run: docker run -e CHOWN_UID=${UID} -e URL_PREFIX="https://xn--kinderbcher-zhb.projektemacher.org/" -v ${PWD}:${PWD} ghcr.io/cmahnke/iiif-action:latest sh -c "cd ${PWD} && ./scripts/iiif.sh"
+
+      - name: Generate Files
+        env:
+          SKIP_IIIF: yes
+        run: |
+          ./scripts/setup.sh
+
+      - name: Setup deploy dependencies
+        env:
+          DEPLOY_SSH_IDENTITY: ${{ secrets.DEPLOY_SSH_IDENTITY }}
+        run: |
+          sudo apt-get install rsync sshpass
+          mkdir -p ~/.ssh && echo "$DEPLOY_SSH_IDENTITY" >>  ~/.ssh/known_hosts
+      - name: IIIF directory upload and cleanup
+        env:
+          DEPLOY_SERVER: ${{ secrets.DEPLOY_SERVER }}
+          DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
+          SSHPASS: ${{ secrets.DEPLOY_PASS }}
+          DEPLOY_PATH: ${{ secrets.DEPLOY_PATH }}
+        run: |
+          cd content
+          find post -name info.json -exec dirname {} \; > files.lst
+          cp ../blaufusstoelpel-redirect/index.html .
+          echo "index.html" >> files.lst
+          cat files.lst | xargs chmod 775
+          sshpass -e rsync -aP --size-only --delete --relative $(cat files.lst) $DEPLOY_USER@$DEPLOY_SERVER:$DEPLOY_PATH/kinderbuecher/
+          rm -f files.lst index.html
+          cd ..
+          find content/post/ -name info.json -exec dirname {} \; | xargs rm -r
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: '0.74.3'
+          extended: true
+      - name: Build Hugo site
+        run: hugo
+      - name: Cleanup Build
+        run: |
+           find docs -type f -size +15M -name '*.jpg' -exec rm {} \;
+           rm -rf docs/plugins
+
+      - name: Cleanup disk
+        run: |
+          df -h
+          docker rmi -f ghcr.io/cmahnke/iiif-action:latest
+          rm -rf node_modules
+          rm -rf content
+          df -h
+
+      - name: Deploy site
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs

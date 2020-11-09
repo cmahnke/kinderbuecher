@@ -1,38 +1,34 @@
 ---
-title: Vieilles Chansons et rondes
-date: 2020-12-01T17:21:11+02:00
-description: '"Vielles chansons pour les petits enfants" von Charles-Marie Widor und Louis Maurice Boutet de Monvel, erschienen ca. 1884 bei E. Plon, Nourrit et Cie., Paris. <a class="worldcat" href="http://www.worldcat.org/oclc/971014633">&nbsp;</a>'
+title: Girls' pastimes in Japan
+date: 2021-4-01T17:21:11+02:00
+description: '"Girls' pastimes in Japan." von Teijirou Takagi, herausgegeben ca. 1910 von Tamamura Photographic Studio, Kobe. <a class="worldcat" href="http://www.worldcat.org/oclc/672614691">&nbsp;</a>'
 resources:
 - src: "front.jpg"
   name: front
   params:
     iiif: front/info.json
     class: front
-    preview: true
+- src: "front-verso.jpg"
+  params:
+    iiif: front-verso/info.json
 - src: "page001.jpg"
   params:
     iiif: page001/info.json
-    label: uncounted
 - src: "page002.jpg"
   params:
     iiif: page002/info.json
-    label: uncounted
 - src: "page003.jpg"
   params:
     iiif: page003/info.json
-    label: uncounted
 - src: "page004.jpg"
   params:
     iiif: page004/info.json
-    label: 4
 - src: "page005.jpg"
   params:
     iiif: page005/info.json
-    label: 5
 - src: "page006.jpg"
   params:
     iiif: page006/info.json
-    label: 6
 - src: "page007.jpg"
   params:
     iiif: page007/info.json
@@ -200,10 +196,26 @@ resources:
 - src: "page048.jpg"
   params:
     iiif: page048/info.json
-    label: uncounted
-- src: "back.jpg"
-  name: back
+    label: 48
+- src: "page049.jpg"
   params:
-    iiif: back/info.json
-    class: back
+    iiif: page049/info.json
+    label: 49
+- src: "page050.jpg"
+  params:
+    iiif: page050/info.json
+    label: 50
+- src: "page051.jpg"
+  params:
+    iiif: page051/info.json
+    label: 51
+- src: "end-verso.jpg"
+  params:
+    iiif: end-verso/info.json
+- src: "end-recto.jpg"
+  params:
+    iiif: end-recto/info.json
+- src: "end.jpg"
+  params:
+    iiif: end/info.json
 ---

@@ -1,38 +1,58 @@
 ---
-title: Vieilles Chansons et rondes
-date: 2020-12-01T17:21:11+02:00
-description: '"Vielles chansons pour les petits enfants" von Charles-Marie Widor und Louis Maurice Boutet de Monvel, erschienen ca. 1884 bei E. Plon, Nourrit et Cie., Paris. <a class="worldcat" href="http://www.worldcat.org/oclc/971014633">&nbsp;</a>'
+title: Kleksographien
+date: 2021-3-01T17:21:11+02:00
+description: '"Kleksographien" von Justinus Kerner, erschienen nach 1857 bei der Deutsche Verlags-Anstalt, 	Stuttgart. <a class="worldcat" href="http://www.worldcat.org/oclc/602645173">&nbsp;</a>'
 resources:
 - src: "front.jpg"
-  name: front
   params:
     iiif: front/info.json
-    class: front
-    preview: true
+- src: "page-0.jpg"
+  params:
+    iiif: page-0/info.json
+- src: "page-I.jpg"
+  params:
+    iiif: page-I/info.json
+- src: "page-II.jpg"
+  params:
+    iiif: page-II/info.json
+- src: "page-III.jpg"
+  params:
+    iiif: page-III/info.json
+- src: "page-IV.jpg"
+  params:
+    iiif: page-IV/info.json
+- src: "page-V.jpg"
+  params:
+    iiif: page-V/info.json
+- src: "page-VI.jpg"
+  params:
+    iiif: page-VI/info.json
+    label: VI
+- src: "page-VII.jpg"
+  params:
+    iiif: page-VII/info.json
+    label: VII
+- src: "page-VIII.jpg"
+  params:
+    iiif: page-VIII/info.json
 - src: "page001.jpg"
   params:
     iiif: page001/info.json
-    label: uncounted
 - src: "page002.jpg"
   params:
     iiif: page002/info.json
-    label: uncounted
 - src: "page003.jpg"
   params:
     iiif: page003/info.json
-    label: uncounted
 - src: "page004.jpg"
   params:
     iiif: page004/info.json
-    label: 4
 - src: "page005.jpg"
   params:
     iiif: page005/info.json
-    label: 5
 - src: "page006.jpg"
   params:
     iiif: page006/info.json
-    label: 6
 - src: "page007.jpg"
   params:
     iiif: page007/info.json
@@ -200,9 +220,156 @@ resources:
 - src: "page048.jpg"
   params:
     iiif: page048/info.json
-    label: uncounted
+    label: 48
+- src: "page049.jpg"
+  params:
+    iiif: page049/info.json
+    label: 49
+- src: "page050.jpg"
+  params:
+    iiif: page050/info.json
+    label: 50
+- src: "page051.jpg"
+  params:
+    iiif: page051/info.json
+    label: 51
+- src: "page052.jpg"
+  params:
+    iiif: page052/info.json
+    label: 52
+- src: "page053.jpg"
+  params:
+    iiif: page053/info.json
+    label: 53
+- src: "page054.jpg"
+  params:
+    iiif: page054/info.json
+    label: 54
+- src: "page055.jpg"
+  params:
+    iiif: page055/info.json
+    label: 55
+- src: "page056.jpg"
+  params:
+    iiif: page056/info.json
+    label: 56
+- src: "page057.jpg"
+  params:
+    iiif: page057/info.json
+    label: 57
+- src: "page058.jpg"
+  params:
+    iiif: page058/info.json
+    label: 58
+- src: "page059.jpg"
+  params:
+    iiif: page059/info.json
+    label: 59
+- src: "page060.jpg"
+  params:
+    iiif: page060/info.json
+    label: 60
+- src: "page061.jpg"
+  params:
+    iiif: page061/info.json
+    label: 61
+- src: "page062.jpg"
+  params:
+    iiif: page062/info.json
+    label: 62
+- src: "page063.jpg"
+  params:
+    iiif: page063/info.json
+    label: 63
+- src: "page064.jpg"
+  params:
+    iiif: page064/info.json
+    label: 64
+- src: "page065.jpg"
+  params:
+    iiif: page065/info.json
+    label: 65
+- src: "page066.jpg"
+  params:
+    iiif: page066/info.json
+    label: 66
+- src: "page067.jpg"
+  params:
+    iiif: page067/info.json
+    label: 67
+- src: "page068.jpg"
+  params:
+    iiif: page068/info.json
+    label: 68
+- src: "page069.jpg"
+  params:
+    iiif: page069/info.json
+    label: 69
+- src: "page070.jpg"
+  params:
+    iiif: page070/info.json
+    label: 70
+- src: "page071.jpg"
+  params:
+    iiif: page071/info.json
+    label: 71
+- src: "page072.jpg"
+  params:
+    iiif: page072/info.json
+    label: 72
+- src: "page073.jpg"
+  params:
+    iiif: page073/info.json
+    label: 73
+- src: "page074.jpg"
+  params:
+    iiif: page074/info.json
+    label: 74
+- src: "page075.jpg"
+  params:
+    iiif: page075/info.json
+    label: 75
+- src: "page076.jpg"
+  params:
+    iiif: page076/info.json
+    label: 76
+- src: "page077.jpg"
+  params:
+    iiif: page077/info.json
+    label: 77
+- src: "page078.jpg"
+  params:
+    iiif: page078/info.json
+    label: 78
+- src: "page079.jpg"
+  params:
+    iiif: page079/info.json
+    label: 79
+- src: "page080.jpg"
+  params:
+    iiif: page080/info.json
+    label: 80
+- src: "page081.jpg"
+  params:
+    iiif: page081/info.json
+    label: 81
+- src: "page082.jpg"
+  params:
+    iiif: page082/info.json
+    label: 82
+- src: "page083.jpg"
+  params:
+    iiif: page083/info.json
+    label: 83
+- src: "page084.jpg"
+  params:
+    iiif: page084/info.json
+    label: 84
+- src: "page085.jpg"
+  params:
+    iiif: page085/info.json
+    label: 85
 - src: "back.jpg"
-  name: back
   params:
     iiif: back/info.json
     class: back

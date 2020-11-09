@@ -1,0 +1,35 @@
+baseURL = "https://xn--kinderbcher-zhb.projektemacher.org/"
+theme = ["story"]
+title = "Kinderbücher"
+languageCode = "de"
+languagecode = "de"
+defaultcontentlanguage = "de"
+publishDir = "docs"
+canonifyurls = true
+disablePathToLower = true
+
+# navigation
+[menu]
+    [[menu.main]]
+        name = "Über"
+        URL = "about"
+        weight = 1
+
+[markup.goldmark.renderer]
+  unsafe= true
+
+[imaging]
+    quality = 95
+
+[outputs]
+    page = ["HTML", "JSON"]
+
+[module]
+
+  [[module.mounts]]
+    source = "assets/scss"
+    target = "assets/scss"
+
+  [[module.mounts]]
+    source = "assets/js"
+    target = "assets/js"

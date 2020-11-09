@@ -1,7 +1,7 @@
 ---
 title: Der Bär und das Schneiderlein
 date: 2020-10-01T17:21:11+02:00
-description:
+description: '"Der Bär und das Schneiderlein" von Franz Stadtmüller, erschienen ca. 1940 bei Grosse, Göttingen. <a class="worldcat" href="http://www.worldcat.org/oclc/930916903">&nbsp;</a>'
 iiifManifest: true
 resources:
 - src: "front.jpg"
@@ -9,62 +9,62 @@ resources:
   params:
     iiif: front/info.json
     class: front
-    canvas: canvas1
 - src: "page001.jpg"
   params:
     iiif: page001/info.json
-    canvas: canvas2
+    label: uncounted
 - src: "page002.jpg"
   params:
     iiif: page002/info.json
-    canvas: canvas2
+    label: uncounted
 - src: "page003.jpg"
   params:
     iiif: page003/info.json
-    canvas: canvas3
+    label: uncounted
 - src: "page004.jpg"
   params:
     iiif: page004/info.json
-    canvas: canvas3
+    label: uncounted
 - src: "page005.jpg"
   params:
     iiif: page005/info.json
-    canvas: canvas4
+    label: uncounted
 - src: "page006.jpg"
   params:
     iiif: page006/info.json
-    canvas: canvas4
+    label: uncounted
 - src: "page007.jpg"
   params:
     iiif: page007/info.json
-    canvas: canvas5
+    label: uncounted
 - src: "page008.jpg"
   params:
     iiif: page008/info.json
-    canvas: canvas5
+    label: uncounted
 - src: "page009.jpg"
   params:
     iiif: page009/info.json
-    canvas: canvas6
+    label: uncounted
 - src: "page010.jpg"
   params:
     iiif: page010/info.json
-    canvas: canvas6
+    label: uncounted
 - src: "page011.jpg"
   params:
     iiif: page002/info.json
-    canvas: canvas7
+    label: uncounted
 - src: "page012.jpg"
   params:
     iiif: page012/info.json
-    canvas: canvas7
+    label: uncounted
 - src: "page013.jpg"
   params:
     iiif: page013/info.json
-    canvas: canvas8
+    label: uncounted
 - src: "page014.jpg"
   params:
     iiif: page014/info.json
-    canvas: canvas8
-
+    label: uncounted
 ---
+Der erste Eintrag ist etwas regionales:
+Die tückischen Folgen des Alkohols und seine Überwindung durch ein nachhaltiges Trauma ist der Inhalt dieses Buches. Wer in dieser Geschichte der wirklich "schwerbestafte" ist, ist vermutlich eine Frage, die man heute anders beantworten würde.
