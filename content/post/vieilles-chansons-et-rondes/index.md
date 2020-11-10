@@ -207,3 +207,4 @@ resources:
     iiif: back/info.json
     class: back
 ---
+Dieses alte französische Kinderliederbuch sehr reich mit Lithographien illustriert. 

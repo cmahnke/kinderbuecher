@@ -1,3 +1,5 @@
+@import "normalize";
+
 @font-face {
   font-family: 'Comic Neue';
   font-style: normal;
@@ -23,11 +25,8 @@
        url('../fonts/comic-neue-v2-latin-700.woff') format('woff');
 }
 
-@import "css/tachyons.min.css";
-@import "css/story.css";
-@import "css/descartes.css";
+@import "blogpaper.scss";
 
-
-body {
+h1, h2,h3, h4, h5 {
     font-family: 'Comic Neue';
 }

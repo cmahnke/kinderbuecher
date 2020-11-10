@@ -1,5 +1,5 @@
 baseURL = "https://xn--kinderbcher-zhb.projektemacher.org/"
-theme = ["story"]
+theme = ["blogpaper"]
 title = "Kinderbücher"
 languageCode = "de"
 languagecode = "de"
@@ -25,11 +25,18 @@ disablePathToLower = true
     page = ["HTML", "JSON"]
 
 [module]
+    [[module.mounts]]
+        source = "assets/scss"
+        target = "assets/scss"
 
-  [[module.mounts]]
-    source = "assets/scss"
-    target = "assets/scss"
+    [[module.mounts]]
+        source = "static"
+        target = "static"
 
-  [[module.mounts]]
-    source = "assets/js"
-    target = "assets/js"
+    [[module.mounts]]
+        source = "assets/js"
+        target = "assets/js"
+
+#    [[module.mounts]]
+#        source = "assets/css"
+#        target = "assets/css"

@@ -199,4 +199,4 @@ resources:
     label: 48
 ---
 
-Früher war alles besser, da haben die Kinder noch was gelernt! Es galt noch "Zu alt ist keiner, noch zu jung, der Waffewn tragen kann". Dieses Kinderbuch aus dem ersten Weltkrieg.
+Früher war alles besser, da haben die Kinder noch was gelernt! Es galt noch "Zu alt ist keiner, noch zu jung, der Waffen tragen kann". Dieses Kinderbuch aus dem ersten Weltkrieg.

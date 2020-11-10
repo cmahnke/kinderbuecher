@@ -1,0 +1,57 @@
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta http-equiv="x-ua-Compatible" content="ie=edge">
+
+  <title>
+  {{- block "title" . -}}
+    {{- with .Title -}}{{- . }} | {{ end -}}
+    {{- .Site.Title -}}
+  {{- end -}}
+  </title>
+
+  {{- with .Description }}
+  <meta name="description" content="{{ . }}">
+  {{- else -}}
+  {{- with .Site.Params.description }}
+  <meta name="description" content="{{ . }}">
+  {{- end -}}
+  {{- end }}
+
+  {{- range .AlternativeOutputFormats }}
+  <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .RelPermalink }}" title="{{ $.Site.Title | safeHTML }}">
+  {{- end }}
+
+  {{ if hasPrefix .Page.Name "404" }}
+      <meta http-equiv="refresh" content="15; URL={{ .Site.BaseURL }}">
+  {{- end }}
+
+      {{- $options := (dict "targetPath" "base.css" "outputStyle" "compressed" "includePaths" (slice "css" "node_modules/normalize.css" )) -}}
+      {{- $scssTemplate := resources.Get "scss/base.scss" -}}
+      {{- $scssStyle := $scssTemplate | resources.ExecuteAsTemplate "scss/base.scss" . | toCSS $options -}}
+      {{- $style := slice  $scssStyle | resources.Concat "css/concated.css" | minify  | fingerprint -}}
+      <link href="{{ $style.RelPermalink }}" rel="stylesheet" integrity="{{ $style.Data.Integrity }}">
+
+
+
+  {{/* Parse SCSS files */}}
+  {{- $blogpaper_scss_filepath := "css/blogpaper.scss" -}}
+  {{- $scss_files := slice (resources.Get $blogpaper_scss_filepath) -}}
+  {{- $scss_files := $scss_files | append (where (resources.Match "**.scss") ".Name" "!=" $blogpaper_scss_filepath) -}}
+
+{{- $css_files := slice -}}
+  {{- range $scss_files -}}
+    {{- $css := . | resources.ExecuteAsTemplate .Name . | toCSS (dict "outputStyle" "compressed") -}}
+    {{- $css_files = $css_files | append $css -}}
+  {{- end -}}
+
+  {{/*
+  {{- $custom_css := where (resources.Match "**.css") ".Name" "!=" $normalize_css_filepath -}}
+  {{- $css_files = $css_files | append $custom_css -}}
+
+
+  {{- $css := $css_files | resources.Concat "main.css" | minify | fingerprint "sha512" -}}
+
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+    */}}
+</head>

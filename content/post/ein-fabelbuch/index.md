@@ -1,6 +1,6 @@
 ---
 title: Ein Fabelbuch
-date: 2021-5-01T17:21:11+02:00
+date: 2021-05-01T17:21:11+02:00
 description: '"Ein Fabelbuch" von Etzel und Ewers, erschienen 1901 bei A. Langen, München. <a class="worldcat" href="http://www.worldcat.org/oclc/459440697">&nbsp;</a>'
 resources:
 - src: "front.jpg"
@@ -497,3 +497,6 @@ resources:
   params:
     iiif: end/info.json
 ---
+"Im Karpfenteiche schwamm einmal eine bläulich bleiche und schleimig weiche Wasserleiche"...
+Und dazu gibt es (neben vielen anderen) auch noch die passende Illustration.
+Ob dies hier wirklich ein Kinderbuch ist, weiß ich nicht genau, aber es ist aus der entsprechenden Abteilung im [Antiquariats Pretzsch](https://antiquariat-pretzsch.de/).
