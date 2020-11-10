@@ -56,7 +56,6 @@ jobs:
         run: |
           cd content
           find post -name info.json -exec dirname {} \; > files.lst
-          cp ../blaufusstoelpel-redirect/index.html .
           echo "index.html" >> files.lst
           cat files.lst | xargs chmod 775
           sshpass -e rsync -aP --size-only --delete --relative $(cat files.lst) $DEPLOY_USER@$DEPLOY_SERVER:$DEPLOY_PATH/kinderbuecher/
