@@ -1,0 +1,103 @@
+<section class="list">
+  {{- partial "header" . -}}
+  {{- $pager := . -}}
+
+  <div class="container">
+    <div class="content">
+    {{ $paginator := .Paginate (where (where .Site.Pages "Type" "post").ByDate.Reverse "IsPage" true) }}
+    {{ range $index, $element := .Paginator.Pages }}
+
+    {{- $context := path.Dir .File.Path -}}
+    {{- $images := newScratch -}}
+    {{- $resize := false -}}
+    {{- $defaultWidth := 800 -}}
+    {{- $defaultHeight := 400 -}}
+
+    {{/* Preview */}}
+    {{- if .Params.preview -}}
+        {{- $previewType := .Params.preview  -}}
+        {{- range .Params.resources -}}
+            {{- if or (eq .name "preview") (eq .params.preview true) -}}
+                {{- $imgLocation := path.Join $context .src -}}
+                {{- $previewImg := ($element.Resources.ByType "image").GetMatch .name -}}
+                {{/* Format: width x height */}}
+
+                {{- $cropWidth := $defaultWidth -}}
+                {{- $cropHeight := $defaultHeight -}}
+
+                {{- if .params.cropwidth -}}
+                    {{- $cropWidth = .params.cropwidth -}}
+                    {{- $resize = true -}}
+                {{- end -}}
+                {{- if .params.cropheight -}}
+                    {{- $cropHeight = .params.cropheight -}}
+                    {{- $resize = true -}}
+                {{- end }}
+
+                {{ $crop := printf "%dx%d" $cropWidth $cropHeight }}
+                {{- if eq $previewImg nil -}}
+                    {{- errorf "Can't find image %s" $imgLocation -}}
+                {{- else -}}
+                    {{- if ne $previewType "book" -}}
+                        {{- $crop2x := printf "%dx%d" (div $previewImg.Width 2) $cropHeight -}}
+                        {{- $previewImg = $previewImg.Fill (printf "%s %s" $crop2x "center") -}}
+                        {{- $previewImg = $previewImg.Fill (printf "%s %s" $crop "center") -}}
+                        {{- if eq $resize true -}}
+                            {{- $previewImg = $previewImg.Fill (printf "%s %s" (printf "%dx%d" $defaultWidth $defaultHeight ) "center") -}}
+                        {{- end -}}
+                    {{- end -}}
+                {{- end -}}
+                {{- $images.Set "preview" $previewImg -}}
+            {{- end -}}
+        {{- end -}}
+    {{- end -}}
+
+    {{- $previewImg := $images.Get "preview" -}}
+    {{- $style := "" -}}
+    {{- $class := "" -}}
+
+    {{- if $previewImg -}}
+        {{- $style = printf "background-image: url(%s);" $previewImg.RelPermalink -}}
+        {{- $class = "preview" -}}
+    {{- end -}}
+
+
+
+
+
+      {{ if eq (mod $index 2) 0 }}
+      {{- end -}}
+
+        <article class="summary">
+          <header class="header">
+            {{- partial "banner" (dict "Page" . "page_href" .RelPermalink) }}
+
+            <div class="header__metadata inline-list">
+              {{- partial "date.html" (dict "date" .Date "language" $.Page.Language "months" $.Site.Data.months) -}}
+
+
+              <div class="header__categories">
+                {{- partial "taxonomies" (dict "Page" . "term" "categories") }}
+              </div>
+            </div>
+
+            <h2 class="header__title">
+              <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            </h2>
+          </header>
+
+          {{- with .Summary }}
+          <div class="summary__content">{{ . }}</div>
+          {{- end }}
+        </article>
+
+
+
+    {{- end }}
+    </div>
+
+    <footer class="footer metadata">
+      {{ template "_internal/pagination.html" .Page }}
+    </footer>
+  </div>
+</section>

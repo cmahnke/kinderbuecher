@@ -1,0 +1,26 @@
+{{- block "footer" . }}
+<footer class="footer footer--main container metadata">
+  <div class="container">
+    <div class="design-credit">
+         <h6 class="projektemacher">
+             {{ .Site.Title }} {{ i18n "projektemacher" | safeHTML }}
+         </h6>
+         {{ range .Site.Params.copyright }}
+               <p>{{ . | markdownify }}</p>
+         {{ else }}
+
+             <div class="font-secondary text-dark">
+                 Theme basiert auf Parsa für Hugo von <a target="_blank" href="https://gethugothemes.com/products/parsa-hugo-theme/">Themefisher</a> - Freie Version verfügbar auf <a href="https://github.com/themefisher/parsa-hugo">GitHub</a>.
+             </div>
+         {{ end }}
+    </div>
+    <div class="copyright">
+      {{- with .Site.Copyright -}}
+      {{ . }}
+      {{- else -}}
+      &copy; {{ now.Year }} {{- with .Site.Author }} {{ .name }}. {{- end }} <a href='{{ "" | relURL }}'>{{ .Site.Title }}</a>
+      {{- end -}}
+    </div>
+  </div>
+</footer>
+{{- end }}

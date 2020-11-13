@@ -27,6 +27,42 @@
 
 @import "blogpaper.scss";
 
-h1, h2,h3, h4, h5 {
+.header__title {
     font-family: 'Comic Neue';
+}
+
+body {
+    &.about {
+        background-position: 90% 27em;
+        background-image: url("/images/cm.svg");
+        background-repeat: no-repeat;
+    }
+}
+
+a,
+a:active,
+a:focus,
+a:hover,
+a:visited {
+    text-decoration: none;
+    border-bottom: none;
+}
+
+.footer {
+    /* background-color: lighten(var(--header--main-color-background), 35%); */
+
+    font-size: small;
+
+    .projektemacher {
+        font-size: unset;
+    }
+
+    h6 {
+        margin-block-start: unset;
+        margin-block-end: unset;
+    }
+
+    .container {
+        text-align: center;
+    }
 }

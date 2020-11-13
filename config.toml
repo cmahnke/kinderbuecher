@@ -7,6 +7,8 @@ defaultcontentlanguage = "de"
 publishDir = "docs"
 canonifyurls = true
 disablePathToLower = true
+disableKinds = ["taxonomy"]
+ignoreErrors = ["error-disable-taxonomy"]
 
 # navigation
 [menu]
