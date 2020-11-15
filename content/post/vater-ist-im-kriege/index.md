@@ -1,6 +1,8 @@
 ---
 title: Vater ist im Kriege
 date: 2021-02-01T17:21:11+02:00
+iiifManifest: ./index.json
+iiifContext: http://iiif.io/api/presentation/2/context.json
 description: '"Vater ist im Kriege - Ein Bilderbuch für Kinder" von Rudolf Presber, herausgegeben 1915 von der Kriegskinderspende deutscher Frauen, Kronprinzenpalais, Berlin. <a class="worldcat" href="http://www.worldcat.org/oclc/970872943">&nbsp;</a>'
 resources:
 - src: "front.jpg"
@@ -200,3 +202,5 @@ resources:
 ---
 
 Früher war alles besser, da haben die Kinder noch was gelernt! Es galt noch "Zu alt ist keiner, noch zu jung, der Waffen tragen kann". Dieses Kinderbuch aus dem ersten Weltkrieg.
+<!--more-->
+<div class="source">Gekauft im <a href="https://antiquariat-pretzsch.de/">Antiquariat Pretzsch N°1</a>.</div>

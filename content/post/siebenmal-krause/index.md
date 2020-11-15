@@ -1,6 +1,8 @@
 ---
 title: Siebenmal Krause
-date:
+date: 2021-06-01T17:21:11+02:00
+iiifManifest: ./index.json
+iiifContext: http://iiif.io/api/presentation/2/context.json
 description: '"Siebenmal Krause - sieben fröhliche Geschichten von sieben fröhlichen Geschwistern" von 	Ilse Linck und Erika Walter, erschienen 1941 bei Stalling, Oldenburg. <a class="worldcat" href="http://www.worldcat.org/oclc/1068564426">&nbsp;</a>'
 iiifManifest: true
 resources:
@@ -88,3 +90,5 @@ resources:
 ---
 Der erste Eintrag ist etwas regionales:
 Die tückischen Folgen des Alkohols und seine Überwindung durch ein nachhaltiges Trauma ist der Inhalt dieses Buches. Wer in dieser Geschichte der wirklich "schwerbestafte" ist, ist vermutlich eine Frage, die man heute anders beantworten würde.
+<!--more-->
+<div class="source">Gekauft im <a href="https://antiquariat-pretzsch.de/">Antiquariat Pretzsch N°2</a>.</div>

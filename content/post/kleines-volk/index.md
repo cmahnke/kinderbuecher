@@ -1,6 +1,8 @@
 ---
 title: Kleines Volk
 date: 2020-11-01T17:21:11+02:00
+iiifManifest: ./index.json
+iiifContext: http://iiif.io/api/presentation/2/context.json
 description: '"Kleines Volk" von Oskar Pletsch, erschienen ca. 1865 bei Wiedmann, Berlin. <a class="worldcat" href="http://www.worldcat.org/oclc/753582892">&nbsp;</a>'
 resources:
 - src: "front.jpg"
@@ -162,3 +164,5 @@ resources:
     label: 39
 ---
 Der Zustand ist nicht der beste, aber dafür ist es bisher auch das älteste hier präsentierte Buch. Die Holzstiche bieten auch einen Einblick in die Inneneinrichtung der Gründerzeit.
+<!--more-->
+<div class="source">Gekauft im <a href="https://antiquariat-pretzsch.de/">Antiquariat Pretzsch N°1</a>.</div>

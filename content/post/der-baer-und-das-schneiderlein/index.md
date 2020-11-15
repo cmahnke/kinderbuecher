@@ -2,7 +2,8 @@
 title: Der Bär und das Schneiderlein
 date: 2020-10-01T17:21:11+02:00
 description: '"Der Bär und das Schneiderlein" von Franz Stadtmüller, erschienen ca. 1940 bei Grosse, Göttingen. <a class="worldcat" href="http://www.worldcat.org/oclc/930916903">&nbsp;</a>'
-iiifManifest: true
+iiifManifest: ./index.json
+iiifContext: http://iiif.io/api/presentation/2/context.json
 resources:
 - src: "front.jpg"
   name: front
@@ -68,3 +69,5 @@ resources:
 ---
 Der erste Eintrag ist etwas regionales:
 Die tückischen Folgen des Alkohols und seine Überwindung durch ein nachhaltiges Trauma ist der Inhalt dieses Buches. Wer in dieser Geschichte der wirklich "schwerbestafte" ist, ist vermutlich eine Frage, die man heute anders beantworten würde.
+<!--more-->
+<div class="source">Gekauft im <a href="https://antiquariat-pretzsch.de/">Antiquariat Pretzsch N°2</a>.</div>

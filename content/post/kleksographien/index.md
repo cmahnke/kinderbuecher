@@ -1,6 +1,8 @@
 ---
 title: Kleksographien
 date: 2021-03-01T17:21:11+02:00
+iiifManifest: ./index.json
+iiifContext: http://iiif.io/api/presentation/2/context.json
 description: '"Kleksographien" von Justinus Kerner, erschienen nach 1857 bei der Deutsche Verlags-Anstalt, 	Stuttgart. <a class="worldcat" href="http://www.worldcat.org/oclc/602645173">&nbsp;</a>'
 resources:
 - src: "front.jpg"
@@ -374,3 +376,5 @@ resources:
     iiif: back/info.json
     class: back
 ---
+<!--more-->
+<div class="source">Gekauft im <a href="https://antiquariat-pretzsch.de/">Antiquariat Pretzsch N°2</a>.</div>

@@ -1,6 +1,8 @@
 ---
 title: Vieilles Chansons et rondes
 date: 2020-12-01T17:21:11+02:00
+iiifManifest: ./index.json
+iiifContext: http://iiif.io/api/presentation/2/context.json
 description: '"Vielles chansons pour les petits enfants" von Charles-Marie Widor und Louis Maurice Boutet de Monvel, erschienen ca. 1884 bei E. Plon, Nourrit et Cie., Paris. <a class="worldcat" href="http://www.worldcat.org/oclc/971014633">&nbsp;</a>'
 resources:
 - src: "front.jpg"
@@ -207,4 +209,6 @@ resources:
     iiif: back/info.json
     class: back
 ---
-Dieses alte französische Kinderliederbuch sehr reich mit Lithographien illustriert. 
+Dieses alte französische Kinderliederbuch sehr reich mit Lithographien illustriert.
+<!--more-->
+<div class="source">Gekauft im <a href="https://antiquariat-pretzsch.de/">Antiquariat Pretzsch N°2</a>.</div>
