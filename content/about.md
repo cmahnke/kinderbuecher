@@ -5,12 +5,14 @@ displayinlist: false
 metaPage: true
 ---
 
+
+
 # Kolophon
 
 Diese Seite wurde mit [Hugo](https://gohugo.io/) generiert.
 
 
-Das Theme basiert auf
+Das Theme basiert auf <a target="_blank" href="https://normanderwan.github.io/Blogpaper/">Blogpaper</a>
 
 Als Schriftarten kommen [Open Sans](https://fonts.google.com/specimen/Open+Sans#about) und [Montserrat](https://github.com/JulietaUla/Montserrat) zum Einsatz.
 

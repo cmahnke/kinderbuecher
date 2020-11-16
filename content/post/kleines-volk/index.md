@@ -163,6 +163,6 @@ resources:
     iiif: page039/info.json
     label: 39
 ---
-Der Zustand ist nicht der beste, aber dafür ist es bisher auch das älteste hier präsentierte Buch. Die Holzstiche bieten auch einen Einblick in die Inneneinrichtung der Gründerzeit.
+Der Zustand ist nicht der beste, aber dafür ist es bisher auch das älteste hier präsentierte Buch.<!--more--> Die Holzstiche bieten auch einen Einblick in die Inneneinrichtung der Gründerzeit.
 <!--more-->
 <div class="source">Gekauft im <a href="https://antiquariat-pretzsch.de/">Antiquariat Pretzsch N°1</a>.</div>

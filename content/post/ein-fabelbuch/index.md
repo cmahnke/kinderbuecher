@@ -499,6 +499,6 @@ resources:
   params:
     iiif: end/info.json
 ---
-"Im Karpfenteiche schwamm einmal eine bläulich bleiche und schleimig weiche Wasserleiche"...
+"Im Karpfenteiche schwamm einmal eine bläulich bleiche und schleimig weiche Wasserleiche"...<!--more-->
 Und dazu gibt es (neben vielen anderen) auch noch die passende Illustration.
 Ob dies hier wirklich ein Kinderbuch ist, weiß ich nicht genau, aber es ist aus der entsprechenden Abteilung im [Antiquariats Pretzsch](https://antiquariat-pretzsch.de/).

@@ -6,6 +6,10 @@ if [[ -z "$SKIP_IIIF" ]] ; then
     ./scripts/iiif.sh
 fi
 
+# Background
+
+convert "Source Files/Background/Background-WSXGA.psd[1]" -quality 20 static/images/background.jpg
+
 # Favicons
 # See https://gist.github.com/pfig/1808188
 convert "Source Files/Favicon/Favicon.psd[1]" -background 'rgba(255, 255, 255, .0)' -resize 300x300 -gravity center -extent 300x300  static/images/favicon.png

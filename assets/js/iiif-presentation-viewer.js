@@ -1,5 +1,5 @@
-//import Mirador from 'mirador'
-import Mirador from 'mirador/dist/es/src'
+import Mirador from 'mirador'
+//import Mirador from 'mirador/dist/es/src'
 import unfetch from 'unfetch';
 const fetch = unfetch;
 

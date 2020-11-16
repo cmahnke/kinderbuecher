@@ -4,62 +4,25 @@
 
   <div class="container">
     <div class="content">
-    {{ $paginator := .Paginate (where (where .Site.Pages "Type" "post").ByDate.Reverse "IsPage" true) }}
-    {{ range $index, $element := .Paginator.Pages }}
+        {{ $paginator := .Paginate (where (where .Site.Pages "Type" "post").ByDate.Reverse "IsPage" true) }}
+        {{ range $index, $element := .Paginator.Pages }}
 
-    {{- $context := path.Dir .File.Path -}}
-    {{- $images := newScratch -}}
-    {{- $resize := false -}}
-    {{- $defaultWidth := 800 -}}
-    {{- $defaultHeight := 400 -}}
+        {{/* Preview */}}
+        {{- $context := path.Dir .File.Path -}}
 
-    {{/* Preview */}}
-    {{- if .Params.preview -}}
-        {{- $previewType := .Params.preview  -}}
-        {{- range .Params.resources -}}
-            {{- if or (eq .name "preview") (eq .params.preview true) -}}
-                {{- $imgLocation := path.Join $context .src -}}
-                {{- $previewImg := ($element.Resources.ByType "image").GetMatch .name -}}
-                {{/* Format: width x height */}}
+        {{- $defaultWidth := 400 -}}
+        {{- $previewImg := (.Resources.ByType "image").GetMatch "front" -}}
 
-                {{- $cropWidth := $defaultWidth -}}
-                {{- $cropHeight := $defaultHeight -}}
-
-                {{- if .params.cropwidth -}}
-                    {{- $cropWidth = .params.cropwidth -}}
-                    {{- $resize = true -}}
-                {{- end -}}
-                {{- if .params.cropheight -}}
-                    {{- $cropHeight = .params.cropheight -}}
-                    {{- $resize = true -}}
-                {{- end }}
-
-                {{ $crop := printf "%dx%d" $cropWidth $cropHeight }}
-                {{- if eq $previewImg nil -}}
-                    {{- errorf "Can't find image %s" $imgLocation -}}
-                {{- else -}}
-                    {{- if ne $previewType "book" -}}
-                        {{- $crop2x := printf "%dx%d" (div $previewImg.Width 2) $cropHeight -}}
-                        {{- $previewImg = $previewImg.Fill (printf "%s %s" $crop2x "center") -}}
-                        {{- $previewImg = $previewImg.Fill (printf "%s %s" $crop "center") -}}
-                        {{- if eq $resize true -}}
-                            {{- $previewImg = $previewImg.Fill (printf "%s %s" (printf "%dx%d" $defaultWidth $defaultHeight ) "center") -}}
-                        {{- end -}}
-                    {{- end -}}
-                {{- end -}}
-                {{- $images.Set "preview" $previewImg -}}
-            {{- end -}}
+        {{- if eq $previewImg nil -}}
+            {{- errorf "Can't find image 'front' for %s" $context -}}
         {{- end -}}
-    {{- end -}}
 
-    {{- $previewImg := $images.Get "preview" -}}
-    {{- $style := "" -}}
-    {{- $class := "" -}}
-
-    {{- if $previewImg -}}
-        {{- $style = printf "background-image: url(%s);" $previewImg.RelPermalink -}}
-        {{- $class = "preview" -}}
-    {{- end -}}
+        {{- $class := "" -}}
+        {{- $style := "" -}}
+        {{- if $previewImg -}}
+            {{- $style = printf "background-image: url(%s);" $previewImg.RelPermalink -}}
+            {{- $class = "preview" -}}
+        {{- end -}}
 
 
 
@@ -69,6 +32,7 @@
       {{- end -}}
 
         <article class="summary">
+          <div class="{{ $class }}" style="{{ $style | safeCSS }}"></div>
           <header class="header">
             {{- partial "banner" (dict "Page" . "page_href" .RelPermalink) }}
 
@@ -87,8 +51,9 @@
           </header>
 
           {{- with .Summary }}
-          <div class="summary__content">{{ . }}</div>
+            <div class="summary__content">{{ . }}</div>
           {{- end }}
+           <div class="ruler"></div>
         </article>
 
 
@@ -96,8 +61,8 @@
     {{- end }}
     </div>
 
-    <footer class="footer metadata">
+    <div class="metadata pagination-container">
       {{ template "_internal/pagination.html" .Page }}
-    </footer>
+    </div>
   </div>
 </section>

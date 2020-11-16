@@ -10,6 +10,10 @@ disablePathToLower = true
 disableKinds = ["taxonomy"]
 ignoreErrors = ["error-disable-taxonomy"]
 
+[params]
+    navHome = "Start"
+#    Copyright = "&copy; MMXX <a href=\"https://projektemacher.org\">Projektemacher</a>" 
+
 # navigation
 [menu]
     [[menu.main]]

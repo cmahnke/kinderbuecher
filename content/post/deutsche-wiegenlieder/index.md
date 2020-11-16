@@ -415,8 +415,10 @@ resources:
   params:
     iiif: end/info.json
 ---
+Der erste Eintrag ist das Buch zum [Vorsatzpapier](https://vorsatzpapier.projektemacher.org/post/deutsche-wiegenlieder/).<!--more--> Es ist die Quelle für den Hintergrund den [Krähenbeißer](https://krähenbeisser.de). 
 
-Passend zu Silvester ein Buch "für groß und klein". Einger dieser Späße kann man sicher auch heute noch bei den Feierlichkeiten am Bildschirm durchführen.
+# Update 25.9.2020
 
+Der Hintergrund des [Krähenbeißers](https://krähenbeisser.de) wurde [aktualisiert](/post/niedersachsens-sagenborn).
 
-freundliche Leihgabe des [Antiquariats Pretzsch](https://antiquariat-pretzsch.de/)
+Dieses Buch war eine freundliche Leihgabe des [Antiquariats Pretzsch](https://antiquariat-pretzsch.de/).

@@ -477,4 +477,4 @@ resources:
     iiif: end/info.json
 ---
 
-Passend zu Silvester ein Buch "für groß und klein". Einger dieser Späße kann man sicher auch heute noch bei den Feierlichkeiten am Bildschirm durchführen.
+Passend zu Silvester ein Buch "für groß und klein".<!--more--> Einger dieser Späße kann man sicher auch heute noch bei den Feierlichkeiten am Bildschirm durchführen.

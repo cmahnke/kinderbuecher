@@ -3,6 +3,7 @@
 {{- $imageIdSuffix := "/full/full/0/default.jpg" -}}
 */}}
 {{- $imageIdSuffix := "" -}}
+{{- $context := path.Dir .File.Path -}}
 {{ if eq .Sites.First.Language.Lang .Page.Lang }}
 {{- if hasPrefix .Params.iiifContext "http://iiif.io/api/presentation/" -}}
 {
@@ -49,11 +50,13 @@
                  {{- $image := newScratch -}}
                  {{- if .name -}}
                     {{- $image.Set "previewImg" ($.Resources.GetMatch .name) -}}
+                    {{- $image.Set "previewLoc" (path.Join $context .name) -}}
                  {{ else }}
                     {{- $image.Set "previewImg" ($.Resources.GetMatch .src) -}}
+                    {{- $image.Set "previewLoc" (path.Join $context .src) -}}
                  {{- end -}}
                  {{- if eq ($image.Get "previewImg") nil -}}
-                    {{- warnf "Can't find image %s" ($image.Get "previewLoc") -}}
+                    {{- warnf "Can't find image %s %d" ($image.Get "previewLoc") $i -}}
                  {{- end -}}
 
                  {{- $canvas := "" -}}

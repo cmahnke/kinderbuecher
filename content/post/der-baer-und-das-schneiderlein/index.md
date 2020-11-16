@@ -67,7 +67,7 @@ resources:
     iiif: page014/info.json
     label: uncounted
 ---
-Der erste Eintrag ist etwas regionales:
+Diesmal etwas regionales: <!--more-->
 Die tückischen Folgen des Alkohols und seine Überwindung durch ein nachhaltiges Trauma ist der Inhalt dieses Buches. Wer in dieser Geschichte der wirklich "schwerbestafte" ist, ist vermutlich eine Frage, die man heute anders beantworten würde.
-<!--more-->
+
 <div class="source">Gekauft im <a href="https://antiquariat-pretzsch.de/">Antiquariat Pretzsch N°2</a>.</div>

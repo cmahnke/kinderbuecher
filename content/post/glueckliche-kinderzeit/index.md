@@ -13,7 +13,7 @@ resources:
 - src: "front-verso.jpg"
   params:
     iiif: front-verso/info.json
-- src: "frontrecto.jpg"
+- src: "front-recto.jpg"
   params:
     iiif: front-recto/info.json
 - src: "page000a.jpg"
@@ -298,7 +298,6 @@ resources:
 - src: "page054a.jpg"
   params:
     iiif: page054a/info.json
-    label: 48
 - src: "page054b.jpg"
   params:
     iiif: page054b/info.json
@@ -310,16 +309,22 @@ resources:
   params:
     iiif: page056/info.json
     label: 56
+- src: "page057.jpg"
+  params:
+    iiif: page057/info.json
+    label: 57
 - src: "end-verso.jpg"
   params:
     iiif: end-verso/info.json
 - src: "end-recto.jpg"
   params:
     iiif: end-recto/info.json
-- src: "end.jpg"
+- src: "back.jpg"
   params:
-    iiif: end/info.json
+    iiif: back/info.json
 ---
+Hier das Buch zum [Vorsatzpapier](https://vorsatzpapier.projektemacher.org/post/glueckliche-kinderzeit/), <!--more-->reich illustriert und auch für die damalige Zeit etwas kitschig...
 
-<!--more-->
+Da dieses Vorsatzpapier durchaus zum Thema dieser Seite passt, wird es hier als Hintergrund der Kopfzeile verwendet.
+
 <div class="source">Gekauft im <a href="https://antiquariat-pretzsch.de/">Antiquariat Pretzsch N°1</a>.</div>

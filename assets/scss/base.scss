@@ -1,5 +1,10 @@
 @import "normalize";
 
+$header--main-color-background: #333;
+$header--main-color-text: #fff;
+$summary-margin-bottom: 3em;
+$nav-height: 6rem;
+
 @font-face {
   font-family: 'Comic Neue';
   font-style: normal;
@@ -25,17 +30,76 @@
        url('../fonts/comic-neue-v2-latin-700.woff') format('woff');
 }
 
+/* open-sans-regular - latin */
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url("/fonts/open-sans-v18-latin-regular.woff2") format('woff2'),
+         url("/fonts/open-sans-v18-latin-regular.woff") format('woff'),
+         url("/fonts/open-sans-v18-latin-regular.ttf") format('truetype');
+}
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    src: url("/fonts/open-sans-v18-latin-600.woff2") format('woff2'),
+         url("/fonts/open-sans-v18-latin-600.woff") format('woff'), url("/fonts/open-sans-v18-latin-600.ttf") format('truetype');
+}
+
 @import "blogpaper.scss";
 
-.header__title {
-    font-family: 'Comic Neue';
+.header--main {
+    position: relative;
+    background: url('/images/background.jpg') rgba(255, 255, 255, .7);
+    background-blend-mode: hue;
+    background-size: cover;
+
+    .header__title {
+        font-family: 'Comic Neue';
+        font-size: 3em;
+        color: darken($header--main-color-text, 90%);
+        font-weight: bold;
+    }
+
+    .date {
+        font-family: 'Open Sans';
+        color: darken($header--main-color-text, 90%);
+    }
+
+}
+
+.nav {
+    width: 100%;
+    background-color: rgba(0, 0, 0, .2);
+
+    .nav__content {
+        font-family: 'Open Sans';
+        font-weight: 600;
+        color: darken($header--main-color-text, 80%);
+        height: $nav-height;
+
+        a,
+        a:active,
+        a:focus,
+        a:hover,
+        a:visited {
+            color: darken($header--main-color-text, 80%);
+        }
+    }
+
 }
 
 body {
     &.about {
-        background-position: 90% 27em;
+        background-position: 90% 15em;
         background-image: url("/images/cm.svg");
         background-repeat: no-repeat;
+
+        p {
+            margin-block-start: unset;
+            margin-block-end: unset;
+        }
     }
 }
 
@@ -48,9 +112,56 @@ a:visited {
     border-bottom: none;
 }
 
-.footer {
-    /* background-color: lighten(var(--header--main-color-background), 35%); */
+.content {
+    position: relative;
 
+    .source {
+        font-size: small;
+        text-align: right;
+        margin: 1.5em;
+        color: lighten(#6c757d, 20%);
+
+        a {
+            color: lighten(#007bff, 20%);
+        }
+    }
+
+    .preview {
+        min-width: 20%;
+        height: 100%;
+    }
+
+    iiif-presentation {
+    }
+}
+
+.summary {
+    margin-bottom: $summary-margin-bottom;
+
+    .ruler {
+        width: 25%;
+        border-bottom: 1px solid darken($header--main-color-text, 20%);
+        margin: auto;
+        padding-top: .6em;
+    }
+
+}
+
+.pagination-container {
+    font-family: 'Open Sans';
+    display: block;
+    margin: auto;
+
+    .pagination {
+        justify-content: center;
+    }
+
+}
+
+.footer {
+    background-color: $header--main-color-background;
+    color: darken($header--main-color-text, 20%);
+    font-family: 'Open Sans';
     font-size: small;
 
     .projektemacher {
@@ -64,5 +175,13 @@ a:visited {
 
     .container {
         text-align: center;
+    }
+
+    a,
+    a:active,
+    a:focus,
+    a:hover,
+    a:visited {
+        color: darken($header--main-color-text, 15%);
     }
 }

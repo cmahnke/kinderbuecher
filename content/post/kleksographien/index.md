@@ -6,6 +6,7 @@ iiifContext: http://iiif.io/api/presentation/2/context.json
 description: '"Kleksographien" von Justinus Kerner, erschienen nach 1857 bei der Deutsche Verlags-Anstalt, 	Stuttgart. <a class="worldcat" href="http://www.worldcat.org/oclc/602645173">&nbsp;</a>'
 resources:
 - src: "front.jpg"
+  name: front
   params:
     iiif: front/info.json
 - src: "page-0.jpg"
@@ -371,10 +372,16 @@ resources:
   params:
     iiif: page085/info.json
     label: 85
-- src: "back.jpg"
+- src: "end.jpg"
   params:
-    iiif: back/info.json
-    class: back
+    iiif: end/info.json
+    class: end
 ---
-<!--more-->
+Wieder ein Buch, bei dem nicht sicher sagen kann, ob es sich um ein Kinderbuch handelt. <!--more-->
+Da es aber interessant illustriert ist, passt es in dieses Blog.
+
+Mehr über den Autoren [Justinus Kerner](https://de.wikipedia.org/wiki/Justinus_Kerner) hat die Wikipedia.
+
+Das angegebene Erscheinungsdatum ist dem Worldcat entnommen (und wie bei Bibliothekskatalogen üblich, mit Vorsicht zu genießen) und sehr wahrscheinlich deutlich zu früh angesetzt. Die Wikipedia gibt 1890 an und stilistisch (Buchdeckel) passt das Jahr besser als 1857.
+
 <div class="source">Gekauft im <a href="https://antiquariat-pretzsch.de/">Antiquariat Pretzsch N°2</a>.</div>

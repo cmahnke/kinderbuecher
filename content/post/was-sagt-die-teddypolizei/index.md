@@ -128,6 +128,6 @@ resources:
     label: 30
 ---
 
-Verkehrserziehung ist immer schon gut gewesen für eine große Portion schwarze Pädagogik, da ist auch dieses Heftchen keine Ausnahme. Besonders spannend: Hier erklärt ein Hersteller von Kraft und Schmierstoffen dem Nachwuchs <s>Product Placement</s>, wie man es vermeidet zum Kollateralschaden der eigenen Produkte zu werden.
+Verkehrserziehung ist immer schon gut gewesen für eine große Portion schwarze Pädagogik,<!--more--> da ist auch dieses Heftchen keine Ausnahme. Besonders spannend: Hier erklärt ein Hersteller von Kraft und Schmierstoffen dem Nachwuchs <s>Product Placement</s>, wie man es vermeidet zum Kollateralschaden der eigenen Produkte zu werden.
 <!--more-->
 <div class="source">Gekauft im <a href="https://antiquariat-pretzsch.de/">Antiquariat Pretzsch N°1</a>.</div>

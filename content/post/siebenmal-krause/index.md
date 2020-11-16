@@ -79,16 +79,11 @@ resources:
   params:
     iiif: page017/info.json
     label: uncounted
-- src: "page018.jpg"
-  params:
-    iiif: page018/info.json
-    label: uncounted
 - src: "back.jpg"
   params:
     iiif: back/info.json
     label: uncounted
 ---
-Der erste Eintrag ist etwas regionales:
-Die tückischen Folgen des Alkohols und seine Überwindung durch ein nachhaltiges Trauma ist der Inhalt dieses Buches. Wer in dieser Geschichte der wirklich "schwerbestafte" ist, ist vermutlich eine Frage, die man heute anders beantworten würde.
+Dieses Buch, erschienen 1941, transportiert nicht nur das damalige Familienbild,<!--more--> sondern auch eine gewisse Kleiderordnung. Und auch wenn man heute relativ klar benennen kann welcher Ästhetik die Illustration folgen, war das nicht wohl immer so (bzw. egal). Dieses Buch wurde auch nach dem Krieg noch neu aufgelegt, wie eine kurze recherce in [Bibliothekskatalogen](http://www.worldcat.org/oclc/254572509) zeigt.
 <!--more-->
 <div class="source">Gekauft im <a href="https://antiquariat-pretzsch.de/">Antiquariat Pretzsch N°2</a>.</div>
