@@ -12,13 +12,13 @@ ignoreErrors = ["error-disable-taxonomy"]
 
 [params]
     navHome = "Start"
-#    Copyright = "&copy; MMXX <a href=\"https://projektemacher.org\">Projektemacher</a>" 
+#    Copyright = "&copy; MMXX <a href=\"https://projektemacher.org\">Projektemacher</a>"
 
 # navigation
 [menu]
     [[menu.main]]
         name = "Über"
-        URL = "about"
+        URL = "/about"
         weight = 1
 
 [markup.goldmark.renderer]

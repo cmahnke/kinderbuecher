@@ -2,8 +2,10 @@
 
 $header--main-color-background: #333;
 $header--main-color-text: #fff;
-$summary-margin-bottom: 3em;
+$summary-margin-bottom: 1.5em;
 $nav-height: 6rem;
+$color-metadata: #666;
+$header--main-margin-bottom: 3.6em;
 
 @font-face {
   font-family: 'Comic Neue';
@@ -54,6 +56,7 @@ $nav-height: 6rem;
     background: url('/images/background.jpg') rgba(255, 255, 255, .7);
     background-blend-mode: hue;
     background-size: cover;
+    margin-bottom: $header--main-margin-bottom;
 
     .header__title {
         font-family: 'Comic Neue';
@@ -62,9 +65,11 @@ $nav-height: 6rem;
         font-weight: bold;
     }
 
-    .date {
-        font-family: 'Open Sans';
-        color: darken($header--main-color-text, 90%);
+    .header__metadata {
+        .date, .datetime {
+            font-family: 'Open Sans';
+            color: darken($header--main-color-text, 90%);
+        }
     }
 
 }
@@ -126,25 +131,79 @@ a:visited {
         }
     }
 
-    .preview {
-        min-width: 20%;
-        height: 100%;
-    }
+    &.list .summary {
+        margin-bottom: $summary-margin-bottom;
+        display: flex;
 
-    iiif-presentation {
-    }
-}
+        .header {
+            display: inline-block;
+            vertical-align: top;
 
-.summary {
-    margin-bottom: $summary-margin-bottom;
+            .inline-list {
+                display: unset;
+            }
+
+            .header__metadata {
+                color: $color-metadata;
+            }
+        }
+
+        .summary__content {
+            display: inline-block;
+            width: 75%;
+        }
+
+        &.even {
+            text-align: left;
+
+            .preview-image {
+                margin-right: 1.6em;
+            }
+        }
+
+        &.odd {
+            text-align: right;
+
+            .preview-image {
+                margin-left: 1.6em;
+            }
+        }
+
+        .preview-image {
+            display: inline-block;
+            width: fit-content;
+            max-width: 20%;
+            vertical-align: top;
+
+            img {
+                display: inline-block;
+                width: 100%;
+            }
+        }
+
+        .preview-text {
+            display: inline-block;
+        }
+
+    }
 
     .ruler {
         width: 25%;
         border-bottom: 1px solid darken($header--main-color-text, 20%);
         margin: auto;
         padding-top: .6em;
+        margin-bottom: 2em;
     }
 
+    .iiif {
+        position: relative;
+
+        #iiif-presentation {
+            width: 100%;
+            display: block;
+            height: 90vw;
+        }
+    }
 }
 
 .pagination-container {

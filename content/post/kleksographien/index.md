@@ -377,8 +377,8 @@ resources:
     iiif: end/info.json
     class: end
 ---
-Wieder ein Buch, bei dem nicht sicher sagen kann, ob es sich um ein Kinderbuch handelt. <!--more-->
-Da es aber interessant illustriert ist, passt es in dieses Blog.
+Wieder ein Buch, bei dem man nicht sicher sagen kann, ob es sich um ein Kinderbuch handelt. <!--more-->
+Wahrscheinlich nicht, da es aber interessant illustriert ist, passt es in dieses Blog.
 
 Mehr über den Autoren [Justinus Kerner](https://de.wikipedia.org/wiki/Justinus_Kerner) hat die Wikipedia.
 

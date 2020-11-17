@@ -1,6 +1,8 @@
 ---
 title: Deutsche Wiegenlieder
 date: 2020-08-05T19:36:07+02:00
+iiifManifest: ./index.json
+iiifContext: http://iiif.io/api/presentation/2/context.json
 description: 'Dieses Vorsatzpapier ist aus dem Buch "Deutsche Wiegenlieder" von Hans Fraungruber, erschienen ca. 1909 im Verlag Gerlach und Wiedling, Wien und Leipzig, entnommen.  <a class="worldcat" href="http://www.worldcat.org/oclc/256761549">&nbsp;</a>'
 resources:
 - src: "front.jpg"
@@ -411,11 +413,11 @@ resources:
 - src: "end-recto.jpg"
   params:
     iiif: end-recto/info.json
-- src: "end.jpg"
+- src: "back.jpg"
   params:
-    iiif: end/info.json
+    iiif: back/info.json
 ---
-Der erste Eintrag ist das Buch zum [Vorsatzpapier](https://vorsatzpapier.projektemacher.org/post/deutsche-wiegenlieder/).<!--more--> Es ist die Quelle für den Hintergrund den [Krähenbeißer](https://krähenbeisser.de). 
+Der erste Eintrag ist das Buch zum [Vorsatzpapier](https://vorsatzpapier.projektemacher.org/post/deutsche-wiegenlieder/).<!--more--> Es ist die Quelle für den Hintergrund den [Krähenbeißer](https://krähenbeisser.de).
 
 # Update 25.9.2020
 

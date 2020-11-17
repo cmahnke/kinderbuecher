@@ -35,7 +35,15 @@ find . -name '*.tif.jpg' -print -exec bash -c 'mv "{}"  $(dirname "{}")/$(basena
 find . -path '*/orig/*.tif' -print -exec convert "{}" -define webp:lossless=true "{}.webp" \;
 ```
 
-# Remove generated IIIF directories
+# IIIF images
+
+## Generating tiles for IIIF Presentation API locally
+
+```
+URL_PREFIX=http://localhost:1313/ ./scripts/iiif.sh
+```
+
+## Remove generated IIIF directories
 
 ```
 find content/post/ -name info.json -exec dirname {} \; | xargs rm -r

@@ -3,7 +3,7 @@
   {{- $pager := . -}}
 
   <div class="container">
-    <div class="content">
+    <div class="content list">
         {{ $paginator := .Paginate (where (where .Site.Pages "Type" "post").ByDate.Reverse "IsPage" true) }}
         {{ range $index, $element := .Paginator.Pages }}
 
@@ -16,47 +16,55 @@
         {{- if eq $previewImg nil -}}
             {{- errorf "Can't find image 'front' for %s" $context -}}
         {{- end -}}
-
+        {{- $previewImg = $previewImg.Resize "300x" -}}
         {{- $class := "" -}}
-        {{- $style := "" -}}
-        {{- if $previewImg -}}
-            {{- $style = printf "background-image: url(%s);" $previewImg.RelPermalink -}}
-            {{- $class = "preview" -}}
+        {{- if eq (mod $index 2) 0 -}}
+            {{- $class = "even" -}}
+        {{- else -}}
+            {{- $class = "odd" -}}
         {{- end -}}
 
-
-
-
-
-      {{ if eq (mod $index 2) 0 }}
-      {{- end -}}
-
-        <article class="summary">
-          <div class="{{ $class }}" style="{{ $style | safeCSS }}"></div>
-          <header class="header">
-            {{- partial "banner" (dict "Page" . "page_href" .RelPermalink) }}
-
-            <div class="header__metadata inline-list">
-              {{- partial "date.html" (dict "date" .Date "language" $.Page.Language "months" $.Site.Data.months) -}}
-
-
-              <div class="header__categories">
-                {{- partial "taxonomies" (dict "Page" . "term" "categories") }}
-              </div>
+        <article class="summary {{ $class }}">
+          {{- if eq (mod $index 2) 0 -}}
+            <div class="preview-image">
+                <a href="{{ .RelPermalink }}">
+                    <img src="{{ $previewImg.RelPermalink }}">
+                </a>
             </div>
+          {{- end -}}
 
-            <h2 class="header__title">
-              <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-            </h2>
-          </header>
+          <div class="preview-text">
+              <header class="header">
+                {{- partial "banner" (dict "Page" . "page_href" .RelPermalink) }}
 
-          {{- with .Summary }}
-            <div class="summary__content">{{ . }}</div>
-          {{- end }}
-           <div class="ruler"></div>
+                <div class="header__metadata inline-list">
+                  {{- partial "date.html" (dict "date" .Date "language" $.Page.Language "months" $.Site.Data.months) -}}
+                </div>
+
+                <h2 class="header__title">
+                  <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                </h2>
+              </header>
+              {{- with .Summary }}
+                 <div class="summary__content">
+                    <a href="{{ $.RelPermalink }}">
+                        {{ . | markdownify }}
+                    </a>
+                 </div>
+              {{- end }}
+           </div>
+           {{- if ne (mod $index 2) 0 -}}
+            <div class="preview-image">
+                <a href="{{ .RelPermalink }}">
+                    <img src="{{ $previewImg.RelPermalink }}">
+                </a>
+            </div>
+           {{- end -}}
+
+
+
         </article>
-
-
+        <div class="ruler"></div>
 
     {{- end }}
     </div>

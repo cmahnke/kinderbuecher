@@ -5,10 +5,11 @@
     <div class="container">
       <div class="content">{{ .Content }}
 
-        {{- if hasPrefix .Params.iiifContext "http://iiif.io/api/presentation/" -}}
-          {{- partial "mirador.html" . -}}
-        {{- end -}}
-        
+        <div class="iiif">
+            {{- if hasPrefix .Params.iiifContext "http://iiif.io/api/presentation/" -}}
+              {{- partial "mirador.html" . -}}
+            {{- end -}}
+        </div>
       </div>
       {{- if .Params.tags }}
       <footer class="footer">

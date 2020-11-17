@@ -15,7 +15,7 @@
       {{- range . }}
         <li class="inline-list__item">
           {{- .Pre -}}
-          <a href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
+          <a href="{{ .URL | absURL }}" title="{{ .Title }}">{{ .Name }}</a>
           {{- .Post -}}
         </li>
       {{- end }}
