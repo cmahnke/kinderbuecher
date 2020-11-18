@@ -23,17 +23,17 @@ jobs:
           password: ${{ secrets.CR_PAT }}
           logout: false
 
-      - name: Setup dependencies
+      - name: Setup deploy dependencies
+        env:
+          DEPLOY_SSH_IDENTITY: ${{ secrets.DEPLOY_SSH_IDENTITY }}
         run: |
-          sudo apt-get install imagemagick parallel
+          sudo apt-get install imagemagick parallel rsync sshpass
+          mkdir -p ~/.ssh && echo "$DEPLOY_SSH_IDENTITY" >>  ~/.ssh/known_hosts
 
       - name: Setup Node.js
         uses: actions/setup-node@v1
         with:
           node-version: 10.22.0
-
-      - name: Create IIIF derivates
-        run: docker run -e CHOWN_UID=${UID} -e URL_PREFIX="https://xn--kinderbcher-zhb.projektemacher.org/" -v ${PWD}:${PWD} ghcr.io/cmahnke/iiif-action:latest sh -c "cd ${PWD} && ./scripts/iiif.sh"
 
       - name: Generate Files
         env:
@@ -42,12 +42,9 @@ jobs:
           ./scripts/setup.sh
           yarn run clean-build
 
-      - name: Setup deploy dependencies
-        env:
-          DEPLOY_SSH_IDENTITY: ${{ secrets.DEPLOY_SSH_IDENTITY }}
-        run: |
-          sudo apt-get install rsync sshpass
-          mkdir -p ~/.ssh && echo "$DEPLOY_SSH_IDENTITY" >>  ~/.ssh/known_hosts
+      - name: Create IIIF derivates
+        run: docker run -e CHOWN_UID=${UID} -e URL_PREFIX="https://xn--kinderbcher-zhb.projektemacher.org/" -v ${PWD}:${PWD} ghcr.io/cmahnke/iiif-action:latest sh -c "cd ${PWD} && ./scripts/iiif.sh"
+
       - name: IIIF directory upload and cleanup
         env:
           DEPLOY_SERVER: ${{ secrets.DEPLOY_SERVER }}
