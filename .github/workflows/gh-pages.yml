@@ -43,7 +43,7 @@ jobs:
           yarn run clean-build
 
       - name: Create IIIF derivates
-        run: docker run -e CHOWN_UID=${UID} -e URL_PREFIX="https://xn--kinderbcher-zhb.projektemacher.org/" -v ${PWD}:${PWD} ghcr.io/cmahnke/iiif-action:latest sh -c "cd ${PWD} && ./scripts/iiif.sh"
+        run: docker run -e CHOWN_UID=${UID} -e URL_PREFIX="https://static.projektemacher.org/kinderbuecher/" -v ${PWD}:${PWD} ghcr.io/cmahnke/iiif-action:latest sh -c "cd ${PWD} && ./scripts/iiif.sh"
 
       - name: IIIF directory upload and cleanup
         env:
@@ -70,7 +70,6 @@ jobs:
       - name: Cleanup Build
         run: |
            find docs -type f -size +15M -name '*.jpg' -exec rm {} \;
-           rm -rf docs/plugins
 
       - name: Validate JSON
         run: |
