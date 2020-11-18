@@ -13,6 +13,9 @@ ignoreErrors = ["error-disable-taxonomy"]
 [params]
     navHome = "Start"
 #    Copyright = "&copy; MMXX <a href=\"https://projektemacher.org\">Projektemacher</a>"
+    iiifCanvasHeight = 400
+    iiifCanvasWidth = 300
+    productionIIIFURLPrefix="https://static.projektemacher.org/blaufusstoelpel/"
 
 # navigation
 [menu]
