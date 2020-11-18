@@ -223,12 +223,12 @@ a:visited {
         &.odd, &.even {
             @media (max-width : 420px) {
                 text-align: center;
-            }
 
-            .preview-image {
-                margin-right: unset;
-                margin-left: unset;
-                margin: auto;
+                .preview-image {
+                    margin-right: unset;
+                    margin-left: unset;
+                    margin: auto;
+                }
             }
         }
 
