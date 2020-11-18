@@ -323,8 +323,8 @@ resources:
   params:
     iiif: back/info.json
 ---
-Hier das Buch zum [Vorsatzpapier](https://vorsatzpapier.projektemacher.org/post/glueckliche-kinderzeit/), <!--more-->reich illustriert und auch für die damalige Zeit etwas kitschig...
-
+Hier das Buch zum [Vorsatzpapier](https://vorsatzpapier.projektemacher.org/post/glueckliche-kinderzeit/), reich illustriert und auch für die damalige Zeit etwas kitschig...
+<!--more-->
 Da dieses Vorsatzpapier durchaus zum Thema dieser Seite passt, wird es hier als Hintergrund der Kopfzeile verwendet.
 
 <div class="source">Gekauft im <a href="https://antiquariat-pretzsch.de/">Antiquariat Pretzsch N°1</a>.</div>

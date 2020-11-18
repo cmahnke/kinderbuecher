@@ -11,11 +11,9 @@ In diesem Blog soll ca. einmal im Monat aus unteschiedlichen Gründen ein neues 
 
 # Kolophon
 
-Diese Seite wurde mit [Hugo](https://gohugo.io/) generiert.
+Diese Seite wurde mit [Hugo](https://gohugo.io/) generiert, das Theme basiert auf <a target="_blank" href="https://normanderwan.github.io/Blogpaper/">Blogpaper</a>.
 
-Das Theme basiert auf <a target="_blank" href="https://normanderwan.github.io/Blogpaper/">Blogpaper</a>
-
-Als Schriftarten kommen [Open Sans](https://fonts.google.com/specimen/Open+Sans#about) und [Montserrat](https://github.com/JulietaUla/Montserrat) zum Einsatz.
+Als Schriftarten kommen [Open Sans](https://fonts.google.com/specimen/Open+Sans#about), [Cormorant](http://www.github.com/CatharsisFonts/Cormorant) und [Montserrat](https://github.com/JulietaUla/Montserrat) zum Einsatz.
 
 Die folgenden JavaScript und CSS Frameworks werden benutzt:
 * [jQuery](https://jquery.com/)
