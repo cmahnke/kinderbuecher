@@ -10,7 +10,21 @@
     {{- $manifestUrl = printf "%s%s/%s" .Site.Params.productionIIIFURLPrefix $contextPath (replaceRE "^\\./(.*)$" "$1" .Params.iiifManifest) -}}
 {{- end -}}
 */}}
-<div id="iiif-presentation" class="viewer presentation-api"></div>
+
+{{- $previewImg := (.Resources.ByType "image").GetMatch "front" -}}
+{{- $context := path.Dir .File.Path -}}
+
+{{- $orientation := "" -}}
+{{- if eq $previewImg nil -}}
+    {{- errorf "Can't find image 'front' for %s" $context -}}
+{{- end -}}
+{{ if lt $previewImg.Width $previewImg.Height }}
+    {{- $orientation = "portrait" -}}
+{{- else -}}
+    {{- $orientation = "landscape" -}}
+{{- end -}}
+
+<div id="iiif-presentation" class="viewer presentation-api {{ $orientation }}"></div>
 <script type="text/javascript">
     var viewer = addMirador('iiif-presentation', '{{ $manifestUrl }}');
 </script>
