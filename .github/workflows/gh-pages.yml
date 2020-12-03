@@ -69,7 +69,7 @@ jobs:
         run: hugo
       - name: Cleanup Build
         run: |
-           find docs -type f -size +15M -name '*.jpg' -exec rm {} \;
+           find docs -type f -size +5M -name '*.jpg' -exec rm {} \;
 
       - name: Validate JSON
         run: |
