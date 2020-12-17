@@ -15,6 +15,7 @@ resources:
   params:
     iiif: page001/info.json
     label: uncounted
+    hint: non-paged
 - src: "page002.jpg"
   params:
     iiif: page002/info.json
