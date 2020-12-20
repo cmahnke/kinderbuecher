@@ -45,7 +45,3 @@ ignoreErrors = ["error-disable-taxonomy"]
     [[module.mounts]]
         source = "assets/js"
         target = "assets/js"
-
-#    [[module.mounts]]
-#        source = "assets/css"
-#        target = "assets/css"
