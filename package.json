@@ -5,7 +5,6 @@
     "normalize.css": "^8.0.1"
   },
   "devDependencies": {
-    "manifesto.js": "IIIF-Commons/manifesto",
     "jsonlint": "^1.6.3",
     "patch-package": "^6.2.2",
     "react": "^17.0.1",
@@ -15,9 +14,8 @@
   },
   "scripts": {
     "patch": "yarn run patch-package",
-    "postinstall-manifesto": "cd node_modules/manifesto.js && yarn install && yarn run build:esmodule",
-    "postinstall-mirador": "cd node_modules/mirador && yarn install && rm -r node_modules/manifesto.js && ln -s ../manifesto.js node_modules/manifesto.js && yarn run build && yarn run build:es",
-    "postinstall": "yarn run patch && yarn run postinstall-manifesto && yarn run postinstall-mirador",
+    "postinstall-mirador": "cd node_modules/mirador && yarn install && yarn run build",
+    "postinstall": "yarn run patch && yarn run postinstall-mirador",
     "validate": "for file in `ls docs/post/*/*.json`; do yarn run jsonlint $file; if [ $? != 0 ]; then exit $?; fi ; done",
     "clean-build": "rm -rf node_modules/mirador/node_modules node_modules/manifesto.js/node_modules"
   }
