@@ -17,6 +17,11 @@ These patches are combined in one file in `patches`.
 
 Currently yarn will will pull Mirador directly from GitHub, not NPM. It applies the patches and rebuilds the viewer with these patches applied.
 
+# Building the `deployer` Docker image
+
+```
+DOCKER_BUILDKIT=1 docker build -f scripts/docker/uploader/Dockerfile .
+```
 
 # Image handling
 

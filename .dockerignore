@@ -1,0 +1,13 @@
+.git*
+archetypes
+assets
+content
+data
+docs
+i18n
+layouts
+node_modules
+patches
+resources
+static
+themes

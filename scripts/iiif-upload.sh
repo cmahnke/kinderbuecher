@@ -37,6 +37,7 @@ fi
 
 for POST in `ls -1 content/post/`
 do
+    cd content
     #Convert
     for IMAGE in `ls -1 $POST/page*.jpg $POST/front.jpg $POST/end.jpg $POST/title.jpg $POST/back.jpg $POST/*-recto.jpg $POST/*-verso.jpg $POST/img*.jpg $POST/**/*.jpg`
     do
@@ -73,7 +74,7 @@ do
     done
 
     # Upload
-    cd content/$POST
+    cd $POST
     find post -name info.json -exec dirname {} \; > files.lst
     cat files.lst | xargs chmod 775
     sshpass -e rsync -aP --size-only --delete --relative $(cat files.lst) $DEPLOY_USER@$DEPLOY_SERVER:$DEPLOY_PATH/kinderbuecher/$POST/
