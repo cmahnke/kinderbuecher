@@ -30,8 +30,8 @@ jobs:
         with:
           context: .
           file: scripts/docker/uploader/Dockerfile
-          push: true
-          tags: localhost:5000/projektemacher/deployer:latest
+          load: true
+          tags: deployer:latest
 
       - name: Setup deploy dependencies
         env:
