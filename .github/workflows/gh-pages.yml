@@ -23,14 +23,6 @@ jobs:
           password: ${{ secrets.CR_PAT }}
           logout: false
 
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v1
-      - name: Build and push to local registry
-        env:
-          DOCKER_BUILDKIT: 1
-        run: |
-          docker build -t uploader:latest  -f scripts/docker/uploader/Dockerfile .
-
       - name: Setup deploy dependencies
         env:
           DEPLOY_SSH_IDENTITY: ${{ secrets.DEPLOY_SSH_IDENTITY }}
