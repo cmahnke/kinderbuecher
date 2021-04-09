@@ -70,3 +70,12 @@ hugo serve -F --debug --disableFastRender  --disableLiveReload --watch=false --r
 ```
 docker run --name hugo -v `pwd`/docs:/usr/share/nginx/html -p 1313:80 nginx
 ```
+
+# TODO
+
+* Add index to
+  * Tante Anstand
+* Upload Images
+  * Quenottes et Menottes
+* Complete scan
+  * Naturgeschichte der Vögel

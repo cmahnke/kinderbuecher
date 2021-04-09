@@ -4,9 +4,18 @@
 
     <div class="container">
       <div class="content">
+        {{- if .Description -}}
+            <div class="book-about">
+                <h2 class="book-about-heading">{{ i18n "aboutTheNeu" }} {{ i18n "book" }}</h2>
+                <div class="book-about-text">
+                    {{- .Params.description | markdownify -}}
+                </div>
+            </div>
+        {{- end -}}
         <div class="content-text">
-          {{ .Content }}
+          {{- .Content -}}
         </div>
+
         <div class="iiif">
             {{- if hasPrefix .Params.iiifContext "http://iiif.io/api/presentation/" -}}
               {{- partial "mirador.html" . -}}

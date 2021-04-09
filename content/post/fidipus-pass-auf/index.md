@@ -1,9 +1,10 @@
 ---
-title: Girls' pastimes in Japan
-date: 2021-04-01T17:21:11+02:00
+title: Fidibus pass auf!
+draft: true
+date: 2021-12-01T17:21:11+01:00
+description: '"Fidibus pass auf!" von Gerhard Baumert, illustriert von Ingeborg Meyer-Rey, Fotografien von Heinz Müller, erschienen 1959 im Kinderbuchverlag, Berlin. <a class="worldcat" href="http://www.worldcat.org/oclc/748329513">&nbsp;</a>'
 iiifManifest: ./index.json
 iiifContext: http://iiif.io/api/presentation/2/context.json
-description: '"Girls'' pastimes in Japan." von Teijirou Takagi, herausgegeben ca. 1910 von Tamamura Photographic Studio, Kobe. <a class="worldcat" href="http://www.worldcat.org/oclc/672614691">&nbsp;</a>'
 resources:
 - src: "front.jpg"
   name: front
@@ -13,216 +14,168 @@ resources:
 - src: "front-verso.jpg"
   params:
     iiif: front-verso/info.json
+    label: uncounted
+- src: "front-recto.jpg"
+  params:
+    iiif: front-recto/info.json
+    label: uncounted
 - src: "page001.jpg"
   params:
     iiif: page001/info.json
+    label: uncounted
 - src: "page002.jpg"
   params:
     iiif: page002/info.json
+    label: uncounted
 - src: "page003.jpg"
   params:
     iiif: page003/info.json
+    label: uncounted
 - src: "page004.jpg"
   params:
     iiif: page004/info.json
+    label: uncounted
 - src: "page005.jpg"
   params:
     iiif: page005/info.json
+    label: uncounted
 - src: "page006.jpg"
   params:
     iiif: page006/info.json
+    label: uncounted
 - src: "page007.jpg"
   params:
     iiif: page007/info.json
-    label: 7
+    label: uncounted
 - src: "page008.jpg"
   params:
     iiif: page008/info.json
-    label: 8
+    label: uncounted
 - src: "page009.jpg"
   params:
     iiif: page009/info.json
-    label: 9
+    label: uncounted
 - src: "page010.jpg"
   params:
     iiif: page010/info.json
-    label: 10
+    label: uncounted
 - src: "page011.jpg"
   params:
     iiif: page011/info.json
-    label: 11
+    label: uncounted
 - src: "page012.jpg"
   params:
     iiif: page012/info.json
-    label: 12
+    label: uncounted
 - src: "page013.jpg"
   params:
     iiif: page013/info.json
-    label: 13
+    label: uncounted
 - src: "page014.jpg"
   params:
     iiif: page014/info.json
-    label: 14
+    label: uncounted
 - src: "page015.jpg"
   params:
     iiif: page015/info.json
-    label: 15
+    label: uncounted
 - src: "page016.jpg"
   params:
     iiif: page016/info.json
-    label: 16
+    label: uncounted
 - src: "page017.jpg"
   params:
     iiif: page017/info.json
-    label: 17
+    label: uncounted
 - src: "page018.jpg"
   params:
     iiif: page018/info.json
-    label: 18
+    label: uncounted
 - src: "page019.jpg"
   params:
     iiif: page019/info.json
-    label: 19
+    label: uncounted
 - src: "page020.jpg"
   params:
     iiif: page020/info.json
-    label: 20
+    label: uncounted
 - src: "page021.jpg"
   params:
     iiif: page021/info.json
-    label: 21
+    label: uncounted
 - src: "page022.jpg"
   params:
     iiif: page022/info.json
-    label: 22
+    label: uncounted
 - src: "page023.jpg"
   params:
     iiif: page023/info.json
-    label: 23
+    label: uncounted
 - src: "page024.jpg"
   params:
     iiif: page024/info.json
-    label: 24
+    label: uncounted
 - src: "page025.jpg"
   params:
     iiif: page025/info.json
-    label: 25
+    label: uncounted
 - src: "page026.jpg"
   params:
     iiif: page026/info.json
-    label: 26
+    label: uncounted
 - src: "page027.jpg"
   params:
     iiif: page027/info.json
-    label: 27
+    label: uncounted
 - src: "page028.jpg"
   params:
     iiif: page028/info.json
-    label: 28
+    label: uncounted
 - src: "page029.jpg"
   params:
     iiif: page029/info.json
-    label: 29
+    label: uncounted
 - src: "page030.jpg"
   params:
     iiif: page030/info.json
-    label: 30
+    label: uncounted
 - src: "page031.jpg"
   params:
     iiif: page031/info.json
-    label: 31
+    label: uncounted
 - src: "page032.jpg"
   params:
     iiif: page032/info.json
-    label: 32
+    label: uncounted
 - src: "page033.jpg"
   params:
     iiif: page033/info.json
-    label: 33
+    label: uncounted
 - src: "page034.jpg"
   params:
     iiif: page034/info.json
-    label: 34
+    label: uncounted
 - src: "page035.jpg"
   params:
     iiif: page035/info.json
-    label: 35
-- src: "page036.jpg"
+    label: uncounted
+- src: "back-verso.jpg"
   params:
-    iiif: page036/info.json
-    label: 36
-- src: "page037.jpg"
+    iiif: back-verso/info.json
+    label: uncounted
+- src: "back-recto.jpg"
   params:
-    iiif: page037/info.json
-    label: 37
-- src: "page038.jpg"
+    iiif: back-recto/info.json
+    label: uncounted
+- src: "back.jpg"
   params:
-    iiif: page038/info.json
-    label: 38
-- src: "page039.jpg"
-  params:
-    iiif: page039/info.json
-    label: 39
-- src: "page040.jpg"
-  params:
-    iiif: page040/info.json
-    label: 40
-- src: "page041.jpg"
-  params:
-    iiif: page041/info.json
-    label: 41
-- src: "page042.jpg"
-  params:
-    iiif: page042/info.json
-    label: 42
-- src: "page043.jpg"
-  params:
-    iiif: page043/info.json
-    label: 43
-- src: "page044.jpg"
-  params:
-    iiif: page044/info.json
-    label: 44
-- src: "page045.jpg"
-  params:
-    iiif: page045/info.json
-    label: 45
-- src: "page046.jpg"
-  params:
-    iiif: page046/info.json
-    label: 46
-- src: "page047.jpg"
-  params:
-    iiif: page047/info.json
-    label: 47
-- src: "page048.jpg"
-  params:
-    iiif: page048/info.json
-    label: 48
-- src: "page049.jpg"
-  params:
-    iiif: page049/info.json
-    label: 49
-- src: "page050.jpg"
-  params:
-    iiif: page050/info.json
-    label: 50
-- src: "page051.jpg"
-  params:
-    iiif: page051/info.json
-    label: 51
-- src: "end-verso.jpg"
-  params:
-    iiif: end-verso/info.json
-- src: "end-recto.jpg"
-  params:
-    iiif: end-recto/info.json
-- src: "end.jpg"
-  params:
-    iiif: end/info.json
+    iiif: back/info.json
+    label: uncounted
 ---
+Verkehrserziehung ist ein wichtiges Thema in diesem Blog.<!--more-->
 
-Ein schönes koloriertes Fotobuch aus Japan.
+Auch wenn dieses Buch nicht so drastisch in den Darstellung ist wie ["Was sagt die Teddypolizei?"](/post/was-sagt-die-teddypolizei).
 
-<!--more-->
-<div class="source">Gekauft auf dem Flohmarkt bei <a href="https://www.ssg365.de/">SSG 365</a>.</div>
+Dieses Buch wurde wie ["Vom Jochen, der nicht aufräumen wollte"](/post/vom-jochen-der-nicht-aufraumen-wollte) von [Ingeborg Meyer-Rey](https://de.wikipedia.org/wiki/Ingeborg_Meyer-Rey) illustriert. Besonders schön ist die Mischung von Zeichnung und Fotografie, die auch qualitativ hochwertig gedruckt wurden.
+
+<div class="source">Gekauft im <a href="https://antiquariat-pretzsch.de/">Antiquariat Pretzsch N°2</a>.</div>

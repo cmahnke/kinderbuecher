@@ -12,6 +12,8 @@ $font-family: Cormorant, "Cormorant Garamond", Georgia, "Palatino Linotype", "Bo
 $font-family-metadata: "Open Sans", system-font;
 $font-family-title: "Berkshire Swash", ;
 
+@import "icons";
+
 /* Title font face */
 /* berkshire-swash-regular - latin */
 @font-face {
@@ -273,6 +275,7 @@ article.post > .container {
 
     .iiif {
         position: relative;
+        clear: both;
 
         #iiif-presentation {
             width: 100%;
@@ -308,6 +311,39 @@ article.post > .container {
             }
 
         }
+    }
+
+    .book-about {
+        text-align: end;
+        float: right;
+        width: 35%;
+        border-radius: 1.8rem;
+        margin-left: 2em;
+        background-color: #fcf5e8;
+        padding: 1.6rem;
+
+        .book-about-heading {
+            font-size: 1em;
+            margin-block-start: 0.4em;
+            margin-block-end: 0.4em;
+            text-align: end;
+        }
+
+        .book-about-text {
+            font-size: smaller;
+
+            a.worldcat {
+                text-decoration: none;
+
+                &:after {
+                    display: inline-block;
+                    width: 1em;
+                    content: url($link-light);
+                }
+            }
+
+        }
+
     }
 }
 

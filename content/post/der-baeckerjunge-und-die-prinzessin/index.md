@@ -1,7 +1,7 @@
 ---
-title: Das Schlaraffenland
-date: 2021-10-01T17:21:11+01:00
-description: '"Das Schlaraffenland" von Hans Sachs, illustriert von Else Wenz-Viëtor, erschienen 1931 bei Hahn, Leipzig. <a class="worldcat" href="http://www.worldcat.org/oclc/552043275">&nbsp;</a>'
+title: Der Bäckerjunge und die Prinzessin
+date: 2021-11-01T17:21:11+01:00
+description: '"Der Bäckerjunge und die Prinzessin" von Herta-Len Felsberg, erschienen 1941 bei Staneck, Berlin. <a class="worldcat" href="http://www.worldcat.org/oclc/72478130">&nbsp;</a>'
 iiifManifest: ./index.json
 iiifContext: http://iiif.io/api/presentation/2/context.json
 resources:
@@ -10,6 +10,14 @@ resources:
   params:
     iiif: front/info.json
     class: front
+- src: "front-verso.jpg"
+  params:
+    iiif: front-verso/info.json
+    label: uncounted
+- src: "title.jpg"
+  params:
+    iiif: title/info.json
+    label: uncounted
 - src: "page001.jpg"
   params:
     iiif: page001/info.json
@@ -66,16 +74,20 @@ resources:
   params:
     iiif: page014/info.json
     label: uncounted
-- src: "page015.jpg"
+- src: "end-verso.jpg"
   params:
-    iiif: page015/info.json
+    iiif: end-verso/info.json
     label: uncounted
-- src: "back.jpg"
+- src: "end-recto.jpg"
   params:
-    iiif: back/info.json
+    iiif: end-recto/info.json
+    label: uncounted
+- src: "end.jpg"
+  params:
+    iiif: end/info.json
     label: uncounted
 ---
 Wer hat nicht noch nicht davon geträumt: Das Schlaraffenland.<!--more-->
 Alleine der Jungbrunnen ist einen Besuch wert!
 
-<div class="source">Gekauft im <a href="https://antiquariat-pretzsch.de/">Antiquariat Pretzsch N°1</a>.</div>
+<div class="source">Gefunden bei <a href="https://www.neue-arbeit-brockensammlung.de/geschaefte/zweigstelle-kim/">KiM</a></div>

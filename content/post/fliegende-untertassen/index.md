@@ -1,9 +1,9 @@
 ---
-title: Girls' pastimes in Japan
-date: 2021-04-01T17:21:11+02:00
+title: Fliegende Untertassen
+date: 2022-01-01T17:21:11+01:00
+description: '"Fliegende Untertassen" von Rolf Strehl, erschienen ca. 1953 - 1955 bei Oldenkott, Rees. <a class="worldcat" href="http://www.worldcat.org/oclc/918095658">&nbsp;</a>'
 iiifManifest: ./index.json
 iiifContext: http://iiif.io/api/presentation/2/context.json
-description: '"Girls'' pastimes in Japan." von Teijirou Takagi, herausgegeben ca. 1910 von Tamamura Photographic Studio, Kobe. <a class="worldcat" href="http://www.worldcat.org/oclc/672614691">&nbsp;</a>'
 resources:
 - src: "front.jpg"
   name: front
@@ -13,24 +13,31 @@ resources:
 - src: "front-verso.jpg"
   params:
     iiif: front-verso/info.json
+    label: uncounted
 - src: "page001.jpg"
   params:
     iiif: page001/info.json
+    label: uncounted
 - src: "page002.jpg"
   params:
     iiif: page002/info.json
+    label: uncounted
 - src: "page003.jpg"
   params:
     iiif: page003/info.json
+    label: uncounted
 - src: "page004.jpg"
   params:
     iiif: page004/info.json
+    label: uncounted
 - src: "page005.jpg"
   params:
     iiif: page005/info.json
+    label: 5
 - src: "page006.jpg"
   params:
     iiif: page006/info.json
+    label: 6
 - src: "page007.jpg"
   params:
     iiif: page007/info.json
@@ -207,22 +214,19 @@ resources:
   params:
     iiif: page050/info.json
     label: 50
-- src: "page051.jpg"
-  params:
-    iiif: page051/info.json
-    label: 51
-- src: "end-verso.jpg"
-  params:
-    iiif: end-verso/info.json
 - src: "end-recto.jpg"
   params:
     iiif: end-recto/info.json
-- src: "end.jpg"
+    label: uncounted
+- src: "back.jpg"
   params:
-    iiif: end/info.json
+    iiif: back/info.json
+    label: uncounted
 ---
+Der kalte Krieg durch die Brille der Massenspsychose betrachtet!<!--more-->
 
-Ein schönes koloriertes Fotobuch aus Japan.
+Ufos waren schon in den 50ern ein Thema - ein faszinierendes Amalgam aus Zukunftsoptimus und Flugbewegungen verschleierten Ursprungs.
 
-<!--more-->
-<div class="source">Gekauft auf dem Flohmarkt bei <a href="https://www.ssg365.de/">SSG 365</a>.</div>
+Informationen über die Rauchtabak- und Zigarettenfabrik Oldenkott weiß die [Wikipedia](https://de.wikipedia.org/wiki/Oldenkott_(Unternehmen)). Mehr über dieses Sammelalbum gibt es [hier](http://klausbuergle.de/sammelalben_fu.htm).
+
+<div class="source">Gekauft im <a href="https://antiquariat-pretzsch.de/">Antiquariat Pretzsch N°1</a>.</div>
