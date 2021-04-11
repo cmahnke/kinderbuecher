@@ -15,9 +15,9 @@ $font-family-title: "Berkshire Swash", ;
 @import "icons";
 
 /* Title font face */
-@import "berkshire-swash";
-@import "cormorant";
-@import "open-sans";
+@import "fonts/berkshire-swash";
+@import "fonts/cormorant";
+@import "fonts/open-sans";
 
 /* open-sans-regular - latin used for header and footer */
 @font-face {
