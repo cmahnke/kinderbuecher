@@ -1,3 +1,6 @@
 [submodule "themes/blogpaper"]
 	path = themes/blogpaper
 	url = https://github.com/NormandErwan/Blogpaper.git
+[submodule "themes/projektemacher-base"]
+	path = themes/projektemacher-base
+	url = https://github.com/cmahnke/projektemacher-base.git
