@@ -18,7 +18,7 @@
 
         <div class="iiif">
             {{- if hasPrefix .Params.iiifContext "http://iiif.io/api/presentation/" -}}
-              {{- partial "mirador.html" . -}}
+              {{- partial "iiif/iiif-presentation.html" . -}}
             {{- end -}}
         </div>
       </div>
