@@ -74,7 +74,7 @@ jobs:
           hugo-version: '0.82.0'
           extended: true
       - name: Build Hugo site
-        run: hugo
+        run: hugo --i18n-warnings
       - name: Cleanup Build
         run: |
            find docs -type f -size +5M -name '*.jpg' -exec rm {} \;
