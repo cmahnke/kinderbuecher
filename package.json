@@ -1,7 +1,4 @@
 {
-  "devDependencies": {
-    "jsonlint": "^1.6.3"
-  },
   "scripts": {
     "validate": "for file in `ls docs/post/*/*.json`; do yarn run jsonlint $file; if [ $? != 0 ]; then exit $?; fi ; done",
     "clean-build": "rm -rf node_modules/mirador/node_modules"
