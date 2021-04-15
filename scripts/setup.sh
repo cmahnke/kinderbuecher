@@ -9,6 +9,8 @@ fi
 # Background
 convert "Source Files/Background/Background-WSXGA.psd[1]" -quality 20 static/images/background.jpg
 
+rm -f 'themes/projektemacher-base/patches/mirador+3.0.0.patch'
+
 echo "Calling theme scripts"
 for SCRIPT in $PWD/themes/projektemacher-base/scripts/init/*.sh ; do
     echo "Running $SCRIPT"

@@ -10,20 +10,10 @@
   {{- end -}}
   </title>
 
-  {{- with .Description }}
-  <meta name="description" content="{{ . }}">
-  {{- else -}}
-  {{- with .Site.Params.description }}
-  <meta name="description" content="{{ . }}">
-  {{- end -}}
-  {{- end }}
+  {{ partial "html/head/meta.html" . }}
 
   {{- range .AlternativeOutputFormats }}
   <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .RelPermalink }}" title="{{ $.Site.Title | safeHTML }}">
-  {{- end }}
-
-  {{ if hasPrefix .Page.Name "404" }}
-      <meta http-equiv="refresh" content="15; URL={{ .Site.BaseURL }}">
   {{- end }}
 
   {{/* JavaScript */}}
