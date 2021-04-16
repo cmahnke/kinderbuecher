@@ -3,6 +3,7 @@ title: Glückliche Kinderzeit
 date: 2020-09-17T07:37:34+02:00
 iiifManifest: ./index.json
 iiifContext: http://iiif.io/api/presentation/2/context.json
+issueYear: 1925
 description: 'Dieses Vorsatzpapier stammt aus dem Buch "Glückliche Kinderzeit" von Lely Kempin, 7. Auflage, erschienen 1925 bei Velhagen und Klasing in Bielefeld. <a class="worldcat" href="http://www.worldcat.org/oclc/257379110">&nbsp;</a>'
 resources:
 - src: "front.jpg"

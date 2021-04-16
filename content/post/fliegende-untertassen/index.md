@@ -2,6 +2,7 @@
 title: Fliegende Untertassen
 date: 2022-01-01T17:21:11+01:00
 description: '"Fliegende Untertassen" von Rolf Strehl, erschienen ca. 1953 - 1955 bei Oldenkott, Rees. <a class="worldcat" href="http://www.worldcat.org/oclc/918095658">&nbsp;</a>'
+issueYear: 1953
 iiifManifest: ./index.json
 iiifContext: http://iiif.io/api/presentation/2/context.json
 resources:
