@@ -1,19 +1,8 @@
 {{- block "footer" . }}
 <footer class="footer footer--main">
-  <div class="container">
-    <div class="design-credit">
-         <h6 class="projektemacher">
-             {{ .Site.Title }} {{ i18n "projektemacher" | safeHTML }}
-         </h6>
-         <div class="font-secondary text-dark">
-             Theme basiert auf <a target="_blank" href="https://normanderwan.github.io/Blogpaper/">Blogpaper</a> für Hugo.
-         </div>
-    </div>
-    <div class="copyright">
-      {{- with .Site.Params.copyright -}}
-        {{ . | safeHTML }}
-      {{- end -}}
-    </div>
-  </div>
+
+  {{- .Scratch.Set "footer" `<div class="font-secondary text-dark">Theme basiert auf <a target="_blank" href="https://normanderwan.github.io/Blogpaper/">Blogpaper</a> für Hugo.</div>` -}}
+  {{- partialCached "footer-content.html" . -}}
+
 </footer>
 {{- end }}

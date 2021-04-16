@@ -323,19 +323,6 @@ article.post > .container {
     font-family: $font-family-metadata;
     font-size: small;
 
-    .projektemacher {
-        font-size: unset;
-    }
-
-    h6 {
-        margin-block-start: unset;
-        margin-block-end: unset;
-    }
-
-    .container {
-        text-align: center;
-    }
-
     a,
     a:active,
     a:focus,
@@ -343,4 +330,15 @@ article.post > .container {
     a:visited {
         color: darken($header--main-color-text, 15%);
     }
+
+    .footer-container {
+        text-align: center;
+
+        .projektemacher {
+            font-size: unset;
+            margin: 0;
+            padding: 1rem 0 0 0;
+        }
+    }
+
 }

@@ -9,10 +9,11 @@ canonifyurls = true
 disablePathToLower = true
 disableKinds = ["taxonomy"]
 ignoreErrors = ["error-disable-taxonomy"]
+copyright = "<a href=\"https://projektemacher.org\">Projektemacher</a>"
 
 [params]
     navHome = "Start"
-#    Copyright = "&copy; MMXX <a href=\"https://projektemacher.org\">Projektemacher</a>"
+    copyrightYears = "MMXXI"
     iiifCanvasHeight = 400
     iiifCanvasWidth = 300
     productionIIIFURLPrefix="https://static.projektemacher.org/kinderbuecher/"
