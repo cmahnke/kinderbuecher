@@ -5,6 +5,10 @@ iiifManifest: ./index.json
 issueYear: 1909
 iiifContext: http://iiif.io/api/presentation/2/context.json
 description: 'Dieses Vorsatzpapier ist aus dem Buch "Deutsche Wiegenlieder" von Hans Fraungruber, erschienen ca. 1909 im Verlag Gerlach und Wiedling, Wien und Leipzig, entnommen.  <a class="worldcat" href="http://www.worldcat.org/oclc/256761549">&nbsp;</a>'
+tags:
+  - 1909
+  - Deutsches Kaiserreich
+  - Deutsch
 resources:
 - src: "front.jpg"
   name: front

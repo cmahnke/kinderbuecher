@@ -5,6 +5,10 @@ description: '"Fliegende Untertassen" von Rolf Strehl, erschienen ca. 1953 - 195
 issueYear: 1953
 iiifManifest: ./index.json
 iiifContext: http://iiif.io/api/presentation/2/context.json
+tags:
+  - 1953
+  - BRD
+  - Deutsch
 resources:
 - src: "front.jpg"
   name: front

@@ -5,6 +5,10 @@ description: '"Der Bär und das Schneiderlein" von Franz Stadtmüller, erschien
 iiifManifest: ./index.json
 iiifContext: http://iiif.io/api/presentation/2/context.json
 issueYear: 1940
+tags:
+  - 1940
+  - NS-Deutschland
+  - Deutsch
 resources:
 - src: "front.jpg"
   name: front

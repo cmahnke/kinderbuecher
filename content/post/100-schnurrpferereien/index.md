@@ -1,10 +1,14 @@
 ---
 title: Hundert Schnurrpfeifereinen
-date: 2020-12-30T07:21:11+02:00
+date: 2020-12-30T07:21:11+01:00
 description: '"Hundert Schnurrpfeifereinen" von Sophus Tromholt, 13. Auflage, erschienen 1906 bei Reclam, Leipzig. <a class="worldcat" href="http://www.worldcat.org/oclc/255740370">&nbsp;</a>'
 iiifManifest: ./index.json
 iiifContext: http://iiif.io/api/presentation/2/context.json
 issueYear: 1906
+tags:
+  - 1906
+  - Deutsches Kaiserreich
+  - Deutsch
 resources:
 - src: "front.jpg"
   name: front

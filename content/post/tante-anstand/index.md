@@ -4,6 +4,10 @@ draft: true
 date: 2022-02-01T17:21:11+01:00
 description: '"Tante Anstand oder Wie die lieben Eltern wollen, daß Kinder sich benehmen sollen" von Leonore Korn und Marie Koch, erschienen 1893 bei der Bibliografischen Anstand Berlin. <a class="worldcat" href="http://www.worldcat.org/oclc/254638330">&nbsp;</a>'
 issueYear: 1893
+tags:
+  - 1893
+  - Deutsches Kaiserreich
+  - Deutsch
 iiifManifest: ./index.json
 iiifContext: http://iiif.io/api/presentation/2/context.json
 resources:

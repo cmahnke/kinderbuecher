@@ -5,6 +5,10 @@ iiifManifest: ./index.json
 iiifContext: http://iiif.io/api/presentation/2/context.json
 description: '"Bummelklaus und andere Geschichten" von verschiedenen Autoren, erschienen ca. 1955 bei Scholz-Mainz, Wiesbaden. <a class="worldcat" href="http://www.worldcat.org/oclc/73285674">&nbsp;</a>'
 issueYear: 1955
+tags:
+  - 1955
+  - BRD
+  - Deutsch
 resources:
 - src: "front.jpg"
   name: front
