@@ -1,14 +1,15 @@
 ---
 title: Quenottes et menottes
-draft: true
 date: 2022-03-01T17:21:11+01:00
 iiifManifest: ./manifest.json
-outputs:
-- html
-- iiif
 iiifContext: http://iiif.io/api/presentation/2/context.json
-description: 'Quenottes et menottes" von Ernest D'Hervilly, illustriert von Harriett M. Bennett, herausgegeben ca. 1890 von Nouvelle Librairie de la Jeunesse, Paris.'
+description: '"Quenottes et menottes" von Ernest D''Hervilly, illustriert von Harriett M. Bennett, herausgegeben ca. 1890 von Nouvelle Librairie de la Jeunesse, Paris.'
+draft: true
 issueYear: 1890
+outputs:
+  - html
+  - iiif
+tags:
   - 1890
   - Dritte Französische Republik
   - Französisch
