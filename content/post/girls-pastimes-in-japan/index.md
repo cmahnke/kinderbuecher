@@ -1,7 +1,10 @@
 ---
 title: Girls' pastimes in Japan
 date: 2021-04-01T17:21:11+01:00
-iiifManifest: ./index.json
+iiifManifest: ./manifest.json
+outputs:
+- html
+- iiif
 iiifContext: http://iiif.io/api/presentation/2/context.json
 description: '"Girls'' pastimes in Japan." von Teijirou Takagi, herausgegeben ca. 1910 von Tamamura Photographic Studio, Kobe. <a class="worldcat" href="http://www.worldcat.org/oclc/672614691">&nbsp;</a>'
 tags:

@@ -11,6 +11,12 @@ jobs:
   deploy:
     runs-on: ubuntu-18.04
     steps:
+# See https://github.com/easimon/maximize-build-space/blob/master/action.yml
+      - name: Try to free disk space
+        run: |
+          sudo rm -rf /usr/local/lib/android /opt/ghc
+# /usr/share/dotnet can also be removed if it's clear that it isn't needed by any actions
+
       - uses: actions/checkout@v2
         with:
           submodules: true  # Fetch Hugo themes (true OR recursive)

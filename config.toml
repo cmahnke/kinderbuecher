@@ -31,8 +31,19 @@ copyright = "<a href=\"https://projektemacher.org\">Projektemacher</a>"
 [imaging]
     quality = 95
 
-[outputs]
-    page = ["HTML", "JSON"]
+#[outputs]
+#    page = ["HTML", "JSON"]
+
+[mediaTypes]
+  [mediaTypes."application/ld+json"]
+    suffixes = ["json"]
+
+  [outputFormats.iiif]
+    mediaType = "application/ld+json"
+    isPlainText = true
+    isHTML = false
+    baseName = "manifest"
+    notAlternative = true
 
 [module]
     [[module.mounts]]
