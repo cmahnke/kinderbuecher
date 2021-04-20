@@ -86,6 +86,8 @@ jobs:
            find docs -type f -size +5M -name '*.jpg' -exec rm {} \;
 
       - name: Validate JSON
+        env:
+          OSTYPE: linux
         run: |
           yarn run validate
 
