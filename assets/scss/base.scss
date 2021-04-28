@@ -8,9 +8,9 @@ $color-metadata: #666;
 $header--main-margin-bottom: 3.6em;
 
 /* Fonts */
-$font-family: Cormorant, "Cormorant Garamond", Georgia, "Palatino Linotype", "Book Antiqua", Palatino, "Times New Roman", Times, serif;
+$font-family: cormorant, "Cormorant Garamond", georgia, "Palatino Linotype", "Book Antiqua", palatino, "Times New Roman", times, serif;
 $font-family-metadata: "Open Sans", system-font;
-$font-family-title: "Berkshire Swash", ;
+$font-family-title: "Berkshire Swash",;
 
 @import "icons";
 
@@ -24,28 +24,32 @@ $font-family-title: "Berkshire Swash", ;
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 400;
-    src: url("/fonts/open-sans-v18-latin-regular.woff2") format('woff2'),
-         url("/fonts/open-sans-v18-latin-regular.woff") format('woff'),
-         url("/fonts/open-sans-v18-latin-regular.ttf") format('truetype');
+    src:
+        url("/fonts/open-sans-v18-latin-regular.woff2") format('woff2'),
+        url("/fonts/open-sans-v18-latin-regular.woff") format('woff'),
+        url("/fonts/open-sans-v18-latin-regular.ttf") format('truetype');
 }
+
 @font-face {
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 600;
-    src: url("/fonts/open-sans-v18-latin-600.woff2") format('woff2'),
-         url("/fonts/open-sans-v18-latin-600.woff") format('woff'), url("/fonts/open-sans-v18-latin-600.ttf") format('truetype');
+    src:
+        url("/fonts/open-sans-v18-latin-600.woff2") format('woff2'),
+        url("/fonts/open-sans-v18-latin-600.woff") format('woff'),
+        url("/fonts/open-sans-v18-latin-600.ttf") format('truetype');
 }
 
 @import "blogpaper.scss";
 
 .header--main {
     position: relative;
-    background: url('/images/background.jpg') rgba(255, 255, 255, .7);
+    background: url('/images/background.jpg') rgba(255, 255, 255, 0.7);
     background-blend-mode: hue;
     background-size: cover;
     margin-bottom: $header--main-margin-bottom;
 
-    @media (max-width : 420px) {
+    @media (max-width: 420px) {
         margin-bottom: calc($header--main-margin-bottom / 2);
     }
 
@@ -54,40 +58,29 @@ $font-family-title: "Berkshire Swash", ;
         font-size: 3em;
         color: darken($header--main-color-text, 90%);
         font-weight: bold;
-        @media (max-width : 420px) {
+
+        @media (max-width: 420px) {
             font-size: 2em;
             text-align: center;
         }
     }
 
     .header__metadata {
-        .date, .datetime {
+        .date,
+        .datetime {
             font-family: $font-family-metadata;
             color: darken($header--main-color-text, 70%);
         }
     }
-
 }
 
-.nav {
-    width: 100%;
-    background-color: rgba(0, 0, 0, .2);
-
-    .nav__content {
-        font-family: $font-family-metadata;
-        font-weight: 600;
-        color: darken($header--main-color-text, 80%);
-        height: $nav-height;
-
-        a,
-        a:active,
-        a:focus,
-        a:hover,
-        a:visited {
-            color: darken($header--main-color-text, 80%);
-        }
-    }
-
+a,
+a:active,
+a:focus,
+a:hover,
+a:visited {
+    text-decoration: none;
+    border-bottom: none;
 }
 
 body {
@@ -103,15 +96,6 @@ body {
             margin-block-end: unset;
         }
     }
-}
-
-a,
-a:active,
-a:focus,
-a:hover,
-a:visited {
-    text-decoration: none;
-    border-bottom: none;
 }
 
 article.post > .container {
@@ -138,8 +122,8 @@ article.post > .container {
     }
 
     p {
-        margin-block-start: .2em;
-        margin-block-end: .4em;
+        margin-block-start: 0.2em;
+        margin-block-end: 0.4em;
         line-height: 1.45;
     }
 
@@ -148,7 +132,7 @@ article.post > .container {
         display: flex;
         line-height: 1.6;
 
-        @media (max-width : 420px) {
+        @media (max-width: 420px) {
             flex-flow: row wrap;
         }
 
@@ -188,14 +172,15 @@ article.post > .container {
             }
         }
 
-        &.odd, &.even {
-            @media (max-width : 420px) {
+        &.odd,
+        &.even {
+            @media (max-width: 420px) {
                 text-align: center;
 
                 .preview-image {
+                    margin: auto;
                     margin-right: unset;
                     margin-left: unset;
-                    margin: auto;
                 }
             }
         }
@@ -205,7 +190,8 @@ article.post > .container {
             width: fit-content;
             max-width: 20%;
             vertical-align: top;
-            @media (max-width : 420px) {
+
+            @media (max-width: 420px) {
                 max-width: 100%;
                 width: 100%;
             }
@@ -219,14 +205,13 @@ article.post > .container {
         .preview-text {
             display: inline-block;
         }
-
     }
 
     .ruler {
         width: 25%;
         border-bottom: 1px solid darken($header--main-color-text, 20%);
         margin: auto;
-        padding-top: .6em;
+        padding-top: 0.6em;
         margin-bottom: 2em;
     }
 
@@ -237,12 +222,13 @@ article.post > .container {
         #iiif-presentation {
             width: 100%;
             display: block;
+
             /* height: 90vh; */
         }
 
         .viewer {
-          width: 100%;
-          display: block;
+            width: 100%;
+            display: block;
 
             &.portrait {
                 /* width: 60vw; */
@@ -250,10 +236,9 @@ article.post > .container {
                 height: calc(60vw * 1.6);
 
                 @media (max-width: 37.5em) {
-                   width: 90vw;
-                   height: calc(90vw * 1.5);
+                    width: 90vw;
+                    height: calc(90vw * 1.5);
                 }
-
             }
 
             &.landscape {
@@ -262,11 +247,10 @@ article.post > .container {
                 height: calc(60vw / 1.5);
 
                 @media (max-width: 37.5em) {
-                   width: 90vw;
-                   height: calc(90vw / 1.5);
+                    width: 90vw;
+                    height: calc(90vw / 1.5);
                 }
             }
-
         }
     }
 
@@ -279,7 +263,7 @@ article.post > .container {
         background-color: #fcf5e8;
         padding: 1.6rem;
         margin-bottom: 2em;
-        margin-top: calc(-1.6rem + -.4em);
+        margin-top: calc(-1.6rem + -0.4em);
 
         .book-about-heading {
             font-size: 1em;
@@ -294,15 +278,13 @@ article.post > .container {
             a.worldcat {
                 text-decoration: none;
 
-                &:after {
+                &::after {
                     display: inline-block;
                     width: 1em;
                     content: url($link-light);
                 }
             }
-
         }
-
     }
 }
 
@@ -314,7 +296,6 @@ article.post > .container {
     .pagination {
         justify-content: center;
     }
-
 }
 
 .footer {
@@ -340,5 +321,24 @@ article.post > .container {
             padding: 1rem 0 0 0;
         }
     }
+}
 
+.nav {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+
+    .nav__content {
+        font-family: $font-family-metadata;
+        font-weight: 600;
+        color: darken($header--main-color-text, 80%);
+        height: $nav-height;
+
+        a,
+        a:active,
+        a:focus,
+        a:hover,
+        a:visited {
+            color: darken($header--main-color-text, 80%);
+        }
+    }
 }

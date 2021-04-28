@@ -8,7 +8,7 @@
 {{- if .Params.metaPage -}}
     {{- $class = printf "%s %s" $class "meta" -}}
 {{ end }}
-<body class={{ $class }}>
+<body class="{{ $class }} {{ if .IsHome }}home{{ end }}">
   {{ partial "nav" . }}
   <main>
     {{- block "main" . -}}{{- end -}}
