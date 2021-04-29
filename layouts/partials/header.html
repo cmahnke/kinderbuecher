@@ -5,7 +5,7 @@
     <div class="header__metadata inline-list date">
         {{ if .PublishDate -}}
             <time datetime='{{ .PublishDate }}' class="metadata datetime">
-              {{- partial "date.html" (dict "date" .Date "language" $.Page.Language "months" $.Site.Data.months) -}}
+              {{- partial "date.html" . -}}
             </time>
         {{- end -}}
     </div>

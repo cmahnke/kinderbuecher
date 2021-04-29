@@ -1,7 +1,6 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta http-equiv="x-ua-Compatible" content="ie=edge">
 
   <title>
   {{- block "title" . -}}
@@ -16,26 +15,7 @@
   <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .RelPermalink }}" title="{{ $.Site.Title | safeHTML }}">
   {{- end }}
 
-  {{/* JavaScript */}}
-  {{- $defines := dict "process.env.NODE_ENV" `"production"` -}}
-  {{- $mainOpts := dict "targetPath" "js/main.js" "defines" $defines "minify" false -}}
-  {{- $main := resources.Get "js/main.js" | js.Build $mainOpts -}}
-
-  {{- $mainJs := "" -}}
-  {{- if (hasPrefix .Page.Params.iiifcontext "http://iiif.io/api/presentation/") -}}
-      {{- $iiifOpts := dict "targetPath" "js/iiif-presentation-viewer.js" "defines" $defines "minify" false -}}
-      {{- $iiif := resources.Get "js/iiif-presentation-viewer.js" | js.Build $iiifOpts -}}
-      {{- $mainJs = slice $main $iiif | resources.Concat "js/main-iiif-p.js" | minify | fingerprint -}}
-  {{- else -}}
-      {{- $mainJs = slice $main | resources.Concat "js/main.js" | minify | fingerprint -}}
-  {{- end -}}
-  <script src="{{ $mainJs.RelPermalink }}" integrity="{{ $mainJs.Data.Integrity }}"></script>
-
-  {{/* SCSS files */}}
-  {{- $options := (dict "targetPath" "base.css" "outputStyle" "compressed" "includePaths" (slice "css" "node_modules/normalize.css" )) -}}
-  {{- $scssTemplate := resources.Get "scss/base.scss" -}}
-  {{- $scssStyle := $scssTemplate | resources.ExecuteAsTemplate "scss/base.scss" . | toCSS $options -}}
-  {{- $style := slice  $scssStyle | resources.Concat "css/concated.css" | minify  | fingerprint -}}
-  <link href="{{ $style.RelPermalink }}" rel="stylesheet" integrity="{{ $style.Data.Integrity }}">
+    {{- partial "html/head/script.html" (dict "js" (partial "html/head/iiif-js.html" .)) -}}
+    {{- partial "html/head/style.html" (dict "context" . "includes" (slice "css")) -}}
 
 </head>
