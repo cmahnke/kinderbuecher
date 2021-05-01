@@ -1,54 +1,27 @@
 @import "normalize";
-
 $header--main-color-background: #333;
 $header--main-color-text: #fff;
 $summary-margin-bottom: 1.5em;
 $nav-height: 6rem;
 $color-metadata: #666;
 $header--main-margin-bottom: 3.6em;
-
 /* Fonts */
 $font-family: cormorant, "Cormorant Garamond", georgia, "Palatino Linotype", "Book Antiqua", palatino, "Times New Roman", times, serif;
 $font-family-metadata: "Open Sans", system-font;
 $font-family-title: "Berkshire Swash",;
-
 @import "icons";
-
 /* Title font face */
 @import "fonts/berkshire-swash";
 @import "fonts/cormorant";
 @import "fonts/open-sans";
-
-/* open-sans-regular - latin used for header and footer */
-@font-face {
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: 400;
-    src:
-        url("/fonts/open-sans-v18-latin-regular.woff2") format('woff2'),
-        url("/fonts/open-sans-v18-latin-regular.woff") format('woff'),
-        url("/fonts/open-sans-v18-latin-regular.ttf") format('truetype');
-}
-
-@font-face {
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: 600;
-    src:
-        url("/fonts/open-sans-v18-latin-600.woff2") format('woff2'),
-        url("/fonts/open-sans-v18-latin-600.woff") format('woff'),
-        url("/fonts/open-sans-v18-latin-600.ttf") format('truetype');
-}
-
 @import "blogpaper.scss";
 
 .header--main {
     position: relative;
-    background: url('/images/background.jpg') rgba(255, 255, 255, 0.7);
+    background: url("/images/background.jpg") rgba(255, 255, 255, 0.7);
     background-blend-mode: hue;
     background-size: cover;
     margin-bottom: $header--main-margin-bottom;
-
     @media (max-width: 420px) {
         margin-bottom: calc($header--main-margin-bottom / 2);
     }
@@ -58,7 +31,6 @@ $font-family-title: "Berkshire Swash",;
         font-size: 3em;
         color: darken($header--main-color-text, 90%);
         font-weight: bold;
-
         @media (max-width: 420px) {
             font-size: 2em;
             text-align: center;
@@ -131,7 +103,6 @@ article.post > .container {
         margin-bottom: $summary-margin-bottom;
         display: flex;
         line-height: 1.6;
-
         @media (max-width: 420px) {
             flex-flow: row wrap;
         }
@@ -172,15 +143,13 @@ article.post > .container {
             }
         }
 
-        &.odd,
-        &.even {
+        &.even,
+        &.odd {
             @media (max-width: 420px) {
                 text-align: center;
 
                 .preview-image {
-                    margin: auto;
-                    margin-right: unset;
-                    margin-left: unset;
+                    margin: auto unset;
                 }
             }
         }
@@ -190,7 +159,6 @@ article.post > .container {
             width: fit-content;
             max-width: 20%;
             vertical-align: top;
-
             @media (max-width: 420px) {
                 max-width: 100%;
                 width: 100%;
@@ -222,7 +190,6 @@ article.post > .container {
         #iiif-presentation {
             width: 100%;
             display: block;
-
             /* height: 90vh; */
         }
 
@@ -234,7 +201,6 @@ article.post > .container {
                 /* width: 60vw; */
                 width: 100%;
                 height: calc(60vw * 1.6);
-
                 @media (max-width: 37.5em) {
                     width: 90vw;
                     height: calc(90vw * 1.5);
@@ -245,7 +211,6 @@ article.post > .container {
                 /* width: 60vw; */
                 width: 100%;
                 height: calc(60vw / 1.5);
-
                 @media (max-width: 37.5em) {
                     width: 90vw;
                     height: calc(90vw / 1.5);
@@ -318,27 +283,64 @@ article.post > .container {
         .projektemacher {
             font-size: unset;
             margin: 0;
-            padding: 1rem 0 0 0;
+            padding: 1rem 0 0;
         }
     }
 }
 
-.nav {
+#menu-toggle,
+.menu-button {
+    display: none;
+}
+/* Should be the same as --nav-max-width from blogpaper.scss */
+$nav-max-width: 100rem;
+
+.header-nav {
     width: 100%;
     background-color: rgba(0, 0, 0, 0.2);
+    font-family: $font-family-metadata;
+    font-weight: 600;
+    color: darken($header--main-color-text, 80%);
+    height: $nav-height;
+    position: absolute;
+    z-index: 10;
 
-    .nav__content {
-        font-family: $font-family-metadata;
-        font-weight: 600;
+    .header-container {
+        max-width: var(--nav-max-width);
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 100%;
+
+        .nav-home {
+            display: inline-block;
+        }
+        @media (max-width : $nav-max-width) {
+            padding: var(--container-padding);
+        }
+    }
+
+    a,
+    a:active,
+    a:focus,
+    a:hover,
+    a:visited {
         color: darken($header--main-color-text, 80%);
-        height: $nav-height;
+    }
+}
 
-        a,
-        a:active,
-        a:focus,
-        a:hover,
-        a:visited {
-            color: darken($header--main-color-text, 80%);
+.top-menu {
+    display: inline-block;
+
+    .navigation-list {
+        margin-block-start: 0;
+        margin-block-end: 0;
+        padding-inline-start: 0;
+        display: inline-block;
+
+        .navigation-item {
+            list-style: none;
         }
     }
 }

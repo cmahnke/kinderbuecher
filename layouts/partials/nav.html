@@ -1,25 +1,10 @@
-<nav class="nav">
-  <div class="nav__content container metadata">
-    <div class="nav__home">
-      <a href="{{ .Site.Home.RelPermalink }}" >
-        {{ if .PublishDate -}}
-            {{- .Site.Title -}}
-        {{- else -}}
-            {{- .Site.Params.navHome -}}
-        {{- end -}}
-      </a>
+<div class="header-nav">
+    <div class="header-container">
+        <div class="nav-home">
+            <a href="{{ .Site.Home.RelPermalink }}" >
+                {{- .Site.Params.navHome -}}
+            </a>
+        </div>
+        {{ partialCached "menu.html" . }}
     </div>
-
-    {{- with .Site.Menus.main }}
-    <ul class="inline-list">
-      {{- range . }}
-        <li class="inline-list__item">
-          {{- .Pre -}}
-          <a href="{{ .URL | absURL }}" title="{{ .Title }}">{{ .Name }}</a>
-          {{- .Post -}}
-        </li>
-      {{- end }}
-    </ul>
-    {{- end }}
-  </div>
-</nav>
+</div>
