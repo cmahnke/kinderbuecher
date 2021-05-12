@@ -79,7 +79,7 @@ jobs:
 #          find content/post/ -name info.json -exec dirname {} \; | xargs rm -r
 
       - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2
+        uses: peaceiris/actions-hugo@v2.4.13
         with:
           hugo-version: '0.82.0'
           extended: true
