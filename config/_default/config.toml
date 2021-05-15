@@ -15,3 +15,15 @@
             width = 1200
         [params.preview.svg]
             template = "./Source Files/Other/preview-template.svg"
+            scale = "width"
+
+#png:
+#  font:
+#    location: ./themes/projektemacher-base/static/fonts/nunito-v14-latin-ext_latin-regular.ttf
+#    size: 100
+#    color: black
+#  text:
+#    margin: 30
+#    position:
+#      top:
+#      left:
