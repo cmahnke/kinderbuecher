@@ -1,4 +1,4 @@
-package.json 
+package.json
 patches
 node_modules
 docs
@@ -14,3 +14,4 @@ content/post/*/end-*/
 content/post/*/front-*/
 content/post/*/back/
 content/post/*/end/
+content/post/*/preview.*

@@ -9,6 +9,10 @@ fi
 # Background
 convert "Source Files/Background/Background-WSXGA.psd[1]" -quality 20 static/images/background.jpg
 
+# Generate Previews
+python3 ./themes/projektemacher-base/scripts/preview.py
+find content -name preview.svg -print -exec bash -c 'inkscape "{}" --export-filename=$(dirname "{}")/$(basename -s .svg "{}").png' \;
+
 rm -f 'themes/projektemacher-base/patches/mirador+3.0.0.patch'
 
 echo "Calling theme scripts"

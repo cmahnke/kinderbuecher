@@ -31,7 +31,7 @@ jobs:
 
       - name: Install required dependencies
         run: |
-          ./themes/projektemacher-base/scripts/github/setup-dependendies.sh
+          ./themes/projektemacher-base/scripts/github/setup-dependencies.sh
           ./themes/projektemacher-base/scripts/github/docker-images.sh
 
       - name: Setup deploy dependencies
@@ -81,7 +81,7 @@ jobs:
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: '0.82.0'
+          hugo-version: '0.83.1'
           extended: true
       - name: Build Hugo site
         run: hugo --i18n-warnings
