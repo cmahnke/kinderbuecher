@@ -32,6 +32,6 @@
     </defs>
     <image id="bg" xlink:href="../../static/images/background.jpg" preserveAspectRatio="xMidYMid slice" width="1200" height="630" x="0" style="opacity:0.6"/>
     <image id="logo" xlink:href="../../themes/projektemacher-base/static/images/cm.svg" preserveAspectRatio="none" width="97.251564" height="100" x="1000" y="500"/>
-    <image id="hanger" xlink:href="../../content/post/der-baer-und-das-schneiderlein/front.jpg" fill-opacity="0" y="50" x="50" style="image-rendering:optimizeQuality" preserveAspectRatio="xMidYMid meet" height="400" width="1100"/>
+    <image id="preview-image" xlink:href="../../content/post/der-baer-und-das-schneiderlein/front.jpg" fill-opacity="0" y="50" x="50" style="image-rendering:optimizeQuality" preserveAspectRatio="xMidYMid meet" height="400" width="1100"/>
     <text id="text-container" xml:space="preserve" style="shape-inside:url(#textbox);font-style:normal;font-weight:normal;font-size:80px;line-height:1.25;font-family:'Berkshire Swash';text-align:center;white-space:pre;fill:#000000;fill-opacity:1;stroke:none;text-align:center;">Der Bär und das Schneiderlein</text>
 </svg>
