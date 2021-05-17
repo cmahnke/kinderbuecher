@@ -17,6 +17,7 @@
         [params.preview.svg]
             template = "./Source Files/Other/preview-template.svg"
             scale = "width"
+            removeMissing = true
 
 #png:
 #  font:
