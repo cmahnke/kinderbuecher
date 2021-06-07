@@ -28,6 +28,6 @@ Die Seite wird von [GitHub](https://github.com/), die IIIF Tiles von [Host Europ
 
 # Kontakt
 
-"Kinderbücher" ist ein [Projekt](https://projektemacher.org) von **Christian Mahnke**.
+"Kinderbücher" ist ein [Projekt](https://projektemacher.org) von **[Christian Mahnke](https://christianmahnke.de/)**.
 
 Kontakt ist via [E-Mail](mailto:kinderbuecher@projektemacher.org) möglich.
