@@ -12,12 +12,16 @@ convert "Source Files/Background/Background-WSXGA.psd[1]" -quality 20 static/ima
 # Generate Previews
 ./themes/projektemacher-base/scripts/preview.sh
 
-rm -f 'themes/projektemacher-base/patches/mirador+3.0.0.patch'
-
+#NPM dependencies
 echo "Calling theme scripts"
 for SCRIPT in $PWD/themes/projektemacher-base/scripts/init/*.sh ; do
     echo "Running $SCRIPT"
     bash "$SCRIPT"
+    ERR=$?
+    if [ $ERR -ne 0 ] ; then
+        echo "Execution of '$SCRIPT' failed!"
+        exit $ERR
+    fi
 done
 
 # Favicons
