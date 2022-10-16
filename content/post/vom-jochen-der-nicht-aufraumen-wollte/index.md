@@ -130,10 +130,6 @@ resources:
   params:
     iiif: page026/info.json
     label: uncounted
-- src: "end-verso.jpg"
-  params:
-    iiif: end-verso/info.json
-    label: uncounted
 - src: "end-recto.jpg"
   params:
     iiif: end-recto/info.json
