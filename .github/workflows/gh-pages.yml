@@ -62,7 +62,7 @@ jobs:
           DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
           SSHPASS: ${{ secrets.DEPLOY_PASS }}
           DEPLOY_PATH: ${{ secrets.DEPLOY_PATH }}
-        run: docker run -e CHOWN_UID=${UID} -e DEPLOY_SERVER="$DEPLOY_SERVER" -e DEPLOY_USER="$DEPLOY_USER" -e SSHPASS="$SSHPASS" -e DEPLOY_PATH="$DEPLOY_PATH" -e URL_PREFIX="https://static.projektemacher.org/kinderbuecher/" -v ${PWD}:${PWD} ghcr.io/cmahnke/iiif-action:latest-uploader sh -c "cd ${PWD} && ./scripts/iiif-upload.sh"
+        run: docker run -e CHOWN_UID=${UID} -e DEPLOY_SERVER="$DEPLOY_SERVER" -e DEPLOY_USER="$DEPLOY_USER" -e SSHPASS="$SSHPASS" -e DEPLOY_PATH="$DEPLOY_PATH" -e URL_PREFIX="https://static.projektemacher.org/kinderbuecher/" -v ${PWD}:${PWD} ghcr.io/cmahnke/iiif-action:latest-jxl-uploader sh -c "cd ${PWD} && ./scripts/iiif-upload.sh"
 
 #      - name: Create IIIF derivates
 #        run: docker run -e CHOWN_UID=${UID} -e URL_PREFIX="https://static.projektemacher.org/kinderbuecher/" -v ${PWD}:${PWD} ghcr.io/cmahnke/iiif-action:latest sh -c "cd ${PWD} && ./scripts/iiif.sh"
