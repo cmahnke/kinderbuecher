@@ -52,6 +52,7 @@ jobs:
       - name: Generate Files
         env:
           SKIP_IIIF: yes
+          NODE_OPTIONS: --openssl-legacy-provider
         run: |
           ./scripts/setup.sh
           yarn run clean-build
@@ -102,7 +103,7 @@ jobs:
       - name: Cleanup disk
         run: |
           df -h
-          docker rmi -f ghcr.io/cmahnke/iiif-action:latest-jxl-uploader 
+          docker rmi -f ghcr.io/cmahnke/iiif-action:latest-jxl-uploader
           rm -rf node_modules
           rm -rf content
           df -h
