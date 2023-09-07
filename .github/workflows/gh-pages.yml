@@ -17,12 +17,12 @@ jobs:
           sudo rm -rf /usr/local/lib/android /opt/ghc
 # /usr/share/dotnet can also be removed if it's clear that it isn't needed by any actions
 
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           submodules: true  # Fetch Hugo themes (true OR recursive)
 
       - name: Login to GitHub Packages Docker Registry
-        uses: docker/login-action@v2.1.0
+        uses: docker/login-action@v2.2.0
         with:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
@@ -45,7 +45,7 @@ jobs:
           mkdir -p ~/.ssh && echo "$DEPLOY_SSH_IDENTITY" >>  ~/.ssh/known_hosts
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3.6.0
+        uses: actions/setup-node@v3.8.1
         with:
           node-version-file: '.nvmrc'
 
