@@ -59,5 +59,9 @@ copyright = "<a href=\"https://projektemacher.org\">Projektemacher</a>"
         target = "assets/js"
 
     [[module.mounts]]
+        source = "themes/blogpaper/assets/css/normalize.css"
+        target = "assets/scss"
+
+    [[module.mounts]]
         source = "themes/blogpaper/assets/css"
         target = "assets/scss"
