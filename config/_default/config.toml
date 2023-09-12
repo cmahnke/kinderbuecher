@@ -2,7 +2,7 @@
     author = "Christian Mahnke"
     keywords = "Kleiderbügel, coat hangers"
     description = "Eine Auswahl an alten Kleiderbügeln"
-    copyrightYears = "MMXXI"
+    copyrightYears = "MMXXI - MMXXIII"
     cc = false
 
     [params.preview]
