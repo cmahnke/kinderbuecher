@@ -4,6 +4,7 @@
     description = "Eine Auswahl an alten Kleiderbügeln"
     copyrightYears = "MMXXI - MMXXIII"
     cc = false
+    disableScale = true
 
     [params.preview]
         outputPrefix = "ogPreview"
