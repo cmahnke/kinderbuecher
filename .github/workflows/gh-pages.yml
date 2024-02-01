@@ -98,10 +98,12 @@ jobs:
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2.6.0
         with:
-          hugo-version: '0.121.1'
+          hugo-version: '0.122.0'
           extended: true
+
       - name: Build Hugo site
         run: hugo --printI18nWarnings --printUnusedTemplates
+
       - name: Cleanup Build
         run: |
            find docs -type f -size +5M -name '*.jpg' -print -exec rm {} \;
