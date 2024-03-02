@@ -67,6 +67,9 @@ defaultMarkdownHandler = 'goldmark'
     baseName = "manifest"
     notAlternative = true
 
+[sitemap]
+  changeFreq = 'weekly'
+
 [module]
     [[module.mounts]]
         source = "assets/scss"
