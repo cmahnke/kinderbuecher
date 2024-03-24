@@ -19,6 +19,7 @@ content/post/*/back-*/
 content/post/*/back/
 content/post/*/end/
 content/post/*/preview.*
+content/post/*/*.pdf
 **/.DS_Store
 static/fonts/**
 assets/css/**
