@@ -6,6 +6,7 @@
     cc = false
     disableScale = true
     debug = false
+    pdfDownload = true
 
     [params.preview]
         outputPrefix = "ogPreview"

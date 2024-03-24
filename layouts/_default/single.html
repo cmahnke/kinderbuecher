@@ -21,6 +21,9 @@
               {{- partial "iiif/iiif-presentation.html" . -}}
             {{- end -}}
         </div>
+        {{- if hasPrefix .Params.iiifContext "http://iiif.io/api/presentation/" -}}
+          {{- partial "iiif/iiif-presentation-pdf.html" . -}}
+        {{- end -}}
       </div>
       {{/*
       {{- if .Params.tags }}

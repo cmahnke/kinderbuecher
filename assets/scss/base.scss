@@ -344,3 +344,20 @@ $nav-max-width: 100rem;
         }
     }
 }
+
+.presentation-api.download {
+  font-weight: bold;
+  text-align: end;
+  margin-top: .6em;
+
+  .pdf-download {
+    &::after {
+      content: url($pdf-dark);
+      display: inline-block;
+      vertical-align: sub;
+      margin-left: .4em;
+      height: 1.2em;
+      width: 1.2em;
+    }
+  }
+}
