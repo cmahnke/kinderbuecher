@@ -95,7 +95,9 @@ resources:
     iiif: end/info.json
     label: uncounted
 ---
-Wer hat nicht noch nicht davon geträumt: Das Schlaraffenland.<!--more-->
-Alleine der Jungbrunnen ist einen Besuch wert!
+Hübsch illustriert, allerdings nicht unbedingt originell.<!--more-->
+Wer erkennt alle Inspirationen? Richtig, der [Fliegende Robert](https://de.wikisource.org/wiki/Der_Struwwelpeter/Die_Geschichte_vom_fliegenden_Robert) ist dabei...
+
+Aber das ist übrigens nicht das fragwürdigste.
 
 <div class="source">Gefunden bei <a href="https://www.neue-arbeit-brockensammlung.de/geschaefte/zweigstelle-kim/">KiM</a></div>

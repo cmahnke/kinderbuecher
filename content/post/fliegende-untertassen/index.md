@@ -233,7 +233,7 @@ resources:
 ---
 Der kalte Krieg durch die Brille der Massenspsychose betrachtet!<!--more-->
 
-Ufos waren schon in den 50ern ein Thema - ein faszinierendes Amalgam aus Zukunftsoptimus und Flugbewegungen verschleierten Ursprungs.
+Ufos waren schon in den 50ern ein Thema - ein faszinierendes Amalgam aus Zukunftsoptimismus und Flugbewegungen verschleierten Ursprungs.
 
 Informationen über die Rauchtabak- und Zigarettenfabrik Oldenkott weiß die [Wikipedia](https://de.wikipedia.org/wiki/Oldenkott_(Unternehmen)). Mehr über dieses Sammelalbum gibt es [hier](http://klausbuergle.de/sammelalben_fu.htm).
 
