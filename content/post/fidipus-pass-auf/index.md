@@ -159,14 +159,6 @@ resources:
   params:
     iiif: page033/info.json
     label: uncounted
-- src: "page034.jpg"
-  params:
-    iiif: page034/info.json
-    label: uncounted
-- src: "page035.jpg"
-  params:
-    iiif: page035/info.json
-    label: uncounted
 - src: "back-verso.jpg"
   params:
     iiif: back-verso/info.json
