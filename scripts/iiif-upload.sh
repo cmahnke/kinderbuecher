@@ -76,6 +76,7 @@ do
     # Upload
     cd $POST
     find post -name info.json -exec dirname {} \; > files.lst
+    find post -name "*.pdf" -exec echo "{}" \; >> files.lst
     cat files.lst | xargs chmod 775
     sshpass -e rsync -aP --size-only --delete --relative $(cat files.lst) $DEPLOY_USER@$DEPLOY_SERVER:$DEPLOY_PATH/kinderbuecher/$POST/
     find content/post/ -name info.json -exec dirname {} \; | xargs rm -r
