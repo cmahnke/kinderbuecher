@@ -64,6 +64,7 @@ jobs:
       - name: Generate Files
         env:
           SKIP_IIIF: yes
+          SKIP_PDF: yes
           NODE_OPTIONS: --openssl-legacy-provider
         run: |
           ./scripts/setup.sh

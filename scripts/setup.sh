@@ -6,6 +6,10 @@ if [ -z "$SKIP_IIIF" ] ; then
     ./scripts/iiif.sh
 fi
 
+if [ -z "$SKIP_PDF" ] ; then
+    python themes/projektemacher-base/scripts/pdf.py
+fi
+
 # Background
 convert "Source Files/Background/Background-WSXGA.psd[1]" -quality 20 static/images/background.jpg
 
