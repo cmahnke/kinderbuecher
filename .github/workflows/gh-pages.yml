@@ -28,7 +28,8 @@ jobs:
 
       - name: Free some disk space
         run: |
-          sudo rm -rf /usr/local/lib/android /opt/ghc /opt/hostedtoolcache/CodeQL /usr/local/graalvm/ /usr/local/share/powershell
+          sudo rm -rf /usr/local/lib/android /opt/ghc /opt/hostedtoolcache/CodeQL /usr/local/graalvm/ /usr/local/share/powershell /usr/local/lib/android /usr/local/lib/node_modules /usr/local/.ghcup/ /usr/share/dotnet/ /opt/hostedtoolcache /opt/microsoft /usr/local/aws-* /usr/share/miniconda /opt/az /usr/share/kotlinc /usr/share/man /usr/share/sbt /usr/local/julia* /usr/share/az* /usr/share/apache-maven* /usr/share/gradle* /usr/share/swift
+          df -h
 
       - uses: actions/checkout@v4
         with:
@@ -92,7 +93,7 @@ jobs:
         run: |
           python themes/projektemacher-base/scripts/pdf.py
 
-      - name: Upload and cleanup
+      - name: Upload
         env:
           DEPLOY_SERVER: ${{ secrets.DEPLOY_SERVER }}
           DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
@@ -106,9 +107,12 @@ jobs:
           # Add this to rsync '--info=progress2' to get a complete progess status
           sshpass -e rsync -a --size-only --delete --relative $(cat files.lst) $DEPLOY_USER@$DEPLOY_SERVER:$DEPLOY_PATH/kinderbuecher/
           rm -f files.lst
-          cd ..
+
+      - name: Cleanup
+        run: |
           find content/post/ -name info.json -exec dirname {} \; | xargs -I {} find {} -mindepth 1 -type d -not -path '*/full*' | xargs rm -fr
           find content/post/ -name '*.pdf' -exec rm -r {} \;
+          df -h
 
 #      - name: Create and upload PDF
 #        env:
