@@ -5,7 +5,7 @@
     copyrightYears = "MMXXI - MMXXIII"
     cc = false
     disableScale = true
-    debug = false
+    debug = true
     pdfDownload = true
 
     [params.preview]
