@@ -1,6 +1,5 @@
 ---
 title: Fidibus pass auf!
-draft: true
 date: 2021-12-01T17:21:11+01:00
 description: '"Fidibus pass auf!" von Gerhard Baumert, illustriert von Ingeborg Meyer-Rey, Fotografien von Heinz Müller, erschienen 1959 im Kinderbuchverlag, Berlin. <a class="worldcat" href="http://www.worldcat.org/oclc/748329513">&nbsp;</a>'
 issueYear: 1959

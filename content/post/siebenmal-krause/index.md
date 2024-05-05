@@ -12,7 +12,6 @@ tags:
   - 1941
   - NS-Deutschland
   - Deutsch
-iiifManifest: true
 resources:
 - src: "front.jpg"
   name: front
