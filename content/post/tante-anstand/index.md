@@ -183,3 +183,4 @@ resources:
     iiif: back/info.json
     label: uncounted
 ---
+Ein schönes Buch mit zahlreichen [Chromolithografien], leider in einem schlechten Zustand. <!--more--> Inhaltlich recht bider: Der Titel, Tante Anstand ist Programm!
