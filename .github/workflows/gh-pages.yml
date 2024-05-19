@@ -158,6 +158,10 @@ jobs:
           hugo-version: '0.126.1'
           extended: true
 
+      - name: Generate stats
+        run: |
+          ./themes/projektemacher-base/scripts/stat.sh
+
       - name: Build Hugo site
         run: hugo --printI18nWarnings --printUnusedTemplates --logLevel=debug
 
