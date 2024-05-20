@@ -10,6 +10,7 @@ disablePathToLower = true
 disableKinds = ["taxonomy"]
 ignoreErrors = ["error-disable-taxonomy"]
 copyright = "<a href=\"https://projektemacher.org\">Projektemacher</a>"
+enableGitInfo = true
 
 [params]
     navHome = "Start"
