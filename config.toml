@@ -90,3 +90,6 @@ defaultMarkdownHandler = 'goldmark'
     [[module.mounts]]
         source = "themes/blogpaper/assets/css"
         target = "assets/scss"
+
+[build]
+  writeStats = true
