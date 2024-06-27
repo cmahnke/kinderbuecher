@@ -5,7 +5,7 @@
     <div class="header__metadata inline-list date">
         {{ if .PublishDate -}}
             <time datetime='{{ .PublishDate }}' class="metadata datetime">
-              {{- partial "date.html" . -}}
+              {{- .Date | time.Format ":date_full" -}}
             </time>
         {{- end -}}
     </div>

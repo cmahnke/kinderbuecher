@@ -3,7 +3,7 @@
     {{- partial "banner" (dict "Page" . "page_href" .RelPermalink) }}
 
     <div class="header__metadata inline-list">
-      {{- partial "date.html" (dict "date" .Date "language" $.Page.Language "months" $.Site.Data.months) -}}
+      {{- .Date | time.Format ":date_full" -}}
 
 
       {{/*
