@@ -1,0 +1,1697 @@
+{"@context":"http://iiif.io/api/presentation/2/context.json",
+    "@type":"sc:Manifest",
+    "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/",
+    "viewingDirection":"left-to-right",
+    "viewingHint":"paged",
+
+    "label":"Girls' pastimes in Japan","description": "\"Girls' pastimes in Japan.\" von Teijirou Takagi, herausgegeben ca. 1910 von Tamamura Photographic Studio, Kobe. \u003ca class=\"worldcat\" href=\"http://www.worldcat.org/oclc/672614691\"\u003e\u0026nbsp;\u003c/a\u003e","sequences":[
+      {
+         "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/sequence/normal",
+         "@type":"sc:Sequence",
+         "label":"Current Page Order",
+         "viewingDirection":"left-to-right",
+         "viewingHint":"paged",
+         "startCanvas":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/front",
+         "canvases":[{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/front",
+                   "@type":"sc:Canvas","label":"uncounted","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/front_hu9ded55a5fd6efcc97a107a737f131df1_17665860_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/annotation/front",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/front",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/front",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4255,
+                            "width": 6025
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/front"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/front-verso",
+                   "@type":"sc:Canvas","label":"uncounted","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/front-verso_hufc7b2823ba74e71c80e412a2ebb4d9ad_6690715_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/annotation/front-verso",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/front-verso",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/front-verso",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4240,
+                            "width": 5543
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/front-verso"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page001",
+                   "@type":"sc:Canvas","label":"uncounted","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/page001_hu86fad15d91c794ea977567b26d33e8a9_9230292_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/annotation/page001",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page001",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page001",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4156,
+                            "width": 5485
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page001"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page002",
+                   "@type":"sc:Canvas","label":"uncounted","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/page002_huc20ad69d75c970b1696b71357bcd20c2_8476264_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/annotation/page002",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page002",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page002",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4169,
+                            "width": 5338
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page002"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page003",
+                   "@type":"sc:Canvas","label":"uncounted","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/page003_hu9416474e243bd37c525d677f44b986b3_7242080_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/annotation/page003",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page003",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page003",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4139,
+                            "width": 5342
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page003"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page004",
+                   "@type":"sc:Canvas","label":"uncounted","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/page004_hu34d5a037af279eafded1a63cc80cbf2d_5016552_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/annotation/page004",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page004",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page004",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4172,
+                            "width": 5348
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page004"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page005",
+                   "@type":"sc:Canvas","label":"uncounted","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/page005_huba5e916c1303d9b5ba252c355d628e9b_7020990_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/annotation/page005",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page005",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page005",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4138,
+                            "width": 5328
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page005"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page006",
+                   "@type":"sc:Canvas","label":"uncounted","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/page006_hua83182f1027b637837fc2b9b3a698815_5113593_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/annotation/page006",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page006",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page006",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4164,
+                            "width": 5318
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page006"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page007",
+                   "@type":"sc:Canvas","label":"7","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/page007_hu8409a37ad70309690069c9d1abedeadc_7529129_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/annotation/page007",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page007",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page007",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4145,
+                            "width": 5350
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page007"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page008",
+                   "@type":"sc:Canvas","label":"8","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/page008_hu84ed5fa0be42ce3b9ea80abd86075524_5028471_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/annotation/page008",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page008",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page008",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4158,
+                            "width": 5314
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page008"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page009",
+                   "@type":"sc:Canvas","label":"9","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/page009_hu3fe636a289b7d361317b42b3692a63a4_7166310_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/annotation/page009",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page009",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page009",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4107,
+                            "width": 5290
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page009"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page010",
+                   "@type":"sc:Canvas","label":"10","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/page010_hu4d6cf11db4eff3a4e9426c7d71c209e6_4874736_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/annotation/page010",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page010",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page010",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4169,
+                            "width": 5302
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page010"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page011",
+                   "@type":"sc:Canvas","label":"11","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/page011_huc0d9fce4c8ed7b269146dab4b30a4579_6507942_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/annotation/page011",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page011",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page011",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4135,
+                            "width": 5307
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page011"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page012",
+                   "@type":"sc:Canvas","label":"12","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/page012_hue0f2b39b6cf791d6811b7ddd76dd7eed_4747196_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/annotation/page012",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page012",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page012",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4170,
+                            "width": 5294
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page012"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page013",
+                   "@type":"sc:Canvas","label":"13","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/page013_hu97876081c085a27f0f9404550f9622c1_6694098_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/annotation/page013",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page013",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page013",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4137,
+                            "width": 5309
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page013"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page014",
+                   "@type":"sc:Canvas","label":"14","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/page014_hucaeaecea3ced8975de27826ba5af1346_4888151_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/annotation/page014",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page014",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page014",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4172,
+                            "width": 5279
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page014"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page015",
+                   "@type":"sc:Canvas","label":"15","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/page015_hu88c2b419034f2c2ad07062128ec91e1c_7672032_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/annotation/page015",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page015",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page015",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4134,
+                            "width": 5315
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page015"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page016",
+                   "@type":"sc:Canvas","label":"16","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/page016_hu0acb22b2039f3bf0cfbe3831f0c9324d_4900826_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/annotation/page016",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page016",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page016",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4169,
+                            "width": 5255
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page016"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page017",
+                   "@type":"sc:Canvas","label":"17","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/page017_hu97c3838798a8a7574bc5b26f6ab773ed_6907114_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/annotation/page017",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page017",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page017",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4132,
+                            "width": 5290
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page017"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page018",
+                   "@type":"sc:Canvas","label":"18","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/page018_hu268f37d57d5447b7b519b26c7d0ac43a_4563919_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/annotation/page018",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page018",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page018",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4176,
+                            "width": 5224
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page018"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page019",
+                   "@type":"sc:Canvas","label":"19","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/page019_hufd7f786ccc761b6099887e5df9f73514_6617512_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/annotation/page019",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page019",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page019",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4128,
+                            "width": 5306
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page019"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page020",
+                   "@type":"sc:Canvas","label":"20","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/page020_hub5da75cd21af433f2b431341d5365c96_8127516_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/annotation/page020",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page020",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page020",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4170,
+                            "width": 5243
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page020"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page021",
+                   "@type":"sc:Canvas","label":"21","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/page021_huf57c7578e509d68a1864d9481958dd49_6509838_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/annotation/page021",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page021",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page021",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4129,
+                            "width": 5295
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page021"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page022",
+                   "@type":"sc:Canvas","label":"22","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/page022_hubdf0f41b8a3f871e5bb474d4160b866a_4472491_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/annotation/page022",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page022",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page022",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4168,
+                            "width": 5207
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page022"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page023",
+                   "@type":"sc:Canvas","label":"23","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/page023_hucdefb403c5e576e0c0e84b973e6d475f_8372986_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/annotation/page023",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page023",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page023",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4118,
+                            "width": 5268
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page023"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page024",
+                   "@type":"sc:Canvas","label":"24","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/page024_hu6c1b84f1466a16608f6c4c7a0cc06ab1_4707070_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/annotation/page024",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page024",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page024",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4176,
+                            "width": 5235
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page024"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page025",
+                   "@type":"sc:Canvas","label":"25","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/page025_hu5b16171780b35ead491de40d28116259_8520070_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/annotation/page025",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page025",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page025",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4115,
+                            "width": 5297
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page025"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page026",
+                   "@type":"sc:Canvas","label":"26","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/page026_hu9caf559dd139d58ec9895038a5227be0_4980309_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/annotation/page026",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page026",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page026",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4172,
+                            "width": 5199
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page026"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page027",
+                   "@type":"sc:Canvas","label":"27","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/page027_hu7031c23c94eebc1cb4edf44538ff89ea_6747754_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/annotation/page027",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page027",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page027",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4110,
+                            "width": 5285
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page027"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page028",
+                   "@type":"sc:Canvas","label":"28","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/page028_hu68ef8a91b0841031d9546955c379ad53_4929370_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/annotation/page028",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page028",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page028",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4164,
+                            "width": 5315
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page028"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page029",
+                   "@type":"sc:Canvas","label":"29","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/page029_hucbde2451dcbc3a288f415e57abacc0f8_8579499_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/annotation/page029",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page029",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page029",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4182,
+                            "width": 5444
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page029"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page030",
+                   "@type":"sc:Canvas","label":"30","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/page030_hu2e04cf8f8d3ee54ab9edfae478e80551_4844334_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/annotation/page030",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page030",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page030",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4176,
+                            "width": 5380
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page030"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page031",
+                   "@type":"sc:Canvas","label":"31","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/page031_hua73b53add7ff8dc88f92f28e33869f5d_7534200_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/annotation/page031",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page031",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page031",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4179,
+                            "width": 5406
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page031"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page032",
+                   "@type":"sc:Canvas","label":"32","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/page032_hu790d9ac52edb47fa392ad44d8ad34f6b_4886557_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/annotation/page032",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page032",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page032",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4171,
+                            "width": 5407
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page032"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page033",
+                   "@type":"sc:Canvas","label":"33","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/page033_hu718cdf9fdf07dd2e665e5414109267f8_7755273_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/annotation/page033",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page033",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page033",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4175,
+                            "width": 5336
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page033"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page034",
+                   "@type":"sc:Canvas","label":"34","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/page034_hu03aa5f8cc6fc31a542407150f0e355e2_5146578_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/annotation/page034",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page034",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page034",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4178,
+                            "width": 5440
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page034"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page035",
+                   "@type":"sc:Canvas","label":"35","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/page035_hu116a4b99f80c02a97912f5abcb31cb9c_7302168_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/annotation/page035",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page035",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page035",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4182,
+                            "width": 5466
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page035"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page036",
+                   "@type":"sc:Canvas","label":"36","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/page036_hu35646dc2703e83269e0f6747cf62d3b8_4780660_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/annotation/page036",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page036",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page036",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4172,
+                            "width": 5408
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page036"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page037",
+                   "@type":"sc:Canvas","label":"37","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/page037_hud89a67dbde2232a6364d971480dc9dfb_7187197_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/annotation/page037",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page037",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page037",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4169,
+                            "width": 5445
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page037"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page038",
+                   "@type":"sc:Canvas","label":"38","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/page038_hu618c94401463add557e92f51e2f678f7_4860553_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/annotation/page038",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page038",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page038",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4175,
+                            "width": 5492
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page038"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page039",
+                   "@type":"sc:Canvas","label":"39","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/page039_hu1ddadccbf81d9558112d8c3878de27a6_7307200_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/annotation/page039",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page039",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page039",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4182,
+                            "width": 5459
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page039"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page040",
+                   "@type":"sc:Canvas","label":"40","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/page040_hu9635e28a75c825da31d557a9ce2147a8_4881532_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/annotation/page040",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page040",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page040",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4183,
+                            "width": 5487
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page040"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page041",
+                   "@type":"sc:Canvas","label":"41","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/page041_hudf8eae077a8564031f4060f59122a9b6_6941630_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/annotation/page041",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page041",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page041",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4180,
+                            "width": 5439
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page041"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page042",
+                   "@type":"sc:Canvas","label":"42","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/page042_hufec1f5d2b1ccacd75c59b7d5bddb89b9_4841726_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/annotation/page042",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page042",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page042",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4134,
+                            "width": 5414
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page042"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page043",
+                   "@type":"sc:Canvas","label":"43","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/page043_hu4b279543645ba299e317d744e3277c82_7356285_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/annotation/page043",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page043",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page043",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4181,
+                            "width": 5378
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page043"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page044",
+                   "@type":"sc:Canvas","label":"44","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/page044_hub602bad470310b52345e5826b6e9cdf1_4931522_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/annotation/page044",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page044",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page044",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4156,
+                            "width": 5442
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page044"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page045",
+                   "@type":"sc:Canvas","label":"45","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/page045_hue22de4e6e4ebcc7622c9841054d40c6d_6983487_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/annotation/page045",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page045",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page045",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4177,
+                            "width": 5398
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page045"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page046",
+                   "@type":"sc:Canvas","label":"46","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/page046_hu34f404523107b585e44425c9a96ecfbb_5098736_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/annotation/page046",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page046",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page046",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4155,
+                            "width": 5436
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page046"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page047",
+                   "@type":"sc:Canvas","label":"47","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/page047_hu769ec99f9e8ee559b390c80fe6770b33_7197714_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/annotation/page047",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page047",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page047",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4167,
+                            "width": 5376
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page047"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page048",
+                   "@type":"sc:Canvas","label":"48","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/page048_hud1ee85be2bff11e55c974b2c212a3f59_4999860_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/annotation/page048",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page048",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page048",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4155,
+                            "width": 5442
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page048"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page049",
+                   "@type":"sc:Canvas","label":"49","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/page049_hu9a87bab165ae5067ce814ebab664aefe_7688633_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/annotation/page049",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page049",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page049",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4185,
+                            "width": 5431
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page049"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page050",
+                   "@type":"sc:Canvas","label":"50","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/page050_hue5cb36b40a51f84da461a3f61459157b_5322167_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/annotation/page050",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page050",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page050",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4164,
+                            "width": 5465
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page050"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page051",
+                   "@type":"sc:Canvas","label":"51","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/page051_hu67fcd3f7345fd69bc9910f2d05f1183f_5666395_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/annotation/page051",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page051",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/page051",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4178,
+                            "width": 5428
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/page051"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/end-verso",
+                   "@type":"sc:Canvas","label":"uncounted","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/end-verso_hu9a62066a9a85db0267902e5bfed1933e_6757808_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/annotation/end-verso",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/end-verso",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/end-verso",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4168,
+                            "width": 5472
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/end-verso"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/end-recto",
+                   "@type":"sc:Canvas","label":"uncounted","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/end-recto_hu3926ecc61a862ee3f2f67a3d6507fd18_6869178_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/annotation/end-recto",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/end-recto",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/end-recto",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4238,
+                            "width": 5530
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/end-recto"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/end",
+                   "@type":"sc:Canvas","label":"uncounted","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/end_hu080ba2252e6e54f2b4bacb61bf47ebc1_13236082_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/annotation/end",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/end",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/end",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4255,
+                            "width": 6038
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/canvas/end"
+                    }]
+               }]
+     }
+  ]}

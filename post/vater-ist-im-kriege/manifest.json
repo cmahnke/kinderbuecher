@@ -1,0 +1,1517 @@
+{"@context":"http://iiif.io/api/presentation/2/context.json",
+    "@type":"sc:Manifest",
+    "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/",
+    "viewingDirection":"left-to-right",
+    "viewingHint":"paged",
+
+    "label":"Vater ist im Kriege","description": "\"Vater ist im Kriege - Ein Bilderbuch für Kinder\" von Rudolf Presber, herausgegeben 1915 von der Kriegskinderspende deutscher Frauen, Kronprinzenpalais, Berlin. \u003ca class=\"worldcat\" href=\"http://www.worldcat.org/oclc/970872943\"\u003e\u0026nbsp;\u003c/a\u003e","sequences":[
+      {
+         "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/sequence/normal",
+         "@type":"sc:Sequence",
+         "label":"Current Page Order",
+         "viewingDirection":"left-to-right",
+         "viewingHint":"paged",
+         "startCanvas":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/front",
+         "canvases":[{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/front",
+                   "@type":"sc:Canvas","label":"uncounted","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/front_hu582ee3d42e079783a3ed03bfa09b299e_15426952_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/annotation/front",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/front",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/front",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 5748,
+                            "width": 4335
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/front"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/title",
+                   "@type":"sc:Canvas","label":"uncounted","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/title_hu097903a95323b510614b0e02384ceabe_12599092_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/annotation/title",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/title",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/title",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 5605,
+                            "width": 4011
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/title"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page001",
+                   "@type":"sc:Canvas","label":"uncounted","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/page001_hua361a4761af18dac789be71afd340d70_7770535_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/annotation/page001",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page001",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page001",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 5612,
+                            "width": 4001
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page001"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page002",
+                   "@type":"sc:Canvas","label":"uncounted","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/page002_huc5601263343f476daa296441c9d5b723_15484608_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/annotation/page002",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page002",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page002",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 5625,
+                            "width": 3996
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page002"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page003",
+                   "@type":"sc:Canvas","label":"uncounted","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/page003_hu07534300ccb6b6ef32939b0c39fdcf6a_8235655_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/annotation/page003",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page003",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page003",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 5560,
+                            "width": 4224
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page003"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page004",
+                   "@type":"sc:Canvas","label":"uncounted","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/page004_hubc1dca523375b79ae15ad9c31c897b2b_15897490_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/annotation/page004",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page004",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page004",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 5634,
+                            "width": 4273
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page004"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page005",
+                   "@type":"sc:Canvas","label":"uncounted","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/page005_hubfe1eee2f41a91568df5c0c6c57a2903_8009881_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/annotation/page005",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page005",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page005",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 5580,
+                            "width": 4214
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page005"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page006",
+                   "@type":"sc:Canvas","label":"uncounted","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/page006_hu281b3fcc15c0a553fb75ce0c88c2bb15_15042809_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/annotation/page006",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page006",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page006",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 5621,
+                            "width": 4261
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page006"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page007",
+                   "@type":"sc:Canvas","label":"7","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/page007_hu97fcad93a46bcaeb5e8cf3bd57417210_8829679_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/annotation/page007",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page007",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page007",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 5603,
+                            "width": 4248
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page007"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page008",
+                   "@type":"sc:Canvas","label":"8","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/page008_huf380573360973ec54124496056757809_15424239_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/annotation/page008",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page008",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page008",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 5617,
+                            "width": 4257
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page008"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page009",
+                   "@type":"sc:Canvas","label":"9","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/page009_hu691c67fb0115cf33af8b6711802138c5_8462035_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/annotation/page009",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page009",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page009",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 5622,
+                            "width": 4244
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page009"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page010",
+                   "@type":"sc:Canvas","label":"10","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/page010_hudc20ba5defe558477cb0e98c08ee97d7_14583810_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/annotation/page010",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page010",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page010",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 5626,
+                            "width": 4254
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page010"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page011",
+                   "@type":"sc:Canvas","label":"11","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/page011_hucd5e46d6a806bccacd7c27e00b563ea7_10229663_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/annotation/page011",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page011",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page011",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 5624,
+                            "width": 4256
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page011"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page012",
+                   "@type":"sc:Canvas","label":"12","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/page012_hu61cbb162d33abb186f3c41a7551d3901_14814931_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/annotation/page012",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page012",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page012",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 5593,
+                            "width": 4225
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page012"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page013",
+                   "@type":"sc:Canvas","label":"13","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/page013_hue34004f4d60db35e36b5f00c66a5beaf_8698702_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/annotation/page013",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page013",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page013",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 5625,
+                            "width": 4263
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page013"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page014",
+                   "@type":"sc:Canvas","label":"14","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/page014_hu8967a264ec38220c510ef1c0a533e80a_16275391_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/annotation/page014",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page014",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page014",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 5626,
+                            "width": 4252
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page014"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page015",
+                   "@type":"sc:Canvas","label":"15","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/page015_hu0b3b7fd8a6f8aa480dcf494dc008268d_9604267_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/annotation/page015",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page015",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page015",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 5546,
+                            "width": 4184
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page015"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page016",
+                   "@type":"sc:Canvas","label":"16","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/page016_hu84d63855d29075dc64336d1793c51545_15225642_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/annotation/page016",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page016",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page016",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 5635,
+                            "width": 4267
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page016"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page017",
+                   "@type":"sc:Canvas","label":"17","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/page017_hu252f4aefd680acd621d69d591efb3b78_8128879_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/annotation/page017",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page017",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page017",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 5596,
+                            "width": 4230
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page017"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page018",
+                   "@type":"sc:Canvas","label":"18","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/page018_hu758df50e8bc336c3e136fddd45f86e25_17790312_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/annotation/page018",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page018",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page018",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 5630,
+                            "width": 4272
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page018"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page019",
+                   "@type":"sc:Canvas","label":"19","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/page019_hue0e77d174c6f8d5df9f1d55f5c0f1522_8074854_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/annotation/page019",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page019",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page019",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 5620,
+                            "width": 4281
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page019"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page020",
+                   "@type":"sc:Canvas","label":"20","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/page020_hu8f81567a32afc3828294ed40783f6935_15558225_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/annotation/page020",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page020",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page020",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 5633,
+                            "width": 4272
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page020"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page021",
+                   "@type":"sc:Canvas","label":"21","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/page021_hu32521c3fc5ec3ad6faf13735936a1bc5_8165963_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/annotation/page021",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page021",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page021",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 5632,
+                            "width": 4284
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page021"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page022",
+                   "@type":"sc:Canvas","label":"22","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/page022_hu9327650a5b31c9d90a4c92e26dccee8f_15988480_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/annotation/page022",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page022",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page022",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 5640,
+                            "width": 4271
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page022"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page023",
+                   "@type":"sc:Canvas","label":"23","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/page023_hub22f49f004905079b6079db97582ae70_9582131_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/annotation/page023",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page023",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page023",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 5599,
+                            "width": 4225
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page023"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page024",
+                   "@type":"sc:Canvas","label":"24","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/page024_hu6f87ff1e2b2fe0da52f436d933013edf_15843254_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/annotation/page024",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page024",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page024",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 5619,
+                            "width": 4256
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page024"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page025",
+                   "@type":"sc:Canvas","label":"25","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/page025_hu52a95fe8c030c7022ed327d71beefed8_9836064_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/annotation/page025",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page025",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page025",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 5629,
+                            "width": 4267
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page025"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page026",
+                   "@type":"sc:Canvas","label":"26","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/page026_hu3c55a18a2c29b0d5afd93c55802d2619_16707008_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/annotation/page026",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page026",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page026",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 5634,
+                            "width": 4264
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page026"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page027",
+                   "@type":"sc:Canvas","label":"27","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/page027_hu07a4e89949c0a9789b28317edb7f7472_8348961_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/annotation/page027",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page027",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page027",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 5623,
+                            "width": 4269
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page027"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page028",
+                   "@type":"sc:Canvas","label":"28","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/page028_hu1f2dbd7e0e3d6640a9fc8cd429ee512c_18306611_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/annotation/page028",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page028",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page028",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 5616,
+                            "width": 4247
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page028"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page029",
+                   "@type":"sc:Canvas","label":"29","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/page029_hufea67f712a9843767af188dc57c32885_8220664_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/annotation/page029",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page029",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page029",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 5623,
+                            "width": 4268
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page029"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page030",
+                   "@type":"sc:Canvas","label":"30","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/page030_hu6636628caaef241f5911bc015bec2312_15288322_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/annotation/page030",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page030",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page030",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 5596,
+                            "width": 4222
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page030"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page031",
+                   "@type":"sc:Canvas","label":"31","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/page031_hu545a581656823e5402c42e706cacf350_8183017_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/annotation/page031",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page031",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page031",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 5601,
+                            "width": 4233
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page031"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page032",
+                   "@type":"sc:Canvas","label":"32","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/page032_hu9977a75175ccc4c0060baf2deda51289_15645347_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/annotation/page032",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page032",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page032",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 5604,
+                            "width": 4254
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page032"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page033",
+                   "@type":"sc:Canvas","label":"33","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/page033_hue22d4aaadd1cca98beb74de76b50164c_7812806_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/annotation/page033",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page033",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page033",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 5621,
+                            "width": 4256
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page033"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page034",
+                   "@type":"sc:Canvas","label":"34","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/page034_hu52cb3d96aef0e0e536fa5086bf7c9a7c_15548519_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/annotation/page034",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page034",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page034",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 5594,
+                            "width": 4242
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page034"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page035",
+                   "@type":"sc:Canvas","label":"35","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/page035_hud2d9a540bd0e9615c15d6e73206480aa_7945333_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/annotation/page035",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page035",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page035",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 5604,
+                            "width": 4229
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page035"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page036",
+                   "@type":"sc:Canvas","label":"36","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/page036_hu993e3e7796d98d709a678f990e341e53_14065702_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/annotation/page036",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page036",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page036",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 5620,
+                            "width": 4218
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page036"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page037",
+                   "@type":"sc:Canvas","label":"37","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/page037_hufd7ecd513074c16fab8813c3702dfc9c_8068514_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/annotation/page037",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page037",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page037",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 5623,
+                            "width": 4265
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page037"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page038",
+                   "@type":"sc:Canvas","label":"38","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/page038_hu61b6767f4e57e1662f0ad4a8acc8c37a_15895820_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/annotation/page038",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page038",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page038",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 5599,
+                            "width": 4221
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page038"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page039",
+                   "@type":"sc:Canvas","label":"39","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/page039_hud700da749a9f7affa32ffc303555c120_8119081_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/annotation/page039",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page039",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page039",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 5605,
+                            "width": 4220
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page039"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page040",
+                   "@type":"sc:Canvas","label":"40","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/page040_hu3dc99fe5129d9761aa022abbbccb79ef_15465346_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/annotation/page040",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page040",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page040",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 5618,
+                            "width": 4228
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page040"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page041",
+                   "@type":"sc:Canvas","label":"41","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/page041_hu6bb0854a7fb54c1f9ffa0a1e6e25059d_9971492_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/annotation/page041",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page041",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page041",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 5619,
+                            "width": 4240
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page041"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page042",
+                   "@type":"sc:Canvas","label":"42","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/page042_hu6446a56e1e27ad257434f2cc0b8e9d6d_15898526_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/annotation/page042",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page042",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page042",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 5630,
+                            "width": 4261
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page042"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page043",
+                   "@type":"sc:Canvas","label":"43","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/page043_hu3a69652a370973b28e20674b1f19ea77_8434707_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/annotation/page043",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page043",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page043",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 5618,
+                            "width": 4264
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page043"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page044",
+                   "@type":"sc:Canvas","label":"44","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/page044_hu9874a41766a7f3c90608018be3d36df2_15609629_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/annotation/page044",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page044",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page044",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 5582,
+                            "width": 4178
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page044"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page045",
+                   "@type":"sc:Canvas","label":"45","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/page045_hu0b3445ebbc41e8ef8fb47adc42b71299_8422847_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/annotation/page045",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page045",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page045",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 5581,
+                            "width": 4196
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page045"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page046",
+                   "@type":"sc:Canvas","label":"46","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/page046_hu402921fd2eda77bff91e7431479ced9b_16785055_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/annotation/page046",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page046",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page046",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 5630,
+                            "width": 4242
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page046"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page047",
+                   "@type":"sc:Canvas","label":"47","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/page047_hu1f42f685b434171bdcc9bbf53980837c_8447737_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/annotation/page047",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page047",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page047",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 5613,
+                            "width": 4254
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page047"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page048",
+                   "@type":"sc:Canvas","label":"48","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/page048_hu1025cdfb7be5636817ccdc83c099ea46_16142558_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/annotation/page048",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page048",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/page048",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 5619,
+                            "width": 4228
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/canvas/page048"
+                    }]
+               }]
+     }
+  ]}

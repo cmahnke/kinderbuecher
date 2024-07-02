@@ -1,0 +1,1637 @@
+{"@context":"http://iiif.io/api/presentation/2/context.json",
+    "@type":"sc:Manifest",
+    "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/",
+    "viewingDirection":"left-to-right",
+    "viewingHint":"paged",
+
+    "label":"Fliegende Untertassen","description": "\"Fliegende Untertassen\" von Rolf Strehl, erschienen ca. 1953 - 1955 bei Oldenkott, Rees. \u003ca class=\"worldcat\" href=\"http://www.worldcat.org/oclc/918095658\"\u003e\u0026nbsp;\u003c/a\u003e","sequences":[
+      {
+         "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/sequence/normal",
+         "@type":"sc:Sequence",
+         "label":"Current Page Order",
+         "viewingDirection":"left-to-right",
+         "viewingHint":"paged",
+         "startCanvas":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/front",
+         "canvases":[{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/front",
+                   "@type":"sc:Canvas","label":"uncounted","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/front_hu9957a5c76a446bf6d59b07ad5e9a0b7a_33603881_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/annotation/front",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/front",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/front",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4832,
+                            "width": 6859
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/front"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/front-verso",
+                   "@type":"sc:Canvas","label":"uncounted","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/front-verso_hue687ade1f9bfe5205d8b7bc8ab99b4fb_9715779_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/annotation/front-verso",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/front-verso",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/front-verso",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4782,
+                            "width": 6464
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/front-verso"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page001",
+                   "@type":"sc:Canvas","label":"uncounted","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/page001_hude0d3a19037d79b70e9a0595f2c0ae94_18452565_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/annotation/page001",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page001",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page001",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4841,
+                            "width": 6476
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page001"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page002",
+                   "@type":"sc:Canvas","label":"uncounted","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/page002_hubb741ab8671542b5c238ae5452ec7439_15453738_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/annotation/page002",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page002",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page002",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4811,
+                            "width": 6399
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page002"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page003",
+                   "@type":"sc:Canvas","label":"uncounted","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/page003_hu7e92bd78a345e1c7565b29f5393ed303_18039117_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/annotation/page003",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page003",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page003",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4833,
+                            "width": 6412
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page003"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page004",
+                   "@type":"sc:Canvas","label":"uncounted","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/page004_hu235f18757d355af7ad6d998b0fe86527_15236481_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/annotation/page004",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page004",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page004",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4827,
+                            "width": 6380
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page004"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page005",
+                   "@type":"sc:Canvas","label":"5","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/page005_hu1e7fdf2e3e6ab1d3990fb6157ac8d8ed_23471163_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/annotation/page005",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page005",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page005",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4835,
+                            "width": 6371
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page005"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page006",
+                   "@type":"sc:Canvas","label":"6","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/page006_hu668539ba9040eccc2c5510c571bf04a7_18736289_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/annotation/page006",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page006",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page006",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4830,
+                            "width": 6341
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page006"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page007",
+                   "@type":"sc:Canvas","label":"7","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/page007_hu91c07632b589af48ba1f6b4a08bc73a4_19085213_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/annotation/page007",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page007",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page007",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4841,
+                            "width": 6368
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page007"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page008",
+                   "@type":"sc:Canvas","label":"8","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/page008_hu39d81cb986cbd06bc5f5451a6972626c_19029551_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/annotation/page008",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page008",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page008",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4838,
+                            "width": 6321
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page008"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page009",
+                   "@type":"sc:Canvas","label":"9","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/page009_hu6d52d3dfccceaf95fa9fbf2b1d86a6bb_28985876_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/annotation/page009",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page009",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page009",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4846,
+                            "width": 6356
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page009"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page010",
+                   "@type":"sc:Canvas","label":"10","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/page010_hu4e9f9be4b346c6d511a0357f28af9e1a_18479308_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/annotation/page010",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page010",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page010",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4829,
+                            "width": 6305
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page010"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page011",
+                   "@type":"sc:Canvas","label":"11","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/page011_hue99e3cb7a0204fbc64457b9722c9de08_18817715_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/annotation/page011",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page011",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page011",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4796,
+                            "width": 6312
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page011"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page012",
+                   "@type":"sc:Canvas","label":"12","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/page012_huf94bfb1e9ebb826e118ce80318da79bb_18723517_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/annotation/page012",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page012",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page012",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4824,
+                            "width": 6288
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page012"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page013",
+                   "@type":"sc:Canvas","label":"13","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/page013_hub215fb1a5b1ee6608ac4ca05c9e7f788_18715651_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/annotation/page013",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page013",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page013",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4837,
+                            "width": 6332
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page013"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page014",
+                   "@type":"sc:Canvas","label":"14","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/page014_hu7ffea2ee82ec8a16a2d88d05d12b4e90_19007509_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/annotation/page014",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page014",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page014",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4840,
+                            "width": 6300
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page014"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page015",
+                   "@type":"sc:Canvas","label":"15","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/page015_huc474955ea9d12ac1b4b4f344acb8d8f0_22190489_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/annotation/page015",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page015",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page015",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4820,
+                            "width": 6319
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page015"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page016",
+                   "@type":"sc:Canvas","label":"16","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/page016_hu1c161d6c1cd33e9f0cfbef234bc4c8a9_18847447_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/annotation/page016",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page016",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page016",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4833,
+                            "width": 6281
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page016"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page017",
+                   "@type":"sc:Canvas","label":"17","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/page017_hu55f217a4dde98cb8a02c1ae7a2daa413_18732859_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/annotation/page017",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page017",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page017",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4831,
+                            "width": 6328
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page017"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page018",
+                   "@type":"sc:Canvas","label":"18","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/page018_hu8af8523d711e6d6f117e8ad306c36490_18778465_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/annotation/page018",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page018",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page018",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4790,
+                            "width": 6811
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page018"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page019",
+                   "@type":"sc:Canvas","label":"19","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/page019_huf0710a9230d9d0ef5d41151ad4f8af1c_22933230_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/annotation/page019",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page019",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page019",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4819,
+                            "width": 6843
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page019"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page020",
+                   "@type":"sc:Canvas","label":"20","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/page020_hu4071091695193917c1022221d12006c2_19186040_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/annotation/page020",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page020",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page020",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4784,
+                            "width": 6715
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page020"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page021",
+                   "@type":"sc:Canvas","label":"21","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/page021_hueec12447d60f3b58d8992d121385af1e_23465635_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/annotation/page021",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page021",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page021",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4813,
+                            "width": 6785
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page021"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page022",
+                   "@type":"sc:Canvas","label":"22","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/page022_hu611e9c0518c55eea5683ffad6e720149_19290725_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/annotation/page022",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page022",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page022",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4818,
+                            "width": 6772
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page022"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page023",
+                   "@type":"sc:Canvas","label":"23","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/page023_hucc5ee49d3512d725ceb9996da0e132d6_23439303_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/annotation/page023",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page023",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page023",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4818,
+                            "width": 6820
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page023"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page024",
+                   "@type":"sc:Canvas","label":"24","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/page024_hu6b6e359a5aa7ee1bb7f7318fc23a6ae5_19042139_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/annotation/page024",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page024",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page024",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4821,
+                            "width": 6770
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page024"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page025",
+                   "@type":"sc:Canvas","label":"25","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/page025_huebdd7cf388b0d013e5861710af98e81c_23090449_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/annotation/page025",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page025",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page025",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4813,
+                            "width": 6809
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page025"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page026",
+                   "@type":"sc:Canvas","label":"26","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/page026_hu665a567437aa8914dd1f48d67c41d25b_18757411_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/annotation/page026",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page026",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page026",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4796,
+                            "width": 6763
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page026"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page027",
+                   "@type":"sc:Canvas","label":"27","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/page027_hu4d1128022d524436ed711491d8b5681b_19300571_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/annotation/page027",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page027",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page027",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4806,
+                            "width": 6813
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page027"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page028",
+                   "@type":"sc:Canvas","label":"28","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/page028_hu2880b323f824f6446f4785fc0a22503a_19216577_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/annotation/page028",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page028",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page028",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4812,
+                            "width": 6774
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page028"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page029",
+                   "@type":"sc:Canvas","label":"29","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/page029_hudea51486320dbc5046988c9568ba59ec_22326510_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/annotation/page029",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page029",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page029",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4823,
+                            "width": 6840
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page029"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page030",
+                   "@type":"sc:Canvas","label":"30","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/page030_hu6e6d06b728cdf76733c7761eaf5e608c_19325244_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/annotation/page030",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page030",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page030",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4815,
+                            "width": 6793
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page030"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page031",
+                   "@type":"sc:Canvas","label":"31","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/page031_hueb7a57b56e904304b312dc9be9632d22_18839844_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/annotation/page031",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page031",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page031",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4824,
+                            "width": 6845
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page031"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page032",
+                   "@type":"sc:Canvas","label":"32","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/page032_hu01f51596430e7ac19efd11688d95a2a4_18244884_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/annotation/page032",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page032",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page032",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4802,
+                            "width": 6773
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page032"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page033",
+                   "@type":"sc:Canvas","label":"33","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/page033_hu23626e636de08432ac67bac8cd924b37_21700719_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/annotation/page033",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page033",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page033",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4794,
+                            "width": 6744
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page033"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page034",
+                   "@type":"sc:Canvas","label":"34","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/page034_hud63459c3bd661060752589853f97e2b3_23049825_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/annotation/page034",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page034",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page034",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4816,
+                            "width": 6754
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page034"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page035",
+                   "@type":"sc:Canvas","label":"35","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/page035_hu9791543832301b8a8757e7939032d598_18623425_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/annotation/page035",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page035",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page035",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4811,
+                            "width": 6772
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page035"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page036",
+                   "@type":"sc:Canvas","label":"36","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/page036_hu8eb73d3dace3daa6824a73a7cb0175bb_23270153_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/annotation/page036",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page036",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page036",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4810,
+                            "width": 6764
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page036"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page037",
+                   "@type":"sc:Canvas","label":"37","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/page037_huf276703a14880bcbd09406ea0e9b356f_18698364_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/annotation/page037",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page037",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page037",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4812,
+                            "width": 6761
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page037"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page038",
+                   "@type":"sc:Canvas","label":"38","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/page038_huce6dfe9b684eddb059765bc204d493b7_19395931_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/annotation/page038",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page038",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page038",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4809,
+                            "width": 6748
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page038"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page039",
+                   "@type":"sc:Canvas","label":"39","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/page039_hu332c505de8c4da0e69987eeb78a4e8a1_23427126_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/annotation/page039",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page039",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page039",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4800,
+                            "width": 6785
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page039"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page040",
+                   "@type":"sc:Canvas","label":"40","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/page040_huc124e918e63aef7bce4fa0d05e03c05e_18884603_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/annotation/page040",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page040",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page040",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4793,
+                            "width": 6740
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page040"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page041",
+                   "@type":"sc:Canvas","label":"41","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/page041_hu61d6af773bcc4b5f8e80e4adff943b8d_18944536_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/annotation/page041",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page041",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page041",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4785,
+                            "width": 6783
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page041"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page042",
+                   "@type":"sc:Canvas","label":"42","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/page042_hu8744c8c886dc1e5af44264c0c684076a_19561188_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/annotation/page042",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page042",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page042",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4804,
+                            "width": 6765
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page042"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page043",
+                   "@type":"sc:Canvas","label":"43","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/page043_hu8ea0063c33da1cde57e7f1d18479cdcb_22731304_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/annotation/page043",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page043",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page043",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4781,
+                            "width": 6832
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page043"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page044",
+                   "@type":"sc:Canvas","label":"44","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/page044_hu1058500655b3dea7fd4a054ef8dd6088_19115037_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/annotation/page044",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page044",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page044",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4811,
+                            "width": 6808
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page044"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page045",
+                   "@type":"sc:Canvas","label":"45","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/page045_huc9ed3cb06d50583cf84ee17a64dddce7_18745206_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/annotation/page045",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page045",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page045",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4811,
+                            "width": 6830
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page045"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page046",
+                   "@type":"sc:Canvas","label":"46","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/page046_hu1978948520c8ebacf43024c9559bb4ca_18964987_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/annotation/page046",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page046",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page046",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4820,
+                            "width": 6786
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page046"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page047",
+                   "@type":"sc:Canvas","label":"47","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/page047_huef9ed3f73d0934912f2afa5f55c98da1_18827362_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/annotation/page047",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page047",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page047",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4822,
+                            "width": 6802
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page047"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page048",
+                   "@type":"sc:Canvas","label":"48","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/page048_hu6282e9ef179e72c9dc47f839c2ffb719_19065662_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/annotation/page048",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page048",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page048",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4803,
+                            "width": 6786
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page048"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page049",
+                   "@type":"sc:Canvas","label":"49","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/page049_hua494cca3d4b706eec93d02a5d8245da9_15158654_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/annotation/page049",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page049",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page049",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4810,
+                            "width": 6819
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page049"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page050",
+                   "@type":"sc:Canvas","label":"50","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/page050_hub25f3cdd17c0ba9eb0b2d137655c59c9_16029199_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/annotation/page050",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page050",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/page050",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4802,
+                            "width": 6586
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/page050"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/end-recto",
+                   "@type":"sc:Canvas","label":"uncounted","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/end-recto_huea1f8abd14987c3ef6c042b88361472f_8777556_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/annotation/end-recto",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/end-recto",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/end-recto",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4770,
+                            "width": 6526
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/end-recto"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/back",
+                   "@type":"sc:Canvas","label":"uncounted","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/back_hud39d009c28fd040a7632e98711493063_19710293_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/annotation/back",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/back",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/back",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4813,
+                            "width": 6859
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/canvas/back"
+                    }]
+               }]
+     }
+  ]}

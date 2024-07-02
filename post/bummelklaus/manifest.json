@@ -1,0 +1,587 @@
+{"@context":"http://iiif.io/api/presentation/2/context.json",
+    "@type":"sc:Manifest",
+    "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/bummelklaus/",
+    "viewingDirection":"left-to-right",
+    "viewingHint":"paged",
+
+    "label":"Kleines Volk","description": "\"Bummelklaus und andere Geschichten\" von verschiedenen Autoren, erschienen ca. 1955 bei Scholz-Mainz, Wiesbaden. \u003ca class=\"worldcat\" href=\"http://www.worldcat.org/oclc/73285674\"\u003e\u0026nbsp;\u003c/a\u003e","sequences":[
+      {
+         "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/bummelklaus/sequence/normal",
+         "@type":"sc:Sequence",
+         "label":"Current Page Order",
+         "viewingDirection":"left-to-right",
+         "viewingHint":"paged",
+         "startCanvas":"https://xn--kinderbcher-zhb.projektemacher.org/post/bummelklaus/canvas/front",
+         "canvases":[{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/bummelklaus/canvas/front",
+                   "@type":"sc:Canvas","label":"uncounted","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/bummelklaus/front_hu6e9d61f110e8af30bca70f443284ded7_12541787_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/bummelklaus/annotation/front",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/bummelklaus/front",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/bummelklaus/front",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4682,
+                            "width": 4548
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/bummelklaus/canvas/front"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/bummelklaus/canvas/title",
+                   "@type":"sc:Canvas","viewingHint":"non-paged","label":"uncounted","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/bummelklaus/page001_hu9dd8205a3cc91ff2ff785d6a397c3a31_2812674_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/bummelklaus/annotation/page001",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/bummelklaus/page001",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/bummelklaus/page001",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4688,
+                            "width": 4567
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/bummelklaus/canvas/title"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/bummelklaus/canvas/page002",
+                   "@type":"sc:Canvas","label":"2","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/bummelklaus/page002_hu00b7401756e05408e14279aee9ae02b6_5670875_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/bummelklaus/annotation/page002",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/bummelklaus/page002",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/bummelklaus/page002",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4687,
+                            "width": 4554
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/bummelklaus/canvas/page002"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/bummelklaus/canvas/page003",
+                   "@type":"sc:Canvas","label":"3","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/bummelklaus/page003_hu6724784edbf7193e2b5282e55a1050c2_5773199_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/bummelklaus/annotation/page003",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/bummelklaus/page003",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/bummelklaus/page003",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4700,
+                            "width": 4577
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/bummelklaus/canvas/page003"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/bummelklaus/canvas/page004",
+                   "@type":"sc:Canvas","label":"4","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/bummelklaus/page004_hu23c6c229f468d605bc5896418ffcc2bb_6207589_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/bummelklaus/annotation/page004",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/bummelklaus/page004",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/bummelklaus/page004",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4707,
+                            "width": 4566
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/bummelklaus/canvas/page004"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/bummelklaus/canvas/page005",
+                   "@type":"sc:Canvas","label":"5","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/bummelklaus/page005_hu4393ef2984f108cc7c569f6a7d5e31a8_7240027_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/bummelklaus/annotation/page005",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/bummelklaus/page005",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/bummelklaus/page005",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4695,
+                            "width": 4554
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/bummelklaus/canvas/page005"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/bummelklaus/canvas/page006",
+                   "@type":"sc:Canvas","label":"6","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/bummelklaus/page006_hu9d6f1bdeba1351d4001007cb47ef2847_7600146_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/bummelklaus/annotation/page006",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/bummelklaus/page006",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/bummelklaus/page006",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4689,
+                            "width": 4541
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/bummelklaus/canvas/page006"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/bummelklaus/canvas/page007",
+                   "@type":"sc:Canvas","label":"7","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/bummelklaus/page007_hu7dd07acd4e5cba9be2d72be5819290c4_7602544_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/bummelklaus/annotation/page007",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/bummelklaus/page007",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/bummelklaus/page007",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4677,
+                            "width": 4542
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/bummelklaus/canvas/page007"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/bummelklaus/canvas/page008",
+                   "@type":"sc:Canvas","label":"8","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/bummelklaus/page008_hud9457568ed6fae3606b2228b99fac378_5605384_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/bummelklaus/annotation/page008",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/bummelklaus/page008",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/bummelklaus/page008",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4696,
+                            "width": 4549
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/bummelklaus/canvas/page008"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/bummelklaus/canvas/page009",
+                   "@type":"sc:Canvas","label":"9","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/bummelklaus/page009_hue39a9c4083b7a491bd990909cfa019fc_6663214_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/bummelklaus/annotation/page009",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/bummelklaus/page009",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/bummelklaus/page009",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4706,
+                            "width": 4552
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/bummelklaus/canvas/page009"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/bummelklaus/canvas/page010",
+                   "@type":"sc:Canvas","label":"10","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/bummelklaus/page010_hu2ecc1f91765e75e482a23104bb866219_7503419_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/bummelklaus/annotation/page010",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/bummelklaus/page010",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/bummelklaus/page010",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4695,
+                            "width": 4533
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/bummelklaus/canvas/page010"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/bummelklaus/canvas/page011",
+                   "@type":"sc:Canvas","label":"11","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/bummelklaus/page011_hu3634644faba9ea8009e4a6ba8a67fd0f_8177863_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/bummelklaus/annotation/page011",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/bummelklaus/page011",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/bummelklaus/page011",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4700,
+                            "width": 4522
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/bummelklaus/canvas/page011"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/bummelklaus/canvas/page012",
+                   "@type":"sc:Canvas","label":"12","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/bummelklaus/page012_hu2bae8e63ff63e03f9c739ed551735540_8338241_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/bummelklaus/annotation/page012",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/bummelklaus/page012",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/bummelklaus/page012",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4705,
+                            "width": 4538
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/bummelklaus/canvas/page012"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/bummelklaus/canvas/page013",
+                   "@type":"sc:Canvas","label":"13","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/bummelklaus/page013_hu878e9ab2d285554336cb2ed42795deff_7648752_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/bummelklaus/annotation/page013",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/bummelklaus/page013",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/bummelklaus/page013",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4672,
+                            "width": 4528
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/bummelklaus/canvas/page013"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/bummelklaus/canvas/page014",
+                   "@type":"sc:Canvas","label":"14","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/bummelklaus/page014_huec8b698c4da0a12d7680235d3138a61d_7635156_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/bummelklaus/annotation/page014",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/bummelklaus/page014",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/bummelklaus/page014",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4705,
+                            "width": 4548
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/bummelklaus/canvas/page014"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/bummelklaus/canvas/page015",
+                   "@type":"sc:Canvas","label":"15","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/bummelklaus/page015_hu343b4be5e3e65af7e3d4274b7a2c9b98_8564454_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/bummelklaus/annotation/page015",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/bummelklaus/page015",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/bummelklaus/page015",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4702,
+                            "width": 4543
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/bummelklaus/canvas/page015"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/bummelklaus/canvas/page016",
+                   "@type":"sc:Canvas","label":"uncounted","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/bummelklaus/page016_hubbfc32491e81bba78502793e54b52a02_1320938_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/bummelklaus/annotation/page016",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/bummelklaus/page016",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/bummelklaus/page016",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4695,
+                            "width": 4548
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/bummelklaus/canvas/page016"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/bummelklaus/canvas/page017",
+                   "@type":"sc:Canvas","label":"uncounted","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/bummelklaus/page017_hu42ef8f1ec0ec3fa221dc23ba2c348c43_6573790_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/bummelklaus/annotation/page017",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/bummelklaus/page017",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/bummelklaus/page017",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4690,
+                            "width": 4535
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/bummelklaus/canvas/page017"
+                    }]
+               },{
+                   "@id":"https://xn--kinderbcher-zhb.projektemacher.org/post/bummelklaus/canvas/back",
+                   "@type":"sc:Canvas","label":"uncounted","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://xn--kinderbcher-zhb.projektemacher.org/post/bummelklaus/back_hue282185cdd80f216b4b03799610baae5_9913621_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://static.projektemacher.org/kinderbuecher/post/bummelklaus/annotation/back",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://static.projektemacher.org/kinderbuecher/post/bummelklaus/back",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://static.projektemacher.org/kinderbuecher/post/bummelklaus/back",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 4696,
+                            "width": 4580
+                         },
+                         "on":"https://xn--kinderbcher-zhb.projektemacher.org/post/bummelklaus/canvas/back"
+                    }]
+               }]
+     }
+  ]}
