@@ -1,11 +1,11 @@
 ---
-title: Kodak Weihnachts-Märchenbuch
-date: 2024-12-01T17:21:11+01:00
-description: '"Kodak Weihnachts-Märchenbuch" herausgegeben von Kodak ca. 1970. <a class="worldcat" href="https://search.worldcat.org/de/title/844989609">&nbsp;</a>'
-issueYear: 1970
+title: Was fährt denn da?
+date: 2024-08-01T17:21:11+01:00
+description: '"Was fährt denn da?" erschien im Rudolf Arnold, Leipzig, 1957. <a class="worldcat" href="https://search.worldcat.org/de/title/312003301">&nbsp;</a>'
+issueYear: 1957
 tags:
-  - 1970
-  - BRD
+  - 1957
+  - DDR
   - Deutsch
 iiifManifest: ./manifest.json
 outputs:
@@ -50,25 +50,10 @@ resources:
   params:
     iiif: page008/info.json
     label: uncounted
-- src: "page009.jxl"
-  params:
-    iiif: page009/info.json
-    label: uncounted
-- src: "page010.jxl"
-  params:
-    iiif: page010/info.json
-    label: uncounted
-- src: "page011.jxl"
-  params:
-    iiif: page011/info.json
-    label: uncounted
-- src: "page012.jxl"
-  params:
-    iiif: page012/info.json
-    label: uncounted
 - src: "back.jxl"
   params:
     iiif: back/info.json
     label: uncounted
 ---
-Bald ist Weihnachten, daher hier ein Buch, das zusammen mit dem neuen (in diesem Jahr gestartetem) Projektemacher Blog: [VintageReality](https://vintagereality.projektemacher.org/). Dort können Seiten mit Anaglyphen auch in anderen Formaten heruntergeladen werden.
+
+Ein schön illustriertes Kinderbuch zum Thema Verkehr, das ja hier ein Schwerpunkt geworden ist. In interessantes historisches Detail ist die [Lufthansa der DDR](https://de.wikipedia.org/wiki/Deutsche_Lufthansa_(DDR)).
