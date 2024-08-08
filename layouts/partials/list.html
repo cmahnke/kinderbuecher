@@ -8,15 +8,22 @@
         {{ range $index, $element := .Paginator.Pages }}
 
         {{/* Preview */}}
-        {{- $context := path.Dir .File.Path -}}
+        {{- $contextDir := path.Dir .File.Path -}}
+        {{- $context := . -}}
 
+        {{- $fit := "600x300" -}}
+        {{- $previewImg := partial "preview/preview-internal.html" (dict "context" $context "fit" $fit) -}}
+
+        {{/*
         {{- $defaultWidth := 400 -}}
         {{- $previewImg := (.Resources.ByType "image").GetMatch "front" -}}
-
+        */}}
         {{- if eq $previewImg nil -}}
-            {{- errorf "Can't find image 'front' for %s" $context -}}
+            {{- errorf "Can't find image 'front' for %s" $contextDir -}}
         {{- end -}}
+        {{/*
         {{- $previewImg = $previewImg.Resize "300x" -}}
+        */}}
         {{- $class := "" -}}
         {{- if eq (mod $index 2) 0 -}}
             {{- $class = "even" -}}

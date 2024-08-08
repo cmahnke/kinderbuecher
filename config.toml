@@ -70,6 +70,8 @@ defaultMarkdownHandler = 'goldmark'
 [mediaTypes]
   [mediaTypes."application/ld+json"]
     suffixes = ["json"]
+  [mediaTypes."image/jxl"]
+    suffixes = ["jxl"]
 
   [outputFormats.iiif]
     mediaType = "application/ld+json"
