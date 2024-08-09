@@ -12,7 +12,7 @@
         {{- $context := . -}}
 
         {{- $fit := "600x300" -}}
-        {{- $previewImg := partial "preview/preview-internal.html" (dict "context" $context "fit" $fit) -}}
+        {{- $previewImg := partial "preview/preview-internal.html" (dict "context" $context) -}}
 
         {{/*
         {{- $defaultWidth := 400 -}}
@@ -21,9 +21,8 @@
         {{- if eq $previewImg nil -}}
             {{- errorf "Can't find image 'front' for %s" $contextDir -}}
         {{- end -}}
-        {{/*
+
         {{- $previewImg = $previewImg.Resize "300x" -}}
-        */}}
         {{- $class := "" -}}
         {{- if eq (mod $index 2) 0 -}}
             {{- $class = "even" -}}
