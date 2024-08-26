@@ -7,7 +7,7 @@ iiifContext: http://iiif.io/api/presentation/2/context.json
 issueYear: 1931
 outputs:
 - html
-- iiif
+- iiif-manifest
 tags:
   - 1931
   - Weimarer Republik

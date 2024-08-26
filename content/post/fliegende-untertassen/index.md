@@ -6,7 +6,7 @@ issueYear: 1953
 iiifManifest: ./manifest.json
 outputs:
 - html
-- iiif
+- iiif-manifest
 iiifContext: http://iiif.io/api/presentation/2/context.json
 tags:
   - 1953

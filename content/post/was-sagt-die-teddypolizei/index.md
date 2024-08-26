@@ -4,7 +4,7 @@ date: 2021-08-01T17:21:11+02:00
 iiifManifest: ./manifest.json
 outputs:
 - html
-- iiif
+- iiif-manifest
 iiifContext: http://iiif.io/api/presentation/2/context.json
 description: '"Was sagt die Teddypolizei? Augen auf in der Puppenstadt" von Rauthgundis von Freier und Günther Rohde, erschienen ca. 1960 bei Wildhagen, Hamburg. <a class="worldcat" href="http://www.worldcat.org/oclc/254386194">&nbsp;</a>'
 issueYear: 1960

@@ -7,7 +7,7 @@ description: '"Bummelklaus und andere Geschichten" von verschiedenen Autoren, er
 issueYear: 1955
 outputs:
 - html
-- iiif
+- iiif-manifest
 tags:
   - 1955
   - BRD

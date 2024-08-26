@@ -10,7 +10,7 @@ tags:
 iiifManifest: ./manifest.json
 outputs:
 - html
-- iiif
+- iiif-manifest
 iiifContext: http://iiif.io/api/presentation/2/context.json
 resources:
 - src: "front.jxl"

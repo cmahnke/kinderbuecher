@@ -6,7 +6,7 @@ iiifManifest: ./manifest.json
 issueYear: 1941
 outputs:
 - html
-- iiif
+- iiif-manifest
 tags:
   - 1941
   - NS-Deutschland

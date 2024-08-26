@@ -7,7 +7,7 @@ iiifContext: http://iiif.io/api/presentation/2/context.json
 issueYear: 1906
 outputs:
 - html
-- iiif
+- iiif-manifest
 tags:
   - 1906
   - Deutsches Kaiserreich

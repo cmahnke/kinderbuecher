@@ -7,7 +7,7 @@ description: '"Quenottes et menottes" von Ernest D''Hervilly, illustriert von Ha
 issueYear: 1890
 outputs:
   - html
-  - iiif
+  - iiif-manifest
 tags:
   - 1890
   - Dritte Französische Republik
