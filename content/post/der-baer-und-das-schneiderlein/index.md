@@ -7,7 +7,7 @@ iiifContext: http://iiif.io/api/presentation/2/context.json
 issueYear: 1940
 outputs:
 - html
-- iiif-manifest
+- iiif 
 tags:
   - 1940
   - NS-Deutschland
