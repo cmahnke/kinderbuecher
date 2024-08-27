@@ -11,6 +11,7 @@ disableKinds = ["taxonomy"]
 ignoreErrors = ["error-disable-taxonomy"]
 copyright = "<a href=\"https://projektemacher.org\">Projektemacher</a>"
 enableGitInfo = true
+timeout = "120s"
 
 [params]
     navHome = "Start"
