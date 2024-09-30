@@ -13,90 +13,90 @@ tags:
   - BRD
   - Deutsch
 resources:
-- src: "front.jpg"
+- src: "front.jxl"
   name: front
   params:
     iiif: front/info.json
     class: front
-- src: "page000.jpg"
+- src: "page000.jxl"
   params:
     iiif: page000/info.json
-- src: "page001.jpg"
+- src: "page001.jxl"
   params:
     iiif: page001/info.json
-- src: "page002.jpg"
+- src: "page002.jxl"
   params:
     iiif: page002/info.json
-- src: "page003.jpg"
+- src: "page003.jxl"
   params:
     iiif: page003/info.json
-- src: "page004.jpg"
+- src: "page004.jxl"
   params:
     iiif: page004/info.json
-- src: "page005.jpg"
+- src: "page005.jxl"
   params:
     iiif: page005/info.json
-- src: "page006.jpg"
+- src: "page006.jxl"
   params:
     iiif: page006/info.json
-- src: "page007.jpg"
+- src: "page007.jxl"
   params:
     iiif: page007/info.json
-- src: "page008.jpg"
+- src: "page008.jxl"
   params:
     iiif: page008/info.json
-- src: "page009.jpg"
+- src: "page009.jxl"
   params:
     iiif: page009/info.json
-- src: "page010.jpg"
+- src: "page010.jxl"
   params:
     iiif: page010/info.json
-- src: "page011.jpg"
+- src: "page011.jxl"
   params:
     iiif: page011/info.json
-- src: "page012.jpg"
+- src: "page012.jxl"
   params:
     iiif: page012/info.json
-- src: "page013.jpg"
+- src: "page013.jxl"
   params:
     iiif: page013/info.json
-- src: "page014.jpg"
+- src: "page014.jxl"
   params:
     iiif: page014/info.json
-- src: "page015.jpg"
+- src: "page015.jxl"
   params:
     iiif: page015/info.json
-- src: "page016.jpg"
+- src: "page016.jxl"
   params:
     iiif: page016/info.json
-- src: "page017.jpg"
+- src: "page017.jxl"
   params:
     iiif: page017/info.json
-- src: "page018.jpg"
+- src: "page018.jxl"
   params:
     iiif: page018/info.json
-- src: "page019.jpg"
+- src: "page019.jxl"
   params:
     iiif: page019/info.json
-- src: "page020.jpg"
+- src: "page020.jxl"
   params:
     iiif: page020/info.json
-- src: "page021.jpg"
+- src: "page021.jxl"
   params:
     iiif: page021/info.json
-- src: "page022.jpg"
+- src: "page022.jxl"
   params:
     iiif: page022/info.json
-- src: "page023.jpg"
+- src: "page023.jxl"
   params:
     iiif: page023/info.json
-- src: "page024.jpg"
+- src: "page024.jxl"
   params:
     iiif: page024/info.json
-- src: "page025.jpg"
+- src: "page025.jxl"
   params:
     iiif: page025/info.json
-- src: "back.jpg"
+- src: "back.jxl"
   params:
     iiif: back/info.json
 ---

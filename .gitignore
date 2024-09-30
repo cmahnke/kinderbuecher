@@ -20,6 +20,7 @@ content/post/*/back/
 content/post/*/end/
 content/post/*/preview.*
 content/post/*/*.pdf
+content/**/ogPreview.*g
 content/files.lst
 **/.DS_Store
 static/fonts/**
