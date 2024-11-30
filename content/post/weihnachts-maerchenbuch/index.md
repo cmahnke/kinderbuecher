@@ -1,6 +1,6 @@
 ---
 title: Kodak Weihnachts-Märchenbuch
-date: 2024-12-01T17:21:11+01:00
+date: 2024-12-01T12:00:00+02:00
 description: '"Kodak Weihnachts-Märchenbuch" herausgegeben von Kodak ca. 1970. <a class="worldcat" href="https://search.worldcat.org/de/title/844989609">&nbsp;</a>'
 issueYear: 1970
 tags:
@@ -10,7 +10,7 @@ tags:
 iiifManifest: ./manifest.json
 outputs:
 - html
-- iiif 
+- iiif
 iiifContext: http://iiif.io/api/presentation/2/context.json
 resources:
 - src: "front.jxl"
