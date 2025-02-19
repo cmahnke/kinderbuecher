@@ -341,6 +341,10 @@ $nav-max-width: 100rem;
 
         .navigation-item {
             list-style: none;
+
+            .navigation-link i.link-icon {
+                display: none;
+            }
         }
     }
 }
