@@ -78,6 +78,11 @@ article.post > .container {
 .content {
     position: relative;
 
+    @media (max-width: 37.5em) {
+        display: flex;
+        flex-direction: column;
+    }
+
     .source {
         font-size: small;
         text-align: right;
@@ -229,6 +234,12 @@ article.post > .container {
         padding: 1.6rem;
         margin-bottom: 2em;
         margin-top: calc(-1.6rem + -0.4em);
+
+        @media (max-width: 37.5em) {
+            width: unset;
+            margin-left: unset;
+            float: unset;
+        }
 
         .book-about-heading {
             font-size: 1em;
