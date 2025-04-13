@@ -2,7 +2,7 @@
     Pinterest sizes: https://louisem.com/228434/pinterest-pin-size
     Open Graph sizees: https://iamturns.com/open-graph-image-size/
     */}}
-{{- $debug := partialCached "partials/functions/debug/enabled.html" . -}}
+{{- $debug := partialCached "functions/debug/enabled.html" . -}}
 
 {{- $filePath := "" -}}
 {{- if and (ne .File nil) (ne .File.Path nil) -}}
