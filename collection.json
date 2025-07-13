@@ -1,0 +1,562 @@
+{
+    "@context": "http://iiif.io/api/presentation/3/context.json",
+    "id": "https://xn--kinderbcher-zhb.projektemacher.org/collection.json",
+    "type": "Collection",
+    "label": {
+        "de": [
+          "Kinderbücher"
+        ]},
+    "items": [{
+          "id": "https://xn--kinderbcher-zhb.projektemacher.org/post/weihnachts-maerchenbuch/manifest.json",
+          "type": "Manifest","thumbnail": [{
+    "id": "https://xn--kinderbcher-zhb.projektemacher.org/post/weihnachts-maerchenbuch/front/full/full/0/default_hu_67591264e5721ae3.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 300,
+    "width": 300
+  },{
+        "id": "https://static.projektemacher.org/kinderbuecher/post/weihnachts-maerchenbuch/front/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 4709,
+        "width": 4702,
+        "service": [{
+          "id":"https://static.projektemacher.org/kinderbuecher/post/weihnachts-maerchenbuch/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+            "de": [
+              "Kodak Weihnachts-Märchenbuch"
+            ]}
+        },{
+          "id": "https://xn--kinderbcher-zhb.projektemacher.org/post/hoert-auf-den-uhu/manifest.json",
+          "type": "Manifest","thumbnail": [{
+    "id": "https://xn--kinderbcher-zhb.projektemacher.org/post/hoert-auf-den-uhu/front/full/full/0/default_hu_4ac80d6299be4da5.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 316,
+    "width": 300
+  },{
+        "id": "https://static.projektemacher.org/kinderbuecher/post/hoert-auf-den-uhu/front/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 3441,
+        "width": 3268,
+        "service": [{
+          "id":"https://static.projektemacher.org/kinderbuecher/post/hoert-auf-den-uhu/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+            "de": [
+              "Hört auf den Uhu!"
+            ]}
+        },{
+          "id": "https://xn--kinderbcher-zhb.projektemacher.org/post/ringel-ringel-reihe/manifest.json",
+          "type": "Manifest","thumbnail": [{
+    "id": "https://xn--kinderbcher-zhb.projektemacher.org/post/ringel-ringel-reihe/front/full/full/0/default_hu_9d4a81a404e53140.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 382,
+    "width": 300
+  },{
+        "id": "https://static.projektemacher.org/kinderbuecher/post/ringel-ringel-reihe/front/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 7557,
+        "width": 5933,
+        "service": [{
+          "id":"https://static.projektemacher.org/kinderbuecher/post/ringel-ringel-reihe/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+            "de": [
+              "Ringel Ringel Reihe"
+            ]}
+        },{
+          "id": "https://xn--kinderbcher-zhb.projektemacher.org/post/was-faehrt-den-da/manifest.json",
+          "type": "Manifest","thumbnail": [{
+    "id": "https://xn--kinderbcher-zhb.projektemacher.org/post/was-faehrt-den-da/front/full/full/0/default_hu_4c7b7e001cc0dc55.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 338,
+    "width": 300
+  },{
+        "id": "https://static.projektemacher.org/kinderbuecher/post/was-faehrt-den-da/front/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 4349,
+        "width": 3858,
+        "service": [{
+          "id":"https://static.projektemacher.org/kinderbuecher/post/was-faehrt-den-da/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+            "de": [
+              "Was fährt denn da?"
+            ]}
+        },{
+          "id": "https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/manifest.json",
+          "type": "Manifest","thumbnail": [{
+    "id": "https://xn--kinderbcher-zhb.projektemacher.org/post/fliegende-untertassen/front_hu_a0180ae9ff5660a1.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 211,
+    "width": 300
+  },{
+        "id": "https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/front/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 4832,
+        "width": 6859,
+        "service": [{
+          "id":"https://static.projektemacher.org/kinderbuecher/post/fliegende-untertassen/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+            "de": [
+              "Fliegende Untertassen"
+            ]}
+        },{
+          "id": "https://xn--kinderbcher-zhb.projektemacher.org/post/quenottes-et-menottes/manifest.json",
+          "type": "Manifest","thumbnail": [{
+    "id": "https://xn--kinderbcher-zhb.projektemacher.org/post/quenottes-et-menottes/front_hu_c0c358142a403c15.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 379,
+    "width": 300
+  },{
+        "id": "https://static.projektemacher.org/kinderbuecher/post/quenottes-et-menottes/front/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 5816,
+        "width": 4602,
+        "service": [{
+          "id":"https://static.projektemacher.org/kinderbuecher/post/quenottes-et-menottes/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+            "de": [
+              "Quenottes et menottes"
+            ]}
+        },{
+          "id": "https://xn--kinderbcher-zhb.projektemacher.org/post/tante-anstand/manifest.json",
+          "type": "Manifest","thumbnail": [{
+    "id": "https://xn--kinderbcher-zhb.projektemacher.org/post/tante-anstand/front_hu_99183a6a07b9f2dd.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 390,
+    "width": 300
+  },{
+        "id": "https://static.projektemacher.org/kinderbuecher/post/tante-anstand/front/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 6218,
+        "width": 4787,
+        "service": [{
+          "id":"https://static.projektemacher.org/kinderbuecher/post/tante-anstand/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+            "de": [
+              "Tante Anstand oder Wie die lieben Eltern wollen, daß Kinder sich benehmen sollen"
+            ]}
+        },{
+          "id": "https://xn--kinderbcher-zhb.projektemacher.org/post/fidipus-pass-auf/manifest.json",
+          "type": "Manifest","thumbnail": [{
+    "id": "https://xn--kinderbcher-zhb.projektemacher.org/post/fidipus-pass-auf/front_hu_2c3423ba30e3207d.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 432,
+    "width": 300
+  },{
+        "id": "https://static.projektemacher.org/kinderbuecher/post/fidipus-pass-auf/front/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 6297,
+        "width": 4377,
+        "service": [{
+          "id":"https://static.projektemacher.org/kinderbuecher/post/fidipus-pass-auf/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+            "de": [
+              "Fidibus pass auf!"
+            ]}
+        },{
+          "id": "https://xn--kinderbcher-zhb.projektemacher.org/post/vom-jochen-der-nicht-aufraumen-wollte/manifest.json",
+          "type": "Manifest","thumbnail": [{
+    "id": "https://xn--kinderbcher-zhb.projektemacher.org/post/vom-jochen-der-nicht-aufraumen-wollte/front_hu_cdab44523d5f6912.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 436,
+    "width": 300
+  },{
+        "id": "https://static.projektemacher.org/kinderbuecher/post/vom-jochen-der-nicht-aufraumen-wollte/front/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 6344,
+        "width": 4368,
+        "service": [{
+          "id":"https://static.projektemacher.org/kinderbuecher/post/vom-jochen-der-nicht-aufraumen-wollte/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+            "de": [
+              "Vom Jochen, der nicht aufräumen wollte"
+            ]}
+        },{
+          "id": "https://xn--kinderbcher-zhb.projektemacher.org/post/der-baeckerjunge-und-die-prinzessin/manifest.json",
+          "type": "Manifest","thumbnail": [{
+    "id": "https://xn--kinderbcher-zhb.projektemacher.org/post/der-baeckerjunge-und-die-prinzessin/front_hu_77a9e63fe8da5110.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 208,
+    "width": 300
+  },{
+        "id": "https://static.projektemacher.org/kinderbuecher/post/der-baeckerjunge-und-die-prinzessin/front/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 4838,
+        "width": 6983,
+        "service": [{
+          "id":"https://static.projektemacher.org/kinderbuecher/post/der-baeckerjunge-und-die-prinzessin/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+            "de": [
+              "Der Bäckerjunge und die Prinzessin"
+            ]}
+        },{
+          "id": "https://xn--kinderbcher-zhb.projektemacher.org/post/das-schlaraffenland/manifest.json",
+          "type": "Manifest","thumbnail": [{
+    "id": "https://xn--kinderbcher-zhb.projektemacher.org/post/das-schlaraffenland/front_hu_d45983b8b142abae.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 353,
+    "width": 300
+  },{
+        "id": "https://static.projektemacher.org/kinderbuecher/post/das-schlaraffenland/front/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 3069,
+        "width": 2610,
+        "service": [{
+          "id":"https://static.projektemacher.org/kinderbuecher/post/das-schlaraffenland/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+            "de": [
+              "Das Schlaraffenland"
+            ]}
+        },{
+          "id": "https://xn--kinderbcher-zhb.projektemacher.org/post/was-sagt-die-teddypolizei/manifest.json",
+          "type": "Manifest","thumbnail": [{
+    "id": "https://xn--kinderbcher-zhb.projektemacher.org/post/was-sagt-die-teddypolizei/front_hu_d6a63fc472d6fed1.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 319,
+    "width": 300
+  },{
+        "id": "https://static.projektemacher.org/kinderbuecher/post/was-sagt-die-teddypolizei/front/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 3428,
+        "width": 3219,
+        "service": [{
+          "id":"https://static.projektemacher.org/kinderbuecher/post/was-sagt-die-teddypolizei/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+            "de": [
+              "Was sagt die Teddypolizei?"
+            ]}
+        },{
+          "id": "https://xn--kinderbcher-zhb.projektemacher.org/post/bummelklaus/manifest.json",
+          "type": "Manifest","thumbnail": [{
+    "id": "https://xn--kinderbcher-zhb.projektemacher.org/post/bummelklaus/front_hu_b1b4efece0d2eaec.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 309,
+    "width": 300
+  },{
+        "id": "https://static.projektemacher.org/kinderbuecher/post/bummelklaus/front/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 4682,
+        "width": 4548,
+        "service": [{
+          "id":"https://static.projektemacher.org/kinderbuecher/post/bummelklaus/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+            "de": [
+              "Kleines Volk"
+            ]}
+        },{
+          "id": "https://xn--kinderbcher-zhb.projektemacher.org/post/siebenmal-krause/manifest.json",
+          "type": "Manifest","thumbnail": [{
+    "id": "https://xn--kinderbcher-zhb.projektemacher.org/post/siebenmal-krause/front_hu_9d4c9654c956f0bf.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 380,
+    "width": 300
+  },{
+        "id": "https://static.projektemacher.org/kinderbuecher/post/siebenmal-krause/front/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 6319,
+        "width": 4994,
+        "service": [{
+          "id":"https://static.projektemacher.org/kinderbuecher/post/siebenmal-krause/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+            "de": [
+              "Siebenmal Krause"
+            ]}
+        },{
+          "id": "https://xn--kinderbcher-zhb.projektemacher.org/post/ein-fabelbuch/manifest.json",
+          "type": "Manifest","thumbnail": [{
+    "id": "https://xn--kinderbcher-zhb.projektemacher.org/post/ein-fabelbuch/front_hu_6f0bbe759d60d917.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 367,
+    "width": 300
+  },{
+        "id": "https://static.projektemacher.org/kinderbuecher/post/ein-fabelbuch/front/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 4815,
+        "width": 3938,
+        "service": [{
+          "id":"https://static.projektemacher.org/kinderbuecher/post/ein-fabelbuch/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+            "de": [
+              "Ein Fabelbuch"
+            ]}
+        },{
+          "id": "https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/manifest.json",
+          "type": "Manifest","thumbnail": [{
+    "id": "https://xn--kinderbcher-zhb.projektemacher.org/post/girls-pastimes-in-japan/front_hu_c248b8288eb4f065.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 212,
+    "width": 300
+  },{
+        "id": "https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/front/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 4255,
+        "width": 6025,
+        "service": [{
+          "id":"https://static.projektemacher.org/kinderbuecher/post/girls-pastimes-in-japan/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+            "de": [
+              "Girls' pastimes in Japan"
+            ]}
+        },{
+          "id": "https://xn--kinderbcher-zhb.projektemacher.org/post/kleksographien/manifest.json",
+          "type": "Manifest","thumbnail": [{
+    "id": "https://xn--kinderbcher-zhb.projektemacher.org/post/kleksographien/front_hu_149c2557da6e9f1d.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 442,
+    "width": 300
+  },{
+        "id": "https://static.projektemacher.org/kinderbuecher/post/kleksographien/front/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 5583,
+        "width": 3788,
+        "service": [{
+          "id":"https://static.projektemacher.org/kinderbuecher/post/kleksographien/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+            "de": [
+              "Kleksographien"
+            ]}
+        },{
+          "id": "https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/manifest.json",
+          "type": "Manifest","thumbnail": [{
+    "id": "https://xn--kinderbcher-zhb.projektemacher.org/post/vater-ist-im-kriege/front_hu_7a3c48bd1091f73c.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 398,
+    "width": 300
+  },{
+        "id": "https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/front/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 5748,
+        "width": 4335,
+        "service": [{
+          "id":"https://static.projektemacher.org/kinderbuecher/post/vater-ist-im-kriege/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+            "de": [
+              "Vater ist im Kriege"
+            ]}
+        },{
+          "id": "https://xn--kinderbcher-zhb.projektemacher.org/post/100-schnurrpfeifereien/manifest.json",
+          "type": "Manifest","thumbnail": [{
+    "id": "https://xn--kinderbcher-zhb.projektemacher.org/post/100-schnurrpfeifereien/front_hu_27c2ea19daab05a.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 431,
+    "width": 300
+  },{
+        "id": "https://static.projektemacher.org/kinderbuecher/post/100-schnurrpfeifereien/front/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 4851,
+        "width": 3374,
+        "service": [{
+          "id":"https://static.projektemacher.org/kinderbuecher/post/100-schnurrpfeifereien/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+            "de": [
+              "Hundert Schnurrpfeifereien"
+            ]}
+        },{
+          "id": "https://xn--kinderbcher-zhb.projektemacher.org/post/vieilles-chansons-et-rondes/manifest.json",
+          "type": "Manifest","thumbnail": [{
+    "id": "https://xn--kinderbcher-zhb.projektemacher.org/post/vieilles-chansons-et-rondes/front_hu_a4bfc035be63619a.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 254,
+    "width": 300
+  },{
+        "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/front/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 5441,
+        "width": 6433,
+        "service": [{
+          "id":"https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+            "de": [
+              "Vieilles Chansons et rondes"
+            ]}
+        },{
+          "id": "https://xn--kinderbcher-zhb.projektemacher.org/post/kleines-volk/manifest.json",
+          "type": "Manifest","thumbnail": [{
+    "id": "https://xn--kinderbcher-zhb.projektemacher.org/post/kleines-volk/front_hu_7cbedabf7674a94d.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 386,
+    "width": 300
+  },{
+        "id": "https://static.projektemacher.org/kinderbuecher/post/kleines-volk/front/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 6223,
+        "width": 4842,
+        "service": [{
+          "id":"https://static.projektemacher.org/kinderbuecher/post/kleines-volk/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+            "de": [
+              "Kleines Volk"
+            ]}
+        },{
+          "id": "https://xn--kinderbcher-zhb.projektemacher.org/post/der-baer-und-das-schneiderlein/manifest.json",
+          "type": "Manifest","thumbnail": [{
+    "id": "https://xn--kinderbcher-zhb.projektemacher.org/post/der-baer-und-das-schneiderlein/front_hu_680bc80f4e142162.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 418,
+    "width": 300
+  },{
+        "id": "https://static.projektemacher.org/kinderbuecher/post/der-baer-und-das-schneiderlein/front/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 4727,
+        "width": 3389,
+        "service": [{
+          "id":"https://static.projektemacher.org/kinderbuecher/post/der-baer-und-das-schneiderlein/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+            "de": [
+              "Der Bär und das Schneiderlein"
+            ]}
+        },{
+          "id": "https://xn--kinderbcher-zhb.projektemacher.org/post/glueckliche-kinderzeit/manifest.json",
+          "type": "Manifest","thumbnail": [{
+    "id": "https://xn--kinderbcher-zhb.projektemacher.org/post/glueckliche-kinderzeit/front_hu_58f071f2537a2c27.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 386,
+    "width": 300
+  },{
+        "id": "https://static.projektemacher.org/kinderbuecher/post/glueckliche-kinderzeit/front/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 5887,
+        "width": 4572,
+        "service": [{
+          "id":"https://static.projektemacher.org/kinderbuecher/post/glueckliche-kinderzeit/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+            "de": [
+              "Glückliche Kinderzeit"
+            ]}
+        },{
+          "id": "https://xn--kinderbcher-zhb.projektemacher.org/post/deutsche-wiegenlieder/manifest.json",
+          "type": "Manifest","thumbnail": [{
+    "id": "https://xn--kinderbcher-zhb.projektemacher.org/post/deutsche-wiegenlieder/front_hu_8cd5b7991177e897.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 329,
+    "width": 300
+  },{
+        "id": "https://static.projektemacher.org/kinderbuecher/post/deutsche-wiegenlieder/front/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 3544,
+        "width": 3234,
+        "service": [{
+          "id":"https://static.projektemacher.org/kinderbuecher/post/deutsche-wiegenlieder/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+            "de": [
+              "Deutsche Wiegenlieder"
+            ]}
+        }]
+  }
