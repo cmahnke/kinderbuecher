@@ -1,29 +1,33 @@
 [params]
-    author = "Christian Mahnke"
-    keywords = "Kinderbücher, Bücher, childrens books, books"
-    description = "Alte, schöne und fragwürdige Kinderbücher"
-    copyrightYears = "MMXXI - MMXXV"
-    cc = false
-    disableScale = true
-    debug = true
-    pdfDownload = true
+  author = "Christian Mahnke"
+  keywords = "Kinderbücher, Bücher, childrens books, books"
+  description = "Alte, schöne und fragwürdige Kinderbücher"
+  copyrightYears = "MMXXI - MMXXV"
+  cc = false
+  disableScale = true
+  wikidata = true
+  debug = true
+  pdfDownload = true
 
-    [params.preview]
-        outputPrefix = "ogPreview"
-        outputSuffix = ".jpg"
-        format =  "svg"
-        image = "front.jpg"
-        source = "post"
-        [params.preview.size]
-            height = 630
-            width = 1200
-        [params.preview.svg]
-            template = "./Source Files/Other/preview-template.svg"
-            scale = "width"
-            removeMissing = true
+  [params.preview]
+    outputPrefix = "ogPreview"
+    outputSuffix = ".jpg"
+    format =  "svg"
+    image = "front.jpg"
+    source = "post"
 
-    [params.footer]
-        privacy = true
+    [params.preview.size]
+      height = 630
+      width = 1200
+
+    [params.preview.svg]
+      template = "./Source Files/Other/preview-template.svg"
+      scale = "width"
+      removeMissing = true
+
+  [params.footer]
+    privacy = true
+
 #png:
 #  font:
 #    location: ./themes/projektemacher-base/static/fonts/nunito-v14-latin-ext_latin-regular.ttf
