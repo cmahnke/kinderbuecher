@@ -177,6 +177,10 @@ article.post > .container {
 
         .preview-text {
             display: inline-block;
+
+            .summary__content pre:has(code) {
+                display: none;
+            }
         }
     }
 
