@@ -28,6 +28,12 @@
   [params.footer]
     privacy = true
 
+  [params.iiif]
+    presentationViewer = "js/iiif/tify.js"
+
+  [params.css]
+    includeDirs = ["node_modules/tify/dist/"]
+
 #png:
 #  font:
 #    location: ./themes/projektemacher-base/static/fonts/nunito-v14-latin-ext_latin-regular.ttf

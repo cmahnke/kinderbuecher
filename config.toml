@@ -120,6 +120,10 @@ defaultMarkdownHandler = 'goldmark'
         source = "themes/blogpaper/assets/css"
         target = "assets/scss"
 
+    [[module.mounts]]
+      source = "node_modules/tify/dist/"
+      target = "static/tify"
+
 [build]
   writeStats = true
 
