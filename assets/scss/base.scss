@@ -16,8 +16,7 @@ $font-family-title: "Berkshire Swash",;
 @import "fonts/open-sans";
 @import "blogpaper.scss";
 
-@import "tify";
-@import "iiif/tify";
+@import "iiif/presentation-tify";
 
 .header--main {
     position: relative;
