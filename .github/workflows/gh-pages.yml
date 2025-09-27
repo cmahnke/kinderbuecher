@@ -114,7 +114,7 @@ jobs:
           find post -name "*.pdf" -exec echo "{}" \; >> files.lst
           cat files.lst | xargs chmod 775
           # Add this to rsync '--info=progress2' to get a complete progess status
-          sshpass -e rsync -a --size-only --delete --relative $(cat files.lst) $DEPLOY_USER@$DEPLOY_SERVER:$DEPLOY_PATH/kinderbuecher/
+          sshpass -e rsync -rlptoDP --size-only --delete --relative $(cat files.lst) $DEPLOY_USER@$DEPLOY_SERVER:$DEPLOY_PATH/kinderbuecher/
           rm -f files.lst
 
       - name: Cleanup
