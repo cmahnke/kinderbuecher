@@ -13,7 +13,7 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  HUGO_VERSION: 0.155.2
+  HUGO_VERSION: 0.155.3
   DEPENDENCY_MANAGER: npm
   PYTHON_VERSION: '3.12'
 
@@ -36,12 +36,12 @@ jobs:
           sudo rm -rf /usr/local/lib/android /opt/ghc /opt/hostedtoolcache/CodeQL /usr/local/graalvm/ /usr/local/share/powershell /usr/local/lib/android /usr/local/.ghcup/ /usr/share/dotnet/ /opt/microsoft /usr/local/aws-* /usr/share/miniconda /opt/az /usr/share/kotlinc /usr/share/man /usr/share/sbt /usr/local/julia* /usr/share/az* /usr/share/apache-maven* /usr/share/gradle* /usr/share/swift
           df -h
 
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v6.0.2
         with:
           submodules: true  # Fetch Hugo themes (true OR recursive)
 
       - name: Login to GitHub Packages Docker Registry
-        uses: docker/login-action@v3.6.0
+        uses: docker/login-action@v3.7.0
         with:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
@@ -49,7 +49,7 @@ jobs:
           logout: false
 
       - name: Set up Python
-        uses: actions/setup-python@v6.1.0
+        uses: actions/setup-python@v6.2.0
         with:
           python-version: ${{ env.PYTHON_VERSION }}
 
@@ -64,11 +64,11 @@ jobs:
           mkdir -p ~/.ssh && echo "$DEPLOY_SSH_IDENTITY" >>  ~/.ssh/known_hosts
 
       - name: Setup Node.js
-        uses: actions/setup-node@v6.1.0
+        uses: actions/setup-node@v6.2.0
         with:
           node-version-file: '.nvmrc'
 
-      - uses: pnpm/action-setup@v4
+      - uses: pnpm/action-setup@v4.2.0
         with:
           version: 9
 
