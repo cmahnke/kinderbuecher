@@ -5,7 +5,7 @@
   cc = false
   disableScale = true
   wikidata = true
-  debug = true
+  debug = false
   pdfDownload = true
 
   [params.preview]
