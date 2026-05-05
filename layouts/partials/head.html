@@ -15,7 +15,7 @@
   <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .RelPermalink }}" title="{{ $.Site.Title | safeHTML }}">
   {{- end }}
 
-    {{- partial "html/head/script.html" (dict "js" (partial "html/head/iiif-js.html" .)) -}}
+    {{- partial "html/head/script.html" (dict "context" . "js" (partial "html/head/iiif-js.html" .)) -}}
     {{- partial "html/head/style.html" (dict "context" . "includes" (slice "css")) -}}
 
 </head>
