@@ -1,8 +1,7 @@
 baseURL = "https://xn--kinderbcher-zhb.projektemacher.org/"
 theme = ["projektemacher-base", "blogpaper"]
 title = "Kinderbücher"
-languageCode = "de"
-languagecode = "de"
+locale = "de"
 defaultcontentlanguage = "de"
 publishDir = "docs"
 canonifyurls = true
