@@ -9,11 +9,15 @@
 #   3. runs the OMR detection (homr -> MusicXML, scripts/run_homr.py)
 #   4. converts the MusicXML to MNX (scripts/generate_mnx.py)
 #   5. builds the IIIF pyramids and thumbnails (scripts/generate_iiif.py)
+#   6. generates the IIIF manifest the viewer consumes
+#      (scripts/generate_manifest.py -> public/manifest.json, including
+#      copies of the notation files under public/musicxml/ and public/mnx/)
 #
 # Every step is safe to re-run. The OMR step is by far the longest (homr
 # runs its transformer per page); skip it while iterating with --skip-omr.
 #
 # Usage: ./setup.sh [--deps-only] [--skip-omr] [--skip-mnx] [--skip-images]
+#                    [--skip-manifest]
 
 set -euo pipefail
 
@@ -26,15 +30,17 @@ DEPS_ONLY=0
 SKIP_OMR=0
 SKIP_MNX=0
 SKIP_IMAGES=0
+SKIP_MANIFEST=0
 for arg in "$@"; do
   case "$arg" in
     --deps-only) DEPS_ONLY=1 ;;
     --skip-omr) SKIP_OMR=1 ;;
     --skip-mnx) SKIP_MNX=1 ;;
     --skip-images) SKIP_IMAGES=1 ;;
+    --skip-manifest) SKIP_MANIFEST=1 ;;
     *)
       echo "Unknown option: $arg" >&2
-      echo "Usage: $0 [--deps-only] [--skip-omr] [--skip-mnx] [--skip-images]" >&2
+      echo "Usage: $0 [--deps-only] [--skip-omr] [--skip-mnx] [--skip-images] [--skip-manifest]" >&2
       exit 2
       ;;
   esac
@@ -113,6 +119,16 @@ if [ "$SKIP_IMAGES" -eq 0 ]; then
   "$PYTHON" scripts/generate_iiif.py . -o public/iiif
 else
   step "Skipping IIIF/thumbnails (--skip-images)"
+fi
+
+# --- 7. IIIF manifest ----------------------------------------------------------
+# The viewer's single data source: page canvases (IIIF endpoints), staff
+# canvases, notation references and thumbnails — static files only.
+if [ "$SKIP_MANIFEST" -eq 0 ]; then
+  step "Generating the IIIF manifest"
+  "$PYTHON" scripts/generate_manifest.py
+else
+  step "Skipping manifest generation (--skip-manifest)"
 fi
 
 step "Setup complete"

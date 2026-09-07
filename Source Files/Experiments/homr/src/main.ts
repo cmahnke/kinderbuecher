@@ -1,32 +1,9 @@
 import './style.css'
 import { setupPlayer, type PlayerHandle } from './playerPanel'
-import type { StaffEntry } from './noteMap'
+import type { PageResult } from './manifest'
+import { loadPages } from './manifest'
 import { createOsdViewer, addPixelOverlay } from './osdViewer'
 import { SHOW_PLAYBACK_HIGHLIGHTS, SHOW_STAFF_OVERLAY } from './config'
-
-interface PageResult {
-  image: string
-  width: number
-  height: number
-  hasScore: boolean
-  confidence: number
-  staves: StaffEntry[]
-  homr?: { status: string; musicxml?: string; error?: string }
-}
-
-interface Manifest {
-  pages: PageResult[]
-}
-
-async function loadManifest(): Promise<Manifest> {
-  const resp = await fetch('/data/results.json')
-  if (!resp.ok) throw new Error(`Failed to load manifest: ${resp.status} ${resp.statusText}`)
-  const data: unknown = await resp.json()
-  if (!data || typeof data !== 'object' || !('pages' in data)) {
-    throw new Error('Invalid manifest format')
-  }
-  return data as Manifest
-}
 
 function formatConfidence(value: unknown): string {
   if (typeof value !== 'number' || !Number.isFinite(value)) return 'n/a'
@@ -45,11 +22,9 @@ function createThumbnail(page: PageResult, index: number): HTMLElement {
   )
 
   const img = document.createElement('img')
-  // Small pre-generated thumbnail (scripts/generate_iiif.py) instead of the
-  // ~12 MP original: 50 full-res thumbnails would saturate decoding and
-  // delay the detail view (and its OpenSeadragon tile source) by seconds.
-  const name = page.image.replace(/\.[^.]+$/, '')
-  img.src = `/thumbnails/${name}.jpg`
+  // IIIF rendition referenced by the manifest (smallest static pyramid
+  // level); the browser scales it down for the overview grid.
+  img.src = page.thumbnail
   img.alt = page.image
   img.addEventListener('error', () => {
     img.alt = `Failed to load ${page.image}`
@@ -128,7 +103,7 @@ function showDetail(page: PageResult, container: HTMLElement): { dispose: () => 
   container.appendChild(playerHost)
   container.appendChild(imgContainer)
 
-  const osd = createOsdViewer(imgContainer, `/iiif/${page.image.replace(/\.[^.]+$/, '')}/info.json`)
+  const osd = createOsdViewer(imgContainer, page.imageService)
   if (overlaySvg) {
     addPixelOverlay(osd.viewer, overlaySvg, 0, 0, page.width, page.height)
   }
@@ -223,7 +198,7 @@ function showDetail(page: PageResult, container: HTMLElement): { dispose: () => 
 }
 
 function showError(app: HTMLElement, message: string): void {
-  app.innerHTML = `<div class="error"><h1>Score Page Viewer</h1><p class="error-text">${message}</p><p>Check that <code>/data/results.json</code> exists and is served from the project root.</p></div>`
+  app.innerHTML = `<div class="error"><h1>Score Page Viewer</h1><p class="error-text">${message}</p><p>Check that <code>/manifest.json</code> exists (run <code>scripts/generate_manifest.py</code>).</p></div>`
 }
 
 async function main(): Promise<void> {
@@ -233,9 +208,9 @@ async function main(): Promise<void> {
     return
   }
 
-  let manifest: Manifest
+  let pages: PageResult[]
   try {
-    manifest = await loadManifest()
+    pages = await loadPages()
   } catch (err) {
     const msg = err instanceof Error ? err.message : String(err)
     console.error(msg)
@@ -243,12 +218,12 @@ async function main(): Promise<void> {
     return
   }
 
-  const scoreCount = manifest.pages.filter((p) => p.hasScore).length
+  const scoreCount = pages.filter((p) => p.hasScore).length
 
   app.innerHTML = `
     <header>
       <h1>Score Page Viewer</h1>
-      <p>${String(scoreCount)} of ${String(manifest.pages.length)} pages contain scores</p>
+      <p>${String(scoreCount)} of ${String(pages.length)} pages contain scores</p>
     </header>
     <div class="container">
       <div class="grid" id="grid"></div>
@@ -264,7 +239,7 @@ async function main(): Promise<void> {
 
   let activePlayer: PlayerHandle | null = null
 
-  for (const [index, page] of manifest.pages.entries()) {
+  for (const [index, page] of pages.entries()) {
     const thumb = createThumbnail(page, index)
     const activate = (): void => {
       if (activePlayer) {

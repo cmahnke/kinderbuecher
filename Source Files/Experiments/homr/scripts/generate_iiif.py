@@ -10,8 +10,13 @@ Pyramid output layout (IIIF Image API 2.0, served statically):
 These are consumed directly by OpenSeadragon in the browser viewer.
 Thumbnails (resized to ~300 px wide) are what the overview grid shows.
 
+The info.json @id (the IIIF Image API id) is built from --base-url so the
+pyramids are location-independent; the manifest generator rewrites it in
+place when the base changes later.
+
 Usage:
     python3 scripts/generate_iiif.py [image_dir] [-o public/iiif] [-t public/thumbnails]
+        [--base-url https://.../]
     python3 scripts/generate_iiif.py . --thumbs-only
 """
 
@@ -25,20 +30,22 @@ import time
 
 import pyvips
 
+DEFAULT_BASE_URL = "https://xn--kinderbcher-zhb.projektemacher.org/post/vieilles-chansons-et-rondes/"
 
-def generate_one(path: str, outdir: str) -> str:
+
+def generate_one(path: str, outdir: str, base: str) -> str:
     img = pyvips.Image.new_from_file(path, access="sequential")
     name = os.path.splitext(os.path.basename(path))[0]
     target = os.path.join(outdir, name)
     os.makedirs(target, exist_ok=True)
     img.dzsave(target, layout="iiif", suffix=".jpg", tile_size=512, overlap=0)
 
-    # vips writes a placeholder "@id"; point it at the static served URL so
-    # OpenSeadragon builds correct tile URLs (root-relative).
+    # vips writes a placeholder "@id"; point it at the absolute static URL
+    # (the IIIF Image API id) so OpenSeadragon builds correct tile URLs.
     info_path = os.path.join(target, "info.json")
     with open(info_path, encoding="utf-8") as fh:
         info = json.load(fh)
-    info["@id"] = f"/iiif/{name}"
+    info["@id"] = base + f"iiif/{name}"
     with open(info_path, "w", encoding="utf-8") as fh:
         json.dump(info, fh, indent=2)
     return name
@@ -61,7 +68,9 @@ def main() -> None:
     parser.add_argument(
         "--thumbs-only", action="store_true", help="only (re)generate the overview thumbnails"
     )
+    parser.add_argument("--base-url", default=DEFAULT_BASE_URL, help="base URL for the IIIF ids")
     args = parser.parse_args()
+    base = args.base_url if args.base_url.endswith("/") else args.base_url + "/"
 
     exts = (".jpg", ".jpeg", ".png", ".tif", ".tiff")
     files = sorted(

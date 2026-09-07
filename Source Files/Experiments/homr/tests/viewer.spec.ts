@@ -139,7 +139,7 @@ test.describe('Score Page Viewer', () => {
     await page.goto('/')
     const imgs = page.locator('.thumb img')
     await expect(imgs).toHaveCount(50)
-    await expect(imgs.first()).toHaveAttribute('src', /^\/thumbnails\/\w+\.jpg$/)
+    await expect(imgs.first()).toHaveAttribute('src', /^\/iiif\/\w+\/full\/\d+,\/0\/default\.jpg$/)
     await expect
       .poll(
         async () =>
@@ -155,13 +155,29 @@ test.describe('Score Page Viewer', () => {
   })
 
   test('note marker is sized proportionally to the detected staff geometry', async ({ page }) => {
-    const manifest = (await (await page.request.get('/data/results.json')).json()) as {
-      pages: { image: string; staves: { grid?: { y: number[] }[] }[] }[]
+    const manifest = (await (await page.request.get('/manifest.json')).json()) as {
+      items: Array<{
+        id?: string
+        annotations?: Array<{
+          items?: Array<{ body?: { id?: string }; target?: string }>
+        }>
+        'omr:staffGrid'?: { y: number[] }[]
+      }>
     }
-    const page006 = manifest.pages.find((p) => p.image === 'page006.jpg')
-    expect(page006).toBeTruthy()
-    const units = page006!.staves
-      .map((s) => (s.grid && s.grid.length > 1 ? s.grid[0].y[1] - s.grid[0].y[0] : NaN))
+    // ids are absolute (configurable --base-url); match on the path
+    const pageCanvas = manifest.items.find((c) => c.id?.endsWith('/iiif/page006/canvas'))
+    expect(pageCanvas).toBeTruthy()
+    // staff canvases are referenced by describing annotations on the page
+    const staffIds = (pageCanvas!.annotations ?? [])
+      .flatMap((ap) => ap.items ?? [])
+      .map((a) => a.body?.id)
+      .filter((id): id is string => !!id)
+    const units = manifest.items
+      .filter((c) => c.id && staffIds.includes(c.id))
+      .map((s) => {
+        const y = s['omr:staffGrid']?.[0]?.y ?? []
+        return y.length > 1 ? y[1] - y[0] : NaN
+      })
       .filter((u) => Number.isFinite(u) && u > 0)
     const minUnit = Math.min(...units)
     const maxUnit = Math.max(...units)
@@ -339,7 +355,7 @@ test.describe('Score Page Viewer', () => {
   })
 
   test('handles manifest load failure gracefully', async ({ page }) => {
-    await page.route('/data/results.json', (route) =>
+    await page.route('/manifest.json', (route) =>
       route.fulfill({ status: 500, body: 'Server error' }),
     )
     await page.goto('/')
