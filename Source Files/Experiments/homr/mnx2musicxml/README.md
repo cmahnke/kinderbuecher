@@ -35,6 +35,14 @@ three; ignores the rest).
 
 ## Known simplifications
 
+- **Staff/voice derivation for real-world MNX**: the upstream converters do
+  not serialize the staff index on positioned clefs and sequences (the array
+  order implies the staff; the vendored MusicXML reader even ignores the
+  `<clef number>` attribute). This converter derives the staff from clef
+  order (initial clefs only) and maps voices to staves by first appearance,
+  capped at the part's staff count. What the MNX genuinely loses cannot be
+  recovered: the rhythmic offset of voices starting mid-measure and the
+  voice/staff attribution of grace groups.
 - **Ottava direction convention**: the vendored converter maps MusicXML
   `<octave-shift size="8" type="down">` to MNX ottava value `1` (this matches
   the upstream W3C converter and its fixtures, but is inverted relative to the
@@ -58,9 +66,29 @@ three; ignores the rest).
   measure repeats) is simply absent from the MusicXML output, so OSMD renders
   concert pitch without those elements.
 
+## Layout
+
+The module is self-contained (it imports nothing from `src/` or `vendor/` at
+runtime):
+
+```
+mnx2musicxml/
+├── index.ts     # public entry, re-exports from src/
+├── src/         # converter.ts, mnx-types.ts, xml.ts
+├── tests/       # mnx2musicxml.spec.ts (playwright project "mnx2musicxml")
+│   └── fixtures/  # golden MNX/MusicXML pairs (shared with tests/mnx.spec.ts)
+├── package.json # proxy scripts (test/lint/check delegate to the root tooling)
+└── README.md
+```
+
+`npm test` inside the folder runs only this module's playwright project; it
+delegates to the root tooling because the browser-side specs load the vendored
+MusicXML → MNX converter and OSMD through the root vite dev server. The folder
+declares no dependencies of its own.
+
 ## Round-trip testing
 
-`tests/mnx2musicxml.spec.ts` converts every fixture in `tests/fixtures/mnx`
+`tests/mnx2musicxml.spec.ts` converts every fixture in `tests/fixtures/`
 through MNX → MusicXML → MNX and compares the MNX documents with all
 generated ids stripped (event/note ids and tie/slur targets are assigned
 freshly by the forward converter and cannot be preserved).

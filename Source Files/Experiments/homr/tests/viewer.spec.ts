@@ -139,7 +139,7 @@ test.describe('Score Page Viewer', () => {
     await page.goto('/')
     const imgs = page.locator('.thumb img')
     await expect(imgs).toHaveCount(50)
-    await expect(imgs.first()).toHaveAttribute('src', /^\/iiif\/\w+\/full\/\d+,\/0\/default\.jpg$/)
+    await expect(imgs.first()).toHaveAttribute('src', /^\/\w+\/full\/\d+,\/0\/default\.jpg$/)
     await expect
       .poll(
         async () =>
@@ -159,23 +159,21 @@ test.describe('Score Page Viewer', () => {
       items: Array<{
         id?: string
         annotations?: Array<{
-          items?: Array<{ body?: { id?: string }; target?: string }>
+          items?: Array<{ body?: { value?: string }; target?: string }>
         }>
-        'omr:staffGrid'?: { y: number[] }[]
       }>
     }
     // ids are absolute (configurable --base-url); match on the path
-    const pageCanvas = manifest.items.find((c) => c.id?.endsWith('/iiif/page006/canvas'))
+    const pageCanvas = manifest.items.find((c) => c.id?.endsWith('/page006/canvas'))
     expect(pageCanvas).toBeTruthy()
-    // staff canvases are referenced by describing annotations on the page
-    const staffIds = (pageCanvas!.annotations ?? [])
+    // staff data lives in the describing annotations' JSON bodies
+    const staffBodies = (pageCanvas!.annotations ?? [])
       .flatMap((ap) => ap.items ?? [])
-      .map((a) => a.body?.id)
-      .filter((id): id is string => !!id)
-    const units = manifest.items
-      .filter((c) => c.id && staffIds.includes(c.id))
-      .map((s) => {
-        const y = s['omr:staffGrid']?.[0]?.y ?? []
+      .filter((a) => a.target?.includes('#xywh='))
+      .map((a) => JSON.parse(a.body?.value ?? '{}') as { staffGrid?: { y: number[] }[] })
+    const units = staffBodies
+      .map((b) => {
+        const y = b.staffGrid?.[0]?.y ?? []
         return y.length > 1 ? y[1] - y[0] : NaN
       })
       .filter((u) => Number.isFinite(u) && u > 0)

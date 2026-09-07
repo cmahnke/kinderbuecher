@@ -113,8 +113,11 @@ export function parseMusicXML(xmlText: string): MusicTimeline {
       const div = a.getElementsByTagName('divisions')[0]
       if (div) divisions = parseInt(div.textContent ?? String(divisions), 10) || divisions
       const clefEls = Array.from(a.getElementsByTagName('clef'))
-      for (const c of clefEls) {
-        const n = parseInt(c.getAttribute('number') ?? '1', 10)
+      for (const [index, c] of clefEls.entries()) {
+        // A missing <clef number> implies the clef's position in the list
+        // (the same convention the vendored MusicXML reader uses — it
+        // ignores the number attribute entirely).
+        const n = parseInt(c.getAttribute('number') ?? String(index + 1), 10) || index + 1
         const sign = (c.getElementsByTagName('sign')[0]?.textContent ?? 'G').toUpperCase() as
           'G' | 'F' | 'C'
         if (n === 1) clef1 = sign

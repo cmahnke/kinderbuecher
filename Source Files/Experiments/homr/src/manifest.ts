@@ -27,17 +27,16 @@ interface ManifestCanvas {
       body?: { id?: string }
     }>
   }>
-  /** staff region annotations: #xywh target + staff canvas body */
+  /** describing staff annotations (#xywh target + JSON body) and the
+   * supplementing MNX annotation (whole-canvas target) */
   annotations?: Array<{
     items?: Array<{
-      body?: { id?: string; type?: string }
+      body?: { id?: string; type?: string; value?: string }
       target?: string
     }>
   }>
   metadata?: Array<{ label?: Record<string, string[]>; value?: Record<string, string[]> }>
   rendering?: Array<{ id?: string; format?: string }>
-  'omr:staffLineCount'?: number
-  'omr:staffGrid'?: Array<{ x: number; y: number[] }>
 }
 
 interface ManifestJson {
@@ -100,10 +99,28 @@ function metadataValue(canvas: ManifestCanvas, label: string): string | undefine
   return entry?.value?.en?.[0]
 }
 
+/** OMR data of one staff, carried in a describing annotation's body. */
+interface StaffBody {
+  staffGrid?: Array<{ x: number; y: number[] }>
+  staffLineCount?: number
+}
+
+/** Parse the OMR staff data from a describing annotation's JSON body. */
+function staffFromBody(value: string | undefined): StaffBody | null {
+  if (!value) return null
+  try {
+    const parsed: unknown = JSON.parse(value)
+    if (parsed && typeof parsed === 'object' && 'staffGrid' in parsed) {
+      return parsed as StaffBody
+    }
+  } catch {
+    /* malformed body — ignore the annotation */
+  }
+  return null
+}
+
 function toPageResult(
   canvas: ManifestCanvas,
-  staffRefs: Array<{ staffId: string; bbox: [number, number, number, number] }>,
-  staffById: Map<string, ManifestCanvas>,
   resolve: (url: string | undefined) => string | undefined,
 ): PageResult | null {
   const name = canvasName(canvas)
@@ -122,14 +139,24 @@ function toPageResult(
   const status = metadataValue(canvas, 'OMR status')
   const error = metadataValue(canvas, 'OMR error')
 
-  const staves: StaffEntry[] = staffRefs.map(({ staffId, bbox }) => {
-    const staffCanvas = staffById.get(staffId)
-    return {
-      bbox,
-      lineCount: staffCanvas?.['omr:staffLineCount'] ?? 5,
-      grid: staffCanvas?.['omr:staffGrid'],
+  // staff regions come from the describing annotations: the #xywh target is
+  // the region on the page, the body carries grid + line count (the
+  // supplementing MNX annotation has no fragment target and is skipped)
+  const staves: StaffEntry[] = []
+  for (const annotationPage of canvas.annotations ?? []) {
+    for (const annotation of annotationPage.items ?? []) {
+      if (!annotation.target) continue
+      const bbox = xywhToBbox(annotation.target)
+      if (!bbox) continue
+      const body = staffFromBody(annotation.body?.value)
+      if (!body) continue
+      staves.push({
+        bbox,
+        lineCount: body.staffLineCount ?? 5,
+        grid: body.staffGrid,
+      })
     }
-  })
+  }
 
   return {
     image: `${name}.jpg`,
@@ -154,10 +181,6 @@ function toPageResult(
 /**
  * Loads the IIIF manifest (static file; see scripts/generate_manifest.py)
  * and maps its canvases into the page data the viewer renders.
- *
- * Staff regions are expressed natively: each staff is a top-level canvas
- * referenced by a "describing" annotation on its page canvas whose
- * #xywh target carries the region.
  */
 export async function loadPages(url = '/manifest.json'): Promise<PageResult[]> {
   const resp = await fetch(url)
@@ -172,42 +195,9 @@ export async function loadPages(url = '/manifest.json'): Promise<PageResult[]> {
   const canvases = manifest.items ?? []
   const resolve = makeResolver(manifest.id)
 
-  // pass 1: staff region annotations (page canvas id -> staff refs); the
-  // staff canvases themselves are separate top-level items
-  const staffRefsByPage = new Map<
-    string,
-    Array<{ staffId: string; bbox: [number, number, number, number] }>
-  >()
-  const staffIds = new Set<string>()
-  for (const canvas of canvases) {
-    if (!canvas.id) continue
-    for (const annotationPage of canvas.annotations ?? []) {
-      for (const annotation of annotationPage.items ?? []) {
-        const staffId = annotation.body?.id
-        const bbox = annotation.target ? xywhToBbox(annotation.target) : null
-        if (!staffId || !bbox) continue
-        staffIds.add(staffId)
-        const refs = staffRefsByPage.get(canvas.id) ?? []
-        refs.push({ staffId, bbox })
-        staffRefsByPage.set(canvas.id, refs)
-      }
-    }
-  }
-  const staffById = new Map<string, ManifestCanvas>()
-  for (const canvas of canvases) {
-    if (canvas.id && staffIds.has(canvas.id)) staffById.set(canvas.id, canvas)
-  }
-
-  // pass 2: every canvas that is not a staff canvas body is a page canvas
   const pages: PageResult[] = []
   for (const canvas of canvases) {
-    if (canvas.id && staffById.has(canvas.id)) continue
-    const page = toPageResult(
-      canvas,
-      staffRefsByPage.get(canvas.id ?? '') ?? [],
-      staffById,
-      resolve,
-    )
+    const page = toPageResult(canvas, resolve)
     if (page) pages.push(page)
   }
   if (pages.length === 0) throw new Error('Manifest contains no page canvases')

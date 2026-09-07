@@ -4,7 +4,7 @@ import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 const here = path.dirname(fileURLToPath(import.meta.url))
-const fixturesDir = path.join(here, 'fixtures', 'mnx')
+const fixturesDir = path.join(here, '..', 'mnx2musicxml', 'tests', 'fixtures')
 const rootDir = path.join(here, '..')
 const VENDOR_MODULE = '/vendor/mnxconverter-ts/src/index.ts'
 

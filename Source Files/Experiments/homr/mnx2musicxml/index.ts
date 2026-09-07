@@ -5,7 +5,7 @@
  *   getMusicXmlFromMnx(mnx) -> MusicXML string
  */
 
-export { getMusicXmlFromMnx } from './converter'
+export { getMusicXmlFromMnx } from './src/converter'
 export type {
   MnxContent,
   MnxDocument,
@@ -20,4 +20,4 @@ export type {
   MnxTempo,
   MnxTime,
   MnxTuplet,
-} from './mnx-types'
+} from './src/mnx-types'

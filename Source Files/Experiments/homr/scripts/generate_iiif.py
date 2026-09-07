@@ -15,7 +15,7 @@ pyramids are location-independent; the manifest generator rewrites it in
 place when the base changes later.
 
 Usage:
-    python3 scripts/generate_iiif.py [image_dir] [-o public/iiif] [-t public/thumbnails]
+    python3 scripts/generate_iiif.py [image_dir] [-o public] [-t public/thumbnails]
         [--base-url https://.../]
     python3 scripts/generate_iiif.py . --thumbs-only
 """
@@ -30,7 +30,7 @@ import time
 
 import pyvips
 
-DEFAULT_BASE_URL = "https://xn--kinderbcher-zhb.projektemacher.org/post/vieilles-chansons-et-rondes/"
+DEFAULT_BASE_URL = "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/"
 
 
 def generate_one(path: str, outdir: str, base: str) -> str:
@@ -45,7 +45,7 @@ def generate_one(path: str, outdir: str, base: str) -> str:
     info_path = os.path.join(target, "info.json")
     with open(info_path, encoding="utf-8") as fh:
         info = json.load(fh)
-    info["@id"] = base + f"iiif/{name}"
+    info["@id"] = base + name
     with open(info_path, "w", encoding="utf-8") as fh:
         json.dump(info, fh, indent=2)
     return name
@@ -63,7 +63,7 @@ def make_thumb(path: str, outdir: str) -> str:
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("image_dir", nargs="?", default=".")
-    parser.add_argument("-o", "--output", default="public/iiif")
+    parser.add_argument("-o", "--output", default="public")
     parser.add_argument("-t", "--thumbs-out", default="public/thumbnails")
     parser.add_argument(
         "--thumbs-only", action="store_true", help="only (re)generate the overview thumbnails"
