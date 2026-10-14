@@ -7,6 +7,7 @@
   wikidata = true
   debug = false
   pdfDownload = true
+  schemaPerson = "https://christianmahnke.de/person.jsonld"
 
   [params.preview]
     outputPrefix = "ogPreview"
