@@ -17,5 +17,5 @@
 
     {{- partial "html/head/script.html" (dict "context" . "js" (partial "html/head/iiif-js.html" .)) -}}
     {{- partial "html/head/style.html" (dict "context" . "includes" (slice "css")) -}}
-
+    {{- partial "metadata/schema.org/schema.org.html" . -}}
 </head>
