@@ -6,6 +6,39 @@ import { parseTei } from './tei'
 import { createOsdViewer, addPixelOverlay } from './osdViewer'
 import { SHOW_PLAYBACK_HIGHLIGHTS, SHOW_STAFF_OVERLAY } from './config'
 
+/** One selectable book (see scripts/generate_books_index.py -> /books.json). */
+interface BookInfo {
+  slug: string
+  title: string
+  manifest: string
+}
+
+const BOOKS_URL = '/books.json'
+const BOOK_STORAGE_KEY = 'score-viewer-book'
+
+/**
+ * Loads the book index. Falls back to a single book at the root manifest so
+ * a deployment of one book without books.json still works.
+ */
+async function loadBooks(): Promise<BookInfo[]> {
+  try {
+    const resp = await fetch(BOOKS_URL)
+    if (resp.ok) {
+      const data: unknown = await resp.json()
+      if (
+        Array.isArray(data) &&
+        data.length > 0 &&
+        data.every((b) => b && typeof b.manifest === 'string' && typeof b.title === 'string')
+      ) {
+        return data as BookInfo[]
+      }
+    }
+  } catch {
+    // fall through to the single-book fallback
+  }
+  return [{ slug: 'book', title: 'Score pages', manifest: '/manifest.json' }]
+}
+
 function formatConfidence(value: unknown): string {
   if (typeof value !== 'number' || !Number.isFinite(value)) return 'n/a'
   return `${(value * 100).toFixed(1)}%`
@@ -234,7 +267,7 @@ function showDetail(
 }
 
 function showError(app: HTMLElement, message: string): void {
-  app.innerHTML = `<div class="error"><h1>Score Page Viewer</h1><p class="error-text">${message}</p><p>Check that <code>/manifest.json</code> exists (run <code>scripts/generate_manifest.py</code>).</p></div>`
+  app.innerHTML = `<div class="error"><h1>Score Page Viewer</h1><p class="error-text">${message}</p><p>Check that <code>/books.json</code> and the book manifests exist (run <code>scripts/generate_manifest.py</code> and <code>scripts/generate_books_index.py</code>).</p></div>`
 }
 
 async function main(): Promise<void> {
@@ -244,22 +277,20 @@ async function main(): Promise<void> {
     return
   }
 
-  let pages: PageResult[]
-  try {
-    pages = await loadPages()
-  } catch (err) {
-    const msg = err instanceof Error ? err.message : String(err)
-    console.error(msg)
-    showError(app, msg)
-    return
-  }
-
-  const scoreCount = pages.filter((p) => p.hasScore).length
+  const books = await loadBooks()
 
   app.innerHTML = `
     <header>
-      <h1>Score Page Viewer</h1>
-      <p>${String(scoreCount)} of ${String(pages.length)} pages contain scores</p>
+      <div class="title-row">
+        <h1>Score Page Viewer</h1>
+        <label class="book-select">
+          Book
+          <select id="book-select">
+            ${books.map((b) => `<option value="${b.manifest}">${b.title}</option>`).join('')}
+          </select>
+        </label>
+      </div>
+      <p></p>
     </header>
     <div class="container">
       <div class="grid" id="grid"></div>
@@ -271,30 +302,68 @@ async function main(): Promise<void> {
 
   const grid = document.getElementById('grid')
   const detail = document.getElementById('detail')
-  if (!grid || !detail) return
+  const select = document.getElementById('book-select') as HTMLSelectElement | null
+  const countLine = app.querySelector('header p')
+  if (!grid || !detail || !select) return
+
+  // restore the previous selection, if it is still offered
+  const remembered = localStorage.getItem(BOOK_STORAGE_KEY)
+  if (remembered && books.some((b) => b.manifest === remembered)) {
+    select.value = remembered
+  }
 
   let activePlayer: PlayerHandle | null = null
 
-  for (const [index, page] of pages.entries()) {
-    const thumb = createThumbnail(page, index)
-    const activate = (): void => {
-      if (activePlayer) {
-        activePlayer.dispose()
-        activePlayer = null
-      }
-      grid.querySelectorAll('.thumb.selected').forEach((el) => el.classList.remove('selected'))
-      thumb.classList.add('selected')
-      activePlayer = showDetail(page, detail, thumb)
+  const showBook = async (manifestUrl: string): Promise<void> => {
+    if (activePlayer) {
+      activePlayer.dispose()
+      activePlayer = null
     }
-    thumb.addEventListener('click', activate)
-    thumb.addEventListener('keydown', (e: KeyboardEvent) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault()
-        activate()
+    grid.innerHTML = ''
+    detail.innerHTML = '<p class="placeholder">Select a page to view details</p>'
+
+    let pages: PageResult[]
+    try {
+      pages = await loadPages(manifestUrl)
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : String(err)
+      console.error(msg)
+      grid.innerHTML = `<div class="error"><p class="error-text">${msg}</p></div>`
+      return
+    }
+
+    const scoreCount = pages.filter((p) => p.hasScore).length
+    if (countLine)
+      countLine.textContent = `${String(scoreCount)} of ${String(pages.length)} pages contain scores`
+
+    for (const [index, page] of pages.entries()) {
+      const thumb = createThumbnail(page, index)
+      const activate = (): void => {
+        if (activePlayer) {
+          activePlayer.dispose()
+          activePlayer = null
+        }
+        grid.querySelectorAll('.thumb.selected').forEach((el) => el.classList.remove('selected'))
+        thumb.classList.add('selected')
+        activePlayer = showDetail(page, detail, thumb)
       }
-    })
-    grid.appendChild(thumb)
+      thumb.addEventListener('click', activate)
+      thumb.addEventListener('keydown', (e: KeyboardEvent) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault()
+          activate()
+        }
+      })
+      grid.appendChild(thumb)
+    }
   }
+
+  select.addEventListener('change', () => {
+    localStorage.setItem(BOOK_STORAGE_KEY, select.value)
+    void showBook(select.value)
+  })
+
+  await showBook(select.value)
 }
 
 void main().catch((err: unknown) => {

@@ -1,0 +1,14 @@
+[
+  {
+    "slug": "vieilles-chansons-et-rondes",
+    "title": "Vieilles Chansons et Danses et Rondes",
+    "imageDir": "books/vieilles-chansons-et-rondes",
+    "baseUrl": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/"
+  },
+  {
+    "slug": "deutsche-wiegenlieder",
+    "title": "Deutsche Wiegenlieder",
+    "imageDir": "books/deutsche-wiegenlieder",
+    "baseUrl": "https://static.projektemacher.org/kinderbuecher/post/deutsche-wiegenlieder/"
+  }
+]

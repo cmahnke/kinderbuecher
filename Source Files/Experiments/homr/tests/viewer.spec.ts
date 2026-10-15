@@ -27,6 +27,16 @@ test.describe('Score Page Viewer', () => {
     await expect(page.locator('header p')).toContainText('37 of 50 pages contain scores')
   })
 
+  test('book selector switches books', async ({ page }) => {
+    await page.goto('/')
+    await expect(page.locator('header p')).toContainText('37 of 50 pages contain scores')
+    await page.locator('#book-select').selectOption({ label: 'Deutsche Wiegenlieder' })
+    await expect(page.locator('header p')).toContainText('of 104 pages contain scores')
+    // the grid was rebuilt with the other book's pages
+    await expect(page.locator('.thumb').first()).toBeVisible({ timeout: 10000 })
+    await expect(page.locator('#book-select')).toHaveValue('/deutsche-wiegenlieder/manifest.json')
+  })
+
   test('shows thumbnails grid with score and no-score markers', async ({ page }) => {
     await page.goto('/')
     const grid = page.locator('#grid')
@@ -173,7 +183,7 @@ test.describe('Score Page Viewer', () => {
     await page.goto('/')
     const imgs = page.locator('.thumb img')
     await expect(imgs).toHaveCount(50)
-    await expect(imgs.first()).toHaveAttribute('src', /^\/\w+\/full\/\d+,\/0\/default\.jpg$/)
+    await expect(imgs.first()).toHaveAttribute('src', /^\/[^/]+\/[^/]+\/full\/\d+,\/0\/default\.jpg$/)
     await expect
       .poll(
         async () =>
@@ -191,7 +201,9 @@ test.describe('Score Page Viewer', () => {
   test('note marker is sized proportionally to the detected staff geometry', async ({ page }) => {
     // the staff geometry lives only in the TEI: the spacing between the
     // first two staff lines of each zone approximates the staff unit
-    const teiText = await (await page.request.get('/tei/page006.tei.xml')).text()
+    const teiText = await (
+      await page.request.get('/vieilles-chansons-et-rondes/tei/page006.tei.xml')
+    ).text()
     const firstPointY = (points: string): number | null => {
       const coords = (points.split(/\s+/)[0] ?? '').split(',').map(Number)
       if (coords.length !== 2 || coords.some((v) => !Number.isFinite(v))) return null
@@ -413,7 +425,7 @@ test.describe('Score Page Viewer', () => {
   })
 
   test('handles manifest load failure gracefully', async ({ page }) => {
-    await page.route('/manifest.json', (route) =>
+    await page.route('/vieilles-chansons-et-rondes/manifest.json', (route) =>
       route.fulfill({ status: 500, body: 'Server error' }),
     )
     await page.goto('/')

@@ -13,7 +13,7 @@ eventually exhaust the open-file limit.
 
 Usage:
     python3 scripts/run_homr.py [image_dir] [-o data/results.json]
-        [--homr-path vendor/homr[:vendor/homr-deps]]
+        [--homr-path vendor/homr[:vendor/homr-deps]] [--resume]
 
 Which homr implementation runs is configurable: by default the installed
 homr package is used; `--homr-path` (or the `HOMR_PATH` environment
@@ -209,11 +209,36 @@ def process_one_page(image_path: str, orig_w: int, orig_h: int, debug: bool) -> 
     return {"hasScore": True, "staves": staves, "status": "ok", "musicxml": xml_path}
 
 
+def save_results(output_path: str, results: list[dict]) -> None:
+    """Persist results after every page so an interrupted run keeps its
+    progress (resumable with --resume)."""
+    os.makedirs(os.path.dirname(output_path) or ".", exist_ok=True)
+    temp = output_path + ".tmp"
+    with open(temp, "w", encoding="utf-8") as fh:
+        json.dump({"pages": results}, fh, indent=2)
+    os.replace(temp, output_path)
+
+
+def load_existing_results(output_path: str) -> dict[str, dict]:
+    """Pages of a previous run, keyed by image name (--resume)."""
+    try:
+        with open(output_path, encoding="utf-8") as fh:
+            data = json.load(fh)
+    except (OSError, json.JSONDecodeError):
+        return {}
+    return {p["image"]: p for p in data.get("pages", []) if isinstance(p, dict) and p.get("image")}
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("image_dir", nargs="?", default=".")
     parser.add_argument("-o", "--output", default="data/results.json")
     parser.add_argument("--debug", action="store_true")
+    parser.add_argument(
+        "--resume", action="store_true",
+        help="skip pages already processed successfully in the output file; "
+        "progress is saved after every page",
+    )
     parser.add_argument(
         "--page", metavar="IMAGE",
         help="Process a single image and print its JSON result to stdout, then exit",
@@ -243,9 +268,15 @@ def main() -> None:
         sys.exit(1)
 
     script = os.path.abspath(__file__)
-    results = []
+    done = load_existing_results(args.output) if args.resume else {}
+    results: list[dict] = []
     for name in files:
         path = os.path.join(args.image_dir, name)
+        previous = done.get(name)
+        if previous is not None and previous.get("homr", {}).get("status") in ("ok", "no-score"):
+            print(f"Skipping {name} (already {previous['homr']['status']})", flush=True)
+            results.append(previous)
+            continue
         print(f"Running homr on {name}...", flush=True)
         try:
             cmd = [sys.executable, script, "--page", path]
@@ -286,13 +317,12 @@ def main() -> None:
                 },
             }
         )
+        save_results(args.output, results)
 
     score_pages = [r for r in results if r["hasScore"]]
     print(f"\n{len(score_pages)} of {len(results)} pages contain scores")
 
-    os.makedirs(os.path.dirname(args.output) or ".", exist_ok=True)
-    with open(args.output, "w", encoding="utf-8") as fh:
-        json.dump({"pages": results}, fh, indent=2)
+    save_results(args.output, results)
     print(f"Wrote {args.output}")
 
 

@@ -38,7 +38,7 @@ from validate_tei import load_musicxml_xsd, load_rng, schematron_from_rng, valid
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DEFAULT_BASE_URL = "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/"
-BOOK_TITLE = "Vieilles Chansons et Danses et Rondes"
+DEFAULT_BOOK_TITLE = "Vieilles Chansons et Danses et Rondes"
 
 PROLOG = '<?xml version="1.0" encoding="UTF-8"?>\n'
 
@@ -96,10 +96,12 @@ def build_tei(
     name: str,
     page: dict,
     musicxml: str,
+    musicxml_path: str,
     base: str,
+    book_title: str,
 ) -> str:
     """Assemble the TEI document for one page."""
-    title = musicxml_title(name + ".musicxml") or name
+    title = musicxml_title(musicxml_path) or name
     canvas = abs_url(base, f"{name}/canvas")
     service = abs_url(base, f"{name}/info.json")
     width, height = page["width"], page["height"]
@@ -108,7 +110,7 @@ def build_tei(
   <teiHeader>
     <fileDesc>
       <titleStmt>
-        <title>{title} ({BOOK_TITLE}, {name})</title>
+        <title>{title} ({book_title}, {name})</title>
         <respStmt>
           <resp>Encoded from the optical music recognition output of</resp>
           <name>homr</name>
@@ -123,7 +125,7 @@ def build_tei(
       </publicationStmt>
       <sourceDesc>
         <bibl>
-          <title>{BOOK_TITLE}</title>
+          <title>{book_title}</title>
           <ptr target="{canvas}"/>
         </bibl>
       </sourceDesc>
@@ -180,6 +182,9 @@ def main() -> None:
     parser.add_argument("-i", "--input", default="data/results.json")
     parser.add_argument("-o", "--output", default="public/tei")
     parser.add_argument("--base-url", default=DEFAULT_BASE_URL, help="base URL for the IIIF references")
+    parser.add_argument(
+        "--book-title", default=DEFAULT_BOOK_TITLE, help="book title for the TEI headers"
+    )
     parser.add_argument("--rng", default=os.path.join(ROOT, "schema", "homr-tei.rng"))
     parser.add_argument("--musicxml-xsd", default=os.path.join(ROOT, "vendor", "musicxml", "schema", "musicxml.xsd"))
     args = parser.parse_args()
@@ -233,7 +238,7 @@ def main() -> None:
 
         out_path = os.path.join(out_dir, f"{name}.tei.xml")
         with open(out_path, "w", encoding="utf-8") as fh:
-            fh.write(build_tei(name, page, musicxml, base))
+            fh.write(build_tei(name, page, musicxml, source_musicxml, base, args.book_title))
 
         errors, warnings = validate_file(out_path, rng, schematron, xsd, strict_musicxml=False)
         for warning in warnings:

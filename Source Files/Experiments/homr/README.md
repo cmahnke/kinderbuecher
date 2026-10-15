@@ -9,19 +9,21 @@ finds the staffs, and its staff grid points are converted back to original image
 pixel coordinates for the viewer overlay.
 
 The staff regions and the MusicXML travel together in per-page TEI documents
-(`public/tei/*.tei.xml`), referenced from the IIIF manifest — see
-`IMPLEMENTATION.md` for the exchange format and setup guide.
+(`public/<slug>/tei/*.tei.xml`), referenced from the book's IIIF manifest —
+see `IMPLEMENTATION.md` for the exchange format and setup guide.
 
 ## Project Structure
 
 ```
-├── setup.sh                    # one-shot setup: deps, icons, OMR, TEI, images, manifest
+├── setup.sh                    # one-shot setup per book in books.json: deps, icons,
+│                               #   OMR, TEI, images, manifest
 ├── scripts/
 │   ├── run_homr.py             # homr OMR processing wrapper (sole detector)
 │   ├── generate_tei.py         # results.json + MusicXML -> per-page TEI wrappers
 │   ├── validate_tei.py         # TEI validation (Relax NG + Schematron + MusicXML XSD)
 │   ├── generate_iiif.py        # build IIIF image pyramids + thumbnails (VIPS/pyvips)
-│   └── generate_manifest.py    # IIIF manifest for the viewer (public/manifest.json)
+│   ├── generate_manifest.py    # per-book IIIF manifest (public/<slug>/manifest.json)
+│   └── generate_books_index.py # books.json -> public/books.json (viewer book index)
 ├── schema/
 │   ├── homr-tei.odd            # ODD customization: TEI + embedded MusicXML
 │   ├── homr-tei.rng            # Relax NG compiled by the TEI's ROMA/TEIGarage
@@ -44,23 +46,28 @@ The staff regions and the MusicXML travel together in per-page TEI documents
 │   ├── playerPanel.ts          # player UI + scan highlight wiring
 │   └── style.css               # Viewer styles
 ├── data/
-│   └── results.json            # homr detection + staff grid results (pipeline source)
-├── public/
-│   ├── manifest.json           # IIIF manifest: page canvases, image endpoints
-│   │                           #   and notation refs (generated)
-│   ├── tei/                    # per-page TEI wrappers referenced by the manifest
-│   └── musicxml/               # plain MusicXML copies referenced by the manifest
+│   └── <slug>/results.json     # homr detection + staff grid results, per book
+│                               #   (pipeline source)
 ├── public/
 │   ├── favicon.svg
-│   ├── <name>/                 # IIIF pyramid per page, directly under public/ (generated)
-│   ├── thumbnails/             # small overview-grid thumbnails (generated)
+│   ├── books.json              # generated book selector index for the viewer
+│   ├── <slug>/                 # generated per book:
+│   │   ├── manifest.json       #   IIIF manifest: page canvases, image endpoints
+│   │   │                       #     and notation refs
+│   │   ├── <page>/             #   IIIF pyramid per page
+│   │   ├── tei/                #   per-page TEI wrappers referenced by the manifest
+│   │   ├── musicxml/           #   plain MusicXML copies referenced by the manifest
+│   │   └── thumbnails/         #   small overview-grid thumbnails
 │   └── openseadragon/          # OpenSeadragon button images
 ├── vendor/
 │   ├── mnxconverter/           # vendored W3C MNX converter (alpha, pinned commit)
 │   └── mnxconverter-ts/        # vendored TS MusicXML -> MNX converter (pinned commit)
 ├── dist/                       # Built viewer (generated, not committed)
 ├── index.html                  # Viewer entry
-└── *.jpg                       # Scanned page images (~12 MP, gitignored large files)
+├── books.json                  # Book registry: slug, title, imageDir, baseUrl per book
+└── books/
+    └── <slug>/                 # Scanned page images (~12 MP, gitignored large files)
+                                #   + homr's pageNNN.musicxml side outputs
 ```
 
 ## Usage
@@ -72,7 +79,8 @@ weights) is done by the setup script — including the OMR run, MNX conversion
 and image generation:
 
 ```bash
-./setup.sh                     # full pipeline (incl. IIIF manifest)
+./setup.sh                     # full pipeline for every book in books.json
+./setup.sh --book <slug>       # limit the run to a single book
 ./setup.sh --deps-only         # just dependencies + icons
 ./setup.sh --skip-omr          # re-run images/MNX/manifest without the slow OMR step
 ```
@@ -88,22 +96,27 @@ python3 -c "from homr.main import download_weights; download_weights(False, Fals
 ### 1. Run homr OMR
 
 ```bash
-python3 scripts/run_homr.py . -o data/results.json
+python3 scripts/run_homr.py books/deutsche-wiegenlieder \
+  -o data/deutsche-wiegenlieder/results.json --resume
 ```
 
-Runs homr on every page. homr is authoritative: pages with no detected staffs
-are marked `hasScore:false`; score pages get `hasScore:true`, per-staff page
-bounding boxes plus the 5-line staff grid (`staves[].grid`), and the generated
-`./pageNNN.musicxml`. The run also normalizes the MusicXML root to carry
-`xmlns=""`, so the files embed cleanly under the TEI namespace later.
-Output is written to `data/results.json`.
+Runs homr on every page of the book's `imageDir`. homr is authoritative:
+pages with no detected staffs are marked `hasScore:false`; score pages get
+`hasScore:true`, per-staff page bounding boxes plus the 5-line staff grid
+(`staves[].grid`), and the generated `pageNNN.musicxml` next to the scans.
+The run also normalizes the MusicXML root to carry `xmlns=""`, so the files
+embed cleanly under the TEI namespace later. Output is written to
+`data/<slug>/results.json`. With `--resume` the progress is saved to the
+output JSON after every page, and already-processed pages (status
+`ok`/`no-score`) are skipped on a re-run.
 
 Which homr runs is configurable: by default the installed package is used.
 `--homr-path` (or `HOMR_PATH`, same `os.pathsep`-separated syntax) points at
 a local checkout that shadows it — e.g. the vendored development checkout:
 
 ```bash
-python3 scripts/run_homr.py . -o data/results.json \
+python3 scripts/run_homr.py books/deutsche-wiegenlieder \
+  -o data/deutsche-wiegenlieder/results.json --resume \
   --homr-path vendor/homr:vendor/homr-deps
 ```
 
@@ -116,14 +129,17 @@ and the development homr API, so either source works.
 
 ```bash
 pip install pyvips          # plus the VIPS system library
-python3 scripts/generate_iiif.py . -o public/iiif
+python3 scripts/generate_iiif.py books/deutsche-wiegenlieder \
+  -o public/deutsche-wiegenlieder -t public/deutsche-wiegenlieder/thumbnails \
+  --base-url https://static.projektemacher.org/kinderbuecher/post/deutsche-wiegenlieder/
 ```
 
 Creates a DZI/IIIF pyramid (`info.json` + tile folders) for every page under
-`public/<name>/` (directly at the public root — the URLs carry no `iiif/`
+`public/<slug>/<page>/` (the URLs carry no `iiif/`
 segment). The pyramids are what OpenSeadragon streams, so the
 viewer stays smooth at any zoom without loading the ~12 MP originals. It also
-writes a ~300 px wide thumbnail per page to `public/thumbnails/<name>.jpg` —
+writes a ~300 px wide thumbnail per page to
+`public/<slug>/thumbnails/<name>.jpg` —
 that is what the overview grid shows (use `--thumbs-only` to regenerate just
 those).
 
@@ -136,16 +152,21 @@ source assets and need no generation step.
 ### 3. Generate TEI wrappers (staff regions + MusicXML)
 
 ```bash
-python3 scripts/generate_tei.py .
+python3 scripts/generate_tei.py -i data/deutsche-wiegenlieder/results.json \
+  -o public/deutsche-wiegenlieder/tei \
+  --base-url https://static.projektemacher.org/kinderbuecher/post/deutsche-wiegenlieder/ \
+  --book-title "Deutsche Wiegenlieder"
 python3 scripts/validate_tei.py        # same validation, standalone
 ```
 
 Wraps each generated `pageNNN.musicxml` in a per-page TEI document
-(`public/tei/pageNNN.tei.xml`), adding the detected staff regions from
-`data/results.json`: one `<surface>` per page (the scan, in original image
+(`public/<slug>/tei/pageNNN.tei.xml`), adding the detected staff regions from
+`data/<slug>/results.json`: one `<surface>` per page (the scan, in original image
 pixels, referencing the IIIF canvas), one `<zone type="staff">` per staff
 (the bbox), and each staff line as a `<path points="x,y …">` polyline
-(homr's staff grid). See `IMPLEMENTATION.md` for the format.
+(homr's staff grid). `--book-title` supplies the book title for the TEI
+headers (default: the Vieilles Chansons title). See `IMPLEMENTATION.md` for
+the format.
 
 Every generated file is validated before it is kept: Relax NG + ISO
 Schematron from the compiled ODD customization (`schema/homr-tei.odd` →
@@ -173,33 +194,43 @@ npm run preview
 # → http://localhost:5199/
 ```
 
-The viewer fetches `/manifest.json` (generated by `scripts/generate_manifest.py`)
-and all data via absolute paths from domain root — there is no IIIF server, the
+The header has a book selector (dropdown) fed by `/books.json` (generated by
+`scripts/generate_books_index.py`); switching books disposes the current
+detail/player view and rebuilds the overview grid from that book's manifest
+(`/<slug>/manifest.json`, generated by `scripts/generate_manifest.py`). The
+selected book is remembered in `localStorage`; if `/books.json` is missing,
+the viewer falls back to the single root manifest `/manifest.json`. All data
+loads via absolute paths from domain root — there is no IIIF server, the
 level-0 pyramids are static files. Vite `base:'/'` is configured accordingly.
 Detail views render the page in **OpenSeadragon** from its IIIF pyramid
-(`<name>/info.json`); the staff bounding boxes and the rendered score are
+(`<slug>/<page>/info.json`); the staff bounding boxes and the rendered score are
 drawn as viewport overlays that track pan/zoom.
 
 ### IIIF manifest
 
-`public/manifest.json` (Presentation 3 style) is the viewer's single data
-source. All IIIF URIs are **absolute**, built from a configurable base URL
-(default `https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/`,
+Each book's `public/<slug>/manifest.json` (Presentation 3 style) is the
+viewer's data source for that book; `public/books.json` — generated by
+`scripts/generate_books_index.py` from `books.json` — is the index the book
+selector reads (per entry: slug, title, root-relative
+`/<slug>/manifest.json`). All IIIF URIs are **absolute**, built from a
+per-book base URL (default
+`https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/`,
 settable with `--base-url` on `generate_manifest.py` and `generate_iiif.py` —
-the pyramid `info.json` `@id`s are kept in sync automatically). The viewer
-resolves referenced URLs to their pathname, so the same manifest works when
-served locally and from the deployment host. The manifest is modeled
-natively, and it carries **no staff data at all**:
+the pyramid `info.json` `@id`s are kept in sync automatically; `--label`
+sets the manifest label). The viewer resolves referenced URLs relative to
+the directory the manifest was fetched from (the per-book folder), so the
+same manifest works when served locally and from the deployment host. The
+manifest is modeled natively, and it carries **no staff data at all**:
 
 - one **canvas per page** painted by its IIIF image service
-  (`<name>/info.json` — the pyramids sit directly under the base URL, there
+  (`<page>/info.json` — the pyramids sit directly under the base URL, there
   is no `iiif/` URL segment)
-- the smallest full pyramid rendition (`<name>/full/<w,/0/default.jpg`)
+- the smallest full pyramid rendition (`<page>/full/<w,/0/default.jpg`)
   as the canvas **thumbnail** — the overview grid shows it, scaled by the
   client (no pre-generated `/thumbnails/*.jpg` needed by the viewer anymore)
 - the notation files as **Alternative Representations** (canvas `rendering`):
-  the TEI wrapper (`/tei/<name>.tei.xml`) and the plain MusicXML
-  (`/musicxml/<name>.musicxml`), so `public/` alone is deployable
+  the TEI wrapper (`<slug>/tei/<name>.tei.xml`) and the plain MusicXML
+  (`<slug>/musicxml/<name>.musicxml`), so `public/` alone is deployable
 - OMR confidence/status/error as native canvas **metadata**
 - `behavior: ["paged"]` marks the sequential book pages
 
@@ -211,6 +242,18 @@ the zones belong to is embedded in the same TEI. The viewer fetches the TEI
 note-position mapping, and the playable score from it. See
 `IMPLEMENTATION.md` for the exchange format and how to consume the TEI
 outside this viewer.
+
+### Adding a book
+
+1. Register the book in `books.json` at the repository root — a JSON array
+   with one entry per book: `slug`, `title`, `imageDir` and `baseUrl` (the
+   deployment base URL for the IIIF URIs).
+2. Copy the scanned pages into `books/<slug>/` (gitignored).
+3. Run `./setup.sh` (all books, or `--book <slug>` for just the new one) —
+   it runs OMR → TEI → IIIF → manifest per book into the per-book paths and
+   refreshes `public/books.json` — or the individual steps 1–4 above with
+   the new book's paths, then `python3 scripts/generate_books_index.py` so
+   the viewer's book selector lists it.
 
 ### 5. Play & Highlight
 
@@ -253,6 +296,8 @@ On the test set ("Vieilles Chansons et Danses et Rondes", Boutet de Monvel):
 
 - homr detects 37 of 50 pages as score pages (`hasScore:true`).
 
+For "Deutsche Wiegenlieder": 70 of 104 pages contain scores.
+
 ## OMR source and recognition statistics
 
 The pipeline runs a development homr (GitHub `main` past the 0.7.0 release,
@@ -291,7 +336,8 @@ Playwright runs two projects (see `playwright.config.ts`): `core` — viewer,
 pipeline and converter round-trip tests in `tests/` — and `mnx2musicxml` — the
 self-contained converter module's specs in `mnx2musicxml/tests/` (with its
 golden fixtures). Both projects share the root vite dev server, which also
-serves `vendor/` and OSMD to the browser-side tests. The module's own
+serves `vendor/` and OSMD to the browser-side tests. The viewer specs use the
+per-book paths and include a book-selector round-trip test. The module's own
 `package.json` holds proxy scripts (`test`/`lint`/`check` delegate to the root
 tooling), so the folder can be worked on standalone; it declares no
 dependencies of its own.

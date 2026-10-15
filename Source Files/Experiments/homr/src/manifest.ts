@@ -48,11 +48,13 @@ const TEI_FORMAT = 'application/tei+xml'
  * where the manifest itself is served from: same-origin URLs keep their
  * pathname (production, or a manifest generated for localhost), while
  * remote-origin URLs (dev, with a manifest generated for the deployment
- * host) have the declared base path stripped so the local static files at
- * the domain root are used.
+ * host) have the declared base path stripped and resolve against the
+ * directory the manifest was fetched from — the per-book folder of the
+ * local static files.
  */
 function makeResolver(
   manifestId: string | undefined,
+  localDir: string,
 ): (url: string | undefined) => string | undefined {
   let remoteBasePath = '/'
   if (manifestId) {
@@ -69,7 +71,7 @@ function makeResolver(
       if (parsed.origin === window.location.origin || !parsed.pathname.startsWith(remoteBasePath)) {
         return parsed.pathname
       }
-      return parsed.pathname.slice(remoteBasePath.length - 1)
+      return localDir + parsed.pathname.slice(remoteBasePath.length)
     } catch {
       return url
     }
@@ -136,7 +138,8 @@ function toPageResult(
 
 /**
  * Loads the IIIF manifest (static file; see scripts/generate_manifest.py)
- * and maps its canvases into the page data the viewer renders.
+ * and maps its canvases into the page data the viewer renders. `url` is the
+ * manifest to load — one per book (see the book selector in main.ts).
  */
 export async function loadPages(url = '/manifest.json'): Promise<PageResult[]> {
   const resp = await fetch(url)
@@ -149,7 +152,8 @@ export async function loadPages(url = '/manifest.json'): Promise<PageResult[]> {
   }
   const manifest = data as ManifestJson
   const canvases = manifest.items ?? []
-  const resolve = makeResolver(manifest.id)
+  const localDir = new URL(url, window.location.href).pathname.replace(/[^/]*$/, '')
+  const resolve = makeResolver(manifest.id, localDir)
 
   const pages: PageResult[] = []
   for (const canvas of canvases) {

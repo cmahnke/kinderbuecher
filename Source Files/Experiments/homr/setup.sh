@@ -6,20 +6,23 @@
 #   2. copies the OpenSeadragon button images into public/ ("icons"; the
 #      favicon.svg and icons.svg in public/ are source assets, nothing to
 #      generate there)
-#   3. runs the OMR detection (homr -> MusicXML, scripts/run_homr.py)
-#   4. wraps the MusicXML in TEI incl. staff regions
-#      (scripts/generate_tei.py, validated by scripts/validate_tei.py
-#      against schema/homr-tei.rng + the MusicXML 4.0 XSD)
-#   5. builds the IIIF pyramids and thumbnails (scripts/generate_iiif.py)
-#   6. generates the IIIF manifest the viewer consumes
-#      (scripts/generate_manifest.py -> public/manifest.json, including
-#      copies of the notation files under public/musicxml/)
+#   3. per book (registered in books.json): runs the OMR detection
+#      (homr -> MusicXML, scripts/run_homr.py), wraps the MusicXML in TEI
+#      incl. staff regions (scripts/generate_tei.py, validated by
+#      scripts/validate_tei.py against schema/homr-tei.rng + the MusicXML
+#      4.0 XSD), builds the IIIF pyramids and thumbnails
+#      (scripts/generate_iiif.py), and generates the IIIF manifest the
+#      viewer consumes (scripts/generate_manifest.py ->
+#      public/<slug>/manifest.json, including copies of the notation files
+#      under public/<slug>/musicxml/)
+#   4. writes the book selector index (scripts/generate_books_index.py ->
+#      public/books.json)
 #
 # Every step is safe to re-run. The OMR step is by far the longest (homr
 # runs its transformer per page); skip it while iterating with --skip-omr.
 #
 # Usage: ./setup.sh [--deps-only] [--skip-omr] [--skip-tei] [--skip-images]
-#                    [--skip-manifest]
+#                    [--skip-manifest] [--book SLUG]
 
 set -euo pipefail
 
@@ -33,6 +36,7 @@ SKIP_OMR=0
 SKIP_TEI=0
 SKIP_IMAGES=0
 SKIP_MANIFEST=0
+ONLY_BOOK=""
 for arg in "$@"; do
   case "$arg" in
     --deps-only) DEPS_ONLY=1 ;;
@@ -40,10 +44,15 @@ for arg in "$@"; do
     --skip-tei) SKIP_TEI=1 ;;
     --skip-images) SKIP_IMAGES=1 ;;
     --skip-manifest) SKIP_MANIFEST=1 ;;
+    --book) ONLY_BOOK="__NEXT__" ;;
     *)
-      echo "Unknown option: $arg" >&2
-      echo "Usage: $0 [--deps-only] [--skip-omr] [--skip-tei] [--skip-images] [--skip-manifest]" >&2
-      exit 2
+      if [ "$ONLY_BOOK" = "__NEXT__" ]; then
+        ONLY_BOOK="$arg"
+      else
+        echo "Unknown option: $arg" >&2
+        echo "Usage: $0 [--deps-only] [--skip-omr] [--skip-tei] [--skip-images] [--skip-manifest] [--book SLUG]" >&2
+        exit 2
+      fi
       ;;
   esac
 done
@@ -95,48 +104,84 @@ if [ "$DEPS_ONLY" -eq 1 ]; then
   exit 0
 fi
 
-# --- 4. OMR detection (homr -> MusicXML) -------------------------------------
-# Writes data/results.json (staff bboxes + grids) and pageNNN.musicxml.
-# Uses the installed homr unless HOMR_PATH points at a local checkout
-# (e.g. export HOMR_PATH="vendor/homr:vendor/homr-deps" for the vendored
-# dev version — see scripts/fetch_homr.py and scripts/run_homr.py --help).
-if [ "$SKIP_OMR" -eq 0 ]; then
-  step "Running homr OMR detection (this is the long step)"
-  "$PYTHON" scripts/run_homr.py . -o data/results.json
-else
-  step "Skipping OMR detection (--skip-omr)"
+# --- 3. Books ---------------------------------------------------------------
+# The book registry (books.json at the repo root) drives everything below:
+# one entry per book with slug, title, imageDir and the deployment baseUrl
+# the IIIF URIs are built from.
+step "Reading the book registry (books.json)"
+BOOKS="$(python3 - "$ONLY_BOOK" <<'PY'
+import json, sys
+
+only = sys.argv[1] if len(sys.argv) > 1 and sys.argv[1] != "__NEXT__" else None
+with open("books.json", encoding="utf-8") as fh:
+    books = json.load(fh)
+for book in books:
+    if only and book["slug"] != only:
+        continue
+    print("\t".join([book["slug"], book["imageDir"], book["baseUrl"], book["title"]]))
+PY
+)"
+if [ -z "$BOOKS" ]; then
+  echo "No matching book in books.json${ONLY_BOOK:+ (filter: $ONLY_BOOK)}" >&2
+  exit 1
 fi
 
-# --- 5. TEI wrappers (staff regions + embedded MusicXML) -----------------------
-# Builds public/tei/pageNNN.tei.xml from data/results.json + pageNNN.musicxml
-# and validates every file against the compiled TEI schema plus the official
-# MusicXML XSD (report only; see schema/VENDORING.md).
-if [ "$SKIP_TEI" -eq 0 ]; then
-  step "Generating TEI wrappers"
-  "$PYTHON" scripts/generate_tei.py .
-else
-  step "Skipping TEI generation (--skip-tei)"
-fi
+while IFS=$'\t' read -r slug image_dir base title; do
+  step "Book: $title ($slug)"
 
-# --- 6. IIIF pyramids + thumbnails --------------------------------------------
-# One run builds public/iiif/<name>/ pyramids and public/thumbnails/*.jpg.
-if [ "$SKIP_IMAGES" -eq 0 ]; then
-  step "Building IIIF pyramids and thumbnails"
-  "$PYTHON" scripts/generate_iiif.py . -o public/iiif
-else
-  step "Skipping IIIF/thumbnails (--skip-images)"
-fi
+  # --- OMR detection (homr -> MusicXML) --------------------------------------
+  # Writes data/<slug>/results.json (staff bboxes + grids) and
+  # pageNNN.musicxml next to the book's images. Uses the installed homr
+  # unless HOMR_PATH points at a local checkout (e.g. export
+  # HOMR_PATH="vendor/homr:vendor/homr-deps" for the vendored dev version —
+  # see scripts/fetch_homr.py and scripts/run_homr.py --help).
+  if [ "$SKIP_OMR" -eq 0 ]; then
+    step "Running homr OMR detection (this is the long step)"
+    "$PYTHON" scripts/run_homr.py "$image_dir" -o "data/$slug/results.json" --resume
+  else
+    step "Skipping OMR detection (--skip-omr)"
+  fi
 
-# --- 7. IIIF manifest ----------------------------------------------------------
-# The viewer's single data source: page canvases (IIIF endpoints), notation
-# references (TEI + MusicXML renderings) and thumbnails — static files only.
-# The staff regions live only in the TEI; the manifest carries no staff data.
-if [ "$SKIP_MANIFEST" -eq 0 ]; then
-  step "Generating the IIIF manifest"
-  "$PYTHON" scripts/generate_manifest.py
-else
-  step "Skipping manifest generation (--skip-manifest)"
-fi
+  # --- TEI wrappers (staff regions + embedded MusicXML) -----------------------
+  # Builds public/<slug>/tei/pageNNN.tei.xml from data/<slug>/results.json +
+  # pageNNN.musicxml and validates every file against the compiled TEI schema
+  # plus the official MusicXML XSD (report only; see schema/VENDORING.md).
+  if [ "$SKIP_TEI" -eq 0 ]; then
+    step "Generating TEI wrappers"
+    "$PYTHON" scripts/generate_tei.py -i "data/$slug/results.json" -o "public/$slug/tei" \
+      --base-url "$base" --book-title "$title"
+  else
+    step "Skipping TEI generation (--skip-tei)"
+  fi
+
+  # --- IIIF pyramids + thumbnails ---------------------------------------------
+  # One run builds public/<slug>/<page>/ pyramids and public/<slug>/thumbnails/.
+  if [ "$SKIP_IMAGES" -eq 0 ]; then
+    step "Building IIIF pyramids and thumbnails"
+    "$PYTHON" scripts/generate_iiif.py "$image_dir" -o "public/$slug" \
+      -t "public/$slug/thumbnails" --base-url "$base"
+  else
+    step "Skipping IIIF/thumbnails (--skip-images)"
+  fi
+
+  # --- IIIF manifest ------------------------------------------------------------
+  # The viewer's per-book data source: page canvases (IIIF endpoints),
+  # notation references (TEI + MusicXML renderings) and thumbnails — static
+  # files only. The staff regions live only in the TEI; the manifest carries
+  # no staff data.
+  if [ "$SKIP_MANIFEST" -eq 0 ]; then
+    step "Generating the IIIF manifest"
+    "$PYTHON" scripts/generate_manifest.py -i "data/$slug/results.json" \
+      -o "public/$slug/manifest.json" --base-url "$base" \
+      --label "$title — score pages (kinderbücher)"
+  else
+    step "Skipping manifest generation (--skip-manifest)"
+  fi
+done <<< "$BOOKS"
+
+# --- Book selector index --------------------------------------------------------
+step "Generating the book selector index"
+"$PYTHON" scripts/generate_books_index.py
 
 step "Setup complete"
 echo "Start the viewer with: npm run dev   (http://localhost:5199/)"

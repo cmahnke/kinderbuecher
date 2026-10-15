@@ -29,7 +29,9 @@ __pycache__/
 .venv/
 .homr_cache/
 
-# Data generation artefacts
+# Data generation artefacts (all of data/ is generated: per-book
+# results.json written by scripts/run_homr.py, plus the run logs)
+data/
 *.npy
 *.musicxml
 *.mnx
@@ -37,6 +39,11 @@ __pycache__/
 public/tei/
 public/musicxml/
 public/manifest.json
+public/books.json
+
+# Book scans (copies of the ~12 MP page images, gitignored like the old
+# root-level *.jpg; homr writes the pageNNN.musicxml side outputs here)
+books/
 
 # Test / coverage
 test-results/

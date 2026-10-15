@@ -80,6 +80,9 @@ def main() -> None:
     parser.add_argument("-i", "--input", default="data/results.json")
     parser.add_argument("-o", "--output", default="public/manifest.json")
     parser.add_argument("--base-url", default=DEFAULT_BASE_URL, help="base URL for all IIIF URIs")
+    parser.add_argument(
+        "--label", default="Score pages (kinderbücher)", help="manifest label (book title)"
+    )
     args = parser.parse_args()
 
     base = args.base_url if args.base_url.endswith("/") else args.base_url + "/"
@@ -240,7 +243,7 @@ def main() -> None:
         "@context": "http://iiif.io/api/presentation/3/context.json",
         "id": abs_url(base, "manifest.json"),
         "type": "Manifest",
-        "label": {"en": ["Score pages (kinderbücher)"]},
+        "label": {"en": [args.label]},
         "behavior": ["paged"],
         "items": items,
     }

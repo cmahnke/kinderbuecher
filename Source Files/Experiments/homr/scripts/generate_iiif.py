@@ -97,7 +97,7 @@ def main() -> None:
     for name in files:
         path = os.path.join(args.image_dir, name)
         start = time.time()
-        out_name = generate_one(path, args.output)
+        out_name = generate_one(path, args.output, base)
         print(f"[{out_name}] {round(time.time() - start, 1)}s", flush=True)
 
     print(f"\nWrote {len(files)} pyramids to {args.output} ({round(time.time() - t0)}s total)")
