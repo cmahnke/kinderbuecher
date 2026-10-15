@@ -37,9 +37,10 @@ test.describe('Score Page Viewer', () => {
     await expect(scoreThumbs).toHaveCount(36)
     const noScoreThumbs = page.locator('.thumb.no-score')
     await expect(noScoreThumbs).toHaveCount(14)
-    // badges only for score pages with staves
+    // badges only appear once a page's TEI has been fetched and parsed
+    await expect(page.locator('.thumb .badge')).toHaveCount(0)
+    await page.locator('.thumb.score').first().click()
     const badges = page.locator('.thumb .badge')
-    await expect(badges).toHaveCount(36)
     await expect(badges.first()).toContainText(/staff/)
     // the sidebar takes 30% of the container width, the detail view the rest
     const ratio = await page.evaluate(() => {
@@ -75,14 +76,17 @@ test.describe('Score Page Viewer', () => {
     await expect(detail.locator('.detail-info').first()).toContainText('Confidence')
   })
 
-  test('detail for score page shows MusicXML link', async ({ page }) => {
+  test('detail for score page shows MusicXML and TEI links', async ({ page }) => {
     await page.goto('/')
     const scoreThumb = page.locator('.thumb.score').first()
     await scoreThumb.click()
     const detail = page.locator('#detail')
-    const link = detail.locator('a[href$=".musicxml"]')
-    await expect(link).toBeVisible()
-    await expect(link).toContainText('.musicxml')
+    const musicxmlLink = detail.locator('a[href$=".musicxml"]')
+    await expect(musicxmlLink).toBeVisible()
+    await expect(musicxmlLink).toContainText('.musicxml')
+    const teiLink = detail.locator('a[href$=".tei.xml"]')
+    await expect(teiLink).toBeVisible()
+    await expect(teiLink).toContainText('.tei.xml')
   })
 
   test('score page renders player with controls and scan highlights', async ({ page }) => {
@@ -155,27 +159,21 @@ test.describe('Score Page Viewer', () => {
   })
 
   test('note marker is sized proportionally to the detected staff geometry', async ({ page }) => {
-    const manifest = (await (await page.request.get('/manifest.json')).json()) as {
-      items: Array<{
-        id?: string
-        annotations?: Array<{
-          items?: Array<{ body?: { value?: string }; target?: string }>
-        }>
-      }>
+    // the staff geometry lives only in the TEI: the spacing between the
+    // first two staff lines of each zone approximates the staff unit
+    const teiText = await (await page.request.get('/tei/page006.tei.xml')).text()
+    const firstPointY = (points: string): number | null => {
+      const coords = (points.split(/\s+/)[0] ?? '').split(',').map(Number)
+      if (coords.length !== 2 || coords.some((v) => !Number.isFinite(v))) return null
+      return coords[1]
     }
-    // ids are absolute (configurable --base-url); match on the path
-    const pageCanvas = manifest.items.find((c) => c.id?.endsWith('/page006/canvas'))
-    expect(pageCanvas).toBeTruthy()
-    // staff data lives in the describing annotations' JSON bodies
-    const staffBodies = (pageCanvas!.annotations ?? [])
-      .flatMap((ap) => ap.items ?? [])
-      .filter((a) => a.target?.includes('#xywh='))
-      .map((a) => JSON.parse(a.body?.value ?? '{}') as { staffGrid?: { y: number[] }[] })
-    const units = staffBodies
-      .map((b) => {
-        const y = b.staffGrid?.[0]?.y ?? []
-        return y.length > 1 ? y[1] - y[0] : NaN
-      })
+    const units = [...teiText.matchAll(/<zone[^>]*>([\s\S]*?)<\/zone>/g)]
+      .map((zone) =>
+        [...zone[1].matchAll(/<path[^>]*points="([^"]+)"/g)]
+          .map((m) => firstPointY(m[1]))
+          .filter((y): y is number => y !== null),
+      )
+      .map((ys) => (ys.length > 1 ? Math.abs(ys[1] - ys[0]) : NaN))
       .filter((u) => Number.isFinite(u) && u > 0)
     const minUnit = Math.min(...units)
     const maxUnit = Math.max(...units)

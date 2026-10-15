@@ -10,8 +10,10 @@ export interface PageResult {
   thumbnail: string
   /** IIIF image service endpoint (info.json) OpenSeadragon consumes */
   imageService: string
+  /** staff regions live only in the TEI: empty at load, populated by the
+   * detail view once it fetches and parses the page's TEI document */
   staves: StaffEntry[]
-  homr?: { status: string; musicxml?: string; error?: string }
+  homr?: { status: string; musicxml?: string; tei?: string; error?: string }
 }
 
 interface ManifestCanvas {
@@ -27,15 +29,8 @@ interface ManifestCanvas {
       body?: { id?: string }
     }>
   }>
-  /** describing staff annotations (#xywh target + JSON body) and the
-   * supplementing MNX annotation (whole-canvas target) */
-  annotations?: Array<{
-    items?: Array<{
-      body?: { id?: string; type?: string; value?: string }
-      target?: string
-    }>
-  }>
   metadata?: Array<{ label?: Record<string, string[]>; value?: Record<string, string[]> }>
+  /** notation references: the TEI wrapper and the plain MusicXML */
   rendering?: Array<{ id?: string; format?: string }>
 }
 
@@ -45,6 +40,7 @@ interface ManifestJson {
 }
 
 const MUSICXML_FORMAT = 'application/vnd.recordare.musicxml+xml'
+const TEI_FORMAT = 'application/tei+xml'
 
 /**
  * The manifest uses absolute IIIF URIs with a configurable base (see
@@ -85,38 +81,9 @@ function canvasName(canvas: ManifestCanvas): string {
   return parts.length >= 2 ? parts[parts.length - 2] : ''
 }
 
-/** bbox [x, y, x1, y1] in page pixels from a "#xywh=x,y,w,h" target. */
-function xywhToBbox(target: string): [number, number, number, number] | null {
-  const fragment = target.split('#xywh=')[1]
-  if (!fragment) return null
-  const [x, y, w, h] = fragment.split(',').map((v) => Number.parseInt(v, 10))
-  if (![x, y, w, h].every((v) => Number.isFinite(v))) return null
-  return [x, y, x + w, y + h]
-}
-
 function metadataValue(canvas: ManifestCanvas, label: string): string | undefined {
   const entry = (canvas.metadata ?? []).find((m) => (m.label?.en ?? []).includes(label))
   return entry?.value?.en?.[0]
-}
-
-/** OMR data of one staff, carried in a describing annotation's body. */
-interface StaffBody {
-  staffGrid?: Array<{ x: number; y: number[] }>
-  staffLineCount?: number
-}
-
-/** Parse the OMR staff data from a describing annotation's JSON body. */
-function staffFromBody(value: string | undefined): StaffBody | null {
-  if (!value) return null
-  try {
-    const parsed: unknown = JSON.parse(value)
-    if (parsed && typeof parsed === 'object' && 'staffGrid' in parsed) {
-      return parsed as StaffBody
-    }
-  } catch {
-    /* malformed body — ignore the annotation */
-  }
-  return null
 }
 
 function toPageResult(
@@ -134,29 +101,15 @@ function toPageResult(
       (r) => r.id && (r.format === MUSICXML_FORMAT || r.id.endsWith('.musicxml')),
     )?.id,
   )
+  const tei = resolve(
+    (canvas.rendering ?? []).find(
+      (r) => r.id && (r.format === TEI_FORMAT || r.id.endsWith('.tei.xml')),
+    )?.id,
+  )
   const confidenceStr = metadataValue(canvas, 'OMR confidence')
   const confidence = confidenceStr ? Number.parseFloat(confidenceStr) : 0
   const status = metadataValue(canvas, 'OMR status')
   const error = metadataValue(canvas, 'OMR error')
-
-  // staff regions come from the describing annotations: the #xywh target is
-  // the region on the page, the body carries grid + line count (the
-  // supplementing MNX annotation has no fragment target and is skipped)
-  const staves: StaffEntry[] = []
-  for (const annotationPage of canvas.annotations ?? []) {
-    for (const annotation of annotationPage.items ?? []) {
-      if (!annotation.target) continue
-      const bbox = xywhToBbox(annotation.target)
-      if (!bbox) continue
-      const body = staffFromBody(annotation.body?.value)
-      if (!body) continue
-      staves.push({
-        bbox,
-        lineCount: body.staffLineCount ?? 5,
-        grid: body.staffGrid,
-      })
-    }
-  }
 
   return {
     image: `${name}.jpg`,
@@ -166,12 +119,15 @@ function toPageResult(
     confidence,
     thumbnail: resolve(canvas.thumbnail?.[0]?.id) ?? `/thumbnails/${name}.jpg`,
     imageService: resolve(canvas.items?.[0]?.items?.[0]?.body?.id) ?? `/iiif/${name}/info.json`,
-    staves,
+    // the staff regions come from the TEI (fetched by the detail view), so
+    // the manifest contributes no staves here
+    staves: [],
     homr:
-      status || musicxml
+      status || musicxml || tei
         ? {
             status: status ?? '',
             musicxml,
+            tei,
             error,
           }
         : undefined,

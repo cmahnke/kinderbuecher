@@ -7,16 +7,18 @@
 #      favicon.svg and icons.svg in public/ are source assets, nothing to
 #      generate there)
 #   3. runs the OMR detection (homr -> MusicXML, scripts/run_homr.py)
-#   4. converts the MusicXML to MNX (scripts/generate_mnx.py)
+#   4. wraps the MusicXML in TEI incl. staff regions
+#      (scripts/generate_tei.py, validated by scripts/validate_tei.py
+#      against schema/homr-tei.rng + the MusicXML 4.0 XSD)
 #   5. builds the IIIF pyramids and thumbnails (scripts/generate_iiif.py)
 #   6. generates the IIIF manifest the viewer consumes
 #      (scripts/generate_manifest.py -> public/manifest.json, including
-#      copies of the notation files under public/musicxml/ and public/mnx/)
+#      copies of the notation files under public/musicxml/)
 #
 # Every step is safe to re-run. The OMR step is by far the longest (homr
 # runs its transformer per page); skip it while iterating with --skip-omr.
 #
-# Usage: ./setup.sh [--deps-only] [--skip-omr] [--skip-mnx] [--skip-images]
+# Usage: ./setup.sh [--deps-only] [--skip-omr] [--skip-tei] [--skip-images]
 #                    [--skip-manifest]
 
 set -euo pipefail
@@ -28,19 +30,19 @@ PYTHON="${PYTHON:-python3}"
 
 DEPS_ONLY=0
 SKIP_OMR=0
-SKIP_MNX=0
+SKIP_TEI=0
 SKIP_IMAGES=0
 SKIP_MANIFEST=0
 for arg in "$@"; do
   case "$arg" in
     --deps-only) DEPS_ONLY=1 ;;
     --skip-omr) SKIP_OMR=1 ;;
-    --skip-mnx) SKIP_MNX=1 ;;
+    --skip-tei) SKIP_TEI=1 ;;
     --skip-images) SKIP_IMAGES=1 ;;
     --skip-manifest) SKIP_MANIFEST=1 ;;
     *)
       echo "Unknown option: $arg" >&2
-      echo "Usage: $0 [--deps-only] [--skip-omr] [--skip-mnx] [--skip-images] [--skip-manifest]" >&2
+      echo "Usage: $0 [--deps-only] [--skip-omr] [--skip-tei] [--skip-images] [--skip-manifest]" >&2
       exit 2
       ;;
   esac
@@ -102,14 +104,15 @@ else
   step "Skipping OMR detection (--skip-omr)"
 fi
 
-# --- 5. MNX conversion --------------------------------------------------------
-# Converts each generated pageNNN.musicxml to pageNNN.mnx (alpha converter;
-# individual failures are reported and do not stop the run).
-if [ "$SKIP_MNX" -eq 0 ]; then
-  step "Generating MNX representations"
-  "$PYTHON" scripts/generate_mnx.py .
+# --- 5. TEI wrappers (staff regions + embedded MusicXML) -----------------------
+# Builds public/tei/pageNNN.tei.xml from data/results.json + pageNNN.musicxml
+# and validates every file against the compiled TEI schema plus the official
+# MusicXML XSD (report only; see schema/VENDORING.md).
+if [ "$SKIP_TEI" -eq 0 ]; then
+  step "Generating TEI wrappers"
+  "$PYTHON" scripts/generate_tei.py .
 else
-  step "Skipping MNX generation (--skip-mnx)"
+  step "Skipping TEI generation (--skip-tei)"
 fi
 
 # --- 6. IIIF pyramids + thumbnails --------------------------------------------
@@ -122,8 +125,9 @@ else
 fi
 
 # --- 7. IIIF manifest ----------------------------------------------------------
-# The viewer's single data source: page canvases (IIIF endpoints), staff
-# canvases, notation references and thumbnails — static files only.
+# The viewer's single data source: page canvases (IIIF endpoints), notation
+# references (TEI + MusicXML renderings) and thumbnails — static files only.
+# The staff regions live only in the TEI; the manifest carries no staff data.
 if [ "$SKIP_MANIFEST" -eq 0 ]; then
   step "Generating the IIIF manifest"
   "$PYTHON" scripts/generate_manifest.py

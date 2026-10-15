@@ -34,6 +34,9 @@ __pycache__/
 *.musicxml
 *.mnx
 !tests/fixtures/mnx/*.mnx
+public/tei/
+public/musicxml/
+public/manifest.json
 
 # Test / coverage
 test-results/
@@ -45,4 +48,3 @@ coverage/
 
 # Other
 vendor/*
-public/*

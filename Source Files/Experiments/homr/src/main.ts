@@ -2,6 +2,7 @@ import './style.css'
 import { setupPlayer, type PlayerHandle } from './playerPanel'
 import type { PageResult } from './manifest'
 import { loadPages } from './manifest'
+import { parseTei } from './tei'
 import { createOsdViewer, addPixelOverlay } from './osdViewer'
 import { SHOW_PLAYBACK_HIGHLIGHTS, SHOW_STAFF_OVERLAY } from './config'
 
@@ -16,10 +17,6 @@ function createThumbnail(page: PageResult, index: number): HTMLElement {
   div.dataset.index = String(index)
   div.setAttribute('role', 'button')
   div.tabIndex = 0
-  div.setAttribute(
-    'aria-label',
-    `${page.image} ${page.hasScore ? `, ${page.staves.length} staves` : ', no score'}`,
-  )
 
   const img = document.createElement('img')
   // IIIF rendition referenced by the manifest (smallest static pyramid
@@ -41,17 +38,39 @@ function createThumbnail(page: PageResult, index: number): HTMLElement {
   label.textContent = page.image.replace(/\.[^.]+$/, '')
   div.appendChild(label)
 
-  if (page.hasScore && page.staves.length > 0) {
-    const badge = document.createElement('div')
-    badge.className = 'badge score'
-    badge.textContent = `${page.staves.length} staff${page.staves.length !== 1 ? 's' : ''}`
-    div.appendChild(badge)
-  }
+  // the staff count arrives with the TEI (fetched by the detail view), so a
+  // page starts unbadged and gets its badge once parsed
+  updateThumbnail(div, page)
 
   return div
 }
 
-function showDetail(page: PageResult, container: HTMLElement): { dispose: () => void } | null {
+/** Refresh the staff badge and accessible label after the TEI was parsed. */
+function updateThumbnail(thumb: HTMLElement, page: PageResult): void {
+  thumb.querySelector('.badge')?.remove()
+  if (page.hasScore && page.staves.length > 0) {
+    const badge = document.createElement('div')
+    badge.className = 'badge score'
+    badge.textContent = `${page.staves.length} staff${page.staves.length !== 1 ? 's' : ''}`
+    thumb.appendChild(badge)
+  }
+  thumb.setAttribute(
+    'aria-label',
+    `${page.image} ${
+      page.hasScore
+        ? page.staves.length > 0
+          ? `, ${page.staves.length} staves`
+          : ', score'
+        : ', no score'
+    }`,
+  )
+}
+
+function showDetail(
+  page: PageResult,
+  container: HTMLElement,
+  thumb: HTMLElement,
+): { dispose: () => void } | null {
   container.innerHTML = ''
 
   const header = document.createElement('div')
@@ -69,70 +88,19 @@ function showDetail(page: PageResult, container: HTMLElement): { dispose: () => 
   imgContainer.className = 'detail-image'
   imgContainer.id = osdId
 
-  // The staff overlay hosts the orange staff rects and (when enabled) the
-  // playback highlight layers drawn by the player, so it is created when
-  // either of them is on.
-  let overlaySvg: SVGSVGElement | null = null
-  if ((SHOW_STAFF_OVERLAY || SHOW_PLAYBACK_HIGHLIGHTS) && page.hasScore && page.staves.length > 0) {
-    overlaySvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
-    overlaySvg.setAttribute('viewBox', `0 0 ${page.width} ${page.height}`)
-    overlaySvg.setAttribute('width', String(page.width))
-    overlaySvg.setAttribute('height', String(page.height))
-    overlaySvg.setAttribute('preserveAspectRatio', 'xMidYMid meet')
-    overlaySvg.classList.add('staff-overlay')
-
-    if (SHOW_STAFF_OVERLAY) {
-      for (const staff of page.staves) {
-        const [x0, y0, x1, y1] = staff.bbox
-        const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect')
-        rect.setAttribute('x', String(x0))
-        rect.setAttribute('y', String(y0))
-        rect.setAttribute('width', String(Math.max(0, x1 - x0)))
-        rect.setAttribute('height', String(Math.max(0, y1 - y0)))
-        rect.setAttribute('fill', 'rgba(255, 100, 0, 0.25)')
-        rect.setAttribute('stroke', 'rgba(255, 100, 0, 0.9)')
-        rect.setAttribute('stroke-width', '3')
-        overlaySvg.appendChild(rect)
-      }
-    }
-  }
-
   const playerHost = document.createElement('div')
   playerHost.className = 'player-host'
 
+  // the staff-dependent sections (info list, overlay) land here once the
+  // TEI is parsed, keeping the header/player/scan order stable
+  const staffInfoHost = document.createElement('div')
+  staffInfoHost.className = 'staff-info-host'
+
   container.appendChild(playerHost)
   container.appendChild(imgContainer)
+  container.appendChild(staffInfoHost)
 
   const osd = createOsdViewer(imgContainer, page.imageService)
-  if (overlaySvg) {
-    addPixelOverlay(osd.viewer, overlaySvg, 0, 0, page.width, page.height)
-  }
-
-  if (page.staves.length > 0) {
-    const info = document.createElement('div')
-    info.className = 'detail-info'
-    const res = document.createElement('p')
-    res.innerHTML = `<strong>Resolution:</strong> ${page.width} × ${page.height}`
-    const stavesP = document.createElement('p')
-    stavesP.innerHTML = `<strong>Staves:</strong> ${page.staves.length}`
-    const confP = document.createElement('p')
-    confP.innerHTML = `<strong>Confidence:</strong> ${formatConfidence(page.confidence)}`
-    info.append(res, stavesP, confP)
-    for (const [i, s] of page.staves.entries()) {
-      const p = document.createElement('p')
-      p.className = 'staff-detail'
-      p.textContent = `Staff ${String(i + 1)}: ${String(s.lineCount)} lines, bbox [${s.bbox.join(', ')}]`
-      info.appendChild(p)
-    }
-    container.appendChild(info)
-  } else {
-    const empty = document.createElement('p')
-    empty.className = 'detail-info'
-    empty.textContent = page.hasScore
-      ? 'No staves found (detection flagged but no bbox)'
-      : 'No staves detected.'
-    container.appendChild(empty)
-  }
 
   if (page.homr) {
     if (page.homr.status === 'error' && page.homr.error) {
@@ -145,39 +113,100 @@ function showDetail(page: PageResult, container: HTMLElement): { dispose: () => 
       msg.className = 'error-text'
       errDiv.append(title, msg)
       container.appendChild(errDiv)
-    } else if (page.homr.musicxml) {
+    } else {
+      const notationLinks = (
+        label: string,
+        href: string | undefined,
+      ): HTMLParagraphElement | null => {
+        if (!href) return null
+        const link = document.createElement('a')
+        link.href = href.replace(/^\.\//, '/')
+        link.textContent = href
+        link.target = '_blank'
+        link.rel = 'noopener'
+        const p = document.createElement('p')
+        p.innerHTML = `<strong>${label}:</strong> `
+        p.appendChild(link)
+        return p
+      }
       const xmlInfo = document.createElement('div')
       xmlInfo.className = 'detail-info'
-      const link = document.createElement('a')
-      // musicxml stored as "./page006.musicxml" -> resolve to "/page006.musicxml"
-      const href = page.homr.musicxml.replace(/^\.\//, '/')
-      link.href = href
-      link.textContent = page.homr.musicxml
-      link.target = '_blank'
-      link.rel = 'noopener'
-      const p = document.createElement('p')
-      p.innerHTML = '<strong>MusicXML:</strong> '
-      p.appendChild(link)
-      xmlInfo.appendChild(p)
-      container.appendChild(xmlInfo)
+      const musicxmlP = notationLinks('MusicXML', page.homr.musicxml)
+      const teiP = notationLinks('TEI', page.homr.tei)
+      if (musicxmlP) xmlInfo.appendChild(musicxmlP)
+      if (teiP) xmlInfo.appendChild(teiP)
+      if (xmlInfo.childElementCount > 0) container.appendChild(xmlInfo)
     }
   }
 
   let activePlayer: PlayerHandle | null = null
-  if (page.homr && page.homr.status === 'ok' && page.homr.musicxml) {
-    const href = page.homr.musicxml.replace(/^\.\//, '/')
+  if (page.homr && page.homr.status === 'ok' && page.homr.tei) {
+    const href = page.homr.tei.replace(/^\.\//, '/')
     fetch(href)
       .then((resp) => {
         if (!resp.ok) throw new Error(`Failed to load ${href}: ${resp.status}`)
         return resp.text()
       })
-      .then((xmlText) => {
+      .then((teiText) => {
+        const parsed = parseTei(teiText)
+        if (!parsed) throw new Error('TEI carries no staff geometry or embedded score')
+        return parsed
+      })
+      .then(({ staves, musicxmlText }) => {
         if (!playerHost.isConnected) return
+        page.staves = staves
+        updateThumbnail(thumb, page)
+
+        // staff overlay: the orange staff rects and (when enabled) the
+        // playback highlight layers drawn by the player
+        let overlaySvg: SVGSVGElement | null = null
+        if (SHOW_STAFF_OVERLAY || SHOW_PLAYBACK_HIGHLIGHTS) {
+          overlaySvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
+          overlaySvg.setAttribute('viewBox', `0 0 ${page.width} ${page.height}`)
+          overlaySvg.setAttribute('width', String(page.width))
+          overlaySvg.setAttribute('height', String(page.height))
+          overlaySvg.setAttribute('preserveAspectRatio', 'xMidYMid meet')
+          overlaySvg.classList.add('staff-overlay')
+
+          if (SHOW_STAFF_OVERLAY) {
+            for (const staff of page.staves) {
+              const [x0, y0, x1, y1] = staff.bbox
+              const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect')
+              rect.setAttribute('x', String(x0))
+              rect.setAttribute('y', String(y0))
+              rect.setAttribute('width', String(Math.max(0, x1 - x0)))
+              rect.setAttribute('height', String(Math.max(0, y1 - y0)))
+              rect.setAttribute('fill', 'rgba(255, 100, 0, 0.25)')
+              rect.setAttribute('stroke', 'rgba(255, 100, 0, 0.9)')
+              rect.setAttribute('stroke-width', '3')
+              overlaySvg.appendChild(rect)
+            }
+          }
+          addPixelOverlay(osd.viewer, overlaySvg, 0, 0, page.width, page.height)
+        }
+
+        const info = document.createElement('div')
+        info.className = 'detail-info'
+        const res = document.createElement('p')
+        res.innerHTML = `<strong>Resolution:</strong> ${page.width} × ${page.height}`
+        const stavesP = document.createElement('p')
+        stavesP.innerHTML = `<strong>Staves:</strong> ${page.staves.length}`
+        const confP = document.createElement('p')
+        confP.innerHTML = `<strong>Confidence:</strong> ${formatConfidence(page.confidence)}`
+        info.append(res, stavesP, confP)
+        for (const [i, s] of page.staves.entries()) {
+          const p = document.createElement('p')
+          p.className = 'staff-detail'
+          p.textContent = `Staff ${String(i + 1)}: ${String(s.lineCount)} lines, bbox [${s.bbox.join(', ')}]`
+          info.appendChild(p)
+        }
+        if (staffInfoHost.isConnected) staffInfoHost.replaceWith(info)
+
         activePlayer = setupPlayer(playerHost, osd, overlaySvg, {
           width: page.width,
           height: page.height,
           staves: page.staves,
-          musicxmlText: xmlText,
+          musicxmlText,
         })
       })
       .catch((err: unknown) => {
@@ -187,6 +216,13 @@ function showDetail(page: PageResult, container: HTMLElement): { dispose: () => 
         p.textContent = `Player unavailable: ${msg}`
         if (container.isConnected) container.appendChild(p)
       })
+  } else {
+    const empty = document.createElement('p')
+    empty.className = 'detail-info'
+    empty.textContent = page.hasScore
+      ? 'No staves found (detection flagged but no bbox)'
+      : 'No staves detected.'
+    staffInfoHost.replaceWith(empty)
   }
 
   return {
@@ -248,7 +284,7 @@ async function main(): Promise<void> {
       }
       grid.querySelectorAll('.thumb.selected').forEach((el) => el.classList.remove('selected'))
       thumb.classList.add('selected')
-      activePlayer = showDetail(page, detail)
+      activePlayer = showDetail(page, detail, thumb)
     }
     thumb.addEventListener('click', activate)
     thumb.addEventListener('keydown', (e: KeyboardEvent) => {

@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:rng="http://relaxng.org/ns/structure/1.0">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>homr score pages: TEI customization</title>
+        <author>Projektemacher</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>Projektemacher</publisher>
+        <availability status="free">
+          <p>Freely available for use and reuse.</p>
+        </availability>
+        <p>Local pipeline customization. Compiled to schema/homr-tei.rng with
+        the TEI's ROMA/TEIGarage ODD processor; see schema/VENDORING.md.</p>
+      </publicationStmt>
+      <sourceDesc>
+        <p>Born digital.</p>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <projectDesc>
+        <p>Per-page TEI wrappers for the OMR pipeline: each document carries a
+        <gi>facsimile</gi> describing the detected staff regions of one scanned
+        page, and embeds the homr-generated MusicXML for that page verbatim in
+        the <gi>body</gi>. Staff geometry is encoded with the standard
+        <gi>surface</gi>/<gi>zone</gi>/<gi>path</gi> coordinate model; the
+        MusicXML is an opaque no-namespace payload validated separately against
+        the official MusicXML 4.0 XSD. Coordinate and content-model
+        requirements are enforced by the schema itself (via
+        <gi>elementSpec</gi> changes); the remaining structural rules are
+        Schematron constraints, kept XPath 1.0 compatible so they can run
+        under any ISO Schematron implementation.</p>
+      </projectDesc>
+    </encodingDesc>
+  </teiHeader>
+  <body>
+    <div>
+      <schemaSpec ident="homr-tei" start="TEI"
+                  defaultExceptions="http://www.tei-c.org/ns/Examples">
+        <moduleRef key="tei"/>
+        <moduleRef key="header"/>
+        <moduleRef key="core"/>
+        <moduleRef key="textstructure"/>
+        <moduleRef key="transcr"/>
+        <moduleRef key="linking"/>
+
+        <elementSpec ident="score-partwise" ns="" mode="add">
+          <desc versionDate="2026-10-15" xml:lang="en">Root of an embedded
+          MusicXML document, carried verbatim inside a
+          <gi>div</gi> <att>type</att>="score". MusicXML has no namespace, so
+          the root undeclares the TEI default namespace with xmlns="". The
+          content is treated as opaque here and validated separately against
+          the official MusicXML XSD.</desc>
+          <classes>
+            <memberOf key="model.common"/>
+          </classes>
+          <content>
+            <anyElement except="http://www.tei-c.org/ns/1.0" maxOccurs="unbounded"/>
+          </content>
+          <attList>
+            <attDef ident="version" usage="opt">
+              <datatype>
+                <dataRef name="token"/>
+              </datatype>
+            </attDef>
+          </attList>
+        </elementSpec>
+
+        <elementSpec ident="surface" mode="change">
+          <desc versionDate="2026-10-15" xml:lang="en">The page surface
+          establishes the pixel coordinate system of the scan: fully bounded,
+          referencing the IIIF image service, and containing at least one
+          staff zone.</desc>
+          <attList>
+            <attDef ident="ulx" mode="change" usage="req">
+              <datatype>
+                <dataRef name="integer"/>
+              </datatype>
+            </attDef>
+            <attDef ident="uly" mode="change" usage="req">
+              <datatype>
+                <dataRef name="integer"/>
+              </datatype>
+            </attDef>
+            <attDef ident="lrx" mode="change" usage="req">
+              <datatype>
+                <dataRef name="integer"/>
+              </datatype>
+            </attDef>
+            <attDef ident="lry" mode="change" usage="req">
+              <datatype>
+                <dataRef name="integer"/>
+              </datatype>
+            </attDef>
+          </attList>
+          <content>
+            <rng:group>
+              <rng:zeroOrMore>
+                <rng:choice>
+                  <rng:ref name="model.global"/>
+                  <rng:ref name="model.labelLike"/>
+                </rng:choice>
+              </rng:zeroOrMore>
+              <rng:ref name="graphic"/>
+              <rng:oneOrMore>
+                <rng:choice>
+                  <rng:ref name="zone"/>
+                  <rng:ref name="model.global"/>
+                </rng:choice>
+              </rng:oneOrMore>
+              <rng:zeroOrMore>
+                <rng:ref name="model.global"/>
+              </rng:zeroOrMore>
+            </rng:group>
+          </content>
+        </elementSpec>
+
+        <elementSpec ident="zone" mode="change">
+          <desc versionDate="2026-10-15" xml:lang="en">A staff zone carries the
+          bounding box of one detected staff as required coordinates, plus its
+          staff lines as <gi>path</gi> polylines.</desc>
+          <attList>
+            <attDef ident="ulx" mode="change" usage="req">
+              <datatype>
+                <dataRef name="integer"/>
+              </datatype>
+            </attDef>
+            <attDef ident="uly" mode="change" usage="req">
+              <datatype>
+                <dataRef name="integer"/>
+              </datatype>
+            </attDef>
+            <attDef ident="lrx" mode="change" usage="req">
+              <datatype>
+                <dataRef name="integer"/>
+              </datatype>
+            </attDef>
+            <attDef ident="lry" mode="change" usage="req">
+              <datatype>
+                <dataRef name="integer"/>
+              </datatype>
+            </attDef>
+          </attList>
+          <content>
+            <rng:oneOrMore>
+              <rng:choice>
+                <rng:ref name="path"/>
+                <rng:ref name="model.global"/>
+              </rng:choice>
+            </rng:oneOrMore>
+          </content>
+        </elementSpec>
+
+        <constraintSpec ident="facsimile-single-surface" scheme="isoschematron">
+          <desc versionDate="2026-10-15" xml:lang="en">One TEI file per page:
+          the facsimile must describe exactly one surface.</desc>
+          <constraint>
+            <sch:rule xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                      context="tei:facsimile">
+              <sch:assert test="count(tei:surface) = 1">A homr page TEI must
+              contain exactly one &lt;surface&gt; (one file per page).</sch:assert>
+            </sch:rule>
+          </constraint>
+        </constraintSpec>
+
+        <constraintSpec ident="staff-zone-shape" scheme="isoschematron">
+          <desc versionDate="2026-10-15" xml:lang="en">A staff zone is the
+          bounding box of one detected staff and its staff-line polylines; a
+          five-line staff system needs at least five paths.</desc>
+          <constraint>
+            <sch:rule xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                      context="tei:zone[@type = 'staff']">
+              <sch:assert test="count(tei:path[@points]) &gt;= 5">A staff
+              &lt;zone&gt; must contain at least five &lt;path&gt; elements with
+              @points (the staff lines).</sch:assert>
+            </sch:rule>
+          </constraint>
+        </constraintSpec>
+
+        <constraintSpec ident="score-div-shape" scheme="isoschematron">
+          <desc versionDate="2026-10-15" xml:lang="en">The score division wraps
+          exactly one embedded MusicXML document and nothing else.</desc>
+          <constraint>
+            <sch:rule xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                      context="tei:div[@type = 'score']">
+              <sch:assert test="count(*) = 1 and count(tei:*) = 0 and local-name(*) = 'score-partwise' and namespace-uri(*) = ''">A score &lt;div&gt;
+              must contain exactly one embedded &lt;score-partwise&gt; element
+              (MusicXML, no namespace) and no other children.</sch:assert>
+            </sch:rule>
+          </constraint>
+        </constraintSpec>
+      </schemaSpec>
+    </div>
+  </body>
+</TEI>

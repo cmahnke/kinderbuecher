@@ -8,15 +8,24 @@ homr is the **single detector** — no OpenCV/classical CV is used. homr's segne
 finds the staffs, and its staff grid points are converted back to original image
 pixel coordinates for the viewer overlay.
 
+The staff regions and the MusicXML travel together in per-page TEI documents
+(`public/tei/*.tei.xml`), referenced from the IIIF manifest — see
+`IMPLEMENTATION.md` for the exchange format and setup guide.
+
 ## Project Structure
 
 ```
-├── setup.sh                    # one-shot setup: deps, icons, OMR, MNX, images, manifest
+├── setup.sh                    # one-shot setup: deps, icons, OMR, TEI, images, manifest
 ├── scripts/
 │   ├── run_homr.py             # homr OMR processing wrapper (sole detector)
+│   ├── generate_tei.py         # results.json + MusicXML -> per-page TEI wrappers
+│   ├── validate_tei.py         # TEI validation (Relax NG + Schematron + MusicXML XSD)
 │   ├── generate_iiif.py        # build IIIF image pyramids + thumbnails (VIPS/pyvips)
-│   ├── generate_mnx.py         # MusicXML -> W3C MNX (vendored mnxconverter)
 │   └── generate_manifest.py    # IIIF manifest for the viewer (public/manifest.json)
+├── schema/
+│   ├── homr-tei.odd            # ODD customization: TEI + embedded MusicXML
+│   ├── homr-tei.rng            # Relax NG compiled by the TEI's ROMA/TEIGarage
+│   └── VENDORING.md            # how the schema was produced
 ├── mnx2musicxml/               # MNX -> MusicXML converter (self-contained module)
 │   ├── index.ts                # public entry (re-exports src/)
 │   ├── src/                    # converter, types, XML writer
@@ -26,6 +35,7 @@ pixel coordinates for the viewer overlay.
 ├── src/
 │   ├── main.ts                 # TypeScript viewer
 │   ├── manifest.ts             # IIIF manifest loader (viewer data source)
+│   ├── tei.ts                  # TEI parser -> staff regions + embedded MusicXML
 │   ├── audio.ts                # Web Audio playback engine
 │   ├── musicxml.ts             # MusicXML parser -> note timeline
 │   ├── noteMap.ts              # note -> page-coordinate mapping (homr grid)
@@ -36,11 +46,10 @@ pixel coordinates for the viewer overlay.
 ├── data/
 │   └── results.json            # homr detection + staff grid results (pipeline source)
 ├── public/
-│   ├── manifest.json           # IIIF manifest: page canvases, staff/MNX
-│   │                           #   annotations, image endpoints, notation
-│   │                           #   refs (generated)
-│   ├── musicxml/               # notation copies referenced by the manifest
-│   └── mnx/                    # MNX copies referenced by the manifest
+│   ├── manifest.json           # IIIF manifest: page canvases, image endpoints
+│   │                           #   and notation refs (generated)
+│   ├── tei/                    # per-page TEI wrappers referenced by the manifest
+│   └── musicxml/               # plain MusicXML copies referenced by the manifest
 ├── public/
 │   ├── favicon.svg
 │   ├── <name>/                 # IIIF pyramid per page, directly under public/ (generated)
@@ -85,7 +94,9 @@ python3 scripts/run_homr.py . -o data/results.json
 Runs homr on every page. homr is authoritative: pages with no detected staffs
 are marked `hasScore:false`; score pages get `hasScore:true`, per-staff page
 bounding boxes plus the 5-line staff grid (`staves[].grid`), and the generated
-`./pageNNN.musicxml`. Output is written to `data/results.json`.
+`./pageNNN.musicxml`. The run also normalizes the MusicXML root to carry
+`xmlns=""`, so the files embed cleanly under the TEI namespace later.
+Output is written to `data/results.json`.
 
 ### 2. Build IIIF image pyramids
 
@@ -108,31 +119,32 @@ those).
 and that target is gitignored); `favicon.svg` and `icons.svg` in `public/` are
 source assets and need no generation step.
 
-### 3. Generate MNX representations (optional)
+### 3. Generate TEI wrappers (staff regions + MusicXML)
 
 ```bash
-pip install lxml
-python3 scripts/generate_mnx.py .
+python3 scripts/generate_tei.py .
+python3 scripts/validate_tei.py        # same validation, standalone
 ```
 
-Converts each generated `pageNNN.musicxml` to the W3C
-[MNX](https://w3c-cg.github.io/mnx/) format, writing `pageNNN.mnx` next to the
-source (gitignored). Uses the vendored
-[mnxconverter](https://github.com/w3c-cg/mnxconverter) (alpha; pinned commit in
-`vendor/mnxconverter/VENDORING.md`). The converter's importer is limited, so
-individual files may fail — failures are reported without stopping the run. The
-output is not used by the viewer; it is kept as an artefact for inspection /
-future use.
+Wraps each generated `pageNNN.musicxml` in a per-page TEI document
+(`public/tei/pageNNN.tei.xml`), adding the detected staff regions from
+`data/results.json`: one `<surface>` per page (the scan, in original image
+pixels, referencing the IIIF canvas), one `<zone type="staff">` per staff
+(the bbox), and each staff line as a `<path points="x,y …">` polyline
+(homr's staff grid). See `IMPLEMENTATION.md` for the format.
 
-The TypeScript port
-[mnxconverter-ts](https://github.com/deemaagog/mnxconverter-ts) is also
-vendored (`vendor/mnxconverter-ts/`, pinned commit in its `VENDORING.md`) — the
-same direction (MusicXML → MNX), but running in the browser. `tests/mnx.spec.ts`
-exercises it against the upstream project's MusicXML fixture pairs (golden
-`.mnx` outputs under `mnx2musicxml/tests/fixtures/`) and cross-checks it
-against the Python converter on real homr output. It is not wired into the
-viewer yet; it exists so a future MNX → MusicXML step can be built and tested
-in TypeScript.
+Every generated file is validated before it is kept: Relax NG + ISO
+Schematron from the compiled ODD customization (`schema/homr-tei.odd` →
+`schema/homr-tei.rng`, built with the TEI's ROMA/TEIGarage — see
+`schema/VENDORING.md`), plus the embedded MusicXML against the official
+MusicXML 4.0 XSD (`vendor/musicxml/`, report-only — homr's own output has a
+known validity bug, see `NOTES.md`). Any Relax NG/Schematron failure fails
+the run, so only schema-valid TEI reaches `public/`.
+
+(MNX is no longer generated: the staff regions moved into the TEI and the
+viewer doesn't consume MNX. The TypeScript MNX tooling — the
+`mnx2musicxml/` module, its specs, and the vendored `mnxconverter-ts` — is
+untouched and still tested; it exists for a future MNX → MusicXML step.)
 
 ### 4. View Results
 
@@ -163,7 +175,7 @@ settable with `--base-url` on `generate_manifest.py` and `generate_iiif.py` —
 the pyramid `info.json` `@id`s are kept in sync automatically). The viewer
 resolves referenced URLs to their pathname, so the same manifest works when
 served locally and from the deployment host. The manifest is modeled
-natively:
+natively, and it carries **no staff data at all**:
 
 - one **canvas per page** painted by its IIIF image service
   (`<name>/info.json` — the pyramids sit directly under the base URL, there
@@ -172,26 +184,21 @@ natively:
   as the canvas **thumbnail** — the overview grid shows it, scaled by the
   client (no pre-generated `/thumbnails/*.jpg` needed by the viewer anymore)
 - the notation files as **Alternative Representations** (canvas `rendering`):
-  MusicXML and MNX, copied to `/musicxml/<name>.musicxml` and
-  `/mnx/<name>.mnx`, so `public/` alone is deployable
+  the TEI wrapper (`/tei/<name>.tei.xml`) and the plain MusicXML
+  (`/musicxml/<name>.musicxml`), so `public/` alone is deployable
 - OMR confidence/status/error as native canvas **metadata**
-- each detected staff (= one system region of the scan) as a **"describing"
-  annotation** on its page canvas: the `#xywh` FragmentSelector target is the
-  region; the body is a `TextualBody` (`format: application/json`) carrying
-  the OMR data as plain JSON (`staffGrid`, `staffLineCount`) — the orange
-  highlight rects and the note-position mapping derive from these. When the
-  page has a valid MNX, the body also links into it: `mnx` (the MNX URL) and
-  `measures` (`[start, end)` — the index range into the MNX's
-  `global.measures`), so any consumer can resolve which MNX fragment belongs
-  to which image region
-- the **MNX document itself** as a "supplementing" annotation with an inline
-  `TextualBody` (`format: application/json`) targeting the whole page canvas —
-  the MNX travels inside the manifest; the `rendering` reference stays for
-  download-only consumers. Empty MNX files (some pages fail the converter
-  silently) are skipped: no copy, no rendering reference, no annotation
 - `behavior: ["paged"]` marks the sequential book pages
 
-### 4. Play & Highlight
+The staff regions live only in the TEI files: each `<zone type="staff">` is
+the region of one detected staff on its page canvas (pointed at via the
+`<surface>`'s `corresp`), each `<path>` is a staff line, and the MusicXML
+the zones belong to is embedded in the same TEI. The viewer fetches the TEI
+(per page, when a detail view opens) and derives the overlay rects, the
+note-position mapping, and the playable score from it. See
+`IMPLEMENTATION.md` for the exchange format and how to consume the TEI
+outside this viewer.
+
+### 5. Play & Highlight
 
 Select a score page and use the player panel:
 

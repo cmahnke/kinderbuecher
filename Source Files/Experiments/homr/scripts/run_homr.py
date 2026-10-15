@@ -20,10 +20,33 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import re
 import subprocess
 import sys
 
 from PIL import Image
+
+
+def normalize_musicxml_namespace(xml_path: str) -> None:
+    """Make homr's MusicXML embeddable in TEI: homr writes a namespace-free
+    <score-partwise> root without a namespace declaration, which would fall
+    into the TEI namespace when embedded. Declare the empty default
+    namespace on the root element instead (semantically identical, keeps the
+    document namespace-free for OSMD and every other consumer). Idempotent."""
+    with open(xml_path, encoding="utf-8") as fh:
+        text = fh.read()
+    match = re.search(r"<score-partwise(?=[\s>])[^>]*>", text)
+    if match is None:
+        raise ValueError(f"{xml_path}: no <score-partwise> root found")
+    if "xmlns" in match.group(0):
+        return  # already carries a namespace declaration
+    updated = (
+        text[: match.start()]
+        + match.group(0).replace("<score-partwise", '<score-partwise xmlns=""', 1)
+        + text[match.end() :]
+    )
+    with open(xml_path, "w", encoding="utf-8") as fh:
+        fh.write(updated)
 
 
 def homr_staff_bboxes(
@@ -109,6 +132,7 @@ def process_one_page(image_path: str, orig_w: int, orig_h: int, debug: bool) -> 
         title = title_future.result(60)
         xml = generate_xml(xml_args, result_staffs, title)
         xml.write(xml_path)
+        normalize_musicxml_namespace(xml_path)
     except Exception as exc:
         return {"hasScore": True, "staves": staves, "status": "error", "error": str(exc)}
     finally:
