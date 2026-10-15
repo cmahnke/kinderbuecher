@@ -174,15 +174,15 @@ export function setupPlayer(
   controls.append(playBtn, pauseBtn, stopBtn, tempoLabel, tempo)
 
   // A page score may carry several staves (e.g. a grand staff with two
-  // voices); by default only one staff is played so the tracks don't stack
-  // on top of each other. Dual mode plays two staves at once, each with its
-  // own instrument.
+  // voices). Dual mode plays two staves at once, each with its own
+  // instrument, and is on by default whenever the score carries two note
+  // streams; with a single staff only that staff plays.
   const presentStaffs = [...new Set(timeline.notes.map((n) => n.staff))].sort((a, b) => a - b)
   let trackA = presentStaffs[0] ?? 1
   let trackB = presentStaffs[1] ?? trackA
   let instrumentA: Instrument = 'piano'
   let instrumentB: Instrument = 'piano'
-  let dual = false
+  let dual = presentStaffs.length > 1
 
   const trackLabel = document.createElement('span')
   trackLabel.className = 'player-tempo'
@@ -225,6 +225,7 @@ export function setupPlayer(
     dualBox.type = 'checkbox'
     dualBox.className = 'player-dual'
     dualBox.id = 'player-dual-toggle'
+    dualBox.checked = dual
     const dualLabel = document.createElement('label')
     dualLabel.className = 'player-tempo'
     dualLabel.htmlFor = 'player-dual-toggle'
@@ -244,22 +245,33 @@ export function setupPlayer(
   } else {
     controls.classList.add('single-track')
   }
+
+  // Toggle for the rendered score overlay (OpenSheetMusicDisplay mapped onto
+  // the scan). Off by default; the OSMD render itself still runs while
+  // anything consumes its alignment data (see below).
+  const scoreBox = document.createElement('input')
+  scoreBox.type = 'checkbox'
+  scoreBox.className = 'player-score'
+  scoreBox.id = 'player-score-toggle'
+  scoreBox.checked = SHOW_SCORE_OVERLAY
+  const scoreLabel = document.createElement('label')
+  scoreLabel.className = 'player-tempo'
+  scoreLabel.htmlFor = 'player-score-toggle'
+  scoreLabel.textContent = 'Score'
+  controls.append(scoreLabel, scoreBox)
   controlsHost.appendChild(controls)
 
   // The rendered score lives in a page-pixel-space SVG (same mechanism as the
   // staff highlight overlay), so OpenSeadragon scales it with pan/zoom.
   // After OSMD renders, every system (or sub-staff of a grand staff) is
   // affine-mapped onto the homr-detected staff region of the scan.
-  // With the score overlay disabled (config.ts) the OSMD render still runs
-  // while anything consumes its alignment data (piece rects, system-entry
-  // mapping, cursor position for the playhead) — but renders into its hidden
-  // container only.
+  // The render runs while anything consumes its alignment data (piece rects,
+  // system-entry mapping, cursor position for the playhead); the rendered
+  // overlay itself is only mounted while the Score toggle is on.
   const needsOsmd = SHOW_SCORE_OVERLAY || SHOW_PLAYBACK_HIGHLIGHTS
-  const scoreSvg = SHOW_SCORE_OVERLAY ? document.createElementNS(SVG_NS, 'svg') : null
-  if (scoreSvg) {
-    scoreSvg.setAttribute('viewBox', `0 0 ${String(page.width)} ${String(page.height)}`)
-    scoreSvg.classList.add('staff-overlay', 'score-overlay')
-  }
+  const scoreSvg = document.createElementNS(SVG_NS, 'svg') as SVGSVGElement
+  scoreSvg.setAttribute('viewBox', `0 0 ${String(page.width)} ${String(page.height)}`)
+  scoreSvg.classList.add('staff-overlay', 'score-overlay')
 
   let osmd: OsmdRenderer | null = null
   let disposed = false
@@ -268,21 +280,53 @@ export function setupPlayer(
   if (import.meta.env.DEV) {
     ;(window as unknown as Record<string, unknown>).__renderer = renderer
   }
-  // The score can only be mounted once the renderer is done AND the overlay
+  let showScore = SHOW_SCORE_OVERLAY
+  let scoreOverlayAdded = false
+  let scoreContentMounted = false
+  // Mounts the rendered overlay once the renderer is done AND the overlay
   // has actually entered the DOM (which happens after the tile source opens).
-  const rendered: Promise<void> | null = needsOsmd
-    ? renderer.render(page.musicxmlText, staffEntries)
-    : null
-  void Promise.all([rendered, scoreSvg ? waitConnected(scoreSvg) : null])
-    .then(() => {
-      if (disposed) return
-      if (scoreSvg && osmd) mountScore(scoreSvg, osmd)
-      pruneUnmatchedRects(overlaySvg, osmd?.getLayout()?.pieces ?? [])
-    })
-    .catch((err: unknown) => {
-      console.error('OSMD render failed:', err)
-    })
-  if (scoreSvg) addPixelOverlay(osd.viewer, scoreSvg, 0, 0, page.width, page.height)
+  // The score content is mounted at most once; the toggle only adds/removes
+  // the overlay itself.
+  function updateScoreOverlay(): void {
+    if (disposed || !osmd || !showScore || !osmd.getLayout()) return
+    if (!scoreOverlayAdded) {
+      addPixelOverlay(osd.viewer, scoreSvg, 0, 0, page.width, page.height)
+      scoreOverlayAdded = true
+    }
+    if (!scoreContentMounted) {
+      void waitConnected(scoreSvg).then(() => {
+        if (disposed || !showScore || scoreContentMounted || !osmd) return
+        mountScore(scoreSvg, osmd)
+        scoreContentMounted = true
+      })
+    }
+  }
+  let rendered: Promise<void> | null = null
+  function ensureRendered(): void {
+    if (rendered) return
+    rendered = renderer.render(page.musicxmlText, staffEntries)
+    void rendered
+      .then(() => {
+        if (disposed) return
+        updateScoreOverlay()
+        pruneUnmatchedRects(overlaySvg, osmd?.getLayout()?.pieces ?? [])
+      })
+      .catch((err: unknown) => {
+        console.error('OSMD render failed:', err)
+      })
+  }
+  if (needsOsmd) ensureRendered()
+
+  scoreBox.addEventListener('change', () => {
+    showScore = scoreBox.checked
+    if (showScore) {
+      ensureRendered()
+      updateScoreOverlay()
+    } else if (scoreOverlayAdded) {
+      osd.viewer.removeOverlay(scoreSvg)
+      scoreOverlayAdded = false
+    }
+  })
 
   const player = new MusicPlayer(timeline)
 
@@ -294,19 +338,6 @@ export function setupPlayer(
         ]
       : [{ staff: trackA, instrument: instrumentA }]
   player.setTracks(trackConfigs())
-
-  // Maps an index into timeline.notes to its position within the primary
-  // track (-1 for other staves), so the score cursor follows the primary
-  // track only.
-  let trackIndex: Int32Array = new Int32Array(0)
-  function rebuildTrackIndex(): void {
-    trackIndex = new Int32Array(timeline.notes.length)
-    let k = 0
-    for (let i = 0; i < timeline.notes.length; i++) {
-      trackIndex[i] = timeline.notes[i].staff === trackA ? k++ : -1
-    }
-  }
-  rebuildTrackIndex()
 
   // OSMD's playback cursor advances one voice entry (onset) per step —
   // including rests, which are not in timeline.notes. Compute the number of
@@ -331,18 +362,36 @@ export function setupPlayer(
     return k
   }
 
-  let currentStaffRect: SVGRectElement | null = null
-  let currentNoteMarker: SVGCircleElement | null = null
-  let currentPosLine: SVGLineElement | null = null
+  /**
+   * One highlight set (staff rect, note marker, playhead line) per playing
+   * staff, so dual mode shows the current position on both staves instead
+   * of letting the second track fight the first for a single marker.
+   */
+  interface TrackHighlights {
+    staffRect: SVGRectElement | null
+    noteMarker: SVGCircleElement | null
+    posLine: SVGLineElement | null
+  }
+  const highlightSets = new Map<number, TrackHighlights>()
+  function highlightsFor(staff: number): TrackHighlights {
+    let set = highlightSets.get(staff)
+    if (!set) {
+      set = { staffRect: null, noteMarker: null, posLine: null }
+      highlightSets.set(staff, set)
+    }
+    return set
+  }
 
   function clearHighlights(): void {
-    if (currentStaffRect) {
-      currentStaffRect.setAttribute('visibility', 'hidden')
-      currentStaffRect.setAttribute('width', '0')
-      currentStaffRect.setAttribute('height', '0')
+    for (const set of highlightSets.values()) {
+      if (set.staffRect) {
+        set.staffRect.setAttribute('visibility', 'hidden')
+        set.staffRect.setAttribute('width', '0')
+        set.staffRect.setAttribute('height', '0')
+      }
+      if (set.noteMarker) set.noteMarker.setAttribute('visibility', 'hidden')
+      if (set.posLine) set.posLine.setAttribute('visibility', 'hidden')
     }
-    if (currentNoteMarker) currentNoteMarker.setAttribute('visibility', 'hidden')
-    if (currentPosLine) currentPosLine.setAttribute('visibility', 'hidden')
   }
 
   /** The staff entry a MusicXML system was aligned to (-1 when unknown). */
@@ -363,6 +412,7 @@ export function setupPlayer(
 
   function highlightStaff(system: number, staff: number): void {
     if (!overlaySvg || !SHOW_PLAYBACK_HIGHLIGHTS) return
+    const set = highlightsFor(staff)
     const entry = entryForSystem(system)
     // Prefer the aligned piece rect: it marks exactly the sub-staff region
     // the score was mapped to, not the whole (possibly two-staff) entry.
@@ -379,30 +429,30 @@ export function setupPlayer(
       return
     }
     const [x0, y0, x1, y1] = box
-    if (!currentStaffRect) {
-      currentStaffRect = document.createElementNS('http://www.w3.org/2000/svg', 'rect')
-      currentStaffRect.setAttribute('class', 'staff-current')
-      currentStaffRect.setAttribute('visibility', 'hidden')
-      overlaySvg.appendChild(currentStaffRect)
+    if (!set.staffRect) {
+      set.staffRect = document.createElementNS('http://www.w3.org/2000/svg', 'rect')
+      set.staffRect.setAttribute('class', 'staff-current')
+      set.staffRect.setAttribute('visibility', 'hidden')
+      overlaySvg.appendChild(set.staffRect)
     }
-    currentStaffRect.setAttribute('x', String(x0))
-    currentStaffRect.setAttribute('y', String(y0))
-    currentStaffRect.setAttribute('width', String(x1 - x0))
-    currentStaffRect.setAttribute('height', String(y1 - y0))
-    currentStaffRect.setAttribute('visibility', 'visible')
+    set.staffRect.setAttribute('x', String(x0))
+    set.staffRect.setAttribute('y', String(y0))
+    set.staffRect.setAttribute('width', String(x1 - x0))
+    set.staffRect.setAttribute('height', String(y1 - y0))
+    set.staffRect.setAttribute('visibility', 'visible')
     // The position line spans the current staff region; its extent is set
     // per note in highlightNote (a bold vertical playhead).
-    if (!currentPosLine) {
-      currentPosLine = document.createElementNS('http://www.w3.org/2000/svg', 'line')
-      currentPosLine.setAttribute('class', 'play-pos')
-      currentPosLine.setAttribute('visibility', 'hidden')
-      overlaySvg.appendChild(currentPosLine)
+    if (!set.posLine) {
+      set.posLine = document.createElementNS('http://www.w3.org/2000/svg', 'line')
+      set.posLine.setAttribute('class', 'play-pos')
+      set.posLine.setAttribute('visibility', 'hidden')
+      overlaySvg.appendChild(set.posLine)
     }
-    currentPosLine.setAttribute('x1', String(x0))
-    currentPosLine.setAttribute('x2', String(x0))
-    currentPosLine.setAttribute('y1', String(y0))
-    currentPosLine.setAttribute('y2', String(y1))
-    currentPosLine.setAttribute('stroke-width', String(Math.max(6, (y1 - y0) * 0.1)))
+    set.posLine.setAttribute('x1', String(x0))
+    set.posLine.setAttribute('x2', String(x0))
+    set.posLine.setAttribute('y1', String(y0))
+    set.posLine.setAttribute('y2', String(y1))
+    set.posLine.setAttribute('stroke-width', String(Math.max(6, (y1 - y0) * 0.1)))
   }
 
   function highlightNote(index: number): void {
@@ -410,6 +460,7 @@ export function setupPlayer(
     if (!note) return
     highlightStaff(note.system, note.staff)
     if (!overlaySvg) return
+    const set = highlightsFor(note.staff)
     const entry = entryForSystem(note.system)
     const coord = noteCoordOnStaff(timeline, note, staffEntries[entry >= 0 ? entry : note.system])
     if (!coord) return
@@ -424,34 +475,40 @@ export function setupPlayer(
       const refined = osmdToPage(piece, cursor).x
       if (Math.abs(refined - coord.x) < piece.width * 0.2) x = refined
     }
-    if (!currentNoteMarker) {
-      currentNoteMarker = document.createElementNS('http://www.w3.org/2000/svg', 'circle')
-      currentNoteMarker.setAttribute('class', 'note-marker')
-      currentNoteMarker.setAttribute('visibility', 'hidden')
-      overlaySvg.appendChild(currentNoteMarker)
+    if (!set.noteMarker) {
+      set.noteMarker = document.createElementNS('http://www.w3.org/2000/svg', 'circle')
+      set.noteMarker.setAttribute('class', 'note-marker')
+      set.noteMarker.setAttribute('visibility', 'hidden')
+      overlaySvg.appendChild(set.noteMarker)
     }
-    currentNoteMarker.setAttribute('r', String(coord.r))
-    currentNoteMarker.setAttribute('cx', String(x))
-    currentNoteMarker.setAttribute('cy', String(coord.y))
-    currentNoteMarker.setAttribute('stroke-width', String(Math.max(4, coord.unit * 0.3)))
-    currentNoteMarker.setAttribute('visibility', 'visible')
+    set.noteMarker.setAttribute('r', String(coord.r))
+    set.noteMarker.setAttribute('cx', String(x))
+    set.noteMarker.setAttribute('cy', String(coord.y))
+    set.noteMarker.setAttribute('stroke-width', String(Math.max(4, coord.unit * 0.3)))
+    set.noteMarker.setAttribute('visibility', 'visible')
     // A bold vertical playhead at the same x: at fit zoom the page is shown
     // at a fraction of its pixel size, so a note-sized dot alone is nearly
     // invisible — the line carries the position.
-    if (currentPosLine) {
-      currentPosLine.setAttribute('x1', String(x))
-      currentPosLine.setAttribute('x2', String(x))
-      currentPosLine.setAttribute('visibility', 'visible')
+    if (set.posLine) {
+      set.posLine.setAttribute('x1', String(x))
+      set.posLine.setAttribute('x2', String(x))
+      set.posLine.setAttribute('visibility', 'visible')
     }
   }
 
   player.setCallbacks({
     onNote: (note, index) => {
-      // In dual mode only the primary track (A) drives the highlights; the
-      // second track would otherwise fight the marker for position.
-      if (note.staff !== trackA || !SHOW_PLAYBACK_HIGHLIGHTS) return
-      // Advance the OSMD cursor first so the marker reads the fresh position.
-      osmd?.highlightNote(osmdStepsBefore(note, trackA))
+      if (!SHOW_PLAYBACK_HIGHLIGHTS) return
+      // Each playing track drives its own highlight set, so dual mode shows
+      // the current position on both staves; notes of staves that are not
+      // playing are ignored. OSMD's single cursor still follows the primary
+      // track only.
+      const audible = note.staff === trackA || (dual && note.staff === trackB)
+      if (!audible) return
+      if (note.staff === trackA) {
+        // Advance the OSMD cursor first so the marker reads the fresh position.
+        osmd?.highlightNote(osmdStepsBefore(note, trackA))
+      }
       highlightNote(index)
     },
     onEnd: () => {
@@ -462,7 +519,6 @@ export function setupPlayer(
 
   function applyTracks(): void {
     player.setTracks(trackConfigs())
-    rebuildTrackIndex()
     osmd?.clearHighlight()
     if (player.isPlaying) {
       player.stop()
@@ -526,7 +582,7 @@ export function setupPlayer(
       player.dispose()
       osmd?.dispose()
       controls.remove()
-      if (scoreSvg) osd.viewer.removeOverlay(scoreSvg)
+      if (scoreOverlayAdded) osd.viewer.removeOverlay(scoreSvg)
     },
   }
 }

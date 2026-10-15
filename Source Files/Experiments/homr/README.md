@@ -98,6 +98,20 @@ bounding boxes plus the 5-line staff grid (`staves[].grid`), and the generated
 `xmlns=""`, so the files embed cleanly under the TEI namespace later.
 Output is written to `data/results.json`.
 
+Which homr runs is configurable: by default the installed package is used.
+`--homr-path` (or `HOMR_PATH`, same `os.pathsep`-separated syntax) points at
+a local checkout that shadows it — e.g. the vendored development checkout:
+
+```bash
+python3 scripts/run_homr.py . -o data/results.json \
+  --homr-path vendor/homr:vendor/homr-deps
+```
+
+See `vendor/homr/VENDORING.md` (pinned dev commit, its weights, and why
+`vendor/homr-deps` exists); `python3 scripts/fetch_homr.py` (re)creates the
+checkout from GitHub — nothing under `vendor/` is committed. The script adapts to both the released (0.7.0)
+and the development homr API, so either source works.
+
 ### 2. Build IIIF image pyramids
 
 ```bash
@@ -204,12 +218,19 @@ Select a score page and use the player panel:
 
 - **Play / Pause / Stop / Tempo** — plays the page's MusicXML via Web Audio.
   Multi-staff pages (e.g. a grand staff) offer a **Track** selector: only the
-  selected staff is played, so the staves don't sound as stacked tracks.
+  selected staff is played, so the staves don't sound as stacked tracks. The
+  **Dual** toggle plays two staves at once, each with its own instrument, and
+  is on by default whenever the score carries two note streams.
 - **Rendered score** — the page's MusicXML is rendered with OpenSheetMusicDisplay;
-  the current note is highlighted on the score during playback.
+  the current note is highlighted on the score during playback. The rendered
+  overlay is hidden behind a **Score** toggle (off by default); each rendered
+  system is mapped exactly onto its staff region, so the notation fills the
+  detected staves.
 - **Scan highlights** — the current staff system is highlighted on the scan, and
   a marker tracks the exact note being played (positions reconstructed from
-  homr's staff grid + the MusicXML pitch/timing; approximate).
+  homr's staff grid + the MusicXML pitch/timing; approximate). In dual mode
+  each playing staff gets its own highlight set, so the position is shown on
+  both staves.
 
 ## Playback / highlighting details
 
@@ -230,12 +251,39 @@ Select a score page and use the player panel:
 
 On the test set ("Vieilles Chansons et Danses et Rondes", Boutet de Monvel):
 
-- homr detects 36 of 50 pages as score pages (`hasScore:true`).
+- homr detects 37 of 50 pages as score pages (`hasScore:true`).
+
+## OMR source and recognition statistics
+
+The pipeline runs a development homr (GitHub `main` past the 0.7.0 release,
+pinned commit — see `vendor/homr/VENDORING.md`, selectable via
+`--homr-path`/`HOMR_PATH`, reproducible with `scripts/fetch_homr.py`)
+because the unreleased upstream commits fix exactly this project's pain
+points (staff-detection robustness, clefs/barlines split out of chords,
+grace-note handling). Measured against the 0.7.0 output on the same 50
+pages:
+
+- score pages: **36 → 37** (`page009` recovered; the remaining 13
+  scoreless pages were verified to contain no notation — covers, lyrics
+  and illustration pages)
+- invalid `<chord/>`+`<rest/>` notes: **3 pages → 0** (`page019`,
+  `page023`, `page030` fixed upstream — the `NOTES.md` workaround stays as
+  a safety net)
+- staff splits: `page028` gained a proper 1/2 split (dual mode now
+  available there); recognized notes total **3891 → 3929**
+- known regression: `page015` lost its 1/2 split (all notes on staff 1, no
+  dual mode there) — watch for upstream fixes
+- caveat: the dev MusicXML writer emits some elements out of XSD order
+  (`<key>`, `<voice>` placement — e.g. `page006` raises 139 report-only XSD
+  notes where 0.7.0 raised none). Order-insensitive consumers (OSMD,
+  DOMParser, the playback parser) are unaffected; the XSD layer stays
+  report-only.
 
 ## Testing
 
 ```bash
-npm test                        # both playwright projects against one dev server
+npm test                        # everything except the unused MNX path
+npm run test:mnx                 # only the MNX converter specs (tagged @mnx)
 cd mnx2musicxml && npm test     # only the converter module's project
 ```
 

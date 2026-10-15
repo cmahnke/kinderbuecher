@@ -23,7 +23,7 @@ async function convertMusicXmlToMnx(page: Page, xml: string): Promise<unknown> {
   )
 }
 
-test.describe('MNX: MusicXML -> MNX (vendored mnxconverter-ts)', () => {
+test.describe('MNX: MusicXML -> MNX (vendored mnxconverter-ts)', { tag: '@mnx' }, () => {
   test('vendor module loads in the browser', async ({ page }) => {
     await page.goto('/')
     const exported = await page.evaluate(async (moduleUrl) => {
@@ -142,7 +142,7 @@ function extractEvents(mnx: MnxDocLike): ExtractedMnx {
   }
 }
 
-test.describe('MNX: cross-check on real homr output', () => {
+test.describe('MNX: cross-check on real homr output', { tag: '@mnx' }, () => {
   test('page006: TS converter agrees with the Python converter', async ({ page }) => {
     const xmlPath = path.join(rootDir, 'page006.musicxml')
     const pyMnxPath = path.join(rootDir, 'page006.mnx')

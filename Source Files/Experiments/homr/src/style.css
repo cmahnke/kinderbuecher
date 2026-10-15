@@ -260,7 +260,8 @@ header p {
 .player-track,
 .player-track2,
 .player-instrument,
-.player-dual {
+.player-dual,
+.player-score {
   font-size: 0.8rem;
   padding: 0.15rem 0.25rem;
   border: 1px solid #ccc;
@@ -268,7 +269,8 @@ header p {
   background: #fff;
 }
 
-.player-dual {
+.player-dual,
+.player-score {
   cursor: pointer;
 }
 

@@ -97,6 +97,9 @@ fi
 
 # --- 4. OMR detection (homr -> MusicXML) -------------------------------------
 # Writes data/results.json (staff bboxes + grids) and pageNNN.musicxml.
+# Uses the installed homr unless HOMR_PATH points at a local checkout
+# (e.g. export HOMR_PATH="vendor/homr:vendor/homr-deps" for the vendored
+# dev version — see scripts/fetch_homr.py and scripts/run_homr.py --help).
 if [ "$SKIP_OMR" -eq 0 ]; then
   step "Running homr OMR detection (this is the long step)"
   "$PYTHON" scripts/run_homr.py . -o data/results.json

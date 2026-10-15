@@ -1,0 +1,12 @@
+{
+  "name": "mnx2musicxml",
+  "description": "MNX -> MusicXML converter (reverse of the vendored MusicXML -> MNX converter)",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "npm --prefix .. run test:mnx -- --project=mnx2musicxml",
+    "lint": "npm --prefix .. run lint",
+    "check": "npm --prefix .. run check"
+  }
+}

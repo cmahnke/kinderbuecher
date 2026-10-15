@@ -33,7 +33,7 @@ interface NormalizedTimeline {
   }>
 }
 
-test.describe('Roundtrip: MusicXML -> MNX -> MusicXML (real pages)', () => {
+test.describe('Roundtrip: MusicXML -> MNX -> MusicXML (real pages)', { tag: '@mnx' }, () => {
   test('converted pages are semantically identical to their sources', async ({ page }) => {
     const docs: Array<[string, string]> = pageFiles.map((f) => [
       f,

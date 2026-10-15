@@ -347,12 +347,12 @@ function pieceFromGeometry(g: PieceGeometry, scalesOut: number[]): ScorePiece | 
   const ty0 = target.y0 - padTop * scaleY
   const th = target.y1 - target.y0 + (padTop + padBottom) * scaleY
   if (!(sh > 0) || !(th > 0)) return null
-  const scaleX = (targetX.x1 - targetX.x0) / sw
-  if (!Number.isFinite(scaleX) || !Number.isFinite(scaleY)) return null
+  if (!Number.isFinite(scaleY)) return null
   scalesOut.push(scaleY)
 
-  // When the aspect ratios diverge too much, letterbox instead of distorting.
-  const distorted = Math.abs(Math.log(scaleX / scaleY)) > 0.4
+  // The piece maps exactly onto its staff region: the staff lines match by
+  // construction (same scaleY on source and target), the notation stretches
+  // horizontally to fill the region.
   return {
     x: targetX.x0,
     y: ty0,
@@ -362,7 +362,7 @@ function pieceFromGeometry(g: PieceGeometry, scalesOut: number[]): ScorePiece | 
     sy: sy0,
     sw,
     sh,
-    fit: distorted ? 'xMidYMid meet' : 'none',
+    fit: 'none',
     entry: 0,
     subStaff: 1,
   }
@@ -685,7 +685,7 @@ export class OsmdRenderer {
           sy: box.y0,
           sw: box.x1 - box.x0,
           sh: box.y1 - box.y0,
-          fit: 'xMidYMid meet',
+          fit: 'none',
           entry: -1,
           subStaff: 1,
         },

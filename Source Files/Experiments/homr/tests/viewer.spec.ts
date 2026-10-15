@@ -24,7 +24,7 @@ test.describe('Score Page Viewer', () => {
 
   test('displays correct page count', async ({ page }) => {
     await page.goto('/')
-    await expect(page.locator('header p')).toContainText('36 of 50 pages contain scores')
+    await expect(page.locator('header p')).toContainText('37 of 50 pages contain scores')
   })
 
   test('shows thumbnails grid with score and no-score markers', async ({ page }) => {
@@ -34,9 +34,9 @@ test.describe('Score Page Viewer', () => {
     const thumbnails = page.locator('.thumb')
     await expect(thumbnails).toHaveCount(50)
     const scoreThumbs = page.locator('.thumb.score')
-    await expect(scoreThumbs).toHaveCount(36)
+    await expect(scoreThumbs).toHaveCount(37)
     const noScoreThumbs = page.locator('.thumb.no-score')
-    await expect(noScoreThumbs).toHaveCount(14)
+    await expect(noScoreThumbs).toHaveCount(13)
     // badges only appear once a page's TEI has been fetched and parsed
     await expect(page.locator('.thumb .badge')).toHaveCount(0)
     await page.locator('.thumb.score').first().click()
@@ -89,10 +89,40 @@ test.describe('Score Page Viewer', () => {
     await expect(teiLink).toContainText('.tei.xml')
   })
 
+  test('score overlay toggle is off by default and controls the overlay', async ({ page }) => {
+    await page.goto('/')
+    await page.locator('.thumb.score').first().click()
+    const detail = page.locator('#detail')
+    await expect(detail.locator('h2')).toBeVisible()
+    const toggle = detail.locator('.player-score')
+    await expect(toggle).toBeVisible()
+    await expect(toggle).not.toBeChecked()
+    await expect(detail.locator('.score-overlay')).toHaveCount(0)
+    await toggle.check()
+    await expect(detail.locator('.score-overlay > svg').first()).toBeVisible({ timeout: 30000 })
+    await toggle.uncheck()
+    await expect(detail.locator('.score-overlay')).toHaveCount(0)
+  })
+
+  test('dual mode defaults to on for grand staves and is absent otherwise', async ({ page }) => {
+    await page.goto('/')
+    // page006 is a grand staff page: dual is offered and enabled by default
+    await page.locator('.thumb.score').first().click()
+    await expect(page.locator('#detail .player-dual')).toBeChecked()
+    // page023 carries a single staff: no dual toggle at all
+    await page.locator('.thumb').filter({ hasText: 'page023' }).click()
+    await expect(page.locator('#detail h2')).toContainText('page023')
+    await expect(page.locator('#detail .player-dual')).toHaveCount(0)
+  })
+
   test('score page renders player with controls and scan highlights', async ({ page }) => {
     await page.goto('/')
     const scoreThumb = page.locator('.thumb.score').first()
     await scoreThumb.click()
+    // single-track mode for the strict single-element assertions below
+    await page.locator('.player-dual').uncheck()
+    // the rendered score overlay is opt-in
+    await page.locator('.player-score').check()
     // OSMD renders the score into per-system SVGs nested in the overlay (the
     // OSMD source svg itself lives in <defs> and must not match)
     const score = page.locator('.score-overlay > svg').first()
@@ -127,7 +157,7 @@ test.describe('Score Page Viewer', () => {
     const thumb = page.locator('.thumb').filter({ hasText: 'page008' })
     await thumb.click()
     const rects = page.locator('#detail svg.staff-overlay:not(.score-overlay) rect')
-    await expect(rects).toHaveCount(3)
+    await expect(rects).toHaveCount(2)
   })
 
   test('keyboard activation via Enter', async ({ page }) => {
@@ -180,6 +210,9 @@ test.describe('Score Page Viewer', () => {
 
     await page.goto('/')
     await page.locator('.thumb.score').first().click()
+    // single track for the strict single-marker assertions below
+    await page.locator('.player-dual').uncheck()
+    await page.locator('.player-score').check()
     await expect(page.locator('.score-overlay > svg').first()).toBeVisible({ timeout: 30000 })
     await page.locator('.player-btn').first().click()
     const marker = page.locator('.note-marker')
@@ -217,6 +250,7 @@ test.describe('Score Page Viewer', () => {
 
     await page.goto('/')
     await page.locator('.thumb.score').first().click()
+    await page.locator('.player-score').check()
     await expect(page.locator('.score-overlay > svg').first()).toBeVisible({ timeout: 30000 })
 
     const readStarts = () =>
@@ -237,6 +271,8 @@ test.describe('Score Page Viewer', () => {
       }
     }
 
+    // dual is on by default for grand staves: drop to a single track first
+    await page.locator('.player-dual').uncheck()
     // default track (staff 1)
     await page.locator('.player-btn').first().click()
     await page.waitForTimeout(2200)
@@ -255,6 +291,28 @@ test.describe('Score Page Viewer', () => {
     expect(secondRun.length).toBeGreaterThanOrEqual(2)
     expectMonophonic(secondRun)
     expect(secondRun[0].f).not.toBeCloseTo(firstFreq, 0)
+  })
+
+  test('dual mode shows the current position on both staves', async ({ page }) => {
+    await page.goto('/')
+    await page.locator('.thumb.score').first().click()
+    await page.locator('.player-score').check()
+    await expect(page.locator('.score-overlay > svg').first()).toBeVisible({ timeout: 30000 })
+    await page.locator('.player-dual').check()
+    await page.locator('.player-btn').first().click()
+    // each playing track drives its own highlight set: two staff rects, two
+    // note markers, two playhead lines (retried until both tracks fired)
+    for (const selector of ['.staff-current', '.note-marker', '.play-pos']) {
+      const els = page.locator(`#detail ${selector}`)
+      await expect(els).toHaveCount(2, { timeout: 15000 })
+      await expect(els.first()).toHaveAttribute('visibility', 'visible')
+      await expect(els.nth(1)).toHaveAttribute('visibility', 'visible')
+    }
+    // the two playheads sit on different staves (different y extents)
+    const boxes = await page
+      .locator('#detail .play-pos')
+      .evaluateAll((lines) => lines.map((l) => [l.getAttribute('y1'), l.getAttribute('y2')]))
+    expect(boxes[0]).not.toEqual(boxes[1])
   })
 
   test('dual mode plays two tracks simultaneously with per-track instruments', async ({ page }) => {
@@ -278,11 +336,12 @@ test.describe('Score Page Viewer', () => {
 
     await page.goto('/')
     await page.locator('.thumb.score').first().click()
+    await page.locator('.player-score').check()
     await expect(page.locator('.score-overlay > svg').first()).toBeVisible({ timeout: 30000 })
 
-    // enable dual playback: both staves are scheduled, so many onsets now
-    // carry two simultaneous notes (one per staff)
-    await page.locator('.player-dual').check()
+    // dual playback is on by default for grand staves; both staves are
+    // scheduled, so many onsets now carry two simultaneous notes (one per staff)
+    await expect(page.locator('.player-dual')).toBeChecked()
     await page.locator('.player-btn').first().click()
     await page.waitForTimeout(2500)
     const starts = await page.evaluate(() =>
@@ -330,6 +389,9 @@ test.describe('Score Page Viewer', () => {
 
     await page.goto('/')
     await page.locator('.thumb.score').first().click()
+    // single track: the assertions below assume one piano voice
+    await page.locator('.player-dual').uncheck()
+    await page.locator('.player-score').check()
     await expect(page.locator('.score-overlay > svg').first()).toBeVisible({ timeout: 30000 })
     await page.locator('.player-btn').first().click()
     await page.waitForTimeout(1800)

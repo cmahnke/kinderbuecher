@@ -7,8 +7,10 @@
 /** Orange rects over the homr-detected staff regions. */
 export const SHOW_STAFF_OVERLAY = true
 
-/** The rendered score (OpenSheetMusicDisplay) mapped onto the scan. */
-export const SHOW_SCORE_OVERLAY = true
+/** The rendered score (OpenSheetMusicDisplay) mapped onto the scan. Off by
+ * default; the player panel offers a "Score" toggle to show it. The OSMD
+ * render itself still runs while anything consumes its alignment data. */
+export const SHOW_SCORE_OVERLAY = false
 
 /** Playhead line, note marker and staff band while playing. */
 export const SHOW_PLAYBACK_HIGHLIGHTS = true

@@ -169,6 +169,16 @@ configurable `--base-url`).
 - The embedded MusicXML goes through the existing `sanitizeMusicXml()`
   (renders safe for OSMD) — the loose `MusicXML` rendering link in the
   detail view points at the plain file for download-only consumers.
+- The player panel (`src/playerPanel.ts`) owns the playback controls: track
+  and per-track instrument selectors, a **Dual** toggle (plays two staves at
+  once; on by default when the score carries two note streams), and a
+  **Score** toggle for the rendered-score overlay (off by default). The OSMD
+  render always runs while anything consumes its alignment data (highlight
+  rects, system mapping, cursor); the overlay itself mounts only while the
+  toggle is on. Each rendered system maps exactly onto its staff region
+  (`fit: 'none'`), so the notation fills the detected staves. In dual mode
+  each playing track drives its own highlight set (staff rect, note marker,
+  playhead), so the position shows on both staves.
 
 ## 4. Pipeline and setup
 
@@ -185,14 +195,26 @@ pageNNN.jpg
 `generate_tei.py` regenerates `public/tei/` from scratch and refuses to
 keep any file that fails Relax NG/Schematron validation.
 
+Which homr implementation runs is selectable: the installed release by
+default, or a local checkout via `run_homr.py --homr-path` (or `HOMR_PATH`,
+honored by `setup.sh` too). `scripts/fetch_homr.py` (re)creates the
+vendored development checkout from GitHub into `vendor/` (gitignored,
+nothing installed); `run_homr.py` adapts to both the released and the
+development homr API. This project currently runs the dev checkout (see
+README for the measured differences).
+
 ## 5. Porting notes (other books, other OMR engines)
 
 - Replace `run_homr.py` with any source of `{bbox, grid}` per staff plus a
   MusicXML file — everything downstream only needs `data/results.json`
-  (same shape) and the root `pageNNN.musicxml`.
+  (same shape) and the root `pageNNN.musicxml`. If you stay on homr,
+  prefer a pinned checkout over a floating release for reproducibility.
 - Keep the two TEI invariants: score files embed `score-partwise` with
   `xmlns=""` (add it at the source, as `run_homr.py` does), and staff
-  geometry stays pixel-based in `surface`/`zone`/`path`.
+  geometry stays pixel-based in `surface`/`zone`/`path`. The embedded
+  score is opaque to the TEI schema by design: switching the OMR source
+  (different zone counts, no DOCTYPE, reordered MusicXML elements) needed
+  no schema change here.
 - Set `--base-url` on `generate_tei.py` and `generate_manifest.py` so the
   TEI `corresp`/`graphic` URLs match the deployed manifest.
 - Known MusicXML caveat: this OMR source can emit `<note>`s carrying both

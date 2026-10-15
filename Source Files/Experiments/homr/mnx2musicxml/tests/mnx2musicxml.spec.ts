@@ -52,7 +52,7 @@ function stripIds(value: unknown): unknown {
   return value
 }
 
-test.describe('MNX -> MusicXML (mnx2musicxml)', () => {
+test.describe('MNX -> MusicXML (mnx2musicxml)', { tag: '@mnx' }, () => {
   test('module loads in the browser', async ({ page }) => {
     await page.goto('/')
     const exported = await page.evaluate(async (moduleUrl) => {

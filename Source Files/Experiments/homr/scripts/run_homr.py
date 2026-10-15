@@ -13,11 +13,22 @@ eventually exhaust the open-file limit.
 
 Usage:
     python3 scripts/run_homr.py [image_dir] [-o data/results.json]
+        [--homr-path vendor/homr[:vendor/homr-deps]]
+
+Which homr implementation runs is configurable: by default the installed
+homr package is used; `--homr-path` (or the `HOMR_PATH` environment
+variable, same PATH-style syntax) prepends directories to `sys.path` so a
+local checkout shadows it — e.g. the vendored dev checkout in `vendor/homr`
+(see `vendor/homr/VENDORING.md`). This also covers the per-page worker
+subprocesses. The script adapts to both the released (0.7.0) and the
+development API (6-tuple detection result, `repair_systems`,
+`generate_xml` returning an element, `title_detection` config flag).
 """
 
 from __future__ import annotations
 
 import argparse
+import dataclasses
 import json
 import os
 import re
@@ -25,6 +36,21 @@ import subprocess
 import sys
 
 from PIL import Image
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+
+def configure_homr_path(explicit: str | None) -> str | None:
+    """Prepend --homr-path (or HOMR_PATH) entries to sys.path so a local
+    homr checkout shadows the installed package. Returns the raw value for
+    forwarding to worker subprocesses (the environment propagates it too)."""
+    raw = explicit or os.environ.get("HOMR_PATH", "")
+    entries = [p for p in raw.split(os.pathsep) if p]
+    for entry in reversed(entries):
+        path = entry if os.path.isabs(entry) else os.path.normpath(os.path.join(ROOT, entry))
+        if os.path.isdir(path) and path not in sys.path:
+            sys.path.insert(0, path)
+    return raw or None
 
 
 def normalize_musicxml_namespace(xml_path: str) -> None:
@@ -96,23 +122,51 @@ def process_one_page(image_path: str, orig_w: int, orig_h: int, debug: bool) -> 
     )
     from homr.transformer.configs import Config
 
-    config = ProcessingConfig(
-        enable_debug=debug,
-        enable_cache=True,
-        write_staff_positions=False,
-        read_staff_positions=False,
-        selected_staff=-1,
-        transformer_use_gpu=False,
-        segnet_use_gpu=False,
-        coreml_encoder=False,
-    )
+    # OCR title reader: released homr initializes it lazily (idempotent),
+    # development homr requires an explicit one-shot download_ocr_weights()
+    # before detection — a single guarded call covers both.
+    try:
+        from homr import title_detection
+
+        init_ocr = getattr(title_detection, "download_ocr_weights", None)
+        if init_ocr is not None:
+            init_ocr()
+    except Exception as exc:
+        print(f"WARNING: OCR title init failed, continuing without titles: {exc}", file=sys.stderr)
+
+    config_kwargs: dict = {
+        "enable_debug": debug,
+        "enable_cache": True,
+        "write_staff_positions": False,
+        "read_staff_positions": False,
+        "selected_staff": -1,
+        "transformer_use_gpu": False,
+        "segnet_use_gpu": False,
+        "coreml_encoder": False,
+    }
+    # title_detection only exists in development homr; released homr always
+    # detects the title
+    if "title_detection" in {f.name for f in dataclasses.fields(ProcessingConfig)}:
+        config_kwargs["title_detection"] = True
+    config = ProcessingConfig(**config_kwargs)
     xml_args = XmlGeneratorArguments()
     xml_path = os.path.splitext(image_path)[0] + ".musicxml"
 
     try:
-        multi_staffs, image, debug_obj, title_future = detect_staffs_in_image(image_path, config)
+        detected = detect_staffs_in_image(image_path, config)
     except Exception as exc:
         return {"hasScore": False, "staves": [], "status": "no-score", "error": str(exc)}
+
+    parse_kwargs: dict = {}
+    if len(detected) == 6:
+        # development homr: extra coordinate mapping + system repair step
+        multi_staffs, image, debug_obj, title_future, _, to_input_image = detected
+        from homr.system_repair import repair_systems
+
+        multi_staffs = repair_systems(debug_obj, multi_staffs)
+        parse_kwargs["page_to_input_image"] = to_input_image
+    else:
+        multi_staffs, image, debug_obj, title_future = detected
 
     resized_h, resized_w = image.shape[:2]
     staves = homr_staff_bboxes(multi_staffs, orig_w, orig_h, resized_w, resized_h)
@@ -128,10 +182,16 @@ def process_one_page(image_path: str, orig_w: int, orig_h: int, debug: bool) -> 
             image,
             selected_staff=config.selected_staff,
             config=transformer_config,
+            **parse_kwargs,
         )
         title = title_future.result(60)
         xml = generate_xml(xml_args, result_staffs, title)
-        xml.write(xml_path)
+        if hasattr(xml, "write"):
+            xml.write(xml_path)  # released homr returns an ElementTree
+        else:
+            import xml.etree.ElementTree as ET
+
+            ET.ElementTree(xml).write(xml_path, encoding="unicode", xml_declaration=True)
         normalize_musicxml_namespace(xml_path)
     except Exception as exc:
         return {"hasScore": True, "staves": staves, "status": "error", "error": str(exc)}
@@ -158,7 +218,13 @@ def main() -> None:
         "--page", metavar="IMAGE",
         help="Process a single image and print its JSON result to stdout, then exit",
     )
+    parser.add_argument(
+        "--homr-path", metavar="DIRS", default=None,
+        help="PATH-style directories of a local homr checkout shadowing the "
+        "installed package (or set HOMR_PATH); e.g. --homr-path vendor/homr:vendor/homr-deps",
+    )
     args = parser.parse_args()
+    homr_path = configure_homr_path(args.homr_path)
 
     if args.page:
         with Image.open(args.page) as im:
@@ -185,6 +251,8 @@ def main() -> None:
             cmd = [sys.executable, script, "--page", path]
             if args.debug:
                 cmd.append("--debug")
+            if homr_path:
+                cmd.extend(["--homr-path", homr_path])
             proc = subprocess.run(cmd, capture_output=True, text=True)
             payload = proc.stdout.strip()
             if not payload:

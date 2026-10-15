@@ -191,7 +191,9 @@ function parseFraction(fraction: [number, number] | undefined, label: string): F
 }
 
 function compareFraction(a: Fraction, b: Fraction): number {
-  return a.n * b.d - b.n * a.d
+  // fraction.js v5 stores numerator/denominator as bigint; the compared
+  // values are small duration integers, so Number() is exact
+  return Number(a.n) * Number(b.d) - Number(b.n) * Number(a.d)
 }
 
 function keyAlteredSteps(fifths: number): Set<string> {
@@ -435,19 +437,20 @@ class MnxToMusicXml {
 
   private computeDivisions(): number {
     let denominator = 1
-    for (const frac of this.soundedFractions) denominator = lcm(denominator, frac.d)
+    for (const frac of this.soundedFractions) denominator = lcm(denominator, Number(frac.d))
     return denominator * 4
   }
 
   /** MusicXML <duration> for a whole-note fraction: divisions are per quarter. */
   private durationOf(frac: Fraction): number {
-    const numer = frac.n * this.divisions * 4
-    if (numer % frac.d !== 0) {
+    const numer = Number(frac.n) * this.divisions * 4
+    const denom = Number(frac.d)
+    if (numer % denom !== 0) {
       throw new Error(
         `duration ${frac.toString()} is not representable with divisions ${String(this.divisions)}`,
       )
     }
-    return numer / frac.d
+    return numer / denom
   }
 
   private collectEndingCloses(): void {
