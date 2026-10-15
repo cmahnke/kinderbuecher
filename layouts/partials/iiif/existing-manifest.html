@@ -1,0 +1,15 @@
+{{/*
+Checks if the page has a pre-made IIIF manifest in its page bundle.
+Returns a dict: "exists" (bool) and "content" (raw file content as string).
+The manifest is expected to be referenced in the frontmatter via `iiifManifest`,
+e.g. `iiifManifest: ./manifest.json`. Only the file name is used, the file has
+to live in the page bundle itself.
+*/}}
+{{- $result := dict "exists" false "content" "" -}}
+{{- with .Params.iiifManifest -}}
+  {{- $path := path.Join "content" $.File.Dir (path.Base .) -}}
+  {{- if fileExists $path -}}
+    {{- $result = dict "exists" true "content" (os.ReadFile $path) -}}
+  {{- end -}}
+{{- end -}}
+{{- return $result -}}
