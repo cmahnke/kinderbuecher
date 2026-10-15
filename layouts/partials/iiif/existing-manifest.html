@@ -1,15 +1,103 @@
 {{/*
 Checks if the page has a pre-made IIIF manifest in its page bundle.
-Returns a dict: "exists" (bool) and "content" (raw file content as string).
+Returns a dict: "exists" (bool) and "content" (manifest as JSON string).
 The manifest is expected to be referenced in the frontmatter via `iiifManifest`,
 e.g. `iiifManifest: ./manifest.json`. Only the file name is used, the file has
 to live in the page bundle itself.
+
+For Presentation 3.0 manifests the image endpoints (body id and body service ids)
+and the renderings (e.g. TEI/MusicXML files, on canvas and manifest level) are
+rewritten to use the same URL prefix scheme as the generated manifests:
+- development (hugo server) or no 'productionIIIFURLPrefix' set: site base URL + page path
+- production: 'productionIIIFURLPrefix' + page path
+Only the prefix is swapped, the page relative structure of the URLs is kept.
+URLs that don't match the page (e.g. external ones) are left untouched.
+Any other manifest version is passed through unchanged.
 */}}
 {{- $result := dict "exists" false "content" "" -}}
 {{- with .Params.iiifManifest -}}
   {{- $path := path.Join "content" $.File.Dir (path.Base .) -}}
   {{- if fileExists $path -}}
-    {{- $result = dict "exists" true "content" (os.ReadFile $path) -}}
+    {{- $raw := os.ReadFile $path -}}
+    {{- $manifest := $raw | transform.Unmarshal -}}
+    {{- if and (reflect.IsMap $manifest) (isset $manifest "@context") (hasPrefix (index $manifest "@context") "http://iiif.io/api/presentation/3/") -}}
+      {{/* Compute the URL prefix like layouts/partials/iiif/3/manifest.json does */}}
+      {{- $localPath := printf "%s/" (substr (path.Dir $.RelPermalink) 1) -}}
+      {{- $urlBase := "" -}}
+      {{- if or hugo.IsServer (not (isset $.Site.Params "productioniiifurlprefix")) -}}
+        {{- $urlBase = printf "%s%s" hugo.Sites.Default.BaseURL $localPath -}}
+      {{- else -}}
+        {{- $urlBase = printf "%s%s" $.Site.Params.productionIIIFURLPrefix $localPath -}}
+      {{- end -}}
+      {{- $pagePath := trim (path.Dir $.RelPermalink) "/" -}}
+      {{- $prefixRe := printf `^https?://[^/]+/%s/` $pagePath -}}
+      {{- $newItems := slice -}}
+      {{- range $canvas := $manifest.items -}}
+        {{- $newAnnotationPages := slice -}}
+        {{- range $annotationPage := $canvas.items -}}
+          {{- $newAnnotations := slice -}}
+          {{- range $annotation := $annotationPage.items -}}
+            {{- $body := $annotation.body -}}
+            {{- if and (reflect.IsMap $body) (isset $body "id") -}}
+              {{- $tail := replaceRE $prefixRe "" (index $body "id") -}}
+              {{- if ne $tail (index $body "id") -}}
+                {{- $body = merge $body (dict "id" (printf "%s%s" $urlBase $tail)) -}}
+              {{- end -}}
+              {{- if isset $body "service" -}}
+                {{- $newServices := slice -}}
+                {{- range $service := $body.service -}}
+                  {{- if and (reflect.IsMap $service) (isset $service "id") -}}
+                    {{- $serviceTail := replaceRE $prefixRe "" (index $service "id") -}}
+                    {{- if ne $serviceTail (index $service "id") -}}
+                      {{- $service = merge $service (dict "id" (printf "%s%s" $urlBase $serviceTail)) -}}
+                    {{- end -}}
+                  {{- end -}}
+                  {{- $newServices = $newServices | append $service -}}
+                {{- end -}}
+                {{- $body = merge $body (dict "service" $newServices) -}}
+              {{- end -}}
+              {{- $annotation = merge $annotation (dict "body" $body) -}}
+            {{- end -}}
+            {{- $newAnnotations = $newAnnotations | append $annotation -}}
+          {{- end -}}
+          {{- $annotationPage = merge $annotationPage (dict "items" $newAnnotations) -}}
+          {{- $newAnnotationPages = $newAnnotationPages | append $annotationPage -}}
+        {{- end -}}
+          {{- if isset $canvas "rendering" -}}
+            {{- $newRenderings := slice -}}
+            {{- range $rendering := $canvas.rendering -}}
+              {{- if and (reflect.IsMap $rendering) (isset $rendering "id") -}}
+                {{- $renderingTail := replaceRE $prefixRe "" (index $rendering "id") -}}
+                {{- if ne $renderingTail (index $rendering "id") -}}
+                  {{- $rendering = merge $rendering (dict "id" (printf "%s%s" $urlBase $renderingTail)) -}}
+                {{- end -}}
+              {{- end -}}
+              {{- $newRenderings = $newRenderings | append $rendering -}}
+            {{- end -}}
+            {{- $canvas = merge $canvas (dict "rendering" $newRenderings) -}}
+          {{- end -}}
+          {{- $canvas = merge $canvas (dict "items" $newAnnotationPages) -}}
+        {{- $newItems = $newItems | append $canvas -}}
+      {{- end -}}
+      {{- if isset $manifest "rendering" -}}
+        {{- $newRenderings := slice -}}
+        {{- range $rendering := $manifest.rendering -}}
+          {{- if and (reflect.IsMap $rendering) (isset $rendering "id") -}}
+            {{- $renderingTail := replaceRE $prefixRe "" (index $rendering "id") -}}
+            {{- if ne $renderingTail (index $rendering "id") -}}
+              {{- $rendering = merge $rendering (dict "id" (printf "%s%s" $urlBase $renderingTail)) -}}
+            {{- end -}}
+          {{- end -}}
+          {{- $newRenderings = $newRenderings | append $rendering -}}
+        {{- end -}}
+        {{- $manifest = merge $manifest (dict "rendering" $newRenderings) -}}
+      {{- end -}}
+      {{- $manifest = merge $manifest (dict "items" $newItems) -}}
+      {{- $result = dict "exists" true "content" ($manifest | jsonify) -}}
+    {{- else -}}
+      {{/* Not a Presentation 3.0 manifest, pass the content through unchanged */}}
+      {{- $result = dict "exists" true "content" $raw -}}
+    {{- end -}}
   {{- end -}}
 {{- end -}}
 {{- return $result -}}
