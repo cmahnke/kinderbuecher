@@ -1,0 +1,2979 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/manifest.json",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Vieilles Chansons et Danses et Rondes \u2014 score pages (kinderb\u00fccher)"
+    ]
+  },
+  "behavior": [
+    "paged"
+  ],
+  "items": [
+    {
+      "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/back/canvas",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "back"
+        ]
+      },
+      "width": 6428,
+      "height": 5437,
+      "thumbnail": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/back/full/402,/0/default.jpg",
+          "type": "Image",
+          "format": "image/jpeg"
+        }
+      ],
+      "items": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/back/annotation-page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/back/annotation/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/back/info.json",
+                "type": "Image",
+                "service": [
+                  {
+                    "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/back",
+                    "type": "ImageService2",
+                    "profile": "level0"
+                  }
+                ]
+              },
+              "target": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/back/canvas"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/front/canvas",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "front"
+        ]
+      },
+      "width": 6433,
+      "height": 5441,
+      "thumbnail": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/front/full/403,/0/default.jpg",
+          "type": "Image",
+          "format": "image/jpeg"
+        }
+      ],
+      "items": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/front/annotation-page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/front/annotation/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/front/info.json",
+                "type": "Image",
+                "service": [
+                  {
+                    "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/front",
+                    "type": "ImageService2",
+                    "profile": "level0"
+                  }
+                ]
+              },
+              "target": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/front/canvas"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page001/canvas",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "page001"
+        ]
+      },
+      "width": 6122,
+      "height": 5238,
+      "thumbnail": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page001/full/383,/0/default.jpg",
+          "type": "Image",
+          "format": "image/jpeg"
+        }
+      ],
+      "items": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page001/annotation-page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page001/annotation/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page001/info.json",
+                "type": "Image",
+                "service": [
+                  {
+                    "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page001",
+                    "type": "ImageService2",
+                    "profile": "level0"
+                  }
+                ]
+              },
+              "target": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page001/canvas"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page002/canvas",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "page002"
+        ]
+      },
+      "width": 6183,
+      "height": 5230,
+      "thumbnail": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page002/full/387,/0/default.jpg",
+          "type": "Image",
+          "format": "image/jpeg"
+        }
+      ],
+      "items": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page002/annotation-page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page002/annotation/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page002/info.json",
+                "type": "Image",
+                "service": [
+                  {
+                    "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page002",
+                    "type": "ImageService2",
+                    "profile": "level0"
+                  }
+                ]
+              },
+              "target": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page002/canvas"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page003/canvas",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "page003"
+        ]
+      },
+      "width": 6191,
+      "height": 5236,
+      "thumbnail": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page003/full/387,/0/default.jpg",
+          "type": "Image",
+          "format": "image/jpeg"
+        }
+      ],
+      "items": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page003/annotation-page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page003/annotation/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page003/info.json",
+                "type": "Image",
+                "service": [
+                  {
+                    "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page003",
+                    "type": "ImageService2",
+                    "profile": "level0"
+                  }
+                ]
+              },
+              "target": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page003/canvas"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page004/canvas",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "page004"
+        ]
+      },
+      "width": 6198,
+      "height": 5187,
+      "thumbnail": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page004/full/388,/0/default.jpg",
+          "type": "Image",
+          "format": "image/jpeg"
+        }
+      ],
+      "items": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page004/annotation-page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page004/annotation/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page004/info.json",
+                "type": "Image",
+                "service": [
+                  {
+                    "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page004",
+                    "type": "ImageService2",
+                    "profile": "level0"
+                  }
+                ]
+              },
+              "target": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page004/canvas"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page005/canvas",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "page005"
+        ]
+      },
+      "width": 6186,
+      "height": 5241,
+      "thumbnail": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page005/full/387,/0/default.jpg",
+          "type": "Image",
+          "format": "image/jpeg"
+        }
+      ],
+      "items": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page005/annotation-page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page005/annotation/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page005/info.json",
+                "type": "Image",
+                "service": [
+                  {
+                    "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page005",
+                    "type": "ImageService2",
+                    "profile": "level0"
+                  }
+                ]
+              },
+              "target": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page005/canvas"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page006/canvas",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "page006"
+        ]
+      },
+      "width": 6174,
+      "height": 5233,
+      "thumbnail": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page006/full/386,/0/default.jpg",
+          "type": "Image",
+          "format": "image/jpeg"
+        }
+      ],
+      "items": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page006/annotation-page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page006/annotation/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page006/info.json",
+                "type": "Image",
+                "service": [
+                  {
+                    "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page006",
+                    "type": "ImageService2",
+                    "profile": "level0"
+                  }
+                ]
+              },
+              "target": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page006/canvas"
+            }
+          ]
+        }
+      ],
+      "rendering": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/tei/page006.tei.xml",
+          "type": "Text",
+          "format": "application/tei+xml",
+          "label": {
+            "en": [
+              "TEI (staff regions + embedded MusicXML)"
+            ]
+          }
+        },
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/musicxml/page006.musicxml",
+          "type": "Text",
+          "format": "application/vnd.recordare.musicxml+xml",
+          "label": {
+            "en": [
+              "MusicXML"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page007/canvas",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "page007"
+        ]
+      },
+      "width": 6210,
+      "height": 5215,
+      "thumbnail": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page007/full/389,/0/default.jpg",
+          "type": "Image",
+          "format": "image/jpeg"
+        }
+      ],
+      "items": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page007/annotation-page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page007/annotation/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page007/info.json",
+                "type": "Image",
+                "service": [
+                  {
+                    "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page007",
+                    "type": "ImageService2",
+                    "profile": "level0"
+                  }
+                ]
+              },
+              "target": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page007/canvas"
+            }
+          ]
+        }
+      ],
+      "rendering": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/tei/page007.tei.xml",
+          "type": "Text",
+          "format": "application/tei+xml",
+          "label": {
+            "en": [
+              "TEI (staff regions + embedded MusicXML)"
+            ]
+          }
+        },
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/musicxml/page007.musicxml",
+          "type": "Text",
+          "format": "application/vnd.recordare.musicxml+xml",
+          "label": {
+            "en": [
+              "MusicXML"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page008/canvas",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "page008"
+        ]
+      },
+      "width": 6228,
+      "height": 5185,
+      "thumbnail": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page008/full/390,/0/default.jpg",
+          "type": "Image",
+          "format": "image/jpeg"
+        }
+      ],
+      "items": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page008/annotation-page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page008/annotation/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page008/info.json",
+                "type": "Image",
+                "service": [
+                  {
+                    "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page008",
+                    "type": "ImageService2",
+                    "profile": "level0"
+                  }
+                ]
+              },
+              "target": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page008/canvas"
+            }
+          ]
+        }
+      ],
+      "rendering": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/tei/page008.tei.xml",
+          "type": "Text",
+          "format": "application/tei+xml",
+          "label": {
+            "en": [
+              "TEI (staff regions + embedded MusicXML)"
+            ]
+          }
+        },
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/musicxml/page008.musicxml",
+          "type": "Text",
+          "format": "application/vnd.recordare.musicxml+xml",
+          "label": {
+            "en": [
+              "MusicXML"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page009/canvas",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "page009"
+        ]
+      },
+      "width": 6223,
+      "height": 5195,
+      "thumbnail": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page009/full/389,/0/default.jpg",
+          "type": "Image",
+          "format": "image/jpeg"
+        }
+      ],
+      "items": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page009/annotation-page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page009/annotation/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page009/info.json",
+                "type": "Image",
+                "service": [
+                  {
+                    "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page009",
+                    "type": "ImageService2",
+                    "profile": "level0"
+                  }
+                ]
+              },
+              "target": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page009/canvas"
+            }
+          ]
+        }
+      ],
+      "rendering": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/tei/page009.tei.xml",
+          "type": "Text",
+          "format": "application/tei+xml",
+          "label": {
+            "en": [
+              "TEI (staff regions + embedded MusicXML)"
+            ]
+          }
+        },
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/musicxml/page009.musicxml",
+          "type": "Text",
+          "format": "application/vnd.recordare.musicxml+xml",
+          "label": {
+            "en": [
+              "MusicXML"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page010/canvas",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "page010"
+        ]
+      },
+      "width": 6211,
+      "height": 5177,
+      "thumbnail": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page010/full/389,/0/default.jpg",
+          "type": "Image",
+          "format": "image/jpeg"
+        }
+      ],
+      "items": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page010/annotation-page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page010/annotation/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page010/info.json",
+                "type": "Image",
+                "service": [
+                  {
+                    "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page010",
+                    "type": "ImageService2",
+                    "profile": "level0"
+                  }
+                ]
+              },
+              "target": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page010/canvas"
+            }
+          ]
+        }
+      ],
+      "rendering": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/tei/page010.tei.xml",
+          "type": "Text",
+          "format": "application/tei+xml",
+          "label": {
+            "en": [
+              "TEI (staff regions + embedded MusicXML)"
+            ]
+          }
+        },
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/musicxml/page010.musicxml",
+          "type": "Text",
+          "format": "application/vnd.recordare.musicxml+xml",
+          "label": {
+            "en": [
+              "MusicXML"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page011/canvas",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "page011"
+        ]
+      },
+      "width": 6206,
+      "height": 5220,
+      "thumbnail": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page011/full/388,/0/default.jpg",
+          "type": "Image",
+          "format": "image/jpeg"
+        }
+      ],
+      "items": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page011/annotation-page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page011/annotation/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page011/info.json",
+                "type": "Image",
+                "service": [
+                  {
+                    "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page011",
+                    "type": "ImageService2",
+                    "profile": "level0"
+                  }
+                ]
+              },
+              "target": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page011/canvas"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page012/canvas",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "page012"
+        ]
+      },
+      "width": 6216,
+      "height": 5225,
+      "thumbnail": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page012/full/389,/0/default.jpg",
+          "type": "Image",
+          "format": "image/jpeg"
+        }
+      ],
+      "items": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page012/annotation-page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page012/annotation/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page012/info.json",
+                "type": "Image",
+                "service": [
+                  {
+                    "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page012",
+                    "type": "ImageService2",
+                    "profile": "level0"
+                  }
+                ]
+              },
+              "target": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page012/canvas"
+            }
+          ]
+        }
+      ],
+      "rendering": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/tei/page012.tei.xml",
+          "type": "Text",
+          "format": "application/tei+xml",
+          "label": {
+            "en": [
+              "TEI (staff regions + embedded MusicXML)"
+            ]
+          }
+        },
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/musicxml/page012.musicxml",
+          "type": "Text",
+          "format": "application/vnd.recordare.musicxml+xml",
+          "label": {
+            "en": [
+              "MusicXML"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page013/canvas",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "page013"
+        ]
+      },
+      "width": 6210,
+      "height": 5246,
+      "thumbnail": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page013/full/389,/0/default.jpg",
+          "type": "Image",
+          "format": "image/jpeg"
+        }
+      ],
+      "items": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page013/annotation-page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page013/annotation/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page013/info.json",
+                "type": "Image",
+                "service": [
+                  {
+                    "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page013",
+                    "type": "ImageService2",
+                    "profile": "level0"
+                  }
+                ]
+              },
+              "target": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page013/canvas"
+            }
+          ]
+        }
+      ],
+      "rendering": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/tei/page013.tei.xml",
+          "type": "Text",
+          "format": "application/tei+xml",
+          "label": {
+            "en": [
+              "TEI (staff regions + embedded MusicXML)"
+            ]
+          }
+        },
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/musicxml/page013.musicxml",
+          "type": "Text",
+          "format": "application/vnd.recordare.musicxml+xml",
+          "label": {
+            "en": [
+              "MusicXML"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page014/canvas",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "page014"
+        ]
+      },
+      "width": 6224,
+      "height": 5203,
+      "thumbnail": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page014/full/389,/0/default.jpg",
+          "type": "Image",
+          "format": "image/jpeg"
+        }
+      ],
+      "items": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page014/annotation-page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page014/annotation/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page014/info.json",
+                "type": "Image",
+                "service": [
+                  {
+                    "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page014",
+                    "type": "ImageService2",
+                    "profile": "level0"
+                  }
+                ]
+              },
+              "target": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page014/canvas"
+            }
+          ]
+        }
+      ],
+      "rendering": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/tei/page014.tei.xml",
+          "type": "Text",
+          "format": "application/tei+xml",
+          "label": {
+            "en": [
+              "TEI (staff regions + embedded MusicXML)"
+            ]
+          }
+        },
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/musicxml/page014.musicxml",
+          "type": "Text",
+          "format": "application/vnd.recordare.musicxml+xml",
+          "label": {
+            "en": [
+              "MusicXML"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page015/canvas",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "page015"
+        ]
+      },
+      "width": 6194,
+      "height": 5237,
+      "thumbnail": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page015/full/388,/0/default.jpg",
+          "type": "Image",
+          "format": "image/jpeg"
+        }
+      ],
+      "items": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page015/annotation-page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page015/annotation/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page015/info.json",
+                "type": "Image",
+                "service": [
+                  {
+                    "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page015",
+                    "type": "ImageService2",
+                    "profile": "level0"
+                  }
+                ]
+              },
+              "target": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page015/canvas"
+            }
+          ]
+        }
+      ],
+      "rendering": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/tei/page015.tei.xml",
+          "type": "Text",
+          "format": "application/tei+xml",
+          "label": {
+            "en": [
+              "TEI (staff regions + embedded MusicXML)"
+            ]
+          }
+        },
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/musicxml/page015.musicxml",
+          "type": "Text",
+          "format": "application/vnd.recordare.musicxml+xml",
+          "label": {
+            "en": [
+              "MusicXML"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page016/canvas",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "page016"
+        ]
+      },
+      "width": 6239,
+      "height": 5234,
+      "thumbnail": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page016/full/390,/0/default.jpg",
+          "type": "Image",
+          "format": "image/jpeg"
+        }
+      ],
+      "items": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page016/annotation-page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page016/annotation/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page016/info.json",
+                "type": "Image",
+                "service": [
+                  {
+                    "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page016",
+                    "type": "ImageService2",
+                    "profile": "level0"
+                  }
+                ]
+              },
+              "target": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page016/canvas"
+            }
+          ]
+        }
+      ],
+      "rendering": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/tei/page016.tei.xml",
+          "type": "Text",
+          "format": "application/tei+xml",
+          "label": {
+            "en": [
+              "TEI (staff regions + embedded MusicXML)"
+            ]
+          }
+        },
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/musicxml/page016.musicxml",
+          "type": "Text",
+          "format": "application/vnd.recordare.musicxml+xml",
+          "label": {
+            "en": [
+              "MusicXML"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page017/canvas",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "page017"
+        ]
+      },
+      "width": 6194,
+      "height": 5236,
+      "thumbnail": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page017/full/388,/0/default.jpg",
+          "type": "Image",
+          "format": "image/jpeg"
+        }
+      ],
+      "items": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page017/annotation-page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page017/annotation/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page017/info.json",
+                "type": "Image",
+                "service": [
+                  {
+                    "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page017",
+                    "type": "ImageService2",
+                    "profile": "level0"
+                  }
+                ]
+              },
+              "target": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page017/canvas"
+            }
+          ]
+        }
+      ],
+      "rendering": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/tei/page017.tei.xml",
+          "type": "Text",
+          "format": "application/tei+xml",
+          "label": {
+            "en": [
+              "TEI (staff regions + embedded MusicXML)"
+            ]
+          }
+        },
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/musicxml/page017.musicxml",
+          "type": "Text",
+          "format": "application/vnd.recordare.musicxml+xml",
+          "label": {
+            "en": [
+              "MusicXML"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page018/canvas",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "page018"
+        ]
+      },
+      "width": 6229,
+      "height": 5174,
+      "thumbnail": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page018/full/390,/0/default.jpg",
+          "type": "Image",
+          "format": "image/jpeg"
+        }
+      ],
+      "items": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page018/annotation-page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page018/annotation/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page018/info.json",
+                "type": "Image",
+                "service": [
+                  {
+                    "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page018",
+                    "type": "ImageService2",
+                    "profile": "level0"
+                  }
+                ]
+              },
+              "target": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page018/canvas"
+            }
+          ]
+        }
+      ],
+      "rendering": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/tei/page018.tei.xml",
+          "type": "Text",
+          "format": "application/tei+xml",
+          "label": {
+            "en": [
+              "TEI (staff regions + embedded MusicXML)"
+            ]
+          }
+        },
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/musicxml/page018.musicxml",
+          "type": "Text",
+          "format": "application/vnd.recordare.musicxml+xml",
+          "label": {
+            "en": [
+              "MusicXML"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page019/canvas",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "page019"
+        ]
+      },
+      "width": 6215,
+      "height": 5226,
+      "thumbnail": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page019/full/389,/0/default.jpg",
+          "type": "Image",
+          "format": "image/jpeg"
+        }
+      ],
+      "items": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page019/annotation-page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page019/annotation/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page019/info.json",
+                "type": "Image",
+                "service": [
+                  {
+                    "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page019",
+                    "type": "ImageService2",
+                    "profile": "level0"
+                  }
+                ]
+              },
+              "target": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page019/canvas"
+            }
+          ]
+        }
+      ],
+      "rendering": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/tei/page019.tei.xml",
+          "type": "Text",
+          "format": "application/tei+xml",
+          "label": {
+            "en": [
+              "TEI (staff regions + embedded MusicXML)"
+            ]
+          }
+        },
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/musicxml/page019.musicxml",
+          "type": "Text",
+          "format": "application/vnd.recordare.musicxml+xml",
+          "label": {
+            "en": [
+              "MusicXML"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page020/canvas",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "page020"
+        ]
+      },
+      "width": 6223,
+      "height": 5220,
+      "thumbnail": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page020/full/389,/0/default.jpg",
+          "type": "Image",
+          "format": "image/jpeg"
+        }
+      ],
+      "items": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page020/annotation-page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page020/annotation/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page020/info.json",
+                "type": "Image",
+                "service": [
+                  {
+                    "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page020",
+                    "type": "ImageService2",
+                    "profile": "level0"
+                  }
+                ]
+              },
+              "target": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page020/canvas"
+            }
+          ]
+        }
+      ],
+      "rendering": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/tei/page020.tei.xml",
+          "type": "Text",
+          "format": "application/tei+xml",
+          "label": {
+            "en": [
+              "TEI (staff regions + embedded MusicXML)"
+            ]
+          }
+        },
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/musicxml/page020.musicxml",
+          "type": "Text",
+          "format": "application/vnd.recordare.musicxml+xml",
+          "label": {
+            "en": [
+              "MusicXML"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page021/canvas",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "page021"
+        ]
+      },
+      "width": 6232,
+      "height": 5197,
+      "thumbnail": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page021/full/390,/0/default.jpg",
+          "type": "Image",
+          "format": "image/jpeg"
+        }
+      ],
+      "items": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page021/annotation-page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page021/annotation/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page021/info.json",
+                "type": "Image",
+                "service": [
+                  {
+                    "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page021",
+                    "type": "ImageService2",
+                    "profile": "level0"
+                  }
+                ]
+              },
+              "target": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page021/canvas"
+            }
+          ]
+        }
+      ],
+      "rendering": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/tei/page021.tei.xml",
+          "type": "Text",
+          "format": "application/tei+xml",
+          "label": {
+            "en": [
+              "TEI (staff regions + embedded MusicXML)"
+            ]
+          }
+        },
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/musicxml/page021.musicxml",
+          "type": "Text",
+          "format": "application/vnd.recordare.musicxml+xml",
+          "label": {
+            "en": [
+              "MusicXML"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page022/canvas",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "page022"
+        ]
+      },
+      "width": 6244,
+      "height": 5215,
+      "thumbnail": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page022/full/391,/0/default.jpg",
+          "type": "Image",
+          "format": "image/jpeg"
+        }
+      ],
+      "items": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page022/annotation-page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page022/annotation/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page022/info.json",
+                "type": "Image",
+                "service": [
+                  {
+                    "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page022",
+                    "type": "ImageService2",
+                    "profile": "level0"
+                  }
+                ]
+              },
+              "target": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page022/canvas"
+            }
+          ]
+        }
+      ],
+      "rendering": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/tei/page022.tei.xml",
+          "type": "Text",
+          "format": "application/tei+xml",
+          "label": {
+            "en": [
+              "TEI (staff regions + embedded MusicXML)"
+            ]
+          }
+        },
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/musicxml/page022.musicxml",
+          "type": "Text",
+          "format": "application/vnd.recordare.musicxml+xml",
+          "label": {
+            "en": [
+              "MusicXML"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page023/canvas",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "page023"
+        ]
+      },
+      "width": 6179,
+      "height": 5229,
+      "thumbnail": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page023/full/387,/0/default.jpg",
+          "type": "Image",
+          "format": "image/jpeg"
+        }
+      ],
+      "items": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page023/annotation-page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page023/annotation/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page023/info.json",
+                "type": "Image",
+                "service": [
+                  {
+                    "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page023",
+                    "type": "ImageService2",
+                    "profile": "level0"
+                  }
+                ]
+              },
+              "target": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page023/canvas"
+            }
+          ]
+        }
+      ],
+      "rendering": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/tei/page023.tei.xml",
+          "type": "Text",
+          "format": "application/tei+xml",
+          "label": {
+            "en": [
+              "TEI (staff regions + embedded MusicXML)"
+            ]
+          }
+        },
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/musicxml/page023.musicxml",
+          "type": "Text",
+          "format": "application/vnd.recordare.musicxml+xml",
+          "label": {
+            "en": [
+              "MusicXML"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page024/canvas",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "page024"
+        ]
+      },
+      "width": 6212,
+      "height": 5229,
+      "thumbnail": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page024/full/389,/0/default.jpg",
+          "type": "Image",
+          "format": "image/jpeg"
+        }
+      ],
+      "items": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page024/annotation-page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page024/annotation/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page024/info.json",
+                "type": "Image",
+                "service": [
+                  {
+                    "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page024",
+                    "type": "ImageService2",
+                    "profile": "level0"
+                  }
+                ]
+              },
+              "target": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page024/canvas"
+            }
+          ]
+        }
+      ],
+      "rendering": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/tei/page024.tei.xml",
+          "type": "Text",
+          "format": "application/tei+xml",
+          "label": {
+            "en": [
+              "TEI (staff regions + embedded MusicXML)"
+            ]
+          }
+        },
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/musicxml/page024.musicxml",
+          "type": "Text",
+          "format": "application/vnd.recordare.musicxml+xml",
+          "label": {
+            "en": [
+              "MusicXML"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page025/canvas",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "page025"
+        ]
+      },
+      "width": 6238,
+      "height": 5195,
+      "thumbnail": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page025/full/390,/0/default.jpg",
+          "type": "Image",
+          "format": "image/jpeg"
+        }
+      ],
+      "items": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page025/annotation-page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page025/annotation/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page025/info.json",
+                "type": "Image",
+                "service": [
+                  {
+                    "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page025",
+                    "type": "ImageService2",
+                    "profile": "level0"
+                  }
+                ]
+              },
+              "target": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page025/canvas"
+            }
+          ]
+        }
+      ],
+      "rendering": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/tei/page025.tei.xml",
+          "type": "Text",
+          "format": "application/tei+xml",
+          "label": {
+            "en": [
+              "TEI (staff regions + embedded MusicXML)"
+            ]
+          }
+        },
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/musicxml/page025.musicxml",
+          "type": "Text",
+          "format": "application/vnd.recordare.musicxml+xml",
+          "label": {
+            "en": [
+              "MusicXML"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page026/canvas",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "page026"
+        ]
+      },
+      "width": 6232,
+      "height": 5181,
+      "thumbnail": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page026/full/390,/0/default.jpg",
+          "type": "Image",
+          "format": "image/jpeg"
+        }
+      ],
+      "items": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page026/annotation-page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page026/annotation/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page026/info.json",
+                "type": "Image",
+                "service": [
+                  {
+                    "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page026",
+                    "type": "ImageService2",
+                    "profile": "level0"
+                  }
+                ]
+              },
+              "target": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page026/canvas"
+            }
+          ]
+        }
+      ],
+      "rendering": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/tei/page026.tei.xml",
+          "type": "Text",
+          "format": "application/tei+xml",
+          "label": {
+            "en": [
+              "TEI (staff regions + embedded MusicXML)"
+            ]
+          }
+        },
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/musicxml/page026.musicxml",
+          "type": "Text",
+          "format": "application/vnd.recordare.musicxml+xml",
+          "label": {
+            "en": [
+              "MusicXML"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page027/canvas",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "page027"
+        ]
+      },
+      "width": 6204,
+      "height": 5238,
+      "thumbnail": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page027/full/388,/0/default.jpg",
+          "type": "Image",
+          "format": "image/jpeg"
+        }
+      ],
+      "items": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page027/annotation-page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page027/annotation/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page027/info.json",
+                "type": "Image",
+                "service": [
+                  {
+                    "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page027",
+                    "type": "ImageService2",
+                    "profile": "level0"
+                  }
+                ]
+              },
+              "target": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page027/canvas"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page028/canvas",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "page028"
+        ]
+      },
+      "width": 6240,
+      "height": 5219,
+      "thumbnail": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page028/full/390,/0/default.jpg",
+          "type": "Image",
+          "format": "image/jpeg"
+        }
+      ],
+      "items": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page028/annotation-page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page028/annotation/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page028/info.json",
+                "type": "Image",
+                "service": [
+                  {
+                    "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page028",
+                    "type": "ImageService2",
+                    "profile": "level0"
+                  }
+                ]
+              },
+              "target": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page028/canvas"
+            }
+          ]
+        }
+      ],
+      "rendering": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/tei/page028.tei.xml",
+          "type": "Text",
+          "format": "application/tei+xml",
+          "label": {
+            "en": [
+              "TEI (staff regions + embedded MusicXML)"
+            ]
+          }
+        },
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/musicxml/page028.musicxml",
+          "type": "Text",
+          "format": "application/vnd.recordare.musicxml+xml",
+          "label": {
+            "en": [
+              "MusicXML"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page029/canvas",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "page029"
+        ]
+      },
+      "width": 6177,
+      "height": 5245,
+      "thumbnail": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page029/full/387,/0/default.jpg",
+          "type": "Image",
+          "format": "image/jpeg"
+        }
+      ],
+      "items": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page029/annotation-page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page029/annotation/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page029/info.json",
+                "type": "Image",
+                "service": [
+                  {
+                    "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page029",
+                    "type": "ImageService2",
+                    "profile": "level0"
+                  }
+                ]
+              },
+              "target": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page029/canvas"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page030/canvas",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "page030"
+        ]
+      },
+      "width": 6238,
+      "height": 5198,
+      "thumbnail": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page030/full/390,/0/default.jpg",
+          "type": "Image",
+          "format": "image/jpeg"
+        }
+      ],
+      "items": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page030/annotation-page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page030/annotation/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page030/info.json",
+                "type": "Image",
+                "service": [
+                  {
+                    "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page030",
+                    "type": "ImageService2",
+                    "profile": "level0"
+                  }
+                ]
+              },
+              "target": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page030/canvas"
+            }
+          ]
+        }
+      ],
+      "rendering": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/tei/page030.tei.xml",
+          "type": "Text",
+          "format": "application/tei+xml",
+          "label": {
+            "en": [
+              "TEI (staff regions + embedded MusicXML)"
+            ]
+          }
+        },
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/musicxml/page030.musicxml",
+          "type": "Text",
+          "format": "application/vnd.recordare.musicxml+xml",
+          "label": {
+            "en": [
+              "MusicXML"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page031/canvas",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "page031"
+        ]
+      },
+      "width": 6216,
+      "height": 5195,
+      "thumbnail": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page031/full/389,/0/default.jpg",
+          "type": "Image",
+          "format": "image/jpeg"
+        }
+      ],
+      "items": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page031/annotation-page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page031/annotation/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page031/info.json",
+                "type": "Image",
+                "service": [
+                  {
+                    "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page031",
+                    "type": "ImageService2",
+                    "profile": "level0"
+                  }
+                ]
+              },
+              "target": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page031/canvas"
+            }
+          ]
+        }
+      ],
+      "rendering": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/tei/page031.tei.xml",
+          "type": "Text",
+          "format": "application/tei+xml",
+          "label": {
+            "en": [
+              "TEI (staff regions + embedded MusicXML)"
+            ]
+          }
+        },
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/musicxml/page031.musicxml",
+          "type": "Text",
+          "format": "application/vnd.recordare.musicxml+xml",
+          "label": {
+            "en": [
+              "MusicXML"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page032/canvas",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "page032"
+        ]
+      },
+      "width": 6231,
+      "height": 5209,
+      "thumbnail": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page032/full/390,/0/default.jpg",
+          "type": "Image",
+          "format": "image/jpeg"
+        }
+      ],
+      "items": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page032/annotation-page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page032/annotation/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page032/info.json",
+                "type": "Image",
+                "service": [
+                  {
+                    "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page032",
+                    "type": "ImageService2",
+                    "profile": "level0"
+                  }
+                ]
+              },
+              "target": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page032/canvas"
+            }
+          ]
+        }
+      ],
+      "rendering": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/tei/page032.tei.xml",
+          "type": "Text",
+          "format": "application/tei+xml",
+          "label": {
+            "en": [
+              "TEI (staff regions + embedded MusicXML)"
+            ]
+          }
+        },
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/musicxml/page032.musicxml",
+          "type": "Text",
+          "format": "application/vnd.recordare.musicxml+xml",
+          "label": {
+            "en": [
+              "MusicXML"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page033/canvas",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "page033"
+        ]
+      },
+      "width": 6184,
+      "height": 5244,
+      "thumbnail": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page033/full/387,/0/default.jpg",
+          "type": "Image",
+          "format": "image/jpeg"
+        }
+      ],
+      "items": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page033/annotation-page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page033/annotation/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page033/info.json",
+                "type": "Image",
+                "service": [
+                  {
+                    "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page033",
+                    "type": "ImageService2",
+                    "profile": "level0"
+                  }
+                ]
+              },
+              "target": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page033/canvas"
+            }
+          ]
+        }
+      ],
+      "rendering": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/tei/page033.tei.xml",
+          "type": "Text",
+          "format": "application/tei+xml",
+          "label": {
+            "en": [
+              "TEI (staff regions + embedded MusicXML)"
+            ]
+          }
+        },
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/musicxml/page033.musicxml",
+          "type": "Text",
+          "format": "application/vnd.recordare.musicxml+xml",
+          "label": {
+            "en": [
+              "MusicXML"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page034/canvas",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "page034"
+        ]
+      },
+      "width": 6221,
+      "height": 5206,
+      "thumbnail": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page034/full/389,/0/default.jpg",
+          "type": "Image",
+          "format": "image/jpeg"
+        }
+      ],
+      "items": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page034/annotation-page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page034/annotation/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page034/info.json",
+                "type": "Image",
+                "service": [
+                  {
+                    "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page034",
+                    "type": "ImageService2",
+                    "profile": "level0"
+                  }
+                ]
+              },
+              "target": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page034/canvas"
+            }
+          ]
+        }
+      ],
+      "rendering": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/tei/page034.tei.xml",
+          "type": "Text",
+          "format": "application/tei+xml",
+          "label": {
+            "en": [
+              "TEI (staff regions + embedded MusicXML)"
+            ]
+          }
+        },
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/musicxml/page034.musicxml",
+          "type": "Text",
+          "format": "application/vnd.recordare.musicxml+xml",
+          "label": {
+            "en": [
+              "MusicXML"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page035/canvas",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "page035"
+        ]
+      },
+      "width": 6201,
+      "height": 5226,
+      "thumbnail": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page035/full/388,/0/default.jpg",
+          "type": "Image",
+          "format": "image/jpeg"
+        }
+      ],
+      "items": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page035/annotation-page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page035/annotation/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page035/info.json",
+                "type": "Image",
+                "service": [
+                  {
+                    "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page035",
+                    "type": "ImageService2",
+                    "profile": "level0"
+                  }
+                ]
+              },
+              "target": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page035/canvas"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page036/canvas",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "page036"
+        ]
+      },
+      "width": 6199,
+      "height": 5248,
+      "thumbnail": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page036/full/388,/0/default.jpg",
+          "type": "Image",
+          "format": "image/jpeg"
+        }
+      ],
+      "items": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page036/annotation-page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page036/annotation/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page036/info.json",
+                "type": "Image",
+                "service": [
+                  {
+                    "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page036",
+                    "type": "ImageService2",
+                    "profile": "level0"
+                  }
+                ]
+              },
+              "target": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page036/canvas"
+            }
+          ]
+        }
+      ],
+      "rendering": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/tei/page036.tei.xml",
+          "type": "Text",
+          "format": "application/tei+xml",
+          "label": {
+            "en": [
+              "TEI (staff regions + embedded MusicXML)"
+            ]
+          }
+        },
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/musicxml/page036.musicxml",
+          "type": "Text",
+          "format": "application/vnd.recordare.musicxml+xml",
+          "label": {
+            "en": [
+              "MusicXML"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page037/canvas",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "page037"
+        ]
+      },
+      "width": 6181,
+      "height": 5222,
+      "thumbnail": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page037/full/387,/0/default.jpg",
+          "type": "Image",
+          "format": "image/jpeg"
+        }
+      ],
+      "items": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page037/annotation-page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page037/annotation/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page037/info.json",
+                "type": "Image",
+                "service": [
+                  {
+                    "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page037",
+                    "type": "ImageService2",
+                    "profile": "level0"
+                  }
+                ]
+              },
+              "target": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page037/canvas"
+            }
+          ]
+        }
+      ],
+      "rendering": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/tei/page037.tei.xml",
+          "type": "Text",
+          "format": "application/tei+xml",
+          "label": {
+            "en": [
+              "TEI (staff regions + embedded MusicXML)"
+            ]
+          }
+        },
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/musicxml/page037.musicxml",
+          "type": "Text",
+          "format": "application/vnd.recordare.musicxml+xml",
+          "label": {
+            "en": [
+              "MusicXML"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page038/canvas",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "page038"
+        ]
+      },
+      "width": 6170,
+      "height": 5211,
+      "thumbnail": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page038/full/386,/0/default.jpg",
+          "type": "Image",
+          "format": "image/jpeg"
+        }
+      ],
+      "items": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page038/annotation-page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page038/annotation/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page038/info.json",
+                "type": "Image",
+                "service": [
+                  {
+                    "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page038",
+                    "type": "ImageService2",
+                    "profile": "level0"
+                  }
+                ]
+              },
+              "target": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page038/canvas"
+            }
+          ]
+        }
+      ],
+      "rendering": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/tei/page038.tei.xml",
+          "type": "Text",
+          "format": "application/tei+xml",
+          "label": {
+            "en": [
+              "TEI (staff regions + embedded MusicXML)"
+            ]
+          }
+        },
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/musicxml/page038.musicxml",
+          "type": "Text",
+          "format": "application/vnd.recordare.musicxml+xml",
+          "label": {
+            "en": [
+              "MusicXML"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page039/canvas",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "page039"
+        ]
+      },
+      "width": 6201,
+      "height": 5212,
+      "thumbnail": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page039/full/388,/0/default.jpg",
+          "type": "Image",
+          "format": "image/jpeg"
+        }
+      ],
+      "items": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page039/annotation-page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page039/annotation/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page039/info.json",
+                "type": "Image",
+                "service": [
+                  {
+                    "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page039",
+                    "type": "ImageService2",
+                    "profile": "level0"
+                  }
+                ]
+              },
+              "target": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page039/canvas"
+            }
+          ]
+        }
+      ],
+      "rendering": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/tei/page039.tei.xml",
+          "type": "Text",
+          "format": "application/tei+xml",
+          "label": {
+            "en": [
+              "TEI (staff regions + embedded MusicXML)"
+            ]
+          }
+        },
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/musicxml/page039.musicxml",
+          "type": "Text",
+          "format": "application/vnd.recordare.musicxml+xml",
+          "label": {
+            "en": [
+              "MusicXML"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page040/canvas",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "page040"
+        ]
+      },
+      "width": 6221,
+      "height": 5189,
+      "thumbnail": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page040/full/389,/0/default.jpg",
+          "type": "Image",
+          "format": "image/jpeg"
+        }
+      ],
+      "items": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page040/annotation-page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page040/annotation/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page040/info.json",
+                "type": "Image",
+                "service": [
+                  {
+                    "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page040",
+                    "type": "ImageService2",
+                    "profile": "level0"
+                  }
+                ]
+              },
+              "target": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page040/canvas"
+            }
+          ]
+        }
+      ],
+      "rendering": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/tei/page040.tei.xml",
+          "type": "Text",
+          "format": "application/tei+xml",
+          "label": {
+            "en": [
+              "TEI (staff regions + embedded MusicXML)"
+            ]
+          }
+        },
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/musicxml/page040.musicxml",
+          "type": "Text",
+          "format": "application/vnd.recordare.musicxml+xml",
+          "label": {
+            "en": [
+              "MusicXML"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page041/canvas",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "page041"
+        ]
+      },
+      "width": 6200,
+      "height": 5179,
+      "thumbnail": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page041/full/388,/0/default.jpg",
+          "type": "Image",
+          "format": "image/jpeg"
+        }
+      ],
+      "items": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page041/annotation-page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page041/annotation/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page041/info.json",
+                "type": "Image",
+                "service": [
+                  {
+                    "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page041",
+                    "type": "ImageService2",
+                    "profile": "level0"
+                  }
+                ]
+              },
+              "target": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page041/canvas"
+            }
+          ]
+        }
+      ],
+      "rendering": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/tei/page041.tei.xml",
+          "type": "Text",
+          "format": "application/tei+xml",
+          "label": {
+            "en": [
+              "TEI (staff regions + embedded MusicXML)"
+            ]
+          }
+        },
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/musicxml/page041.musicxml",
+          "type": "Text",
+          "format": "application/vnd.recordare.musicxml+xml",
+          "label": {
+            "en": [
+              "MusicXML"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page042/canvas",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "page042"
+        ]
+      },
+      "width": 6236,
+      "height": 5200,
+      "thumbnail": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page042/full/390,/0/default.jpg",
+          "type": "Image",
+          "format": "image/jpeg"
+        }
+      ],
+      "items": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page042/annotation-page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page042/annotation/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page042/info.json",
+                "type": "Image",
+                "service": [
+                  {
+                    "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page042",
+                    "type": "ImageService2",
+                    "profile": "level0"
+                  }
+                ]
+              },
+              "target": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page042/canvas"
+            }
+          ]
+        }
+      ],
+      "rendering": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/tei/page042.tei.xml",
+          "type": "Text",
+          "format": "application/tei+xml",
+          "label": {
+            "en": [
+              "TEI (staff regions + embedded MusicXML)"
+            ]
+          }
+        },
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/musicxml/page042.musicxml",
+          "type": "Text",
+          "format": "application/vnd.recordare.musicxml+xml",
+          "label": {
+            "en": [
+              "MusicXML"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page043/canvas",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "page043"
+        ]
+      },
+      "width": 6178,
+      "height": 5244,
+      "thumbnail": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page043/full/387,/0/default.jpg",
+          "type": "Image",
+          "format": "image/jpeg"
+        }
+      ],
+      "items": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page043/annotation-page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page043/annotation/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page043/info.json",
+                "type": "Image",
+                "service": [
+                  {
+                    "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page043",
+                    "type": "ImageService2",
+                    "profile": "level0"
+                  }
+                ]
+              },
+              "target": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page043/canvas"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page044/canvas",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "page044"
+        ]
+      },
+      "width": 6204,
+      "height": 5222,
+      "thumbnail": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page044/full/388,/0/default.jpg",
+          "type": "Image",
+          "format": "image/jpeg"
+        }
+      ],
+      "items": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page044/annotation-page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page044/annotation/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page044/info.json",
+                "type": "Image",
+                "service": [
+                  {
+                    "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page044",
+                    "type": "ImageService2",
+                    "profile": "level0"
+                  }
+                ]
+              },
+              "target": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page044/canvas"
+            }
+          ]
+        }
+      ],
+      "rendering": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/tei/page044.tei.xml",
+          "type": "Text",
+          "format": "application/tei+xml",
+          "label": {
+            "en": [
+              "TEI (staff regions + embedded MusicXML)"
+            ]
+          }
+        },
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/musicxml/page044.musicxml",
+          "type": "Text",
+          "format": "application/vnd.recordare.musicxml+xml",
+          "label": {
+            "en": [
+              "MusicXML"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page045/canvas",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "page045"
+        ]
+      },
+      "width": 6174,
+      "height": 5232,
+      "thumbnail": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page045/full/386,/0/default.jpg",
+          "type": "Image",
+          "format": "image/jpeg"
+        }
+      ],
+      "items": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page045/annotation-page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page045/annotation/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page045/info.json",
+                "type": "Image",
+                "service": [
+                  {
+                    "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page045",
+                    "type": "ImageService2",
+                    "profile": "level0"
+                  }
+                ]
+              },
+              "target": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page045/canvas"
+            }
+          ]
+        }
+      ],
+      "rendering": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/tei/page045.tei.xml",
+          "type": "Text",
+          "format": "application/tei+xml",
+          "label": {
+            "en": [
+              "TEI (staff regions + embedded MusicXML)"
+            ]
+          }
+        },
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/musicxml/page045.musicxml",
+          "type": "Text",
+          "format": "application/vnd.recordare.musicxml+xml",
+          "label": {
+            "en": [
+              "MusicXML"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page046/canvas",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "page046"
+        ]
+      },
+      "width": 6189,
+      "height": 5246,
+      "thumbnail": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page046/full/387,/0/default.jpg",
+          "type": "Image",
+          "format": "image/jpeg"
+        }
+      ],
+      "items": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page046/annotation-page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page046/annotation/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page046/info.json",
+                "type": "Image",
+                "service": [
+                  {
+                    "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page046",
+                    "type": "ImageService2",
+                    "profile": "level0"
+                  }
+                ]
+              },
+              "target": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page046/canvas"
+            }
+          ]
+        }
+      ],
+      "rendering": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/tei/page046.tei.xml",
+          "type": "Text",
+          "format": "application/tei+xml",
+          "label": {
+            "en": [
+              "TEI (staff regions + embedded MusicXML)"
+            ]
+          }
+        },
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/musicxml/page046.musicxml",
+          "type": "Text",
+          "format": "application/vnd.recordare.musicxml+xml",
+          "label": {
+            "en": [
+              "MusicXML"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page047/canvas",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "page047"
+        ]
+      },
+      "width": 6155,
+      "height": 5149,
+      "thumbnail": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page047/full/385,/0/default.jpg",
+          "type": "Image",
+          "format": "image/jpeg"
+        }
+      ],
+      "items": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page047/annotation-page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page047/annotation/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page047/info.json",
+                "type": "Image",
+                "service": [
+                  {
+                    "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page047",
+                    "type": "ImageService2",
+                    "profile": "level0"
+                  }
+                ]
+              },
+              "target": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page047/canvas"
+            }
+          ]
+        }
+      ],
+      "rendering": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/tei/page047.tei.xml",
+          "type": "Text",
+          "format": "application/tei+xml",
+          "label": {
+            "en": [
+              "TEI (staff regions + embedded MusicXML)"
+            ]
+          }
+        },
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/musicxml/page047.musicxml",
+          "type": "Text",
+          "format": "application/vnd.recordare.musicxml+xml",
+          "label": {
+            "en": [
+              "MusicXML"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page048/canvas",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "page048"
+        ]
+      },
+      "width": 6114,
+      "height": 5201,
+      "thumbnail": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page048/full/383,/0/default.jpg",
+          "type": "Image",
+          "format": "image/jpeg"
+        }
+      ],
+      "items": [
+        {
+          "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page048/annotation-page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page048/annotation/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page048/info.json",
+                "type": "Image",
+                "service": [
+                  {
+                    "id": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page048",
+                    "type": "ImageService2",
+                    "profile": "level0"
+                  }
+                ]
+              },
+              "target": "https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/page048/canvas"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

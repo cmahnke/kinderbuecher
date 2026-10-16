@@ -123,6 +123,14 @@ defaultMarkdownHandler = 'goldmark'
       source = "node_modules/tify/dist/"
       target = "static/tify"
 
+    [[module.mounts]]
+      source = "node_modules/@projektemacher/tify-plugin-musicxml/dist/"
+      target = "assets/scss/tify-plugin-musicxml"
+
+    [[module.mounts]]
+      source = "node_modules/@projektemacher/tify-plugin-core/"
+      target = "assets/scss/tify-plugin-core"
+
 [build]
   writeStats = true
 

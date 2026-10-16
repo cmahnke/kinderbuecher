@@ -1,0 +1,27 @@
+@import "tify-plugin-core/style";
+
+@import "tify-plugin-musicxml/index";
+
+.iiif:has(.player-host) {
+  display: flex;
+  gap: 1rem;
+  align-items: stretch;
+
+  @media (max-width: 800px) {
+    flex-direction: column;
+  }
+}
+
+.player-host {
+  flex: 0 0 380px;
+  max-width: 380px;
+  min-height: 360px;
+  height: 72vh;
+  overflow: auto;
+
+  @media (max-width: 800px) {
+    flex: none;
+    max-width: none;
+    height: auto;
+  }
+}

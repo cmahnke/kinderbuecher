@@ -1,0 +1,18 @@
+{{- /*
+  Serve a pre-made IIIF manifest from the page bundle when one exists
+  (iiif.manifest, e.g. ./manifest.json), with URL rewriting and optional
+  front-matter structure injection via partial "iiif/existing-manifest.html".
+  Falls back to the theme's manifest generation otherwise.
+*/ -}}
+{{- $existing := partial "iiif/existing-manifest.html" . -}}
+{{- if $existing.exists -}}
+  {{- $existing.content -}}
+{{- else -}}
+  {{- $version := partial "functions/iiif/presentation-version.html" . -}}
+  {{- $isLeaflet := partial "functions/iiif/is-leaflet.html" . -}}
+  {{- if $isLeaflet -}}
+    {{- partial (printf "iiif/%d/manifest-leaflet.json" $version) . -}}
+  {{- else -}}
+    {{- partial (printf "iiif/%d/manifest.json" $version) . -}}
+  {{- end -}}
+{{- end -}}
