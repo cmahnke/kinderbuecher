@@ -35,6 +35,13 @@ const TEI_FORMAT = 'application/tei+xml'
  * host) have the declared base path stripped and resolve against the
  * directory the manifest was fetched from — the per-book folder of the
  * local static files.
+ *
+ * NOTE: this inference exists only for the standalone dev viewer (`npm run
+ * dev` serves the raw generated manifests without Hugo). The publication
+ * path rewrites manifest URLs at build time instead — see
+ * layouts/partials/iiif/existing-manifest.html in the blog, which cuts a
+ * declared `iiif.baseURL` front matter param (mandatory for absolute URLs)
+ * and prepends the standard deployment prefix.
  */
 function makeResolver(
   manifestId: string | undefined,
