@@ -3,6 +3,15 @@ title: Was sagt die Teddypolizei?
 date: 2021-08-01T17:21:11+02:00
 iiif:
   manifest: ./manifest.json
+  structure:
+    - label: {de: [Umschlag]}
+      page: front
+    - label: {de: [Liebe Jungen und Mädel!]}
+      page: page001
+    - label: {de: [Immerzu hört man von Kindern … (Beginn der Verserzählung)]}
+      page: page002
+    - label: {de: [Verkehrszeichen-Tafel (Anhang mit Impressum)]}
+      page: page030
 outputs:
 - html
 - iiif-manifest

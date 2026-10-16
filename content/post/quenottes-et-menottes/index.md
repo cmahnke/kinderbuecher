@@ -3,6 +3,115 @@ title: Quenottes et menottes
 date: 2022-03-01T17:21:11+01:00
 iiif:
   manifest: ./manifest.json
+  structure:
+    - label: {de: [Umschlag]}
+      page: front
+    - label: {de: [Vorsatz]}
+      page: front-verso
+    - label: {de: [Vorsatz]}
+      page: front-recto
+    - label: {fr: [La chanson des oiseaux]}
+      page: page003
+    - label: {fr: [Frontispice en couleur (fillette au bouquet)]}
+      page: page004
+    - label: {fr: ['Quenottes et Menottes, par Ernest d''Hervilly']}
+      page: page005
+    - label: {fr: [Quenottes et Menottes]}
+      page: page006
+    - label: {fr: [Le mauvais écolier.]}
+      page: page008
+    - label: {fr: [Le mauvais écolier.]}
+      page: page009
+    - label: {fr: [Pour maman.]}
+      page: page010
+    - label: {fr: [Simple bouquet.]}
+      page: page011
+    - label: {fr: [Incroyable aventure.]}
+      page: page012
+    - label: {fr: [L'enfant terrible.]}
+      page: page013
+    - label: {fr: [Maman chatte.]}
+      page: page014
+    - label: {fr: [Deux amies.]}
+      page: page015
+    - label: {fr: [Souffle.]}
+      page: page016
+    - label: {fr: [Conseils.]}
+      page: page017
+    - label: {fr: [Musique de chambre.]}
+      page: page018
+    - label: {fr: [Trio.]}
+      page: page019
+    - label: {fr: [Un beau merle.]}
+      page: page020
+    - label: {fr: [Beau merle.]}
+      page: page021
+    - label: {fr: [Prudence — confiance]}
+      page: page022
+    - label: {fr: [L'alouette.]}
+      page: page023
+    - label: {fr: [Mon chien.]}
+      page: page024
+    - label: {fr: [Mon chien.]}
+      page: page025
+    - label: {fr: [Sur la plage.]}
+      page: page026
+    - label: {fr: [Perfide comme l'onde.]}
+      page: page027
+    - label: {fr: [L'oiseau défunts.]}
+      page: page028
+    - label: {fr: [Planche en couleur sans légende (enfants et chien dans la neige)]}
+      page: page029
+    - label: {fr: [Bébé tout neuf.]}
+      page: page030
+    - label: {fr: [Bébé tout neuf.]}
+      page: page031
+    - label: {fr: [Propos oiseux.]}
+      page: page032
+    - label: {fr: [Giboulées d'avril.]}
+      page: page033
+    - label: {fr: [L'amie de l'oie.]}
+      page: page034
+    - label: {fr: [L'oie de la petite fille.]}
+      page: page035
+    - label: {fr: [A cache-cache.]}
+      page: page036
+    - label: {fr: ['Où peut-elle être?']}
+      page: page037
+    - label: {fr: [Planche en couleur sans légende (bergère et agneaux près de l'étang)]}
+      page: page038
+    - label: {fr: [Chers petits moutons]}
+      page: page039
+    - label: {fr: [Ville et campagne.]}
+      page: page040
+    - label: {fr: ['Il est charmant, cet écureuil']}
+      page: page041
+    - label: {fr: [Ce que se dit la petite modiste.]}
+      page: page042
+    - label: {fr: [Planche en couleur sans légende (fillette au chapeau de poupée)]}
+      page: page043
+    - label: {fr: [Il faut toujours être très doux]}
+      page: page044
+    - label: {fr: [Toujours minet.]}
+      page: page045
+    - label: {fr: ['Un baiser à bébé,']}
+      page: page046
+    - label: {fr: [Un baiser à bébé.]}
+      page: page047
+    - label: {fr: [Alerte.]}
+      page: page048
+    - label: {fr: ['Ma chère petite dame, n''ayez point peur!']}
+      page: page049
+    - label: {fr: [Astronomie intime.]}
+      page: page050
+    - label: {fr: [Les étoiles.]}
+      page: page051
+    - label: {de: [Nachsatz]}
+      page: end-verso
+    - label: {de: [Nachsatz]}
+      page: end-recto
+    - label: {de: [Rückendeckel]}
+      page: end
 iiifcontext: http://iiif.io/api/presentation/3/context.json
 description: '"Quenottes et menottes" von Ernest D''Hervilly, illustriert von Harriett M. Bennett, herausgegeben ca. 1890 von Nouvelle Librairie de la Jeunesse, Paris.'
 issueYear: 1890

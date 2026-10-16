@@ -5,6 +5,27 @@ description: '"Fliegende Untertassen" von Rolf Strehl, erschienen ca. 1953 - 195
 issueYear: 1953
 iiif:
   manifest: ./manifest.json
+  structure:
+    - label: {de: [Umschlag]}
+      page: front
+    - label: {de: [Vorsatz]}
+      page: front-verso
+    - label: {de: ['Rolf Strehl: Fliegende Untertassen — Ein Geheimnis geistert um die Welt']}
+      page: page001
+    - label: {de: [Vorwort]}
+      page: page003
+    - label: {de: [Werden die „Untertassen“ wirklich von Lebewesen gesteuert …]}
+      page: page009
+    - label: {de: [Würden Lebewesen von anderen Sternen eine Landung auf unserer Erde vorbereiten …]}
+      page: page019
+    - label: {de: ['Eine Panik brach in New York aus, als die Rundfunkhörer 1937 ahnungslos ihr Radio einschalteten …']}
+      page: page029
+    - label: {de: [Ein Raumschiff von der Erde landet auf einem anderen Planeten …]}
+      page: page039
+    - label: {de: [Nachsatz]}
+      page: end-recto
+    - label: {de: [Rückendeckel]}
+      page: back
 outputs:
 - html
 - iiif-manifest

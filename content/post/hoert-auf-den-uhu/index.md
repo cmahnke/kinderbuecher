@@ -3,6 +3,23 @@ title: Hört auf den Uhu!
 date: 2024-10-01T17:21:11+02:00
 iiif:
   manifest: ./manifest.json
+  structure:
+    - label: {de: [Umschlag]}
+      page: front
+    - label: {de: [Liebe Kinder!]}
+      page: page000
+    - label: {de: ['1. Zwei kleine Bären, Schnuff und Schnauff,']}
+      page: page002
+    - label: {de: [2. Hier sieht man beieinander stehn Frau Lampe und Frau Hase.]}
+      page: page006
+    - label: {de: [3. Ein Fußballspiel ist stets beliebt.]}
+      page: page010
+    - label: {de: ['4. Zum Mohrchen sprach der Kater Mumm:']}
+      page: page015
+    - label: {de: [5. Hier radelt Fips. Wir sehen ihn]}
+      page: page020
+    - label: {de: [Rückendeckel]}
+      page: back
 outputs:
 - html
 - iiif-manifest

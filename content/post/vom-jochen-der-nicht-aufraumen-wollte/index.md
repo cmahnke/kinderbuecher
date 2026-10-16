@@ -9,6 +9,23 @@ tags:
   - Deutsch
 iiif:
   manifest: ./manifest.json
+  structure:
+    - label: {de: [Umschlag]}
+      page: front
+    - label: {de: [Vorsatz]}
+      page: front-verso
+    - label: {de: ['Vom Jochen, der nicht aufräumen wollte']}
+      page: title
+    - label: {de: ['Bildseite (ohne Text): Die Spielsachen machen sich auf den Weg']}
+      page: page008
+    - label: {de: ['Bildseite (ohne Text): Ankunft der Spielsachen bei den Nachbarskindern']}
+      page: page011
+    - label: {de: ['Bildseite (ohne Text): Die Kinder räumen die reparierten Spielsachen ins Regal']}
+      page: page024
+    - label: {de: [Nachsatz]}
+      page: end-recto
+    - label: {de: [Rückendeckel]}
+      page: end
 outputs:
 - html
 - iiif-manifest

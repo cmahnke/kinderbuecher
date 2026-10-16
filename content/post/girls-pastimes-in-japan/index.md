@@ -3,6 +3,71 @@ title: Girls' pastimes in Japan
 date: 2021-04-01T17:21:11+01:00
 iiif:
   manifest: ./manifest.json
+  structure:
+    - label: {de: [Umschlag]}
+      page: front
+    - label: {de: [Vorsatz]}
+      page: front-verso
+    - label: {en: [Girls' Pastimes in Japan.]}
+      page: page001
+    - label: {en: [O Hina Sama.—Dolls to represent the Emperor and Empress.]}
+      page: page002
+    - label: {en: ['On the veranda, sits Umeko San (Miss Plum,) a young girl of good family.']}
+      page: page003
+    - label: {en: [Haruko San (Miss Spring) is dressing her sister's hair.]}
+      page: page005
+    - label: {en: [The children next door are donning their best attire.]}
+      page: page007
+    - label: {en: ['At the gate, Yoshiko San receives her friends.']}
+      page: page009
+    - label: {en: ['On arrival at the entrance to the house, the visitors are welcomed with profound bows by Yoshiko San''s sisters.']}
+      page: page011
+    - label: {en: ['In the drawing-room, Yoshiko San and her sisters serve the guests with tea.']}
+      page: page013
+    - label: {en: [The attraction of the day is the display of dolls and their miniature house furnishings.]}
+      page: page015
+    - label: {en: ['In a large room over-looking the garden, three of the visitors entertain the company with music.']}
+      page: page017
+    - label: {en: ['Dear little Okiku San (Miss Chrysanthemum,) the youngest, and pet of all, now gives her prettiest dance.']}
+      page: page019
+    - label: {en: [Games follow. The first is throwing a fan at the gay toy on top of the box.]}
+      page: page021
+    - label: {en: ['In groups, the girls play on the veranda.']}
+      page: page023
+    - label: {en: [See how skillfully the girls send the bean-bags high up into the air.]}
+      page: page025
+    - label: {en: ['Before dinner, the girls wash their hands.']}
+      page: page027
+    - label: {en: [Dinner.]}
+      page: page029
+    - label: {en: ['After dinner,—a walk in the garden.']}
+      page: page031
+    - label: {en: [Battledoor and shuttlecock.]}
+      page: page033
+    - label: {en: [Blind man's buff.]}
+      page: page035
+    - label: {en: [Swiftly round and round goes the water-wheel in the Yodo river.]}
+      page: page037
+    - label: {en: [A game of tag.]}
+      page: page039
+    - label: {en: [The last child is to be caught by the girl who is alone.]}
+      page: page041
+    - label: {en: [Skipping rope when one wears sandals on the feet requires care and skill.]}
+      page: page043
+    - label: {en: [It is such fun to play "house" and to do cooking on the veranda.]}
+      page: page045
+    - label: {en: [Afternoon tea in the garden.]}
+      page: page047
+    - label: {en: [The end of a happy day.]}
+      page: page049
+    - label: {en: ['Published by The Tamamura, Photographic Studio & Art Gallery, Kobe. (Kolophon)']}
+      page: page051
+    - label: {de: [Nachsatz]}
+      page: end-verso
+    - label: {de: [Nachsatz]}
+      page: end-recto
+    - label: {de: [Rückendeckel]}
+      page: end
 outputs:
 - html
 - iiif-manifest

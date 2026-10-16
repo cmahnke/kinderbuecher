@@ -3,6 +3,49 @@ title: Kleines Volk
 date: 2020-11-01T17:21:11+02:00
 iiif:
   manifest: ./manifest.json
+  structure:
+    - label: {de: [Umschlag]}
+      page: front
+    - label: {de: [Kleines Volk]}
+      page: page001
+    - label: {de: [Blöde.]}
+      page: page003
+    - label: {de: [Guck in die Welt.]}
+      page: page005
+    - label: {de: [Zärtlich.]}
+      page: page007
+    - label: {de: [Schlechtgelaunt.]}
+      page: page009
+    - label: {de: [Stillvergnügt.]}
+      page: page011
+    - label: {de: [Bescheiden.]}
+      page: page013
+    - label: {de: [Zierlieschen.]}
+      page: page015
+    - label: {de: [Es schmeckt nicht.]}
+      page: page017
+    - label: {de: [Schmöker.]}
+      page: page019
+    - label: {de: [Unvorsichtig.]}
+      page: page021
+    - label: {de: [Gefällig.]}
+      page: page023
+    - label: {de: [Viel Phantasie.]}
+      page: page025
+    - label: {de: [Schadenfroh.]}
+      page: page027
+    - label: {de: [Häuslich.]}
+      page: page029
+    - label: {de: [Verschämt.]}
+      page: page031
+    - label: {de: [Neugierig.]}
+      page: page033
+    - label: {de: [Haushälterchen.]}
+      page: page035
+    - label: {de: [Faul.]}
+      page: page037
+    - label: {de: [Sandmann.]}
+      page: page039
 outputs:
 - html
 - iiif-manifest

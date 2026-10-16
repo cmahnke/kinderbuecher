@@ -4,6 +4,73 @@ date: 2020-12-01T17:21:11+01:00
 iiif:
   manifest: ./manifest.json
   baseURL: https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/
+  structure:
+    - label: {de: [Umschlag]}
+      page: front
+    - label: {fr: [Vieilles Chansons et Danses pour les petits enfants]}
+      page: page001
+    - label: {fr: [Vieilles Chansons pour les petits enfants (Titel)]}
+      page: page003
+    - label: {fr: [Table des matières]}
+      page: page005
+    - label: {fr: [Au clair de la lune]}
+      page: page006
+    - label: {fr: [J'ai du bon tabac.]}
+      page: page007
+    - label: {fr: [La Polichinelle]}
+      page: page008
+    - label: {fr: [La Mist' en laire.]}
+      page: page010
+    - label: {fr: [Ragotin.]}
+      page: page012
+    - label: {fr: [La Boulangère.]}
+      page: page013
+    - label: {fr: [Le Pont d'Avignon.]}
+      page: page014
+    - label: {fr: [La Queue leu leu.]}
+      page: page016
+    - label: {fr: [Le Furet du bois joli.]}
+      page: page017
+    - label: {fr: [Frère Jacques.]}
+      page: page018
+    - label: {fr: [Ramène tes moutons.]}
+      page: page020
+    - label: {fr: ['La Tour, prends garde.']}
+      page: page021
+    - label: {fr: ['As-tu vu la casquette?']}
+      page: page024
+    - label: {fr: [Nous n'irons plus au bois.]}
+      page: page025
+    - label: {fr: ['Giroflé, Girofla.']}
+      page: page028
+    - label: {fr: ['Papa, les p''tits bateaux.']}
+      page: page030
+    - label: {fr: [La Monaco.]}
+      page: page031
+    - label: {fr: [Le Chevalier du guet]}
+      page: page032
+    - label: {fr: [Ah! mon beau chateau.]}
+      page: page034
+    - label: {fr: [Coucou.]}
+      page: page036
+    - label: {fr: ['Fais dodo, Colas.']}
+      page: page038
+    - label: {fr: ['Ah! vous dirai-je, Maman.']}
+      page: page039
+    - label: {fr: [La Bonne Aventure.]}
+      page: page040
+    - label: {fr: [Le Petit Chasseur.]}
+      page: page042
+    - label: {fr: ['Savez-vous planter les choux?']}
+      page: page044
+    - label: {fr: [La Mère Michel.]}
+      page: page045
+    - label: {fr: [Galop.]}
+      page: page046
+    - label: {fr: [Polka.]}
+      page: page047
+    - label: {de: [Rückendeckel]}
+      page: back
 outputs:
 - html
 - iiif-manifest

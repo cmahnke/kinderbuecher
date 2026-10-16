@@ -9,6 +9,53 @@ tags:
   - Deutsch
 iiif:
   manifest: ./manifest.json
+  structure:
+    - label: {de: [Umschlag]}
+      page: front
+    - label: {de: ['Tante Anstand oder Wie die lieben Eltern wollen, daß Kinder sich benehmen sollen']}
+      page: page001
+    - label: {de: ['Hör'', Bürschchen, sei nicht ungezogen,']}
+      page: page003
+    - label: {de: ['Trittst Du herein in''s Zimmer,']}
+      page: page005
+    - label: {de: [Wenn Mütterchen und Vater leise]}
+      page: page007
+    - label: {de: ['Pfui, was ich gesehen hab''!']}
+      page: page009
+    - label: {de: ['He'' Bübchen, mäß''ge Deinen Schritt']}
+      page: page011
+    - label: {de: [Willst Du allein schon auf den Gassen]}
+      page: page011
+    - label: {de: ['Ich kenne einen Plagegeist,']}
+      page: page013
+    - label: {de: ['Wenn große Leute sprechen,']}
+      page: page013
+    - label: {de: ['Ist jemand bei Mama zu Gast,']}
+      page: page015
+    - label: {de: ['Hier, Gretelchen, Du bist noch klein,']}
+      page: page017
+    - label: {de: ['Ist der Sandmann abends da,']}
+      page: page019
+    - label: {de: ['Wenn Du bei Tisch noch hungrig bist,']}
+      page: page021
+    - label: {de: ['Ei Hänschen, Schmudelpeterlein,']}
+      page: page023
+    - label: {de: [Nun bindet die Servietten um]}
+      page: page025
+    - label: {de: ['Zu Tische, Kinder, aber schnell,']}
+      page: page027
+    - label: {de: ['Wenn Du das Klatschen nicht wirfst,']}
+      page: page029
+    - label: {de: ['Kind, hast Böses Du gethan,']}
+      page: page031
+    - label: {de: ['Ich weiß zwei kleine Hände,']}
+      page: page033
+    - label: {de: ['Wenn Du den Kuchen wirfst, so stopfen']}
+      page: page035
+    - label: {de: ['Du lutschest wol am Daumen, Mädchen?']}
+      page: page037
+    - label: {de: [Rückendeckel]}
+      page: back
 outputs:
 - html
 - iiif-manifest

@@ -9,6 +9,11 @@ tags:
   - Deutsch
 iiif:
   manifest: ./manifest.json
+  structure:
+    - label: {de: [Umschlag]}
+      page: front
+    - label: {de: [Rückendeckel]}
+      page: back
 outputs:
 - html
 - iiif-manifest

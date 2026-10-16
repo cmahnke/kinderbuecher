@@ -4,6 +4,13 @@ date: 2021-10-01T17:21:11+02:00
 description: '"Das Schlaraffenland" von Hans Sachs, illustriert von Else Wenz-Viëtor, erschienen 1931 bei Hahn, Leipzig. <a class="worldcat" href="http://www.worldcat.org/oclc/552043275">&nbsp;</a>'
 iiif:
   manifest: ./manifest.json
+  structure:
+    - label: {de: [Umschlag]}
+      page: front
+    - label: {de: [Eine Gegend heißt Schlaraffenland]}
+      page: page001
+    - label: {de: [Rückendeckel]}
+      page: back
 iiifcontext: http://iiif.io/api/presentation/3/context.json
 issueYear: 1931
 outputs:

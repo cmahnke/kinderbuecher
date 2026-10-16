@@ -9,6 +9,15 @@ tags:
   - Deutsch
 iiif:
   manifest: ./manifest.json
+  structure:
+    - label: {de: [Umschlag]}
+      page: front
+    - label: {de: ['Ganzseitige Anaglyphen-Illustration: verschneite Stadtansicht mit Kirche']}
+      page: page001
+    - label: {de: ['Ganzseitige Illustration: Weihnachtsmann bringt ein Geschenk zum Haus']}
+      page: page011
+    - label: {de: [Rückendeckel]}
+      page: back
 outputs:
 - html
 - iiif-manifest

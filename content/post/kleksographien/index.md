@@ -3,6 +3,31 @@ title: Kleksographien
 date: 2021-03-01T17:21:11+01:00
 iiif:
   manifest: ./manifest.json
+  structure:
+    - label: {de: [Umschlag]}
+      page: front
+    - label: {de: [Kleksographien von Justinus Kerner]}
+      page: page-I
+    - label: {de: ['Frontispiz: Kleksographie mit handschriftlicher Widmung']}
+      page: page-III
+    - label: {de: [Die Kleksographie.]}
+      page: page-V
+    - label: {de: ['Hadesbilder, kleksographirt (erste Tafel, handschriftliche Beschriftung im Kleks)']}
+      page: page001
+    - label: {de: [Memento mori!]}
+      page: page003
+    - label: {de: [Todesboten.]}
+      page: page006
+    - label: {de: [Hadesbilder.]}
+      page: page011
+    - label: {de: [Nutzanwendung.]}
+      page: page048
+    - label: {de: [Höllenbilder.]}
+      page: page059
+    - label: {de: ['Schlußtafel: Komposition vieler Motten- und Schmetterlings-Kleksographien']}
+      page: page079
+    - label: {de: [Rückendeckel]}
+      page: end
 outputs:
 - html
 - iiif-manifest

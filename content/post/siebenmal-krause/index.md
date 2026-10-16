@@ -3,6 +3,29 @@ title: Siebenmal Krause
 date: 2021-06-01T17:21:11+02:00
 iiif:
   manifest: ./manifest.json
+  structure:
+    - label: {de: [Umschlag]}
+      page: front
+    - label: {de: [Siebenmal Krause (Titelseite)]}
+      page: page001
+    - label: {de: [Gerhard hilft]}
+      page: page002
+    - label: {de: [Hans rettet Schnurrian]}
+      page: page004
+    - label: {de: [Der Jahrmarkt]}
+      page: page005
+    - label: {de: [Die große Überraschung]}
+      page: page007
+    - label: {de: [Die Schultüte]}
+      page: page010
+    - label: {de: [Der Apfeldieb]}
+      page: page012
+    - label: {de: [Puppe Emma]}
+      page: page014
+    - label: {de: [Mutter hat Geburtstag]}
+      page: page016
+    - label: {de: [Rückendeckel]}
+      page: back
 outputs:
 - html
 - iiif-manifest

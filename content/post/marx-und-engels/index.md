@@ -4,6 +4,29 @@ draft: true
 date: 2021-09-01T17:21:11+02:00
 iiif:
   manifest: ./manifest.json
+  structure:
+    - label: {de: [Umschlag]}
+      page: front
+    - label: {de: [Erster Streich]}
+      page: page002
+    - label: {de: [Zweiter Streich]}
+      page: page005
+    - label: {de: [Dritter Streich]}
+      page: page009
+    - label: {de: [Vierter Streich]}
+      page: page013
+    - label: {de: [Fünfter Streich]}
+      page: page021
+    - label: {de: [Letzter Streich]}
+      page: page027
+    - label: {de: ['Schluß — (Schluß?)']}
+      page: page031
+    - label: {de: ['Daß Marx und Engels weitermachen, ist also klar … (Anhang DKP)']}
+      page: page032
+    - label: {de: [Tatsache 1 / Tatsache 2 / Tatsache 3 (Anhang DKP)]}
+      page: page033
+    - label: {de: [Rückendeckel]}
+      page: end
 outputs:
 - html
 - iiif-manifest

@@ -9,6 +9,43 @@ tags:
   - Deutsch
 iiif:
   manifest: ./manifest.json
+  structure:
+    - label: {de: [Umschlag]}
+      page: front
+    - label: {de: [Häschen in der Grube saß und schlief.]}
+      page: page001
+    - label: {de: ['Storch, Storch, Langbein,']}
+      page: page001
+    - label: {de: ['Ringel, Ringel, Reihe!']}
+      page: page002
+    - label: {de: ['Spannenlanger Hanfel, muddicke Dirn,']}
+      page: page002
+    - label: {de: ['Schlaf, Kindchen, schlaf,']}
+      page: page003
+    - label: {de: ['ABC,']}
+      page: page003
+    - label: {de: ['Schneck im Haus,']}
+      page: page004
+    - label: {de: ['Tanz, Kindlein, tanz!']}
+      page: page004
+    - label: {de: ['Eio Popeio, was raschelt im Stroh?']}
+      page: page005
+    - label: {de: ['Bauer, bind den Pudel an,']}
+      page: page005
+    - label: {de: ['Muh, muh, muh!']}
+      page: page006
+    - label: {de: ['Backe, backe Kuchen,']}
+      page: page006
+    - label: {de: ['Eia popeia, schlags Gickelchen tot,']}
+      page: page007
+    - label: {de: ['Es regnet, es regnet,']}
+      page: page007
+    - label: {de: ['Maikäfer, flieg,']}
+      page: page008
+    - label: {de: [Ihr Diener.]}
+      page: page008
+    - label: {de: [Rückendeckel]}
+      page: back
 outputs:
 - html
 - iiif-manifest

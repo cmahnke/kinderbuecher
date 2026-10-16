@@ -1,0 +1,7 @@
+---
+# Lint config for the structure drafts (scripts/structure/assemble.py).
+# Front matter labels follow the repository convention of long content
+# lines (see existing index.md files), so the line-length rule is off.
+extends: default
+rules:
+  line-length: disable

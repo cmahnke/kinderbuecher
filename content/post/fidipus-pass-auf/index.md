@@ -9,6 +9,19 @@ tags:
   - Deutsch
 iiif:
   manifest: ./manifest.json
+  structure:
+    - label: {de: [Umschlag]}
+      page: front
+    - label: {de: [Vorsatz]}
+      page: front-verso
+    - label: {de: [Vorsatz]}
+      page: front-recto
+    - label: {de: [FIDIBUS PAß AUF!]}
+      page: page001
+    - label: {de: [FIDIBUS paß auf! Ein Verkehrs-Bilderbuch]}
+      page: page003
+    - label: {de: [Rückendeckel]}
+      page: back
 outputs:
 - html
 - iiif-manifest
