@@ -19,6 +19,9 @@ timeout = "300s"
     iiifCanvasWidth = 300
     productionIIIFURLPrefix="https://static.projektemacher.org/kinderbuecher/"
 
+[params.iiif]
+    presentationViewer = "ts/tify.ts"
+
 # navigation
 [menu]
     [[menu.main]]

@@ -2,17 +2,11 @@ import './style.css'
 import 'tify/dist/tify.css'
 import '@projektemacher/tify-plugin-core/style.css'
 import '@projektemacher/tify-plugin-musicxml/musicxml.css'
-import Tify from 'tify'
-import { musicxmlPlugin, type MusicXmlPlugin } from '@projektemacher/tify-plugin-musicxml'
+import type Tify from 'tify'
+import type { MusicXmlPlugin } from '@projektemacher/tify-plugin-musicxml'
 import type { PageResult } from './manifest'
 import { loadPages } from './manifest'
-import {
-  REGION_COLOR,
-  REGION_FILL_OPACITY,
-  SHOW_PLAYBACK_HIGHLIGHTS,
-  SHOW_SCORE_OVERLAY,
-  SHOW_STAFF_OVERLAY,
-} from './config'
+import { attachMusicxml, createTify } from './tify-musicxml'
 
 /** One selectable book (see scripts/generate_books_index.py -> /books.json). */
 interface BookInfo {
@@ -122,25 +116,18 @@ function showDetail(
   let plugin: MusicXmlPlugin | null = null
   let tify: Tify | null = null
   void (async (): Promise<void> => {
-    tify = new Tify({
+    tify = createTify({
       container: `#${tifyId}`,
       manifestUrl,
       // TIFY pages are 1-based and the option is the pages array (TIFY 0.36
       // dropped the singular `page` option)
       pages: [pageIndex + 1],
     })
-    plugin = await musicxmlPlugin(tify, {
+    plugin = await attachMusicxml(tify, {
       panelEl: panelHost,
       // the TEI/MusicXML ids in the manifest point at the deployment host;
       // pass the resolver-localized TEI so the plugin fetches same-origin
       tei: page.homr?.tei,
-      showScoreOverlay: SHOW_SCORE_OVERLAY,
-      showHighlights: SHOW_PLAYBACK_HIGHLIGHTS,
-      regionOverlay: {
-        enabled: SHOW_STAFF_OVERLAY,
-        color: REGION_COLOR,
-        opacity: REGION_FILL_OPACITY,
-      },
     })
     if (import.meta.env.DEV) {
       ;(window as unknown as Record<string, unknown>).__tify = tify
