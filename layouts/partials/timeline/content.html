@@ -1,0 +1,59 @@
+<section>
+  <div class="container timeline mb-5">
+    <div class="content">
+      <article class="content-clean">
+        {{- .Content -}}
+      </article>
+
+      <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active" id="vertical-tab" data-bs-toggle="tab" href="#vertical" role="tab" aria-controls="vertical">Vertikal</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="horizontal-tab" data-bs-toggle="tab" href="#horizontal" role="tab" aria-controls="horizontal">Horizontal</a>
+        </li>
+      </ul>
+
+      {{- /* The books carry the publishing year as `issueYear` */ -}}
+      {{- $issues := where .Site.RegularPages "Params.issueYear" "!=" nil -}}
+      {{- $issues = sort $issues ".Params.issueYear" -}}
+      <div class="tab-content">
+        <div id="vertical" class="tab-pane fade show active timeline-content" role="tabpanel" aria-labelledby="vertical-tab">
+            {{- partial "timeline/vertical.html" (dict "context" . "entries" $issues "yearKey" "issueYear") -}}
+        </div>
+        <div id="horizontal" class="tab-pane fade timeline-content" role="tabpanel" aria-labelledby="horizontal-tab">
+            {{- partial "timeline/horizontal.html" (dict "context" . "entries" $issues "yearKey" "issueYear") -}}
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+      /* This isn't implemented even in modern Browsers
+      if (!URL.canParse(window.location)) {
+        return;
+      }
+      */
+      var url = new URL(window.location);
+      if (url.hash !== "") {
+        var name = url.hash.replace(/^#/,"");
+        var activeTab = document.querySelector('.container.timeline a.nav-link[aria-selected="true"]');
+        if (activeTab !== null) {
+          Array.from(document.querySelectorAll('.container.timeline a.nav-link')).forEach(el => el.setAttribute('aria-selected', 'false'));
+          activeTab.setAttribute('aria-selected', 'true');
+        }
+      } else {
+        var checked = document.querySelector('.container.timeline a.nav-link[aria-selected="true"]');
+        if (checked !== null && checked.hasAttribute('href')) {
+          window.location.href = checked.href
+        }
+      }
+    });
+    document.querySelectorAll('.container.timeline a.nav-link').forEach(tabLabel => {
+      tabLabel.addEventListener('click', (e) => {
+        var tabName = new URL(e.target.href).hash;
+        window.location.href = `${window.location.href.replace(/#.*/, "")}${tabName}`;
+      });
+    });
+  </script>
+</section>

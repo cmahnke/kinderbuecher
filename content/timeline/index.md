@@ -4,7 +4,10 @@ slug: timeline
 displayinlist: false
 metaPage: true
 layout: timeline
-draft: true
+draft: false
+js:
+  - js/timeline.js
+  - js/bootstrap.js
 ---
 
 Auf diesem Zeitstrahl werden alle Bücher angezeigt

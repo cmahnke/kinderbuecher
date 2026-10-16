@@ -17,6 +17,80 @@ $font-family-title: "Berkshire Swash",;
 @import "blogpaper.scss";
 
 @import "iiif/presentation-tify";
+@import "timeline";
+
+/* Timeline (Zeitstrahl) — adapted to the vintage look: serif titles, paper tones,
+   custom tabs (no Bootstrap CSS, only Bootstrap JS for the tab switching) */
+.timeline {
+    .nav-tabs {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        padding-inline-start: 0;
+        margin-block-start: 2em;
+        border-bottom: 1px solid darken(#fcf5e8, 15%);
+
+        .nav-item {
+            list-style: none;
+
+            .nav-link {
+                display: inline-block;
+                padding: 0.6em 1.6em;
+                font-family: $font-family;
+                font-size: larger;
+                color: $color-metadata;
+                border: 1px solid transparent;
+                border-bottom: none;
+                cursor: pointer;
+
+                &:hover {
+                    color: darken($color-metadata, 30%);
+                }
+
+                &.active {
+                    background-color: #fcf5e8;
+                    border-color: darken(#fcf5e8, 15%);
+                    border-radius: 0.4em 0.4em 0 0;
+                    color: darken($color-metadata, 40%);
+                }
+            }
+        }
+    }
+
+    /* Tab panes: Bootstrap CSS isn't loaded, hide/show manually */
+    .tab-pane {
+        display: none;
+
+        &.active {
+            display: block;
+        }
+    }
+
+    .tab-content {
+        margin-top: 1.8em;
+    }
+
+    p {
+        margin-top: 1em;
+        font-size: large;
+    }
+}
+
+.timeline.timeline-horizontal {
+    min-height: 32em;
+}
+
+.timeline-vertical {
+    .preview-title {
+        font-family: $font-family;
+        font-weight: bold;
+    }
+
+    .timeline-item .year {
+        font-family: $font-family;
+        font-weight: bold;
+    }
+}
 
 .header--main {
     position: relative;
