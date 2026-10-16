@@ -112,6 +112,8 @@ jobs:
           cd content
           find post -name info.json -exec dirname {} \; > files.lst
           find post -name "*.pdf" -exec echo "{}" \; >> files.lst
+          find post -name "*.tei.xml" -exec echo "{}" \; >> files.lst
+          find post -name "*.musicxml" -exec echo "{}" \; >> files.lst
           cat files.lst | xargs chmod 775
           # Add this to rsync '--info=progress2' to get a complete progess status
           sshpass -e rsync -rlptoDP --size-only --delete --relative $(cat files.lst) $DEPLOY_USER@$DEPLOY_SERVER:$DEPLOY_PATH/kinderbuecher/

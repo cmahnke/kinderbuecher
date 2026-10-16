@@ -3,8 +3,6 @@ title: Deutsche Wiegenlieder
 date: 2020-08-05T19:36:07+02:00
 iiif:
   manifest: ./manifest.json
-iiif:
-  manifest: ./manifest.json
   baseURL: https://static.projektemacher.org/kinderbuecher/post/deutsche-wiegenlieder/
 issueYear: 1909
 outputs:

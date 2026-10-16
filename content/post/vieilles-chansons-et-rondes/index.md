@@ -3,8 +3,6 @@ title: Vieilles Chansons et rondes
 date: 2020-12-01T17:21:11+01:00
 iiif:
   manifest: ./manifest.json
-iiif:
-  manifest: ./manifest.json
   baseURL: https://static.projektemacher.org/kinderbuecher/post/vieilles-chansons-et-rondes/
 outputs:
 - html
