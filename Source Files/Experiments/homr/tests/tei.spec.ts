@@ -5,8 +5,12 @@ import { fileURLToPath } from 'node:url'
 
 const here = path.dirname(fileURLToPath(import.meta.url))
 const rootDir = path.join(here, '..')
-const TEI_MODULE = '/src/tei.ts'
-const PARSER_MODULE = '/src/musicxml.ts'
+// the score modules come from the published npm package
+// (@projektemacher/tify-plugin-musicxml@0.2.0); the dev server serves the
+// bundled dist entry directly
+const SCORE_MODULE = '/node_modules/@projektemacher/tify-plugin-musicxml/dist/index.js'
+const TEI_MODULE = SCORE_MODULE
+const PARSER_MODULE = SCORE_MODULE
 
 interface ParsedTei {
   staves: Array<{
@@ -27,7 +31,7 @@ async function parseTei(page: Page, teiText: string): Promise<ParsedTei | null> 
   )
 }
 
-test.describe('TEI page wrapper (src/tei.ts)', () => {
+test.describe('TEI page wrapper (@projektemacher/tify-plugin-musicxml)', () => {
   test('module loads in the browser', async ({ page }) => {
     await page.goto('/')
     const exported = await page.evaluate(async (moduleUrl) => {

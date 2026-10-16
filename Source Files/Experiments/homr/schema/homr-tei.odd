@@ -153,6 +153,41 @@
           </content>
         </elementSpec>
 
+        <elementSpec ident="application" mode="change">
+          <desc versionDate="2026-10-15" xml:lang="en">The homr application
+          record carries the machine-readable outcome of the optical music
+          recognition run for this page: <att>status</att> is the run
+          status and <att>confidence</att> the detector's confidence in
+          [0,1]. Only pages with <val>status</val>="ok" carry staff
+          geometry and an embedded score.</desc>
+          <attList>
+            <attDef ident="status" usage="req">
+              <desc versionDate="2026-10-15" xml:lang="en">Outcome of the OMR
+              run on this page.</desc>
+              <valList type="closed">
+                <valItem ident="ok">
+                  <desc versionDate="2026-10-15" xml:lang="en">The page was
+                  processed successfully; staff geometry and the MusicXML
+                  score are encoded in this document.</desc>
+                </valItem>
+                <valItem ident="error">
+                  <desc versionDate="2026-10-15" xml:lang="en">The OMR run
+                  failed on this page; the document carries no usable
+                  notation data.</desc>
+                </valItem>
+              </valList>
+            </attDef>
+            <attDef ident="confidence" usage="opt">
+              <desc versionDate="2026-10-15" xml:lang="en">Detector
+              confidence for the page, a probability in the interval
+              [0,1].</desc>
+              <datatype>
+                <dataRef name="double"/>
+              </datatype>
+            </attDef>
+          </attList>
+        </elementSpec>
+
         <constraintSpec ident="facsimile-single-surface" scheme="isoschematron">
           <desc versionDate="2026-10-15" xml:lang="en">One TEI file per page:
           the facsimile must describe exactly one surface.</desc>
@@ -175,6 +210,19 @@
               <sch:assert test="count(tei:path[@points]) &gt;= 5">A staff
               &lt;zone&gt; must contain at least five &lt;path&gt; elements with
               @points (the staff lines).</sch:assert>
+            </sch:rule>
+          </constraint>
+        </constraintSpec>
+
+        <constraintSpec ident="omr-confidence-range" scheme="isoschematron">
+          <desc versionDate="2026-10-15" xml:lang="en">The homr confidence
+          attribute is a probability.</desc>
+          <constraint>
+            <sch:rule xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                      context="tei:application[@confidence]">
+              <sch:assert test="number(@confidence) &gt;= 0 and number(@confidence) &lt;= 1">The
+              homr <att>confidence</att> must be a number between 0 and
+              1.</sch:assert>
             </sch:rule>
           </constraint>
         </constraintSpec>

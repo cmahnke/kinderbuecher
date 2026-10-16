@@ -4,7 +4,8 @@
 Each TEI file is the single source of staff geometry for one scanned page and
 embeds that page's MusicXML verbatim:
 
-  - <teiHeader> with the source/Omr metadata
+  - <teiHeader> with the source/Omr metadata; the OMR run outcome is
+    machine-readable on <application ident="homr" status="…" confidence="…">
   - <facsimile> with one <surface> (the page, coordinates in original image
     pixels, corresp = the IIIF canvas) and one <zone type="staff"> per
     detected staff: the staff bounding box as @ulx/@uly/@lrx/@lry plus each
@@ -105,6 +106,9 @@ def build_tei(
     canvas = abs_url(base, f"{name}/canvas")
     service = abs_url(base, f"{name}/info.json")
     width, height = page["width"], page["height"]
+    homr = page.get("homr") or {}
+    status = homr.get("status", "ok")
+    confidence = float(page.get("confidence", 0.0))
 
     header = f"""<TEI xmlns="http://www.tei-c.org/ns/1.0">
   <teiHeader>
@@ -132,12 +136,14 @@ def build_tei(
     </fileDesc>
     <encodingDesc>
       <appInfo>
-        <application version="1" ident="homr">
+        <application version="1" ident="homr" status="{status}" confidence="{confidence:.3f}">
           <label>homr</label>
           <p>Optical music recognition (homr) detected {len(page.get("staves", []))} staff(s)
           on this page; their regions and staff-line paths are encoded in the
           facsimile below. The MusicXML produced by homr is embedded in the
-          body. IIIF image service: {service}</p>
+          body. The run status and detector confidence are machine-readable
+          on the application element (@status, @confidence). IIIF image
+          service: {service}</p>
         </application>
       </appInfo>
     </encodingDesc>

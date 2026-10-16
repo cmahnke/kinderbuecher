@@ -1,15 +1,21 @@
 /**
- * Viewer feature flags: flip these to true/false to show or hide the visual
- * overlays over the scanned page. The playback controls (play/pause, track
- * and instrument selection) work in every combination.
+ * Viewer defaults, passed to the musicxml plugin when the detail view spins
+ * up its embedded TIFY instance (see main.ts). The playback controls work in
+ * every combination; the panel offers runtime toggles for score, regions and
+ * highlights.
  */
 
-/** Orange rects over the homr-detected staff regions. */
-export const SHOW_STAFF_OVERLAY = true
+/** Show the staff-region rects over the homr-detected staff regions. Off by
+ * default; the panel's Regions group (on/off + rgba selector) turns them on. */
+export const SHOW_STAFF_OVERLAY = false
 
-/** The rendered score (OpenSheetMusicDisplay) mapped onto the scan. Off by
- * default; the player panel offers a "Score" toggle to show it. The OSMD
- * render itself still runs while anything consumes its alignment data. */
+/** Default RGB of the staff-region rects, hex '#rrggbb'. */
+export const REGION_COLOR = '#ff6400'
+
+/** Default region alpha 0–1 (fill and border share it). */
+export const REGION_FILL_OPACITY = 0.25
+
+/** The rendered score (OpenSheetMusicDisplay) mapped onto the scan. */
 export const SHOW_SCORE_OVERLAY = false
 
 /** Playhead line, note marker and staff band while playing. */

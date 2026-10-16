@@ -35,16 +35,15 @@ see `IMPLEMENTATION.md` for the exchange format and setup guide.
 │   ├── package.json            # proxy scripts to the root tooling
 │   └── README.md
 ├── src/
-│   ├── main.ts                 # TypeScript viewer
-│   ├── manifest.ts             # IIIF manifest loader (viewer data source)
-│   ├── tei.ts                  # TEI parser -> staff regions + embedded MusicXML
-│   ├── audio.ts                # Web Audio playback engine
-│   ├── musicxml.ts             # MusicXML parser -> note timeline
-│   ├── noteMap.ts              # note -> page-coordinate mapping (homr grid)
-│   ├── osmdRenderer.ts         # OpenSheetMusicDisplay score renderer
-│   ├── osdViewer.ts            # OpenSeadragon wrapper (IIIF + pixel overlays)
-│   ├── playerPanel.ts          # player UI + scan highlight wiring
+│   ├── main.ts                 # TypeScript viewer: grid, book selector, TIFY detail view
+│   ├── manifest.ts             # IIIF manifest loader (grid data source)
+│   ├── config.ts               # plugin option defaults (overlays, regions)
 │   └── style.css               # Viewer styles
+│                               # The whole score stack (TEI parsing, OSMD
+│                               # rendering, playback, regions panel) lives in
+│                               # @projektemacher/tify-plugin-musicxml
+│                               # (installed from npm, @0.2.0);
+│                               # the detail view embeds TIFY + the plugin.
 ├── data/
 │   └── <slug>/results.json     # homr detection + staff grid results, per book
 │                               #   (pipeline source)
@@ -231,7 +230,9 @@ manifest is modeled natively, and it carries **no staff data at all**:
 - the notation files as **Alternative Representations** (canvas `rendering`):
   the TEI wrapper (`<slug>/tei/<name>.tei.xml`) and the plain MusicXML
   (`<slug>/musicxml/<name>.musicxml`), so `public/` alone is deployable
-- OMR confidence/status/error as native canvas **metadata**
+- no metadata of its own: the OMR run information (status, confidence) lives
+  in the TEI files' `<application>` header element, next to the staff
+  geometry it describes
 - `behavior: ["paged"]` marks the sequential book pages
 
 The staff regions live only in the TEI files: each `<zone type="staff">` is
@@ -260,10 +261,9 @@ outside this viewer.
 Select a score page and use the player panel:
 
 - **Play / Pause / Stop / Tempo** — plays the page's MusicXML via Web Audio.
-  Multi-staff pages (e.g. a grand staff) offer a **Track** selector: only the
-  selected staff is played, so the staves don't sound as stacked tracks. The
-  **Dual** toggle plays two staves at once, each with its own instrument, and
-  is on by default whenever the score carries two note streams.
+  Every detected staff gets its own track row, all on by default (the page
+  sounds as written): each staff can be muted individually and gets its own
+  **instrument** selector.
 - **Rendered score** — the page's MusicXML is rendered with OpenSheetMusicDisplay;
   the current note is highlighted on the score during playback. The rendered
   overlay is hidden behind a **Score** toggle (off by default); each rendered
@@ -271,23 +271,28 @@ Select a score page and use the player panel:
   detected staves.
 - **Scan highlights** — the current staff system is highlighted on the scan, and
   a marker tracks the exact note being played (positions reconstructed from
-  homr's staff grid + the MusicXML pitch/timing; approximate). In dual mode
-  each playing staff gets its own highlight set, so the position is shown on
-  both staves.
+  homr's staff grid + the MusicXML pitch/timing; approximate). Every playing
+  staff gets its own highlight set, so the position is shown on all playing
+  staves.
+- **Regions** — the orange staff-region rects (from `SHOW_STAFF_OVERLAY`, off
+  by default) can be toggled in the panel and styled with one **rgba
+  selector** (color picker + alpha slider; fill and border share the alpha).
 
 ## Playback / highlighting details
 
-- `src/musicxml.ts` parses each `score-partwise` MusicXML into a note timeline,
-  tracking `<print new-system>` to assign notes to physical staff systems.
-- `src/noteMap.ts` maps a played note to page coordinates using homr's staff
+- The score stack is the `@projektemacher/tify-plugin-musicxml` TIFY plugin
+  (installed from npm, version 0.2.0). Its `src/musicxml-timeline.ts` parses each `score-partwise`
+  MusicXML into a note timeline, tracking `<print new-system>` to assign
+  notes to physical staff systems; `src/note-map.ts` maps a played note to
+  page coordinates using homr's staff
   grid: X by the note's time position across the system, Y by pitch mapped onto
   the staff lines (clef-aware). The marker radius is scaled to the detected
   staff line spacing so it matches note-head size on the scan. Staffs are
   near-straight in these scans, so the nonlinear dewarp is ignored; the marker
   may be off by a few px.
-- `src/audio.ts` synthesizes tones with the Web Audio API, so no soundfont
-  files are required.
-- `src/osdViewer.ts` wraps OpenSeadragon. Overlays are added in original image
+- the plugin's `src/audio.ts` synthesizes tones with the Web Audio API, so no
+  soundfont files are required.
+- TIFY embeds OpenSeadragon. The plugin's overlays are added in original image
   pixel coordinates, converted to viewport space only **after** the tile source
   opens (converting earlier would use the 1×1 placeholder bounds and place the
   overlay off-screen).

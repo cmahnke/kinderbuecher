@@ -9,4 +9,11 @@ export default tseslint.config(
   {
     ignores: ['dist/'],
   },
+  // vendored ambient types for the untyped tify package (see src/tify.d.ts)
+  {
+    files: ['src/tify.d.ts'],
+    rules: {
+      '@typescript-eslint/no-explicit-any': 'off',
+    },
+  },
 )

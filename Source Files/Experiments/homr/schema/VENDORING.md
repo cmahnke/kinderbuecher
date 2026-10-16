@@ -4,16 +4,20 @@ Official TEI machinery for the per-page score TEI format:
 
 - `homr-tei.odd` — the ODD customization (source of truth). A minimal
   `schemaSpec` (modules `tei`, `header`, `core`, `textstructure`, `transcr`,
-  `linking`) with three changes:
+  `linking`) with four changes:
   - a new no-namespace element `score-partwise` (member of `model.common`),
     opaque content, for the embedded MusicXML document
   - `surface` and `zone` content models tightened (`mode="change"`): fully
     required `@ulx/@uly/@lrx/@lry`, a required `<graphic>` child on
     `<surface>`, and `<path>`-only content for staff `<zone>`s
-  - three ISO Schematron `<constraintSpec>`s (XPath 1.0 compatible so they
+  - the homr `<application>` record tightened (`mode="change"`): required
+    `@status` (`ok`/`error`) and optional `@confidence` — the machine-
+    readable OMR run outcome for the page
+  - four ISO Schematron `<constraintSpec>`s (XPath 1.0 compatible so they
     run under any processor): one `<surface>` per `<facsimile>`, at least
-    five `<path>`s per staff `<zone>`, and exactly one embedded
-    `<score-partwise>` (and nothing else) in the score `<div>`
+    five `<path>`s per staff `<zone>`, exactly one embedded
+    `<score-partwise>` (and nothing else) in the score `<div>`, and
+    `@confidence` ∈ [0,1]
 - `homr-tei.rng` — the compiled Relax NG schema **derived artifact**,
   including the compiled Schematron patterns. Do not edit by hand.
 
@@ -26,9 +30,12 @@ https://roma.tei-c.org/):
 ```bash
 curl -sS -X POST \
   -F "file=@schema/homr-tei.odd" \
-  "https://teigarage.tei-c.org/ege-webservice/Conversions/ODD%3Atext%3Axml/ODDC%3Atext%3Axml/relaxng%3Aapplication%3Axml-relaxng/conversion?properties=<conversions><conversion%20index=%220%22><property%20id=%22oxgarage.getImages%22>false</property><property%20id=%22oxgarage.getOnlineImages%22>false</property><property%20id=%22oxgarage.lang%22>en</property><property%20id=%22oxgarage.textOnly%22>true</property><property%20id=%22pl.psnc.dl.ege.tei.profileNames%22>default</property></conversion><conversion%20index=%221%22><property%20id=%22oxgarage.getImages%22>false</property><property%20id=%22oxgarage.getOnlineImages%22>false</property><property%20id=%22oxgarage.lang%22>en</property><property%20id=%22oxgarage.textOnly%22>true</property><property%20id=%22pl.psnc.dl.ege.tei.profileNames%22>default</property></conversion></conversions>" \
+  "https://teigarage.tei-c.org/ege-webservice/Conversions/ODD%3Atext%3Axml/ODDC%3Atext%3Axml/relaxng%3Aapplication%3Axml-relaxng/conversion?properties=%3Cconversions%3E%3Cconversion%20index%3D%220%22%3E%3Cproperty%20id%3D%22oxgarage.getImages%22%3Efalse%3C%2Fproperty%3E%3Cproperty%20id%3D%22oxgarage.getOnlineImages%22%3Efalse%3C%2Fproperty%3E%3Cproperty%20id%3D%22oxgarage.lang%22%3Een%3C%2Fproperty%3E%3Cproperty%20id%3D%22oxgarage.textOnly%22%3Etrue%3C%2Fproperty%3E%3Cproperty%20id%3D%22pl.psnc.dl.ege.tei.profileNames%22%3Edefault%3C%2Fproperty%3E%3C%2Fconversion%3E%3Cconversion%20index%3D%221%22%3E%3Cproperty%20id%3D%22oxgarage.getImages%22%3Efalse%3C%2Fproperty%3E%3Cproperty%20id%3D%22oxgarage.getOnlineImages%22%3Efalse%3C%2Fproperty%3E%3Cproperty%20id%3D%22oxgarage.lang%22%3Een%3C%2Fproperty%3E%3Cproperty%20id%3D%22oxgarage.textOnly%22%3Etrue%3C%2Fproperty%3E%3Cproperty%20id%3D%22pl.psnc.dl.ege.tei.profileNames%22%3Edefault%3C%2Fproperty%3E%3C%2Fconversion%3E%3C%2Fconversions%3E" \
   -o schema/homr-tei.rng
 ```
+
+(The `properties` query value must be percent-encoded — the server rejects
+raw `<`/`>` in the request target.)
 
 (The same conversion is available interactively via ROMA: upload the ODD,
 download the Relax NG schema.)

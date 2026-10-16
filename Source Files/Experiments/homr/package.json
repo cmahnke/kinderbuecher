@@ -33,10 +33,12 @@
     "vite": "^8.3.4"
   },
   "dependencies": {
+    "@projektemacher/tify-plugin-core": "^0.2.0",
+    "@projektemacher/tify-plugin-musicxml": "^0.2.0",
     "@xmldom/xmldom": "^0.9.12",
     "fraction.js": "^5.3.4",
-    "openseadragon": "^6.1.1",
     "opensheetmusicdisplay": "^2.2.1",
+    "tify": "0.36.2",
     "xpath": "^0.0.35"
   }
 }

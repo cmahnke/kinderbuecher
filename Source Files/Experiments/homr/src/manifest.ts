@@ -1,36 +1,20 @@
-import type { StaffEntry } from './noteMap'
-
 export interface PageResult {
   image: string
-  width: number
-  height: number
   hasScore: boolean
-  confidence: number
   /** static IIIF rendition for the overview grid, scaled by the client */
   thumbnail: string
-  /** IIIF image service endpoint (info.json) OpenSeadragon consumes */
-  imageService: string
-  /** staff regions live only in the TEI: empty at load, populated by the
-   * detail view once it fetches and parses the page's TEI document */
-  staves: StaffEntry[]
-  homr?: { status: string; musicxml?: string; tei?: string; error?: string }
+  /** notation references, resolved to same-origin paths (the manifest ids
+   * point at the deployment host — see makeResolver); the detail view hands
+   * the TEI to the score plugin so it fetches locally */
+  homr?: { musicxml?: string; tei?: string }
 }
 
 interface ManifestCanvas {
   id?: string
   type?: string
-  label?: Record<string, string[]>
-  width?: number
-  height?: number
   thumbnail?: Array<{ id?: string }>
-  /** painting annotation page (page canvases) */
-  items?: Array<{
-    items?: Array<{
-      body?: { id?: string }
-    }>
-  }>
-  metadata?: Array<{ label?: Record<string, string[]>; value?: Record<string, string[]> }>
-  /** notation references: the TEI wrapper and the plain MusicXML */
+  /** notation references: the TEI wrapper and the plain MusicXML. The
+   * manifest carries no metadata: OMR run info lives in the TEI header. */
   rendering?: Array<{ id?: string; format?: string }>
 }
 
@@ -83,21 +67,15 @@ function canvasName(canvas: ManifestCanvas): string {
   return parts.length >= 2 ? parts[parts.length - 2] : ''
 }
 
-function metadataValue(canvas: ManifestCanvas, label: string): string | undefined {
-  const entry = (canvas.metadata ?? []).find((m) => (m.label?.en ?? []).includes(label))
-  return entry?.value?.en?.[0]
-}
-
 function toPageResult(
   canvas: ManifestCanvas,
   resolve: (url: string | undefined) => string | undefined,
 ): PageResult | null {
   const name = canvasName(canvas)
   if (!name || canvas.type !== 'Canvas') return null
-  const width = canvas.width ?? 0
-  const height = canvas.height ?? 0
-  if (width <= 0 || height <= 0) return null
 
+  // the plugin discovers the TEI/MusicXML renderings itself; here the
+  // MusicXML presence only drives the grid's score badge
   const musicxml = resolve(
     (canvas.rendering ?? []).find(
       (r) => r.id && (r.format === MUSICXML_FORMAT || r.id.endsWith('.musicxml')),
@@ -108,38 +86,20 @@ function toPageResult(
       (r) => r.id && (r.format === TEI_FORMAT || r.id.endsWith('.tei.xml')),
     )?.id,
   )
-  const confidenceStr = metadataValue(canvas, 'OMR confidence')
-  const confidence = confidenceStr ? Number.parseFloat(confidenceStr) : 0
-  const status = metadataValue(canvas, 'OMR status')
-  const error = metadataValue(canvas, 'OMR error')
 
   return {
     image: `${name}.jpg`,
-    width,
-    height,
     hasScore: musicxml !== undefined,
-    confidence,
     thumbnail: resolve(canvas.thumbnail?.[0]?.id) ?? `/thumbnails/${name}.jpg`,
-    imageService: resolve(canvas.items?.[0]?.items?.[0]?.body?.id) ?? `/iiif/${name}/info.json`,
-    // the staff regions come from the TEI (fetched by the detail view), so
-    // the manifest contributes no staves here
-    staves: [],
-    homr:
-      status || musicxml || tei
-        ? {
-            status: status ?? '',
-            musicxml,
-            tei,
-            error,
-          }
-        : undefined,
+    homr: musicxml || tei ? { musicxml, tei } : undefined,
   }
 }
 
 /**
  * Loads the IIIF manifest (static file; see scripts/generate_manifest.py)
- * and maps its canvases into the page data the viewer renders. `url` is the
- * manifest to load — one per book (see the book selector in main.ts).
+ * and maps its canvases into the page data the overview grid renders. `url`
+ * is the manifest to load — one per book (see the book selector in main.ts);
+ * the embedded TIFY detail view loads the same manifest itself.
  */
 export async function loadPages(url = '/manifest.json'): Promise<PageResult[]> {
   const resp = await fetch(url)

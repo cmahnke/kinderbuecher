@@ -1,6 +1,10 @@
 import { test, expect } from '@playwright/test'
 
 test.describe('Score Page Viewer', () => {
+  // the embedded TIFY viewer mounts the manifest + image services per detail
+  // view, which is heavier than the old hand-rolled OpenSeadragon wrapper
+  test.setTimeout(90_000)
+
   test('loads without console errors or 404s', async ({ page }) => {
     const errors: string[] = []
     const notFound: string[] = []
@@ -47,11 +51,6 @@ test.describe('Score Page Viewer', () => {
     await expect(scoreThumbs).toHaveCount(37)
     const noScoreThumbs = page.locator('.thumb.no-score')
     await expect(noScoreThumbs).toHaveCount(13)
-    // badges only appear once a page's TEI has been fetched and parsed
-    await expect(page.locator('.thumb .badge')).toHaveCount(0)
-    await page.locator('.thumb.score').first().click()
-    const badges = page.locator('.thumb .badge')
-    await expect(badges.first()).toContainText(/staff/)
     // the sidebar takes 30% of the container width, the detail view the rest
     const ratio = await page.evaluate(() => {
       const sidebar = document.querySelector('#grid')
@@ -63,80 +62,111 @@ test.describe('Score Page Viewer', () => {
     expect(ratio).toBeLessThan(0.32)
   })
 
-  test('clicking thumbnail shows detail with staff overlay', async ({ page }) => {
+  test('clicking thumbnail shows the TIFY detail view with staff regions', async ({ page }) => {
     await page.goto('/')
     // click first score thumbnail (should be page006 after sorting by filename)
     const scoreThumb = page.locator('.thumb.score').first()
     await expect(scoreThumb).toBeVisible()
     await scoreThumb.click()
     const detail = page.locator('#detail')
-    await expect(detail.locator('h2')).toBeVisible()
-    // OpenSeadragon renders the IIIF image into a canvas
-    await expect(detail.locator('.detail-image canvas').first()).toBeVisible()
-    // overlay SVG should exist for score pages (the highlight layer only —
-    // the score overlay also carries the staff-overlay class)
-    const overlay = detail.locator('svg.staff-overlay:not(.score-overlay)')
-    await expect(overlay).toBeVisible()
-    const rects = overlay.locator('rect')
+    await expect(detail.locator('.detail-header h2')).toBeVisible()
+    // TIFY embeds OpenSeadragon, which renders the IIIF image into a canvas
+    await expect(detail.locator('.detail-image canvas').first()).toBeVisible({ timeout: 30_000 })
+    // the plugin fetched the page's TEI and built the (default hidden)
+    // persistent staff regions; the panel's Regions switch turns them on
+    const regions = detail.locator('.region-overlay .staff-region')
     // page006 has 3 staves after dedup
-    await expect(rects).toHaveCount(3)
-    // detail info (first .detail-info holds resolution)
-    await expect(detail.locator('.detail-info').first()).toContainText('Resolution')
-    await expect(detail.locator('.detail-info').first()).toContainText('Staves: 3')
-    await expect(detail.locator('.detail-info').first()).toContainText('Confidence')
+    await expect(regions).toHaveCount(3, { timeout: 30_000 })
+    await expect(regions.first()).toHaveAttribute('visibility', 'hidden')
+    await detail.locator('#player-region-toggle').check()
+    await expect(regions.first()).toHaveAttribute('visibility', 'visible')
+    // the score plugin's panel is up (player controls built from the TEI)
+    await expect(detail.locator('.player-controls').first()).toBeVisible({ timeout: 30_000 })
   })
 
-  test('detail for score page shows MusicXML and TEI links', async ({ page }) => {
+  test('detail for score page shows the score player panel', async ({ page }) => {
     await page.goto('/')
     const scoreThumb = page.locator('.thumb.score').first()
     await scoreThumb.click()
     const detail = page.locator('#detail')
-    const musicxmlLink = detail.locator('a[href$=".musicxml"]')
-    await expect(musicxmlLink).toBeVisible()
-    await expect(musicxmlLink).toContainText('.musicxml')
-    const teiLink = detail.locator('a[href$=".tei.xml"]')
-    await expect(teiLink).toBeVisible()
-    await expect(teiLink).toContainText('.tei.xml')
+    await expect(detail.locator('.player-controls').first()).toBeVisible({ timeout: 30_000 })
+    await expect(detail.locator('.player-btn').first()).toHaveText('Play')
+    // the score references stay discoverable in the panel? They live in the
+    // TEI/manifest — the plugin panel exposes the player, not file links.
+    await expect(detail.locator('.region-controls')).toBeVisible()
   })
 
   test('score overlay toggle is off by default and controls the overlay', async ({ page }) => {
     await page.goto('/')
     await page.locator('.thumb.score').first().click()
     const detail = page.locator('#detail')
-    await expect(detail.locator('h2')).toBeVisible()
+    await expect(detail.locator('.detail-header h2')).toBeVisible()
     const toggle = detail.locator('.player-score')
     await expect(toggle).toBeVisible()
     await expect(toggle).not.toBeChecked()
     await expect(detail.locator('.score-overlay')).toHaveCount(0)
     await toggle.check()
-    await expect(detail.locator('.score-overlay > svg').first()).toBeVisible({ timeout: 30000 })
+    await expect(detail.locator('.score-overlay > svg').first()).toBeVisible({ timeout: 60_000 })
     await toggle.uncheck()
     await expect(detail.locator('.score-overlay')).toHaveCount(0)
   })
 
-  test('dual mode defaults to on for grand staves and is absent otherwise', async ({ page }) => {
+  test('region overlay controls toggle and restyle the staff regions', async ({ page }) => {
     await page.goto('/')
-    // page006 is a grand staff page: dual is offered and enabled by default
     await page.locator('.thumb.score').first().click()
-    await expect(page.locator('#detail .player-dual')).toBeChecked()
-    // page023 carries a single staff: no dual toggle at all
+    const detail = page.locator('#detail')
+    const region = detail.locator('.region-overlay .staff-region').first()
+    const toggle = detail.locator('#player-region-toggle')
+    // off by default
+    await expect(toggle).toBeVisible({ timeout: 30_000 })
+    await expect(toggle).not.toBeChecked()
+    await expect(region).toHaveAttribute('visibility', 'hidden')
+    // on: homr-orange at the default 0.25 alpha, fill and border alike
+    await toggle.check()
+    await expect(region).toHaveAttribute('visibility', 'visible')
+    await expect(region).toHaveAttribute('fill', 'rgba(255, 100, 0, 0.25)')
+    await expect(region).toHaveAttribute('stroke', 'rgba(255, 100, 0, 0.25)')
+    // recolor + alpha via the rgba selector
+    await detail.locator('.player-region-color').evaluate((el) => {
+      ;(el as HTMLInputElement).value = '#008000'
+      el.dispatchEvent(new Event('input', { bubbles: true }))
+    })
+    await detail.locator('.player-region-alpha').evaluate((el) => {
+      ;(el as HTMLInputElement).value = '50'
+      el.dispatchEvent(new Event('input', { bubbles: true }))
+    })
+    await expect(region).toHaveAttribute('fill', 'rgba(0, 128, 0, 0.5)')
+    await expect(region).toHaveAttribute('stroke', 'rgba(0, 128, 0, 0.5)')
+  })
+
+  test('every detected staff gets a track row, all on by default', async ({ page }) => {
+    await page.goto('/')
+    // page006 is a grand staff page: one row per staff, all playing
+    await page.locator('.thumb.score').first().click()
+    const rows = page.locator('#detail .player-staff-row')
+    await expect(rows).toHaveCount(2, { timeout: 30_000 })
+    await expect(page.locator('#detail #player-staff-1')).toBeChecked()
+    await expect(page.locator('#detail #player-staff-2')).toBeChecked()
+    // each row carries its own instrument selector
+    await expect(rows.first().locator('.player-instrument')).toBeVisible()
+    // page023 carries a single staff: exactly one row
     await page.locator('.thumb').filter({ hasText: 'page023' }).click()
-    await expect(page.locator('#detail h2')).toContainText('page023')
-    await expect(page.locator('#detail .player-dual')).toHaveCount(0)
+    await expect(page.locator('#detail .detail-header h2')).toContainText('page023')
+    await expect(page.locator('#detail .player-staff-row')).toHaveCount(1, { timeout: 30_000 })
   })
 
   test('score page renders player with controls and scan highlights', async ({ page }) => {
     await page.goto('/')
     const scoreThumb = page.locator('.thumb.score').first()
     await scoreThumb.click()
-    // single-track mode for the strict single-element assertions below
-    await page.locator('.player-dual').uncheck()
+    // mute Staff 2 for the strict single-element assertions below
+    await page.locator('#player-staff-2').uncheck({ timeout: 30_000 })
     // the rendered score overlay is opt-in
     await page.locator('.player-score').check()
     // OSMD renders the score into per-system SVGs nested in the overlay (the
     // OSMD source svg itself lives in <defs> and must not match)
     const score = page.locator('.score-overlay > svg').first()
-    await expect(score).toBeVisible({ timeout: 30000 })
+    await expect(score).toBeVisible({ timeout: 60_000 })
     await expect(page.locator('.player-btn').first()).toHaveText('Play')
     // staff + note highlight layers are added to the scan overlay when
     // playing. NB: the *computed* visibility must be checked — a CSS
@@ -151,23 +181,26 @@ test.describe('Score Page Viewer', () => {
     await expect(page.locator('.play-pos')).toHaveCSS('visibility', 'visible')
   })
 
-  test('detail for non-score page shows no overlay', async ({ page }) => {
+  test('detail for non-score page shows no regions and an empty panel', async ({ page }) => {
     await page.goto('/')
     const noScoreThumb = page.locator('.thumb.no-score').first()
     await noScoreThumb.click()
     const detail = page.locator('#detail')
-    await expect(detail.locator('h2')).toBeVisible()
-    await expect(detail.locator('.detail-image canvas').first()).toBeVisible()
-    await expect(detail.locator('.staff-overlay')).toHaveCount(0)
-    await expect(detail).toContainText('No staves detected')
+    await expect(detail.locator('.detail-header h2')).toBeVisible()
+    await expect(detail.locator('.detail-image canvas').first()).toBeVisible({ timeout: 30_000 })
+    await expect(detail.locator('.region-overlay')).toHaveCount(0)
+    // the plugin panel reports that the page has no score
+    await expect(detail.locator('.tify-plugin-status')).toContainText('No score on this page', {
+      timeout: 30_000,
+    })
   })
 
-  test('page008 has multiple staff overlay (homr detection)', async ({ page }) => {
+  test('page008 has multiple staff regions (homr detection)', async ({ page }) => {
     await page.goto('/')
     const thumb = page.locator('.thumb').filter({ hasText: 'page008' })
     await thumb.click()
-    const rects = page.locator('#detail svg.staff-overlay:not(.score-overlay) rect')
-    await expect(rects).toHaveCount(2)
+    const rects = page.locator('#detail .region-overlay .staff-region')
+    await expect(rects).toHaveCount(2, { timeout: 30_000 })
   })
 
   test('keyboard activation via Enter', async ({ page }) => {
@@ -175,15 +208,18 @@ test.describe('Score Page Viewer', () => {
     const thumb = page.locator('.thumb.score').first()
     await thumb.focus()
     await page.keyboard.press('Enter')
-    await expect(page.locator('#detail h2')).toBeVisible()
-    await expect(page.locator('#detail svg.staff-overlay:not(.score-overlay)')).toBeVisible()
+    await expect(page.locator('#detail .detail-header h2')).toBeVisible()
+    await expect(page.locator('#detail .region-overlay')).toBeVisible({ timeout: 30_000 })
   })
 
   test('overview grid shows generated thumbnails and all of them load', async ({ page }) => {
     await page.goto('/')
     const imgs = page.locator('.thumb img')
     await expect(imgs).toHaveCount(50)
-    await expect(imgs.first()).toHaveAttribute('src', /^\/[^/]+\/[^/]+\/full\/\d+,\/0\/default\.jpg$/)
+    await expect(imgs.first()).toHaveAttribute(
+      'src',
+      /^\/[^/]+\/[^/]+\/full\/\d+,\/0\/default\.jpg$/,
+    )
     await expect
       .poll(
         async () =>
@@ -222,12 +258,12 @@ test.describe('Score Page Viewer', () => {
 
     await page.goto('/')
     await page.locator('.thumb.score').first().click()
-    // single track for the strict single-marker assertions below
-    await page.locator('.player-dual').uncheck()
+    // mute Staff 2 for the strict single-marker assertions below
+    await page.locator('#player-staff-2').uncheck({ timeout: 30_000 })
     await page.locator('.player-score').check()
-    await expect(page.locator('.score-overlay > svg').first()).toBeVisible({ timeout: 30000 })
+    await expect(page.locator('.score-overlay > svg').first()).toBeVisible({ timeout: 60_000 })
     await page.locator('.player-btn').first().click()
-    const marker = page.locator('.note-marker')
+    const marker = page.locator('.note-marker').first()
     await expect(marker).toHaveAttribute('visibility', 'visible')
     const r = parseFloat((await marker.getAttribute('r')) ?? '0')
     // The marker radius must track the detected staff line spacing (a fixed
@@ -236,7 +272,7 @@ test.describe('Score Page Viewer', () => {
     expect(r).toBeLessThanOrEqual(0.5 * maxUnit)
   })
 
-  test('playback plays a single track: no simultaneous onsets, selector switches staff', async ({
+  test('playback plays a single staff: no simultaneous onsets, toggling switches staff', async ({
     page,
   }) => {
     // Record every scheduled oscillator start (time + frequency + waveform)
@@ -263,7 +299,7 @@ test.describe('Score Page Viewer', () => {
     await page.goto('/')
     await page.locator('.thumb.score').first().click()
     await page.locator('.player-score').check()
-    await expect(page.locator('.score-overlay > svg').first()).toBeVisible({ timeout: 30000 })
+    await expect(page.locator('.score-overlay > svg').first()).toBeVisible({ timeout: 60_000 })
 
     const readStarts = () =>
       page.evaluate(() =>
@@ -283,8 +319,8 @@ test.describe('Score Page Viewer', () => {
       }
     }
 
-    // dual is on by default for grand staves: drop to a single track first
-    await page.locator('.player-dual').uncheck()
+    // all staves play by default: mute Staff 2 first so only Staff 1 sounds
+    await page.locator('#player-staff-2').uncheck()
     // default track (staff 1)
     await page.locator('.player-btn').first().click()
     await page.waitForTimeout(2200)
@@ -294,9 +330,8 @@ test.describe('Score Page Viewer', () => {
     const firstFreq = firstRun[0].f
 
     // switch to staff 2: still monophonic, and the first onset pitch changes
-    const track = page.locator('.player-track')
-    await expect(track).toBeVisible()
-    await track.selectOption('2')
+    await page.locator('#player-staff-1').uncheck()
+    await page.locator('#player-staff-2').check()
     const before = (await readStarts()).length
     await page.waitForTimeout(1600)
     const secondRun = (await readStarts()).slice(before)
@@ -305,15 +340,15 @@ test.describe('Score Page Viewer', () => {
     expect(secondRun[0].f).not.toBeCloseTo(firstFreq, 0)
   })
 
-  test('dual mode shows the current position on both staves', async ({ page }) => {
+  test('all staves playing show the current position on every staff', async ({ page }) => {
     await page.goto('/')
     await page.locator('.thumb.score').first().click()
     await page.locator('.player-score').check()
-    await expect(page.locator('.score-overlay > svg').first()).toBeVisible({ timeout: 30000 })
-    await page.locator('.player-dual').check()
+    await expect(page.locator('.score-overlay > svg').first()).toBeVisible({ timeout: 60_000 })
     await page.locator('.player-btn').first().click()
-    // each playing track drives its own highlight set: two staff rects, two
-    // note markers, two playhead lines (retried until both tracks fired)
+    // every playing staff drives its own highlight set: one staff rect, one
+    // note marker, one playhead line per staff (page006: two staves; retried
+    // until both tracks fired)
     for (const selector of ['.staff-current', '.note-marker', '.play-pos']) {
       const els = page.locator(`#detail ${selector}`)
       await expect(els).toHaveCount(2, { timeout: 15000 })
@@ -327,7 +362,7 @@ test.describe('Score Page Viewer', () => {
     expect(boxes[0]).not.toEqual(boxes[1])
   })
 
-  test('dual mode plays two tracks simultaneously with per-track instruments', async ({ page }) => {
+  test('plays all staves simultaneously with per-staff instruments', async ({ page }) => {
     await page.addInitScript(() => {
       const starts: { t: number; f: number; w: string }[] = []
       Object.assign(window, { __oscStarts: starts })
@@ -349,11 +384,12 @@ test.describe('Score Page Viewer', () => {
     await page.goto('/')
     await page.locator('.thumb.score').first().click()
     await page.locator('.player-score').check()
-    await expect(page.locator('.score-overlay > svg').first()).toBeVisible({ timeout: 30000 })
+    await expect(page.locator('.score-overlay > svg').first()).toBeVisible({ timeout: 60_000 })
 
-    // dual playback is on by default for grand staves; both staves are
-    // scheduled, so many onsets now carry two simultaneous notes (one per staff)
-    await expect(page.locator('.player-dual')).toBeChecked()
+    // all staves play by default, so many onsets carry two simultaneous
+    // notes (one per staff)
+    await expect(page.locator('#player-staff-1')).toBeChecked()
+    await expect(page.locator('#player-staff-2')).toBeChecked()
     await page.locator('.player-btn').first().click()
     await page.waitForTimeout(2500)
     const starts = await page.evaluate(() =>
@@ -370,8 +406,8 @@ test.describe('Score Page Viewer', () => {
     }
     const pairs = [...byTime.values()].filter((fs) => fs.length >= 2)
     expect(pairs.length).toBeGreaterThanOrEqual(2)
-    // track B gets the instrument chosen for it (organ = sine stack)
-    await page.locator('.player-instrument-b').selectOption('organ')
+    // staff 2 gets the instrument chosen for it (organ = sine stack)
+    await page.locator('.player-staff-row[data-staff="2"] .player-instrument').selectOption('organ')
     await page.waitForTimeout(1200)
     const after = await page.evaluate(
       () => (window as unknown as { __oscStarts: { w: string }[] }).__oscStarts.length,
@@ -380,7 +416,7 @@ test.describe('Score Page Viewer', () => {
     expect(after).toBeGreaterThan(starts.length)
   })
 
-  test('instrument selection per track reschedules playback', async ({ page }) => {
+  test('instrument selection per staff reschedules playback', async ({ page }) => {
     await page.addInitScript(() => {
       const starts: { t: number; f: number; w: string }[] = []
       Object.assign(window, { __oscStarts: starts })
@@ -401,10 +437,10 @@ test.describe('Score Page Viewer', () => {
 
     await page.goto('/')
     await page.locator('.thumb.score').first().click()
-    // single track: the assertions below assume one piano voice
-    await page.locator('.player-dual').uncheck()
+    // mute Staff 2: the assertions below assume one piano voice
+    await page.locator('#player-staff-2').uncheck({ timeout: 30_000 })
     await page.locator('.player-score').check()
-    await expect(page.locator('.score-overlay > svg').first()).toBeVisible({ timeout: 30000 })
+    await expect(page.locator('.score-overlay > svg').first()).toBeVisible({ timeout: 60_000 })
     await page.locator('.player-btn').first().click()
     await page.waitForTimeout(1800)
     const first = await page.evaluate(() =>
@@ -414,7 +450,7 @@ test.describe('Score Page Viewer', () => {
     // default is piano (triangle)
     expect(first[0].w).toBe('triangle')
     // switching the instrument restarts the playback with the new waveform
-    await page.locator('.player-instrument-a').selectOption('synth')
+    await page.locator('.player-staff-row[data-staff="1"] .player-instrument').selectOption('synth')
     await page.waitForTimeout(1500)
     const second = await page.evaluate(
       () => (window as unknown as { __oscStarts: { w: string }[] }).__oscStarts,

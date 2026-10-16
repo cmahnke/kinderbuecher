@@ -2,13 +2,16 @@ import { test, expect } from '@playwright/test'
 import { readFileSync, readdirSync } from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
-import type { MusicTimeline } from '../src/musicxml'
+import type { MusicTimeline } from '@projektemacher/tify-plugin-musicxml'
 
 const here = path.dirname(fileURLToPath(import.meta.url))
 const rootDir = path.join(here, '..')
 const VENDOR_MODULE = '/vendor/mnxconverter-ts/src/index.ts'
 const OUR_MODULE = '/mnx2musicxml/index.ts'
-const PARSER_MODULE = '/src/musicxml.ts'
+// the score parser comes from the published npm package
+// (@projektemacher/tify-plugin-musicxml@0.2.0); the dev server serves the
+// bundled dist entry directly
+const PARSER_MODULE = '/node_modules/@projektemacher/tify-plugin-musicxml/dist/index.js'
 
 // the real homr MusicXML pages: MusicXML -> MNX (vendored converter) ->
 // MusicXML (our reverse converter) must be semantically identical

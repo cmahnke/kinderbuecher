@@ -1,10 +1,18 @@
 import './style.css'
-import { setupPlayer, type PlayerHandle } from './playerPanel'
+import 'tify/dist/tify.css'
+import '@projektemacher/tify-plugin-core/style.css'
+import '@projektemacher/tify-plugin-musicxml/musicxml.css'
+import Tify from 'tify'
+import { musicxmlPlugin, type MusicXmlPlugin } from '@projektemacher/tify-plugin-musicxml'
 import type { PageResult } from './manifest'
 import { loadPages } from './manifest'
-import { parseTei } from './tei'
-import { createOsdViewer, addPixelOverlay } from './osdViewer'
-import { SHOW_PLAYBACK_HIGHLIGHTS, SHOW_STAFF_OVERLAY } from './config'
+import {
+  REGION_COLOR,
+  REGION_FILL_OPACITY,
+  SHOW_PLAYBACK_HIGHLIGHTS,
+  SHOW_SCORE_OVERLAY,
+  SHOW_STAFF_OVERLAY,
+} from './config'
 
 /** One selectable book (see scripts/generate_books_index.py -> /books.json). */
 interface BookInfo {
@@ -39,11 +47,6 @@ async function loadBooks(): Promise<BookInfo[]> {
   return [{ slug: 'book', title: 'Score pages', manifest: '/manifest.json' }]
 }
 
-function formatConfidence(value: unknown): string {
-  if (typeof value !== 'number' || !Number.isFinite(value)) return 'n/a'
-  return `${(value * 100).toFixed(1)}%`
-}
-
 function createThumbnail(page: PageResult, index: number): HTMLElement {
   const div = document.createElement('div')
   div.className = `thumb ${page.hasScore ? 'score' : 'no-score'}`
@@ -71,38 +74,23 @@ function createThumbnail(page: PageResult, index: number): HTMLElement {
   label.textContent = page.image.replace(/\.[^.]+$/, '')
   div.appendChild(label)
 
-  // the staff count arrives with the TEI (fetched by the detail view), so a
-  // page starts unbadged and gets its badge once parsed
-  updateThumbnail(div, page)
+  div.setAttribute('aria-label', `${page.image}, ${page.hasScore ? 'score' : 'no score'}`)
 
   return div
 }
 
-/** Refresh the staff badge and accessible label after the TEI was parsed. */
-function updateThumbnail(thumb: HTMLElement, page: PageResult): void {
-  thumb.querySelector('.badge')?.remove()
-  if (page.hasScore && page.staves.length > 0) {
-    const badge = document.createElement('div')
-    badge.className = 'badge score'
-    badge.textContent = `${page.staves.length} staff${page.staves.length !== 1 ? 's' : ''}`
-    thumb.appendChild(badge)
-  }
-  thumb.setAttribute(
-    'aria-label',
-    `${page.image} ${
-      page.hasScore
-        ? page.staves.length > 0
-          ? `, ${page.staves.length} staves`
-          : ', score'
-        : ', no score'
-    }`,
-  )
-}
-
+/**
+ * Detail view: the page in an embedded TIFY viewer (same per-book manifest
+ * the overview grid was built from) plus the musicxml score plugin, which
+ * owns the whole score stack — it fetches the page's TEI (via the canvas
+ * rendering reference), draws the staff regions and the rendered score,
+ * and provides the player panel (playback, regions, highlights).
+ */
 function showDetail(
   page: PageResult,
   container: HTMLElement,
-  thumb: HTMLElement,
+  pageIndex: number,
+  manifestUrl: string,
 ): { dispose: () => void } | null {
   container.innerHTML = ''
 
@@ -116,152 +104,62 @@ function showDetail(
   header.append(h2, tag)
   container.appendChild(header)
 
-  const osdId = `osd-${page.image.replace(/\.[^.]+$/, '')}`
-  const imgContainer = document.createElement('div')
-  imgContainer.className = 'detail-image'
-  imgContainer.id = osdId
+  const viewerRow = document.createElement('div')
+  viewerRow.className = 'detail-viewer'
 
-  const playerHost = document.createElement('div')
-  playerHost.className = 'player-host'
+  const tifyId = `tify-${page.image.replace(/\.[^.]+$/, '')}`
+  const tifyHost = document.createElement('div')
+  tifyHost.className = 'detail-image'
+  tifyHost.id = tifyId
 
-  // the staff-dependent sections (info list, overlay) land here once the
-  // TEI is parsed, keeping the header/player/scan order stable
-  const staffInfoHost = document.createElement('div')
-  staffInfoHost.className = 'staff-info-host'
+  const panelHost = document.createElement('div')
+  panelHost.className = 'player-host'
 
-  container.appendChild(playerHost)
-  container.appendChild(imgContainer)
-  container.appendChild(staffInfoHost)
+  viewerRow.append(tifyHost, panelHost)
+  container.appendChild(viewerRow)
 
-  const osd = createOsdViewer(imgContainer, page.imageService)
-
-  if (page.homr) {
-    if (page.homr.status === 'error' && page.homr.error) {
-      const errDiv = document.createElement('div')
-      errDiv.className = 'detail-info homr-error'
-      const title = document.createElement('p')
-      title.innerHTML = '<strong>OMR:</strong>'
-      const msg = document.createElement('p')
-      msg.textContent = page.homr.error
-      msg.className = 'error-text'
-      errDiv.append(title, msg)
-      container.appendChild(errDiv)
-    } else {
-      const notationLinks = (
-        label: string,
-        href: string | undefined,
-      ): HTMLParagraphElement | null => {
-        if (!href) return null
-        const link = document.createElement('a')
-        link.href = href.replace(/^\.\//, '/')
-        link.textContent = href
-        link.target = '_blank'
-        link.rel = 'noopener'
-        const p = document.createElement('p')
-        p.innerHTML = `<strong>${label}:</strong> `
-        p.appendChild(link)
-        return p
-      }
-      const xmlInfo = document.createElement('div')
-      xmlInfo.className = 'detail-info'
-      const musicxmlP = notationLinks('MusicXML', page.homr.musicxml)
-      const teiP = notationLinks('TEI', page.homr.tei)
-      if (musicxmlP) xmlInfo.appendChild(musicxmlP)
-      if (teiP) xmlInfo.appendChild(teiP)
-      if (xmlInfo.childElementCount > 0) container.appendChild(xmlInfo)
+  let disposed = false
+  let plugin: MusicXmlPlugin | null = null
+  let tify: Tify | null = null
+  void (async (): Promise<void> => {
+    tify = new Tify({
+      container: `#${tifyId}`,
+      manifestUrl,
+      // TIFY pages are 1-based and the option is the pages array (TIFY 0.36
+      // dropped the singular `page` option)
+      pages: [pageIndex + 1],
+    })
+    plugin = await musicxmlPlugin(tify, {
+      panelEl: panelHost,
+      // the TEI/MusicXML ids in the manifest point at the deployment host;
+      // pass the resolver-localized TEI so the plugin fetches same-origin
+      tei: page.homr?.tei,
+      showScoreOverlay: SHOW_SCORE_OVERLAY,
+      showHighlights: SHOW_PLAYBACK_HIGHLIGHTS,
+      regionOverlay: {
+        enabled: SHOW_STAFF_OVERLAY,
+        color: REGION_COLOR,
+        opacity: REGION_FILL_OPACITY,
+      },
+    })
+    if (import.meta.env.DEV) {
+      ;(window as unknown as Record<string, unknown>).__tify = tify
     }
-  }
-
-  let activePlayer: PlayerHandle | null = null
-  if (page.homr && page.homr.status === 'ok' && page.homr.tei) {
-    const href = page.homr.tei.replace(/^\.\//, '/')
-    fetch(href)
-      .then((resp) => {
-        if (!resp.ok) throw new Error(`Failed to load ${href}: ${resp.status}`)
-        return resp.text()
-      })
-      .then((teiText) => {
-        const parsed = parseTei(teiText)
-        if (!parsed) throw new Error('TEI carries no staff geometry or embedded score')
-        return parsed
-      })
-      .then(({ staves, musicxmlText }) => {
-        if (!playerHost.isConnected) return
-        page.staves = staves
-        updateThumbnail(thumb, page)
-
-        // staff overlay: the orange staff rects and (when enabled) the
-        // playback highlight layers drawn by the player
-        let overlaySvg: SVGSVGElement | null = null
-        if (SHOW_STAFF_OVERLAY || SHOW_PLAYBACK_HIGHLIGHTS) {
-          overlaySvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
-          overlaySvg.setAttribute('viewBox', `0 0 ${page.width} ${page.height}`)
-          overlaySvg.setAttribute('width', String(page.width))
-          overlaySvg.setAttribute('height', String(page.height))
-          overlaySvg.setAttribute('preserveAspectRatio', 'xMidYMid meet')
-          overlaySvg.classList.add('staff-overlay')
-
-          if (SHOW_STAFF_OVERLAY) {
-            for (const staff of page.staves) {
-              const [x0, y0, x1, y1] = staff.bbox
-              const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect')
-              rect.setAttribute('x', String(x0))
-              rect.setAttribute('y', String(y0))
-              rect.setAttribute('width', String(Math.max(0, x1 - x0)))
-              rect.setAttribute('height', String(Math.max(0, y1 - y0)))
-              rect.setAttribute('fill', 'rgba(255, 100, 0, 0.25)')
-              rect.setAttribute('stroke', 'rgba(255, 100, 0, 0.9)')
-              rect.setAttribute('stroke-width', '3')
-              overlaySvg.appendChild(rect)
-            }
-          }
-          addPixelOverlay(osd.viewer, overlaySvg, 0, 0, page.width, page.height)
-        }
-
-        const info = document.createElement('div')
-        info.className = 'detail-info'
-        const res = document.createElement('p')
-        res.innerHTML = `<strong>Resolution:</strong> ${page.width} × ${page.height}`
-        const stavesP = document.createElement('p')
-        stavesP.innerHTML = `<strong>Staves:</strong> ${page.staves.length}`
-        const confP = document.createElement('p')
-        confP.innerHTML = `<strong>Confidence:</strong> ${formatConfidence(page.confidence)}`
-        info.append(res, stavesP, confP)
-        for (const [i, s] of page.staves.entries()) {
-          const p = document.createElement('p')
-          p.className = 'staff-detail'
-          p.textContent = `Staff ${String(i + 1)}: ${String(s.lineCount)} lines, bbox [${s.bbox.join(', ')}]`
-          info.appendChild(p)
-        }
-        if (staffInfoHost.isConnected) staffInfoHost.replaceWith(info)
-
-        activePlayer = setupPlayer(playerHost, osd, overlaySvg, {
-          width: page.width,
-          height: page.height,
-          staves: page.staves,
-          musicxmlText,
-        })
-      })
-      .catch((err: unknown) => {
-        const msg = err instanceof Error ? err.message : String(err)
-        const p = document.createElement('p')
-        p.className = 'detail-info player-error'
-        p.textContent = `Player unavailable: ${msg}`
-        if (container.isConnected) container.appendChild(p)
-      })
-  } else {
-    const empty = document.createElement('p')
-    empty.className = 'detail-info'
-    empty.textContent = page.hasScore
-      ? 'No staves found (detection flagged but no bbox)'
-      : 'No staves detected.'
-    staffInfoHost.replaceWith(empty)
-  }
+  })().catch((err: unknown) => {
+    if (disposed) return
+    console.error(err)
+    const msg = err instanceof Error ? err.message : String(err)
+    const p = document.createElement('p')
+    p.className = 'detail-info player-error'
+    p.textContent = `Player unavailable: ${msg}`
+    if (container.isConnected) container.appendChild(p)
+  })
 
   return {
     dispose: () => {
-      if (activePlayer) activePlayer.dispose()
-      osd.dispose()
+      disposed = true
+      plugin?.destroy()
+      tify?.destroy()
     },
   }
 }
@@ -312,13 +210,15 @@ async function main(): Promise<void> {
     select.value = remembered
   }
 
-  let activePlayer: PlayerHandle | null = null
+  let activeDetail: { dispose: () => void } | null = null
+
+  const closeDetail = (): void => {
+    activeDetail?.dispose()
+    activeDetail = null
+  }
 
   const showBook = async (manifestUrl: string): Promise<void> => {
-    if (activePlayer) {
-      activePlayer.dispose()
-      activePlayer = null
-    }
+    closeDetail()
     grid.innerHTML = ''
     detail.innerHTML = '<p class="placeholder">Select a page to view details</p>'
 
@@ -339,13 +239,10 @@ async function main(): Promise<void> {
     for (const [index, page] of pages.entries()) {
       const thumb = createThumbnail(page, index)
       const activate = (): void => {
-        if (activePlayer) {
-          activePlayer.dispose()
-          activePlayer = null
-        }
+        closeDetail()
         grid.querySelectorAll('.thumb.selected').forEach((el) => el.classList.remove('selected'))
         thumb.classList.add('selected')
-        activePlayer = showDetail(page, detail, thumb)
+        activeDetail = showDetail(page, detail, index, manifestUrl)
       }
       thumb.addEventListener('click', activate)
       thumb.addEventListener('keydown', (e: KeyboardEvent) => {

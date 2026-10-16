@@ -11,6 +11,6 @@ export default defineConfig({
     strictPort: true,
   },
   optimizeDeps: {
-    include: ['@xmldom/xmldom', 'fraction.js', 'xpath'],
+    include: ['@xmldom/xmldom', 'fraction.js', 'xpath', 'tify'],
   },
 })
