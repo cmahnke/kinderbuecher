@@ -1,11 +1,12 @@
 ---
 title: Hört auf den Uhu!
 date: 2024-10-01T17:21:11+02:00
-iiifManifest: ./manifest.json
+iiif:
+  manifest: ./manifest.json
 outputs:
 - html
-- iiif
-iiifContext: http://iiif.io/api/presentation/2/context.json
+- iiif-manifest
+iiifcontext: http://iiif.io/api/presentation/3/context.json
 description: '"Hört auf den Uhu! ein Bilderbuch für klein und groß" illustriert von Fritz Schröder, erschienen ca. 1955 bei Die Landwerbung, Hamburg. <a class="worldcat" href="http://www.worldcat.org/oclc/931603776">&nbsp;</a>'
 issueYear: 1955
 tags:

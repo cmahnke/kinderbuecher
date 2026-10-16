@@ -2,16 +2,17 @@
 title: Der Bäckerjunge und die Prinzessin
 date: 2021-11-01T17:21:11+01:00
 description: '"Der Bäckerjunge und die Prinzessin" von Herta-Len Felsberg, erschienen 1941 bei Staneck, Berlin. <a class="worldcat" href="http://www.worldcat.org/oclc/72478130">&nbsp;</a>'
-iiifManifest: ./manifest.json
+iiif:
+  manifest: ./manifest.json
 issueYear: 1941
 outputs:
 - html
-- iiif 
+- iiif-manifest
 tags:
   - 1941
   - NS-Deutschland
   - Deutsch
-iiifContext: http://iiif.io/api/presentation/2/context.json
+iiifcontext: http://iiif.io/api/presentation/3/context.json
 resources:
 - src: "front.jpg"
   name: front

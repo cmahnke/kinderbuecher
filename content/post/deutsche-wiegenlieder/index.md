@@ -1,15 +1,16 @@
 ---
 title: Deutsche Wiegenlieder
 date: 2020-08-05T19:36:07+02:00
-iiifManifest: ./manifest.json
+iiif:
+  manifest: ./manifest.json
 iiif:
   manifest: ./manifest.json
   baseURL: https://static.projektemacher.org/kinderbuecher/post/deutsche-wiegenlieder/
 issueYear: 1909
 outputs:
 - html
-- iiif 
-iiifContext: http://iiif.io/api/presentation/2/context.json
+- iiif-manifest
+iiifcontext: http://iiif.io/api/presentation/3/context.json
 description: 'Dieses Vorsatzpapier ist aus dem Buch "Deutsche Wiegenlieder" von Hans Fraungruber, erschienen ca. 1909 im Verlag Gerlach und Wiedling, Wien und Leipzig, entnommen.  <a class="worldcat" href="http://www.worldcat.org/oclc/256761549">&nbsp;</a>'
 tags:
   - 1909

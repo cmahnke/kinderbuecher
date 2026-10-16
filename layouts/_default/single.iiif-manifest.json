@@ -1,7 +1,0 @@
-{{- $existing := partial "iiif/existing-manifest.html" . -}}
-{{- if $existing.exists -}}
-  {{/* A pre-made manifest is referenced in the frontmatter and exists in the page bundle, use it instead of generating a new one */}}
-  {{- $existing.content -}}
-{{- else -}}
-  {{- partial "iiif/3/manifest.json" . -}}
-{{- end -}}

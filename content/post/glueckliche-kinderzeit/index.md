@@ -1,11 +1,12 @@
 ---
 title: Glückliche Kinderzeit
 date: 2020-09-17T07:37:34+02:00
-iiifManifest: ./manifest.json
+iiif:
+  manifest: ./manifest.json
 outputs:
 - html
-- iiif 
-iiifContext: http://iiif.io/api/presentation/2/context.json
+- iiif-manifest
+iiifcontext: http://iiif.io/api/presentation/3/context.json
 issueYear: 1925
 tags:
   - 1925

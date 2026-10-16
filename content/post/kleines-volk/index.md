@@ -1,11 +1,12 @@
 ---
 title: Kleines Volk
 date: 2020-11-01T17:21:11+02:00
-iiifManifest: ./manifest.json
+iiif:
+  manifest: ./manifest.json
 outputs:
 - html
-- iiif 
-iiifContext: http://iiif.io/api/presentation/2/context.json
+- iiif-manifest
+iiifcontext: http://iiif.io/api/presentation/3/context.json
 description: '"Kleines Volk" von Oskar Pletsch, erschienen ca. 1865 bei Wiedmann, Berlin. <a class="worldcat" href="http://www.worldcat.org/oclc/753582892">&nbsp;</a>'
 tags:
   - 1865

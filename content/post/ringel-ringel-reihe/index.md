@@ -7,11 +7,12 @@ tags:
   - 1915
   - Deutsches Reich
   - Deutsch
-iiifManifest: ./manifest.json
+iiif:
+  manifest: ./manifest.json
 outputs:
 - html
-- iiif 
-iiifContext: http://iiif.io/api/presentation/2/context.json
+- iiif-manifest
+iiifcontext: http://iiif.io/api/presentation/3/context.json
 resources:
 - src: "front.jxl"
   name: front
