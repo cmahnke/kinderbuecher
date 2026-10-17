@@ -5,7 +5,7 @@
 # 2. Dumps the front matter resource order per book (`order.txt`) — this is
 #    the canvas order used by manifests and PDF generation
 # 3. Runs tesseract OCR per page (`ocr/`) as a text source for heading
-#    candidates (Fraktur for older books, based on `issueYear`)
+#    candidates (Fraktur for older books, based on `year`)
 # 4. Generates labeled contact sheets (`sheets/sheet-NN.jpg`, 12 pages each)
 #    for the visual pass (illustrations, title pages, tables of contents)
 #
@@ -50,7 +50,7 @@ for POST in "$CONTENT"/*/; do
     *vieilles-chansons* | *quenottes*) OCR_LANG="fra" ;;
     *girls-pastimes*) OCR_LANG="eng" ;;
     *)
-      YEAR=$(grep -o 'issueYear: [0-9]*' "$POST/index.md" | grep -o '[0-9]*' || echo "0")
+      YEAR=$(grep -o 'year: [0-9]*' "$POST/index.md" | grep -o '[0-9]*' || echo "0")
       [ -n "$YEAR" ] && [ "$YEAR" -lt 1945 ] && OCR_LANG="script/Fraktur"
       ;;
   esac
