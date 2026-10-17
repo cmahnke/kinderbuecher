@@ -2,7 +2,7 @@
 title: Ringel Ringel Reihe
 date: 2024-09-01T17:21:11+01:00
 description: '"Ringel Ringel Reihe" mit Bildern von Maria Hohneck erschien im Verlag von Jos. Scholz, Mainz, vor 1915. <a class="worldcat" href="https://search.worldcat.org/de/title/254847549">&nbsp;</a>'
-issueYear: 1915
+year: 1915
 tags:
   - 1915
   - Deutsches Reich

@@ -33,7 +33,7 @@ iiif:
       page: end-recto
     - label: {de: [Rückendeckel]}
       page: end
-issueYear: 1941
+year: 1941
 outputs:
 - html
 - iiif-manifest

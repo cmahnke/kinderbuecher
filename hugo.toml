@@ -138,6 +138,10 @@ defaultMarkdownHandler = 'goldmark'
       source = "node_modules/@projektemacher/tify-plugin-core/"
       target = "assets/scss/tify-plugin-core"
 
+    [[module.mounts]]
+      source = "node_modules/vis-timeline/styles"
+      target = "assets/css/vis-timeline"
+
 [build]
   writeStats = true
 

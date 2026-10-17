@@ -446,7 +446,10 @@ $nav-max-width: 100rem;
         margin-block-start: 0;
         margin-block-end: 0;
         padding-inline-start: 0;
-        display: inline-block;
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        gap: 1.5em;
 
         .navigation-item {
             list-style: none;

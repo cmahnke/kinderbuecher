@@ -33,7 +33,7 @@ outputs:
 - iiif-manifest
 iiifcontext: http://iiif.io/api/presentation/3/context.json
 description: '"Kleksographien" von Justinus Kerner, erschienen nach 1857 bei der Deutsche Verlags-Anstalt, Stuttgart. <a class="worldcat" href="http://www.worldcat.org/oclc/602645173">&nbsp;</a>'
-issueYear: 1890
+year: 1890
 tags:
   - 1890
   - Deutsches Kaiserreich

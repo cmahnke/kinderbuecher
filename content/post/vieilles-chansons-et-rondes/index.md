@@ -76,7 +76,7 @@ outputs:
 - iiif-manifest
 iiifcontext: http://iiif.io/api/presentation/3/context.json
 description: '"Vielles chansons pour les petits enfants" von Charles-Marie Widor und Louis Maurice Boutet de Monvel, erschienen ca. 1884 bei E. Plon, Nourrit et Cie., Paris. <a class="worldcat" href="http://www.worldcat.org/oclc/971014633">&nbsp;</a>'
-issueYear: 1884
+year: 1884
 tags:
   - 1884
   - Dritte Französische Republik

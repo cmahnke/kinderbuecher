@@ -31,7 +31,7 @@ outputs:
 - iiif-manifest
 iiifcontext: http://iiif.io/api/presentation/3/context.json
 description: '"Siebenmal Krause - sieben fröhliche Geschichten von sieben fröhlichen Geschwistern" von 	Ilse Linck und Erika Walter, erschienen 1941 bei Stalling, Oldenburg. <a class="worldcat" href="http://www.worldcat.org/oclc/1068564426">&nbsp;</a>'
-issueYear: 1941
+year: 1941
 tags:
   - 1941
   - NS-Deutschland

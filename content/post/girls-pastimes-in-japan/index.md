@@ -79,7 +79,7 @@ tags:
   - English
   - Japan
   - Meiji-Zeit
-issueYear: 1910
+year: 1910
 resources:
 - src: "front.jpg"
   name: front

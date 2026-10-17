@@ -32,7 +32,7 @@ outputs:
 - iiif-manifest
 iiifcontext: http://iiif.io/api/presentation/3/context.json
 description: '"Marx und Engels" von Ekkes, herausgegeben 1969 von der Deutsche Kommunistische Partei. Bezirk Ruhr-Westfalen, Essen. <a class="worldcat" href="http://www.worldcat.org/oclc/251382859">&nbsp;</a>'
-issueYear: 1969
+year: 1969
 tags:
   - 1969
   - BRD

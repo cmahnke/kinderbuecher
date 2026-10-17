@@ -147,7 +147,7 @@ iiif:
       page: end-recto
     - label: {de: [Rückendeckel]}
       page: back
-issueYear: 1909
+year: 1909
 outputs:
 - html
 - iiif-manifest

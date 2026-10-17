@@ -55,7 +55,7 @@ tags:
   - 1865
   - Deutscher Bund
   - Deutsch
-issueYear: 1865
+year: 1865
 resources:
 - src: "front.jpg"
   name: front

@@ -10,7 +10,7 @@ iiif:
     - label: {de: ['Einst wohnt'' in einem Dorf ein Schneider,']}
       page: page002
 iiifcontext: http://iiif.io/api/presentation/3/context.json
-issueYear: 1940
+year: 1940
 outputs:
 - html
 - iiif-manifest

@@ -120,7 +120,7 @@ outputs:
 - html
 - iiif-manifest
 iiifcontext: http://iiif.io/api/presentation/3/context.json
-issueYear: 1925
+year: 1925
 tags:
   - 1925
   - Weimarer Republik

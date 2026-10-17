@@ -2,7 +2,7 @@
 title: Was fährt denn da?
 date: 2024-08-01T17:21:11+01:00
 description: '"Was fährt denn da?" erschien im Rudolf Arnold, Leipzig, 1957. <a class="worldcat" href="https://search.worldcat.org/de/title/312003301">&nbsp;</a>'
-issueYear: 1957
+year: 1957
 tags:
   - 1957
   - DDR

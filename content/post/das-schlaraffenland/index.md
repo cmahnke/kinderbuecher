@@ -12,7 +12,7 @@ iiif:
     - label: {de: [Rückendeckel]}
       page: back
 iiifcontext: http://iiif.io/api/presentation/3/context.json
-issueYear: 1931
+year: 1931
 outputs:
 - html
 - iiif-manifest

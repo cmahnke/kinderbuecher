@@ -14,15 +14,15 @@
         </li>
       </ul>
 
-      {{- /* The books carry the publishing year as `issueYear` */ -}}
-      {{- $issues := where .Site.RegularPages "Params.issueYear" "!=" nil -}}
-      {{- $issues = sort $issues ".Params.issueYear" -}}
+      {{- /* The books carry the publishing year as `year` */ -}}
+      {{- $issues := where .Site.RegularPages "Params.year" "!=" nil -}}
+      {{- $issues = sort $issues ".Params.year" -}}
       <div class="tab-content">
         <div id="vertical" class="tab-pane fade show active timeline-content" role="tabpanel" aria-labelledby="vertical-tab">
-            {{- partial "timeline/vertical.html" (dict "context" . "entries" $issues "yearKey" "issueYear") -}}
+            {{- partial "timeline/vertical.html" (dict "context" . "entries" $issues) -}}
         </div>
         <div id="horizontal" class="tab-pane fade timeline-content" role="tabpanel" aria-labelledby="horizontal-tab">
-            {{- partial "timeline/horizontal.html" (dict "context" . "entries" $issues "yearKey" "issueYear") -}}
+            {{- partial "timeline/horizontal.html" (dict "context" . "entries" $issues) -}}
         </div>
       </div>
     </div>

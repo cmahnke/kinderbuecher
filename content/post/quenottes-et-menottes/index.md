@@ -114,7 +114,7 @@ iiif:
       page: end
 iiifcontext: http://iiif.io/api/presentation/3/context.json
 description: '"Quenottes et menottes" von Ernest D''Hervilly, illustriert von Harriett M. Bennett, herausgegeben ca. 1890 von Nouvelle Librairie de la Jeunesse, Paris.'
-issueYear: 1890
+year: 1890
 outputs:
   - html
   - iiif-manifest

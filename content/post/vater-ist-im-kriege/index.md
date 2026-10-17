@@ -61,7 +61,7 @@ outputs:
 - iiif-manifest
 iiifcontext: http://iiif.io/api/presentation/3/context.json
 description: '"Vater ist im Kriege - Ein Bilderbuch für Kinder" von Rudolf Presber, herausgegeben 1915 von der Kriegskinderspende deutscher Frauen, Kronprinzenpalais, Berlin. <a class="worldcat" href="http://www.worldcat.org/oclc/970872943">&nbsp;</a>'
-issueYear: 1915
+year: 1915
 tags:
   - 1915
   - Deutsches Kaiserreich

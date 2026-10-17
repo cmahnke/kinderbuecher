@@ -118,7 +118,7 @@ outputs:
 - html
 - iiif-manifest
 iiifcontext: http://iiif.io/api/presentation/3/context.json
-issueYear: 1901
+year: 1901
 description: '"Ein Fabelbuch" von Etzel und Ewers, erschienen 1901 bei A. Langen, München. <a class="worldcat" href="http://www.worldcat.org/oclc/459440697">&nbsp;</a>'
 tags:
   - 1901
