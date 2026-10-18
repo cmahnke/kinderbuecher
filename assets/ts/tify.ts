@@ -64,6 +64,7 @@ export function createTify(options: CreateTifyOptions): Tify {
     manifestUrl: options.manifestUrl,
     language: options.language,
     pages: options.pages,
+    translationsDirUrl: '/tify/translations/',
   })
 }
 
