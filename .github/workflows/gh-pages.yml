@@ -79,7 +79,6 @@ jobs:
           NODE_OPTIONS: --openssl-legacy-provider
         run: |
           ./scripts/setup.sh
-          yarn run clean-build
 
 #      - name: Create PDF
 #        run: |
@@ -186,6 +185,10 @@ jobs:
           OSTYPE: linux
         run: |
           yarn run validate
+
+      - name: Check JS errors
+        run: |
+          ./themes/projektemacher-base/scripts/github/check-js-errors.sh -f -c test-urls.json
 
       - name: Cleanup disk
         run: |

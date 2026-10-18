@@ -1,5 +1,2 @@
 {
-  "scripts": {
-    "clean-build": "rm -rf node_modules/mirador/node_modules"
-  }
 }

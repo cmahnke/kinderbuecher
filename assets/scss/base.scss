@@ -7,7 +7,7 @@ $color-metadata: #666;
 $header--main-margin-bottom: 3.6em;
 /* Fonts */
 $font-family: cormorant, "Cormorant Garamond", georgia, "Palatino Linotype", "Book Antiqua", palatino, "Times New Roman", times, serif;
-$font-family-metadata: "Open Sans", system-font;
+$font-family-metadata: "Open Sans Variable", system-font;
 $font-family-title: "Berkshire Swash",;
 @import "icons";
 /* Title font face */
@@ -485,4 +485,40 @@ p.small {
 
 .home .header.header--main .header__metadata.date {
   display: none;
+}
+
+/*
+ * Skip link (baseof.html): visually hidden until focused. Fixed
+ * high-contrast colors, because the theme's palette variables are
+ * consumer-defined and must not affect this control (WCAG 2.4.1).
+ */
+.skip-link {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    z-index: 10000;
+    padding: 0.5em 1em;
+    background: #212121;
+    color: #fafafa;
+
+    &:focus {
+        left: 0;
+    }
+}
+
+/*
+ * Utility for text that should stay accessible to screen readers but
+ * invisible visually (e.g. "page N" context in pagination links).
+ * Unlike display: none the content stays in the accessibility tree.
+ */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip-path: inset(50%);
+    border: 0;
+    white-space: nowrap;
 }

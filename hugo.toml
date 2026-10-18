@@ -15,8 +15,6 @@ timeout = "300s"
 [params]
     navHome = "Start"
     copyrightYears = "MMXXI"
-    iiifCanvasHeight = 400
-    iiifCanvasWidth = 300
     productionIIIFURLPrefix="https://static.projektemacher.org/kinderbuecher/"
 
 [params.iiif]
