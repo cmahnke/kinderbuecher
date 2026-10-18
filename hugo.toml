@@ -1,5 +1,5 @@
 baseURL = "https://xn--kinderbcher-zhb.projektemacher.org/"
-theme = ["projektemacher-base", "blogpaper"]
+theme = ["projektemacher-base"]
 title = "Kinderbücher"
 locale = "de"
 defaultcontentlanguage = "de"
@@ -117,12 +117,8 @@ defaultMarkdownHandler = 'goldmark'
         target = "assets/ts"
 
     [[module.mounts]]
-        source = "themes/blogpaper/assets/css/normalize.css"
-        target = "assets/scss"
-
-    [[module.mounts]]
-        source = "themes/blogpaper/assets/css"
-        target = "assets/scss"
+      source = "node_modules/normalize.css/normalize.css"
+      target = "assets/scss/normalize.css"
 
     [[module.mounts]]
       source = "node_modules/tify/dist/"
