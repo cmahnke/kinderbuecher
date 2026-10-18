@@ -7,7 +7,7 @@ layout: timeline
 draft: false
 js:
   - ts/timeline.ts
-  - js/bootstrap.js
+  - ts/tabs.ts
 css:
   - css/vis-timeline/vis-timeline-graph2d.min.css
 ---
