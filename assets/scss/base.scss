@@ -82,6 +82,8 @@ $font-family-title: "Berkshire Swash",;
 }
 
 .timeline-vertical {
+    padding-top: 5em !important;
+
     .preview-title {
         font-family: $font-family;
         font-weight: bold;
