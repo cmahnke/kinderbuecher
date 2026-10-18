@@ -3,7 +3,6 @@
   description = "Alte, schöne und fragwürdige Kinderbücher"
   copyrightYears = "MMXXI - MMXXVI"
   cc = false
-  disableScale = true
   wikidata = true
   debug = false
   pdfDownload = true
