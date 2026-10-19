@@ -1,4 +1,4 @@
-@import "normalize7";
+@use "normalize7";
 $header--main-color-background: #333;
 $header--main-color-text: #fff;
 $summary-margin-bottom: 1.5em;
@@ -9,16 +9,16 @@ $header--main-margin-bottom: 3.6em;
 $font-family: cormorant, "Cormorant Garamond", georgia, "Palatino Linotype", "Book Antiqua", palatino, "Times New Roman", times, serif;
 $font-family-metadata: "Open Sans Variable", system-font;
 $font-family-title: "Berkshire Swash",;
-@import "icons";
+@use "icons" as *;
 /* Title font face */
-@import "npm-fonts/berkshire-swash";
-@import "npm-fonts/cormorant";
-@import "npm-fonts/open-sans";
-@import "blogpaper.scss";
+@use "npm-fonts/berkshire-swash";
+@use "npm-fonts/cormorant";
+@use "npm-fonts/open-sans";
+@use "blogpaper.scss";
 
-@import "iiif/presentation-tify";
-@import "iiif/musicxml-plugin";
-@import "timeline";
+@use "iiif/presentation-tify";
+@use "iiif/musicxml-plugin";
+@use "timeline";
 
 /* Timeline (Zeitstrahl) — adapted to the vintage look: serif titles, paper tones,
    custom tabs (no Bootstrap CSS, only Bootstrap JS for the tab switching) */

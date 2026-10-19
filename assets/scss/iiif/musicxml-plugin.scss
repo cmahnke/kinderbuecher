@@ -1,6 +1,6 @@
-@import "tify-plugin-core/style";
+@use "tify-plugin-core/style";
 
-@import "tify-plugin-musicxml/index";
+@use "tify-plugin-musicxml/index";
 
 .iiif:has(.player-host) {
   display: flex;
