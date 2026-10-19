@@ -186,7 +186,7 @@ jobs:
         env:
           OSTYPE: linux
         run: |
-          yarn run validate
+          npm run validate
 
       - name: Check JS errors
         run: |

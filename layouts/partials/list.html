@@ -4,7 +4,7 @@
 
   <div class="container">
     <div class="content list">
-        {{ $paginator := .Paginate (where (where .Site.Pages "Type" "post").ByDate.Reverse "IsPage" true) }}
+        {{ $paginator := .Paginate (where (where site.Pages "Type" "post").ByDate.Reverse "IsPage" true) }}
         {{ range $index, $element := .Paginator.Pages }}
 
         {{/* Preview */}}

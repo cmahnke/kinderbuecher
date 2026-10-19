@@ -16,7 +16,7 @@
 {{/*
     {{- $subtitle_deactivated := and (isset .Params "subtitle") (eq (len $subtitle) 0) -}}
     {{- if not $subtitle_deactivated -}}
-      {{- $default_subtitle_len := .Site.Params.subtitleLength | default 25 -}}
+      {{- $default_subtitle_len := site.Params.subtitleLength | default 25 -}}
       {{- $default_subtitle := delimit (.PlainWords | first $default_subtitle_len) " " -}}
       {{- $subtitle = $subtitle | default $default_subtitle -}}
 

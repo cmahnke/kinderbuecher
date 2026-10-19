@@ -1,8 +1,8 @@
 {{- block "footer" . }}
 <footer class="footer footer--main">
 
-  {{- .Scratch.Set "footer" `<div class="font-secondary text-dark">Theme basiert auf <a target="_blank" href="https://normanderwan.github.io/Blogpaper/">Blogpaper</a> für Hugo.</div>` -}}
-  {{- partialCached "footer-content.html" . -}}
+  {{- $footerStr := `<div class="font-secondary text-dark">Theme basiert auf <a target="_blank" href="https://normanderwan.github.io/Blogpaper/">Blogpaper</a> für Hugo.</div>` -}}
+  {{- partial "footer-content.html" (dict "page" . "footer" $footerStr) -}}
 
 </footer>
 {{- end }}

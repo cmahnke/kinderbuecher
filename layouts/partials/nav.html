@@ -1,8 +1,8 @@
 <div class="header-nav">
     <div class="header-container">
         <div class="nav-home">
-            <a href="{{ .Site.Home.RelPermalink }}" >
-                {{- .Site.Params.navHome -}}
+            <a href="{{ site.Home.RelPermalink }}" >
+                {{- site.Params.navHome -}}
             </a>
         </div>
         {{ partialCached "menu.html" . }}

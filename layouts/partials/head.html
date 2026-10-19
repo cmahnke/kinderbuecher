@@ -5,14 +5,14 @@
   <title>
   {{- block "title" . -}}
     {{- with .Title -}}{{- . }} | {{ end -}}
-    {{- .Site.Title -}}
+    {{- site.Title -}}
   {{- end -}}
   </title>
 
   {{ partial "html/head/meta.html" . }}
 
   {{- range .AlternativeOutputFormats }}
-  <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .RelPermalink }}" title="{{ $.Site.Title | safeHTML }}">
+  <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .RelPermalink }}" title="{{ site.Title | safeHTML }}">
   {{- end }}
 
     {{- partial "html/head/script.html" (dict "context" . "js" (partial "html/head/iiif-js.html" .)) -}}

@@ -11,9 +11,9 @@ $font-family-metadata: "Open Sans Variable", system-font;
 $font-family-title: "Berkshire Swash",;
 @import "icons";
 /* Title font face */
-@import "fonts/berkshire-swash";
-@import "fonts/cormorant";
-@import "fonts/open-sans";
+@import "npm-fonts/berkshire-swash";
+@import "npm-fonts/cormorant";
+@import "npm-fonts/open-sans";
 @import "blogpaper.scss";
 
 @import "iiif/presentation-tify";

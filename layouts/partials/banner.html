@@ -33,7 +33,7 @@
     {{- else -}}
 
       {{/* Or try to get the default banner resource */}}
-      {{- $src := .Page.Site.Params.banner | default "banner.*" -}}
+      {{- $src := site.Params.banner | default "banner.*" -}}
       {{- with .Page.Resources.GetMatch $src -}}
         {{- $banner = merge $banner (dict "src" $src "resource" .) }}
         {{- partial "banner-figure" $banner }}

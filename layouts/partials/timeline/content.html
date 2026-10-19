@@ -15,7 +15,7 @@
       </ul>
 
       {{- /* The books carry the publishing year as `year` */ -}}
-      {{- $issues := where .Site.RegularPages "Params.year" "!=" nil -}}
+      {{- $issues := where site.RegularPages "Params.year" "!=" nil -}}
       {{- $issues = sort $issues ".Params.year" -}}
       <div class="tab-content">
         <div id="vertical" class="tab-pane fade show active timeline-content" role="tabpanel" aria-labelledby="vertical-tab">
