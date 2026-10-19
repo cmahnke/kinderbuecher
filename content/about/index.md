@@ -17,7 +17,7 @@ Als Schriftarten kommen [Open Sans](https://fonts.google.com/specimen/Open+Sans#
 
 Die folgenden JavaScript und CSS Frameworks werden benutzt:
 * [jQuery](https://jquery.com/)
-* [normalize.css](https://necolas.github.io/normalize.css/)
+* [normalize.css](https://necolas.github.io/normalize.css/) (Version 7, direkt eingebunden)
 
 Die Nachbearbeitung der Digitalisate wurde mit [ScanTailor Advanced](https://github.com/4lex4/scantailor-advanced) durchgeführt.
 

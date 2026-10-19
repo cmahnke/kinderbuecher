@@ -117,10 +117,6 @@ defaultMarkdownHandler = 'goldmark'
         target = "assets/ts"
 
     [[module.mounts]]
-      source = "node_modules/normalize.css/normalize.css"
-      target = "assets/scss/normalize.css"
-
-    [[module.mounts]]
       source = "node_modules/tify/dist/"
       target = "static/tify"
 
