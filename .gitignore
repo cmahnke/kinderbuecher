@@ -30,3 +30,11 @@ static/pdfjs/**
 data/stats.json
 scripts/structure/drafts
 Source Files/Experiments/homr/public/
+
+/package-lock.json
+
+/npm-shrinkwrap.json
+
+/pnpm-lock.yaml
+
+/yarn.lock
