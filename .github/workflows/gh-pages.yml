@@ -190,7 +190,7 @@ jobs:
 
       - name: Check JS errors
         run: |
-          ./themes/projektemacher-base/scripts/github/check-js-errors.sh -f -c test-urls.json
+          ./themes/projektemacher-base/scripts/github/check-js-errors.sh -f -c test-urls.json -i
 
       - name: Cleanup disk
         run: |
