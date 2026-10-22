@@ -12,6 +12,8 @@ copyright = "<a href=\"https://projektemacher.org\">Projektemacher</a>"
 enableGitInfo = true
 timeout = "300s"
 
+enableRobotsTXT = true
+
 [params]
     navHome = "Start"
     copyrightYears = "MMXXI"
@@ -141,3 +143,6 @@ defaultMarkdownHandler = 'goldmark'
 
 [params.js]
   format = "esm"
+
+[params.robots]
+  llmsTXT = true
