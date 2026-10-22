@@ -1,67 +1,68 @@
 ---
 title: Vater ist im Kriege
 date: 2021-02-01T17:21:11+01:00
-iiif:
-  manifest: ./manifest.json
-  structure:
-    - label: {de: [Umschlag]}
-      page: front
-    - label: {de: [Titelseite]}
-      page: title
-    - label: {de: ['Frontispiz: Reitender Offizier (mit handschriftlicher Widmung)']}
-      page: page002
-    - label: {de: [Kriegsfreiwillige.]}
-      page: page004
-    - label: {de: [Die Eisenbahner.]}
-      page: page006
-    - label: {de: [Der Flieger.]}
-      page: page008
-    - label: {de: [Deutsche Reiter.]}
-      page: page010
-    - label: {de: [Stürmende Infanterie.]}
-      page: page012
-    - label: {de: [Artillerie.]}
-      page: page014
-    - label: {de: [Unsere blauen Jungen.]}
-      page: page016
-    - label: {de: [Die Pioniere.]}
-      page: page018
-    - label: {de: [Die Jäger.]}
-      page: page020
-    - label: {de: [Landwehr im Schützengraben.]}
-      page: page022
-    - label: {de: [Landsturm.]}
-      page: page024
-    - label: {de: [Fuhrparkkolonne auf dem Marsch.]}
-      page: page026
-    - label: {de: [Armierungssoldaten.]}
-      page: page028
-    - label: {de: [Die „Emden“.]}
-      page: page030
-    - label: {de: [Patrouillenritt.]}
-      page: page032
-    - label: {de: [Einmarsch in Feindesland.]}
-      page: page034
-    - label: {de: [Untersee-Boote.]}
-      page: page036
-    - label: {de: [Treue Waffenbrüder.]}
-      page: page038
-    - label: {de: [Zeppelin.]}
-      page: page040
-    - label: {de: [Barmherzige Samariter.]}
-      page: page042
-    - label: {de: [Hindenburgs Gefangene.]}
-      page: page044
-    - label: {de: [Weihnacht im Felde.]}
-      page: page046
-    - label: {de: [Besuch im Lazarett.]}
-      page: page048
+params:
+  iiif:
+    manifest: ./manifest.json
+    structure:
+      - label: {de: [Umschlag]}
+        page: front
+      - label: {de: [Titelseite]}
+        page: title
+      - label: {de: ['Frontispiz: Reitender Offizier (mit handschriftlicher Widmung)']}
+        page: page002
+      - label: {de: [Kriegsfreiwillige.]}
+        page: page004
+      - label: {de: [Die Eisenbahner.]}
+        page: page006
+      - label: {de: [Der Flieger.]}
+        page: page008
+      - label: {de: [Deutsche Reiter.]}
+        page: page010
+      - label: {de: [Stürmende Infanterie.]}
+        page: page012
+      - label: {de: [Artillerie.]}
+        page: page014
+      - label: {de: [Unsere blauen Jungen.]}
+        page: page016
+      - label: {de: [Die Pioniere.]}
+        page: page018
+      - label: {de: [Die Jäger.]}
+        page: page020
+      - label: {de: [Landwehr im Schützengraben.]}
+        page: page022
+      - label: {de: [Landsturm.]}
+        page: page024
+      - label: {de: [Fuhrparkkolonne auf dem Marsch.]}
+        page: page026
+      - label: {de: [Armierungssoldaten.]}
+        page: page028
+      - label: {de: [Die „Emden“.]}
+        page: page030
+      - label: {de: [Patrouillenritt.]}
+        page: page032
+      - label: {de: [Einmarsch in Feindesland.]}
+        page: page034
+      - label: {de: [Untersee-Boote.]}
+        page: page036
+      - label: {de: [Treue Waffenbrüder.]}
+        page: page038
+      - label: {de: [Zeppelin.]}
+        page: page040
+      - label: {de: [Barmherzige Samariter.]}
+        page: page042
+      - label: {de: [Hindenburgs Gefangene.]}
+        page: page044
+      - label: {de: [Weihnacht im Felde.]}
+        page: page046
+      - label: {de: [Besuch im Lazarett.]}
+        page: page048
+  iiifcontext: http://iiif.io/api/presentation/3/context.json
+  year: 1915
 outputs:
 - html
 - iiif-manifest
-iiifcontext: http://iiif.io/api/presentation/3/context.json
 description: '"Vater ist im Kriege - Ein Bilderbuch für Kinder" von Rudolf Presber, herausgegeben 1915 von der Kriegskinderspende deutscher Frauen, Kronprinzenpalais, Berlin. <a class="worldcat" href="http://www.worldcat.org/oclc/970872943">&nbsp;</a>'
-year: 1915
 tags:
   - 1915
   - Deutsches Kaiserreich

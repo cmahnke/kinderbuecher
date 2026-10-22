@@ -2,227 +2,230 @@
 title: Hundert Schnurrpfeifereien
 date: 2020-12-30T07:21:11+01:00
 description: '"Hundert Schnurrpfeifereien" von Sophus Tromholt, 13. Auflage, erschienen 1906 bei Reclam, Leipzig. <a class="worldcat" href="http://www.worldcat.org/oclc/255740370">&nbsp;</a>'
-iiif:
-  manifest: ./manifest.json
-  structure:
-    - label: {de: [Umschlag]}
-      page: front
-    - label: {de: [Vorsatz]}
-      page: front-verso
-    - label: {de: [Vorsatz]}
-      page: front-recto
-    - label: {de: [1. Der Teller auf der Nadelspitze]}
-      page: page003
-    - label: {de: [2. Der auf seiner Spitze stehende Bleistift]}
-      page: page004
-    - label: {de: [3. Das auf der Flasche stehende Ei]}
-      page: page005
-    - label: {de: [4. Die durchschnittene Birne]}
-      page: page005
-    - label: {de: [5. Eine Stecknadel mit einer Nähnadel zu durchbohren]}
-      page: page006
-    - label: {de: [6. Die balancierende Kaffeetasse]}
-      page: page007
-    - label: {de: [7. Ein Einpfennigstück mit einer Nähnadel zu durchbohren]}
-      page: page008
-    - label: {de: [8. Feuerschaufel und Feuerzange]}
-      page: page009
-    - label: {de: [9. Der balancierende Teller]}
-      page: page010
-    - label: {de: [10. Der balancierende Löffel. I.]}
-      page: page011
-    - label: {de: [11. Der balancierende Kochlöffel. II.]}
-      page: page011
-    - label: {de: [12. Die Flasche als Akrobat]}
-      page: page012
-    - label: {de: [13. Die balancierenden Bleistifte]}
-      page: page013
-    - label: {de: ['14. Karaffe, Flasche und drei Gläser']}
-      page: page014
-    - label: {de: [15. Eine Taucherglocke]}
-      page: page015
-    - label: {de: [16. Das Glas mit dem dreifarbigen Inhalt]}
-      page: page016
-    - label: {de: [17. Der kleine Vulkan]}
-      page: page017
-    - label: {de: [18. Der Champagner-Teufel]}
-      page: page018
-    - label: {de: [19. Das Weinfass und die Flasche]}
-      page: page020
-    - label: {de: [20. Wasser in Wein zu verwandeln]}
-      page: page021
-    - label: {de: [21. Der gehorsame Fisch]}
-      page: page022
-    - label: {de: [22. Der kuriose Leuchter]}
-      page: page023
-    - label: {de: [23. Seifenblasen und Kohlensäure]}
-      page: page024
-    - label: {de: [24. Die Besenstiel-Briefwage]}
-      page: page026
-    - label: {de: [25. Der Kampferskorpion]}
-      page: page027
-    - label: {de: [26. Das Nuß-Wasserrad]}
-      page: page028
-    - label: {de: [27. Das Heber-Wasserrad]}
-      page: page029
-    - label: {de: [28. Das Strohhalm-Wasserrad]}
-      page: page030
-    - label: {de: [29. Der schwimmende Fisch]}
-      page: page032
-    - label: {de: [30. Das Dampfboot]}
-      page: page033
-    - label: {de: [31. Ein Kanonenschuß]}
-      page: page034
-    - label: {de: [32. Die lebendigen Wasserfiguren]}
-      page: page036
-    - label: {de: [33. Die Kraft des Atems]}
-      page: page037
-    - label: {de: [34. Der widerspenstige Pfropfen]}
-      page: page038
-    - label: {de: [35. Der fliegende Schmetterling]}
-      page: page039
-    - label: {de: [36. Die Münze im Glase]}
-      page: page040
-    - label: {de: [37. Die Centrifugalkraft]}
-      page: page041
-    - label: {de: [38. Das tanzende Ei]}
-      page: page042
-    - label: {de: [39. Der Luftdruck]}
-      page: page043
-    - label: {de: [40. Der Nagel in der Flasche]}
-      page: page045
-    - label: {de: [41. Ein Glas mit Hilfe einer gefüllten Flasche zu leeren]}
-      page: page046
-    - label: {de: [42. Ein Kunststück mit einem Lampenglas]}
-      page: page047
-    - label: {de: [43. Ein gefülltes Glas mit der flachen Hand zu heben]}
-      page: page049
-    - label: {de: [44. Das merkwürdige Pendel]}
-      page: page050
-    - label: {de: [45. Veränderungen einer Seifenblase]}
-      page: page051
-    - label: {de: [46. Das Aufhängen ohne Faden]}
-      page: page053
-    - label: {de: ['47. Die Hand in Wasser zu tauchen, ohne sie zu benetzen']}
-      page: page054
-    - label: {de: [48. Schwimmende Nadeln]}
-      page: page055
-    - label: {de: [49. Einigkeit macht stark]}
-      page: page056
-    - label: {de: [50. Das Auge im Nacken]}
-      page: page057
-    - label: {de: [51. Das Theater im Spiegel]}
-      page: page058
-    - label: {de: [52. Lebendige Schatten]}
-      page: page059
-    - label: {de: [53. Farbige Schatten]}
-      page: page060
-    - label: {de: [54. Der dreifarbige Stern]}
-      page: page061
-    - label: {de: [55. Der Hampelmann im Spiegel]}
-      page: page063
-    - label: {de: [56. Die Umdrehung der Erde]}
-      page: page064
-    - label: {de: [57. Chinesische Schatten]}
-      page: page064
-    - label: {de: [58. Rotierende Stecknadeln]}
-      page: page065
-    - label: {de: [59. Die Münze in der Schale]}
-      page: page067
-    - label: {de: [60. Der Löffel-Reflektor]}
-      page: page068
-    - label: {de: [61. Eine Familienlotterie]}
-      page: page068
-    - label: {de: [62. Augentäuschung. I.]}
-      page: page070
-    - label: {de: [63. Augentäuschung. II.]}
-      page: page071
-    - label: {de: [64. Der zersprungene Spiegel]}
-      page: page072
-    - label: {de: [65. Die kleinen Equilibristen]}
-      page: page073
-    - label: {de: [66. Das elektrisierte Papier]}
-      page: page074
-    - label: {de: [67. Ein Lampencylinder als Elektrisiermaschine]}
-      page: page075
-    - label: {de: [68. Oersteds Experiment]}
-      page: page076
-    - label: {de: [69. Tantalusqualen]}
-      page: page078
-    - label: {de: [70. Die schwierige Anzündung eines Lichtes]}
-      page: page079
-    - label: {de: [71. Unter einem Besenstiel hindurchzukriechen]}
-      page: page079
-    - label: {de: [72. Die Damensteine]}
-      page: page080
-    - label: {de: [73. Ein Taburett zu heben]}
-      page: page082
-    - label: {de: [74. Drei Streichhölzer mit einem Streichholz zu heben]}
-      page: page083
-    - label: {de: [75. Die Streichholzbrücke]}
-      page: page084
-    - label: {de: [76. Der Streichholztelegraph]}
-      page: page085
-    - label: {de: [77. Fünfzehn Streichhölzer mit einem Streichholz aufzuheben]}
-      page: page086
-    - label: {de: [78. Ein Wassertropfen als Bewegkraft]}
-      page: page087
-    - label: {de: [79. Die fünf Strohhalme]}
-      page: page088
-    - label: {de: [80. Höllenmaschine]}
-      page: page088
-    - label: {de: [81. Ein Zweipfennigstück auf einer Nadelspitze zur Umdrehung zu bringen]}
-      page: page090
-    - label: {de: [82. Kleine Wurfspieße]}
-      page: page091
-    - label: {de: [83. Ein Lampencylinder als Cigarettenraucher]}
-      page: page092
-    - label: {de: [84. Gläserpyramiden]}
-      page: page093
-    - label: {de: [85. Die drei Champagnergläser]}
-      page: page094
-    - label: {de: [86. Die Flasche auf den Schlüsseln]}
-      page: page095
-    - label: {de: [87. Ein Schüsselstativ]}
-      page: page096
-    - label: {de: [88. Die Bindfadenwage]}
-      page: page096
-    - label: {de: [89. Die Küchenschnellwage]}
-      page: page098
-    - label: {de: [90. Eine Flaschenwasserwage]}
-      page: page099
-    - label: {de: [91. Eine Kartonwage als Ersaß für die Wasserwage]}
-      page: page100
-    - label: {de: [92. Die Feder Robinsons]}
-      page: page101
-    - label: {de: [93. Leuchter und Uhrstativ]}
-      page: page102
-    - label: {de: [94. Die geheimnisvolle Kugel]}
-      page: page103
-    - label: {de: [95. Die kleinen Pyrotechniker]}
-      page: page103
-    - label: {de: [96. Der Nußrosenkranz]}
-      page: page104
-    - label: {de: [97. Unbewußte Bewegungen]}
-      page: page105
-    - label: {de: [98. Durch eine Spielkarte hindurchzukriechen]}
-      page: page106
-    - label: {de: [99. Ein Zerstäuber]}
-      page: page107
-    - label: {de: [100. Handschattenbilder]}
-      page: page108
-    - label: {de: [Inhalt]}
-      page: page111
-    - label: {de: [Inhalt (Fortsetzung)]}
-      page: page112
-    - label: {de: [Nachsatz]}
-      page: end-verso
-    - label: {de: [Nachsatz]}
-      page: end-recto
-    - label: {de: [Rückendeckel]}
-      page: end
-iiifcontext: http://iiif.io/api/presentation/3/context.json
-year: 1906
+params:
+  iiif:
+    manifest: ./manifest.json
+    structure:
+      - label: {de: [Umschlag]}
+        page: front
+      - label: {de: [Vorsatz]}
+        page: front-verso
+      - label: {de: [Vorsatz]}
+        page: front-recto
+      - label: {de: [1. Der Teller auf der Nadelspitze]}
+        page: page003
+      - label: {de: [2. Der auf seiner Spitze stehende Bleistift]}
+        page: page004
+      - label: {de: [3. Das auf der Flasche stehende Ei]}
+        page: page005
+      - label: {de: [4. Die durchschnittene Birne]}
+        page: page005
+      - label: {de: [5. Eine Stecknadel mit einer Nähnadel zu durchbohren]}
+        page: page006
+      - label: {de: [6. Die balancierende Kaffeetasse]}
+        page: page007
+      - label: {de: [7. Ein Einpfennigstück mit einer Nähnadel zu durchbohren]}
+        page: page008
+      - label: {de: [8. Feuerschaufel und Feuerzange]}
+        page: page009
+      - label: {de: [9. Der balancierende Teller]}
+        page: page010
+      - label: {de: [10. Der balancierende Löffel. I.]}
+        page: page011
+      - label: {de: [11. Der balancierende Kochlöffel. II.]}
+        page: page011
+      - label: {de: [12. Die Flasche als Akrobat]}
+        page: page012
+      - label: {de: [13. Die balancierenden Bleistifte]}
+        page: page013
+      - label: {de: ['14. Karaffe, Flasche und drei Gläser']}
+        page: page014
+      - label: {de: [15. Eine Taucherglocke]}
+        page: page015
+      - label: {de: [16. Das Glas mit dem dreifarbigen Inhalt]}
+        page: page016
+      - label: {de: [17. Der kleine Vulkan]}
+        page: page017
+      - label: {de: [18. Der Champagner-Teufel]}
+        page: page018
+      - label: {de: [19. Das Weinfass und die Flasche]}
+        page: page020
+      - label: {de: [20. Wasser in Wein zu verwandeln]}
+        page: page021
+      - label: {de: [21. Der gehorsame Fisch]}
+        page: page022
+      - label: {de: [22. Der kuriose Leuchter]}
+        page: page023
+      - label: {de: [23. Seifenblasen und Kohlensäure]}
+        page: page024
+      - label: {de: [24. Die Besenstiel-Briefwage]}
+        page: page026
+      - label: {de: [25. Der Kampferskorpion]}
+        page: page027
+      - label: {de: [26. Das Nuß-Wasserrad]}
+        page: page028
+      - label: {de: [27. Das Heber-Wasserrad]}
+        page: page029
+      - label: {de: [28. Das Strohhalm-Wasserrad]}
+        page: page030
+      - label: {de: [29. Der schwimmende Fisch]}
+        page: page032
+      - label: {de: [30. Das Dampfboot]}
+        page: page033
+      - label: {de: [31. Ein Kanonenschuß]}
+        page: page034
+      - label: {de: [32. Die lebendigen Wasserfiguren]}
+        page: page036
+      - label: {de: [33. Die Kraft des Atems]}
+        page: page037
+      - label: {de: [34. Der widerspenstige Pfropfen]}
+        page: page038
+      - label: {de: [35. Der fliegende Schmetterling]}
+        page: page039
+      - label: {de: [36. Die Münze im Glase]}
+        page: page040
+      - label: {de: [37. Die Centrifugalkraft]}
+        page: page041
+      - label: {de: [38. Das tanzende Ei]}
+        page: page042
+      - label: {de: [39. Der Luftdruck]}
+        page: page043
+      - label: {de: [40. Der Nagel in der Flasche]}
+        page: page045
+      - label: {de: [41. Ein Glas mit Hilfe einer gefüllten Flasche zu leeren]}
+        page: page046
+      - label: {de: [42. Ein Kunststück mit einem Lampenglas]}
+        page: page047
+      - label: {de: [43. Ein gefülltes Glas mit der flachen Hand zu heben]}
+        page: page049
+      - label: {de: [44. Das merkwürdige Pendel]}
+        page: page050
+      - label: {de: [45. Veränderungen einer Seifenblase]}
+        page: page051
+      - label: {de: [46. Das Aufhängen ohne Faden]}
+        page: page053
+      - label: {de: ['47. Die Hand in Wasser zu tauchen, ohne sie zu benetzen']}
+        page: page054
+      - label: {de: [48. Schwimmende Nadeln]}
+        page: page055
+      - label: {de: [49. Einigkeit macht stark]}
+        page: page056
+      - label: {de: [50. Das Auge im Nacken]}
+        page: page057
+      - label: {de: [51. Das Theater im Spiegel]}
+        page: page058
+      - label: {de: [52. Lebendige Schatten]}
+        page: page059
+      - label: {de: [53. Farbige Schatten]}
+        page: page060
+      - label: {de: [54. Der dreifarbige Stern]}
+        page: page061
+      - label: {de: [55. Der Hampelmann im Spiegel]}
+        page: page063
+      - label: {de: [56. Die Umdrehung der Erde]}
+        page: page064
+      - label: {de: [57. Chinesische Schatten]}
+        page: page064
+      - label: {de: [58. Rotierende Stecknadeln]}
+        page: page065
+      - label: {de: [59. Die Münze in der Schale]}
+        page: page067
+      - label: {de: [60. Der Löffel-Reflektor]}
+        page: page068
+      - label: {de: [61. Eine Familienlotterie]}
+        page: page068
+      - label: {de: [62. Augentäuschung. I.]}
+        page: page070
+      - label: {de: [63. Augentäuschung. II.]}
+        page: page071
+      - label: {de: [64. Der zersprungene Spiegel]}
+        page: page072
+      - label: {de: [65. Die kleinen Equilibristen]}
+        page: page073
+      - label: {de: [66. Das elektrisierte Papier]}
+        page: page074
+      - label: {de: [67. Ein Lampencylinder als Elektrisiermaschine]}
+        page: page075
+      - label: {de: [68. Oersteds Experiment]}
+        page: page076
+      - label: {de: [69. Tantalusqualen]}
+        page: page078
+      - label: {de: [70. Die schwierige Anzündung eines Lichtes]}
+        page: page079
+      - label: {de: [71. Unter einem Besenstiel hindurchzukriechen]}
+        page: page079
+      - label: {de: [72. Die Damensteine]}
+        page: page080
+      - label: {de: [73. Ein Taburett zu heben]}
+        page: page082
+      - label: {de: [74. Drei Streichhölzer mit einem Streichholz zu heben]}
+        page: page083
+      - label: {de: [75. Die Streichholzbrücke]}
+        page: page084
+      - label: {de: [76. Der Streichholztelegraph]}
+        page: page085
+      - label: {de: [77. Fünfzehn Streichhölzer mit einem Streichholz aufzuheben]}
+        page: page086
+      - label: {de: [78. Ein Wassertropfen als Bewegkraft]}
+        page: page087
+      - label: {de: [79. Die fünf Strohhalme]}
+        page: page088
+      - label: {de: [80. Höllenmaschine]}
+        page: page088
+      - label: {de: [81. Ein Zweipfennigstück auf einer Nadelspitze zur Umdrehung zu bringen]}
+        page: page090
+      - label: {de: [82. Kleine Wurfspieße]}
+        page: page091
+      - label: {de: [83. Ein Lampencylinder als Cigarettenraucher]}
+        page: page092
+      - label: {de: [84. Gläserpyramiden]}
+        page: page093
+      - label: {de: [85. Die drei Champagnergläser]}
+        page: page094
+      - label: {de: [86. Die Flasche auf den Schlüsseln]}
+        page: page095
+      - label: {de: [87. Ein Schüsselstativ]}
+        page: page096
+      - label: {de: [88. Die Bindfadenwage]}
+        page: page096
+      - label: {de: [89. Die Küchenschnellwage]}
+        page: page098
+      - label: {de: [90. Eine Flaschenwasserwage]}
+        page: page099
+      - label: {de: [91. Eine Kartonwage als Ersaß für die Wasserwage]}
+        page: page100
+      - label: {de: [92. Die Feder Robinsons]}
+        page: page101
+      - label: {de: [93. Leuchter und Uhrstativ]}
+        page: page102
+      - label: {de: [94. Die geheimnisvolle Kugel]}
+        page: page103
+      - label: {de: [95. Die kleinen Pyrotechniker]}
+        page: page103
+      - label: {de: [96. Der Nußrosenkranz]}
+        page: page104
+      - label: {de: [97. Unbewußte Bewegungen]}
+        page: page105
+      - label: {de: [98. Durch eine Spielkarte hindurchzukriechen]}
+        page: page106
+      - label: {de: [99. Ein Zerstäuber]}
+        page: page107
+      - label: {de: [100. Handschattenbilder]}
+        page: page108
+      - label: {de: [Inhalt]}
+        page: page111
+      - label: {de: [Inhalt (Fortsetzung)]}
+        page: page112
+      - label: {de: [Nachsatz]}
+        page: end-verso
+      - label: {de: [Nachsatz]}
+        page: end-recto
+      - label: {de: [Rückendeckel]}
+        page: end
+  iiifcontext: http://iiif.io/api/presentation/3/context.json
+  year: 1906
+aliases:
+    - 100-schnurrpferereien
 outputs:
 - html
 - iiif-manifest
@@ -230,8 +233,6 @@ tags:
   - 1906
   - Deutsches Kaiserreich
   - Deutsch
-alias:
-  - 100-schnurrpferereien
 resources:
 - src: "front.jpg"
   name: front

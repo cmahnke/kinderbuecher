@@ -2,26 +2,27 @@
 title: Kodak Weihnachts-Märchenbuch
 date: 2024-12-01T12:00:00+02:00
 description: '"Kodak Weihnachts-Märchenbuch" herausgegeben von Kodak ca. 1970. <a class="worldcat" href="https://search.worldcat.org/de/title/844989609">&nbsp;</a>'
-year: 1970
+params:
+  year: 1970
+  iiif:
+    manifest: ./manifest.json
+    structure:
+      - label: {de: [Umschlag]}
+        page: front
+      - label: {de: ['Ganzseitige Anaglyphen-Illustration: verschneite Stadtansicht mit Kirche']}
+        page: page001
+      - label: {de: ['Ganzseitige Illustration: Weihnachtsmann bringt ein Geschenk zum Haus']}
+        page: page011
+      - label: {de: [Rückendeckel]}
+        page: back
+  iiifcontext: http://iiif.io/api/presentation/3/context.json
 tags:
   - 1970
   - BRD
   - Deutsch
-iiif:
-  manifest: ./manifest.json
-  structure:
-    - label: {de: [Umschlag]}
-      page: front
-    - label: {de: ['Ganzseitige Anaglyphen-Illustration: verschneite Stadtansicht mit Kirche']}
-      page: page001
-    - label: {de: ['Ganzseitige Illustration: Weihnachtsmann bringt ein Geschenk zum Haus']}
-      page: page011
-    - label: {de: [Rückendeckel]}
-      page: back
 outputs:
 - html
 - iiif-manifest
-iiifcontext: http://iiif.io/api/presentation/3/context.json
 resources:
 - src: "front.jxl"
   name: front

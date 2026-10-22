@@ -2,22 +2,23 @@
 title: Was fährt denn da?
 date: 2024-08-01T17:21:11+01:00
 description: '"Was fährt denn da?" erschien im Rudolf Arnold, Leipzig, 1957. <a class="worldcat" href="https://search.worldcat.org/de/title/312003301">&nbsp;</a>'
-year: 1957
+params:
+  year: 1957
+  iiif:
+    manifest: ./manifest.json
+    structure:
+      - label: {de: [Umschlag]}
+        page: front
+      - label: {de: [Rückendeckel]}
+        page: back
+  iiifcontext: http://iiif.io/api/presentation/3/context.json
 tags:
   - 1957
   - DDR
   - Deutsch
-iiif:
-  manifest: ./manifest.json
-  structure:
-    - label: {de: [Umschlag]}
-      page: front
-    - label: {de: [Rückendeckel]}
-      page: back
 outputs:
 - html
 - iiif-manifest
-iiifcontext: http://iiif.io/api/presentation/3/context.json
 resources:
 - src: "front.jxl"
   name: front

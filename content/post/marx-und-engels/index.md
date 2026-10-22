@@ -2,37 +2,38 @@
 title: Marx und Engels
 draft: true
 date: 2021-09-01T17:21:11+02:00
-iiif:
-  manifest: ./manifest.json
-  structure:
-    - label: {de: [Umschlag]}
-      page: front
-    - label: {de: [Erster Streich]}
-      page: page002
-    - label: {de: [Zweiter Streich]}
-      page: page005
-    - label: {de: [Dritter Streich]}
-      page: page009
-    - label: {de: [Vierter Streich]}
-      page: page013
-    - label: {de: [Fünfter Streich]}
-      page: page021
-    - label: {de: [Letzter Streich]}
-      page: page027
-    - label: {de: ['Schluß — (Schluß?)']}
-      page: page031
-    - label: {de: ['Daß Marx und Engels weitermachen, ist also klar … (Anhang DKP)']}
-      page: page032
-    - label: {de: [Tatsache 1 / Tatsache 2 / Tatsache 3 (Anhang DKP)]}
-      page: page033
-    - label: {de: [Rückendeckel]}
-      page: end
+params:
+  iiif:
+    manifest: ./manifest.json
+    structure:
+      - label: {de: [Umschlag]}
+        page: front
+      - label: {de: [Erster Streich]}
+        page: page002
+      - label: {de: [Zweiter Streich]}
+        page: page005
+      - label: {de: [Dritter Streich]}
+        page: page009
+      - label: {de: [Vierter Streich]}
+        page: page013
+      - label: {de: [Fünfter Streich]}
+        page: page021
+      - label: {de: [Letzter Streich]}
+        page: page027
+      - label: {de: ['Schluß — (Schluß?)']}
+        page: page031
+      - label: {de: ['Daß Marx und Engels weitermachen, ist also klar … (Anhang DKP)']}
+        page: page032
+      - label: {de: [Tatsache 1 / Tatsache 2 / Tatsache 3 (Anhang DKP)]}
+        page: page033
+      - label: {de: [Rückendeckel]}
+        page: end
+  iiifcontext: http://iiif.io/api/presentation/3/context.json
+  year: 1969
 outputs:
 - html
 - iiif-manifest
-iiifcontext: http://iiif.io/api/presentation/3/context.json
 description: '"Marx und Engels" von Ekkes, herausgegeben 1969 von der Deutsche Kommunistische Partei. Bezirk Ruhr-Westfalen, Essen. <a class="worldcat" href="http://www.worldcat.org/oclc/251382859">&nbsp;</a>'
-year: 1969
 tags:
   - 1969
   - BRD

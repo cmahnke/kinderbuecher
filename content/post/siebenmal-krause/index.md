@@ -1,37 +1,38 @@
 ---
 title: Siebenmal Krause
 date: 2021-06-01T17:21:11+02:00
-iiif:
-  manifest: ./manifest.json
-  structure:
-    - label: {de: [Umschlag]}
-      page: front
-    - label: {de: [Siebenmal Krause (Titelseite)]}
-      page: page001
-    - label: {de: [Gerhard hilft]}
-      page: page002
-    - label: {de: [Hans rettet Schnurrian]}
-      page: page004
-    - label: {de: [Der Jahrmarkt]}
-      page: page005
-    - label: {de: [Die große Überraschung]}
-      page: page007
-    - label: {de: [Die Schultüte]}
-      page: page010
-    - label: {de: [Der Apfeldieb]}
-      page: page012
-    - label: {de: [Puppe Emma]}
-      page: page014
-    - label: {de: [Mutter hat Geburtstag]}
-      page: page016
-    - label: {de: [Rückendeckel]}
-      page: back
+params:
+  iiif:
+    manifest: ./manifest.json
+    structure:
+      - label: {de: [Umschlag]}
+        page: front
+      - label: {de: [Siebenmal Krause (Titelseite)]}
+        page: page001
+      - label: {de: [Gerhard hilft]}
+        page: page002
+      - label: {de: [Hans rettet Schnurrian]}
+        page: page004
+      - label: {de: [Der Jahrmarkt]}
+        page: page005
+      - label: {de: [Die große Überraschung]}
+        page: page007
+      - label: {de: [Die Schultüte]}
+        page: page010
+      - label: {de: [Der Apfeldieb]}
+        page: page012
+      - label: {de: [Puppe Emma]}
+        page: page014
+      - label: {de: [Mutter hat Geburtstag]}
+        page: page016
+      - label: {de: [Rückendeckel]}
+        page: back
+  iiifcontext: http://iiif.io/api/presentation/3/context.json
+  year: 1941
 outputs:
 - html
 - iiif-manifest
-iiifcontext: http://iiif.io/api/presentation/3/context.json
 description: '"Siebenmal Krause - sieben fröhliche Geschichten von sieben fröhlichen Geschwistern" von 	Ilse Linck und Erika Walter, erschienen 1941 bei Stalling, Oldenburg. <a class="worldcat" href="http://www.worldcat.org/oclc/1068564426">&nbsp;</a>'
-year: 1941
 tags:
   - 1941
   - NS-Deutschland

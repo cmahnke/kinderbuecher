@@ -1,126 +1,127 @@
 ---
 title: Glückliche Kinderzeit
 date: 2020-09-17T07:37:34+02:00
-iiif:
-  manifest: ./manifest.json
-  structure:
-    - label: {de: [Umschlag]}
-      page: front
-    - label: {de: [Vorsatz]}
-      page: front-verso
-    - label: {de: [Vorsatz]}
-      page: front-recto
-    - label: {de: ['Glückliche Kinderzeit. Lichtbilder, Verse und Geschichten für kleine und große Kinder']}
-      page: page000d
-    - label: {de: [Der Rattenfänger]}
-      page: page001
-    - label: {de: [Schlittenfahrt.]}
-      page: page002
-    - label: {de: ['Tafel: Kind auf dem Schlitten (zu „Schlittenfahrt“)']}
-      page: page002a
-    - label: {de: [Der ruppige Bär. (Eine Puppengeschichte.)]}
-      page: page003
-    - label: {de: [Aprilsonne.]}
-      page: page008
-    - label: {de: [Märlein.]}
-      page: page009
-    - label: {de: [Himmelschlüsselchen.]}
-      page: page010
-    - label: {de: [Im Garten.]}
-      page: page011
-    - label: {de: [In Blüten.]}
-      page: page012
-    - label: {de: ['Tanze, mein Bübchen!']}
-      page: page013
-    - label: {de: [Eine Katzengeschichte.]}
-      page: page014
-    - label: {de: [Zwei Eifrige.]}
-      page: page017
-    - label: {de: [Guten Morgen]}
-      page: page018
-    - label: {de: [Gute Nacht]}
-      page: page019
-    - label: {de: [Wieder gesund.]}
-      page: page020
-    - label: {de: ['Tafel: Kind am Bett (Abendstimmung)']}
-      page: page020a
-    - label: {de: ['Tafel: Babyporträt im ovalen Rahmen mit Schleife (Sepia)']}
-      page: page020b
-    - label: {de: [Abendgebet.]}
-      page: page021
-    - label: {de: [Lutscherbub'.]}
-      page: page022
-    - label: {de: ['Tafel: Babyporträt im Oval (Sepia)']}
-      page: page022a
-    - label: {de: [Klagelied der Puppen.]}
-      page: page023
-    - label: {de: [Brummerchen.]}
-      page: page024
-    - label: {de: [Geschwisterliebe.]}
-      page: page025
-    - label: {de: [Eine Blume und zwei Blümchen]}
-      page: page026
-    - label: {de: [Zwiegespräch.]}
-      page: page027
-    - label: {de: [Spiel mit Wellen und Wind.]}
-      page: page028
-    - label: {de: [Morgensonne.]}
-      page: page029
-    - label: {de: [Eine Schale Milch. (Märlein.)]}
-      page: page030
-    - label: {de: ['Tafel: Mädchen in weißem Kleid am Feldrand (mit Bildunterschrift)']}
-      page: page032a
-    - label: {de: [Zwei Rosen.]}
-      page: page034
-    - label: {de: ['Tafel: Kleinkind trinkt aus Kanne']}
-      page: page034a
-    - label: {de: [Wir haben ein kleines Ziegenlamm]}
-      page: page035
-    - label: {de: [Hausputz.]}
-      page: page036
-    - label: {de: ['Tafel: Mädchen am Spülgeschirr']}
-      page: page036a
-    - label: {de: [Die vier Nebenbuhler.]}
-      page: page037
-    - label: {de: [Das Märchen vom Froschkönig.]}
-      page: page038
-    - label: {de: [Geburtstagsfeier.]}
-      page: page044
-    - label: {de: [Lütje Buernfru.]}
-      page: page045
-    - label: {de: [Im Spiegel.]}
-      page: page046
-    - label: {de: ['Tafel: Mädchen am Kinderbett (Sepia)']}
-      page: page046a
-    - label: {de: [Unser Gärtnerbursch.]}
-      page: page047
-    - label: {de: [Als unsere Großeltern jung waren.]}
-      page: page048
-    - label: {de: ['Tafel: Mädchen am Kachelofen (mit Bildunterschrift)']}
-      page: page048a
-    - label: {de: [Zwei Schlößchen.]}
-      page: page052
-    - label: {de: [Das heilige Korn.]}
-      page: page053
-    - label: {de: [In den Ferien.]}
-      page: page054
-    - label: {de: ['Tafel: Zwei Mädchen am Strand']}
-      page: page054a
-    - label: {de: [Das Wunder.]}
-      page: page055
-    - label: {de: [Inhaltsverzeichnis.]}
-      page: page056
-    - label: {de: [Nachsatz]}
-      page: end-verso
-    - label: {de: [Nachsatz]}
-      page: end-recto
-    - label: {de: [Rückendeckel]}
-      page: back
+params:
+  iiif:
+    manifest: ./manifest.json
+    structure:
+      - label: {de: [Umschlag]}
+        page: front
+      - label: {de: [Vorsatz]}
+        page: front-verso
+      - label: {de: [Vorsatz]}
+        page: front-recto
+      - label: {de: ['Glückliche Kinderzeit. Lichtbilder, Verse und Geschichten für kleine und große Kinder']}
+        page: page000d
+      - label: {de: [Der Rattenfänger]}
+        page: page001
+      - label: {de: [Schlittenfahrt.]}
+        page: page002
+      - label: {de: ['Tafel: Kind auf dem Schlitten (zu „Schlittenfahrt“)']}
+        page: page002a
+      - label: {de: [Der ruppige Bär. (Eine Puppengeschichte.)]}
+        page: page003
+      - label: {de: [Aprilsonne.]}
+        page: page008
+      - label: {de: [Märlein.]}
+        page: page009
+      - label: {de: [Himmelschlüsselchen.]}
+        page: page010
+      - label: {de: [Im Garten.]}
+        page: page011
+      - label: {de: [In Blüten.]}
+        page: page012
+      - label: {de: ['Tanze, mein Bübchen!']}
+        page: page013
+      - label: {de: [Eine Katzengeschichte.]}
+        page: page014
+      - label: {de: [Zwei Eifrige.]}
+        page: page017
+      - label: {de: [Guten Morgen]}
+        page: page018
+      - label: {de: [Gute Nacht]}
+        page: page019
+      - label: {de: [Wieder gesund.]}
+        page: page020
+      - label: {de: ['Tafel: Kind am Bett (Abendstimmung)']}
+        page: page020a
+      - label: {de: ['Tafel: Babyporträt im ovalen Rahmen mit Schleife (Sepia)']}
+        page: page020b
+      - label: {de: [Abendgebet.]}
+        page: page021
+      - label: {de: [Lutscherbub'.]}
+        page: page022
+      - label: {de: ['Tafel: Babyporträt im Oval (Sepia)']}
+        page: page022a
+      - label: {de: [Klagelied der Puppen.]}
+        page: page023
+      - label: {de: [Brummerchen.]}
+        page: page024
+      - label: {de: [Geschwisterliebe.]}
+        page: page025
+      - label: {de: [Eine Blume und zwei Blümchen]}
+        page: page026
+      - label: {de: [Zwiegespräch.]}
+        page: page027
+      - label: {de: [Spiel mit Wellen und Wind.]}
+        page: page028
+      - label: {de: [Morgensonne.]}
+        page: page029
+      - label: {de: [Eine Schale Milch. (Märlein.)]}
+        page: page030
+      - label: {de: ['Tafel: Mädchen in weißem Kleid am Feldrand (mit Bildunterschrift)']}
+        page: page032a
+      - label: {de: [Zwei Rosen.]}
+        page: page034
+      - label: {de: ['Tafel: Kleinkind trinkt aus Kanne']}
+        page: page034a
+      - label: {de: [Wir haben ein kleines Ziegenlamm]}
+        page: page035
+      - label: {de: [Hausputz.]}
+        page: page036
+      - label: {de: ['Tafel: Mädchen am Spülgeschirr']}
+        page: page036a
+      - label: {de: [Die vier Nebenbuhler.]}
+        page: page037
+      - label: {de: [Das Märchen vom Froschkönig.]}
+        page: page038
+      - label: {de: [Geburtstagsfeier.]}
+        page: page044
+      - label: {de: [Lütje Buernfru.]}
+        page: page045
+      - label: {de: [Im Spiegel.]}
+        page: page046
+      - label: {de: ['Tafel: Mädchen am Kinderbett (Sepia)']}
+        page: page046a
+      - label: {de: [Unser Gärtnerbursch.]}
+        page: page047
+      - label: {de: [Als unsere Großeltern jung waren.]}
+        page: page048
+      - label: {de: ['Tafel: Mädchen am Kachelofen (mit Bildunterschrift)']}
+        page: page048a
+      - label: {de: [Zwei Schlößchen.]}
+        page: page052
+      - label: {de: [Das heilige Korn.]}
+        page: page053
+      - label: {de: [In den Ferien.]}
+        page: page054
+      - label: {de: ['Tafel: Zwei Mädchen am Strand']}
+        page: page054a
+      - label: {de: [Das Wunder.]}
+        page: page055
+      - label: {de: [Inhaltsverzeichnis.]}
+        page: page056
+      - label: {de: [Nachsatz]}
+        page: end-verso
+      - label: {de: [Nachsatz]}
+        page: end-recto
+      - label: {de: [Rückendeckel]}
+        page: back
+  iiifcontext: http://iiif.io/api/presentation/3/context.json
+  year: 1925
 outputs:
 - html
 - iiif-manifest
-iiifcontext: http://iiif.io/api/presentation/3/context.json
-year: 1925
 tags:
   - 1925
   - Weimarer Republik

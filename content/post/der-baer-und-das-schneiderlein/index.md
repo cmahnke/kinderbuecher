@@ -2,15 +2,16 @@
 title: Der Bär und das Schneiderlein
 date: 2020-10-01T17:21:11+02:00
 description: '"Der Bär und das Schneiderlein" von Franz Stadtmüller, erschienen ca. 1940 bei Grosse, Göttingen. <a class="worldcat" href="http://www.worldcat.org/oclc/930916903">&nbsp;</a>'
-iiif:
-  manifest: ./manifest.json
-  structure:
-    - label: {de: [Umschlag]}
-      page: front
-    - label: {de: ['Einst wohnt'' in einem Dorf ein Schneider,']}
-      page: page002
-iiifcontext: http://iiif.io/api/presentation/3/context.json
-year: 1940
+params:
+  iiif:
+    manifest: ./manifest.json
+    structure:
+      - label: {de: [Umschlag]}
+        page: front
+      - label: {de: ['Einst wohnt'' in einem Dorf ein Schneider,']}
+        page: page002
+  iiifcontext: http://iiif.io/api/presentation/3/context.json
+  year: 1940
 outputs:
 - html
 - iiif-manifest

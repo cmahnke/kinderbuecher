@@ -2,38 +2,40 @@
 title: Der Bäckerjunge und die Prinzessin
 date: 2021-11-01T17:21:11+01:00
 description: '"Der Bäckerjunge und die Prinzessin" von Herta-Len Felsberg, erschienen 1941 bei Staneck, Berlin. <a class="worldcat" href="http://www.worldcat.org/oclc/72478130">&nbsp;</a>'
-iiif:
-  manifest: ./manifest.json
-  structure:
-    - label: {de: [Umschlag]}
-      page: front
-    - label: {de: [Vorsatz]}
-      page: front-verso
-    - label: {de: [Titelseite]}
-      page: title
-    - label: {de: [Es war einmal eine kleine Prinzessin … (Beginn der Erzählung)]}
-      page: page001
-    - label: {de: ['Bildtafel: Die Prinzessin an der Gartentor der Frau Sonne (Sonnenblumengarten)']}
-      page: page002
-    - label: {de: ['Bildtafel: Die weinende Prinzessin im Himmelbett, Kammerfrauen und Bäcker bringen Gebäck']}
-      page: page004
-    - label: {de: ['Bildtafel: Der Wind trägt den Bäckerjungen Peter durch die Luft']}
-      page: page006
-    - label: {de: ['Bildtafel: Der Bäckerjunge steigt die Himmelsleiter zu den Sternlein hinauf']}
-      page: page008
-    - label: {de: ['Bildtafel: Der Bäckerjunge vor dem Himmelsbäckermeister']}
-      page: page010
-    - label: {de: ['Bildtafel: Der Bäckerjunge bringt der Prinzessin die Kringlein (Garten, roter Sonnenschirm)']}
-      page: page012
-    - label: {de: ['Bildtafel: Hochzeitszug unter dem Rosenbogen – „Ende“']}
-      page: page014
-    - label: {de: [Nachsatz]}
-      page: end-verso
-    - label: {de: [Nachsatz]}
-      page: end-recto
-    - label: {de: [Rückendeckel]}
-      page: end
-year: 1941
+params:
+  iiif:
+    manifest: ./manifest.json
+    structure:
+      - label: {de: [Umschlag]}
+        page: front
+      - label: {de: [Vorsatz]}
+        page: front-verso
+      - label: {de: [Titelseite]}
+        page: title
+      - label: {de: [Es war einmal eine kleine Prinzessin … (Beginn der Erzählung)]}
+        page: page001
+      - label: {de: ['Bildtafel: Die Prinzessin an der Gartentor der Frau Sonne (Sonnenblumengarten)']}
+        page: page002
+      - label: {de: ['Bildtafel: Die weinende Prinzessin im Himmelbett, Kammerfrauen und Bäcker bringen Gebäck']}
+        page: page004
+      - label: {de: ['Bildtafel: Der Wind trägt den Bäckerjungen Peter durch die Luft']}
+        page: page006
+      - label: {de: ['Bildtafel: Der Bäckerjunge steigt die Himmelsleiter zu den Sternlein hinauf']}
+        page: page008
+      - label: {de: ['Bildtafel: Der Bäckerjunge vor dem Himmelsbäckermeister']}
+        page: page010
+      - label: {de: ['Bildtafel: Der Bäckerjunge bringt der Prinzessin die Kringlein (Garten, roter Sonnenschirm)']}
+        page: page012
+      - label: {de: ['Bildtafel: Hochzeitszug unter dem Rosenbogen – „Ende“']}
+        page: page014
+      - label: {de: [Nachsatz]}
+        page: end-verso
+      - label: {de: [Nachsatz]}
+        page: end-recto
+      - label: {de: [Rückendeckel]}
+        page: end
+  year: 1941
+  iiifcontext: http://iiif.io/api/presentation/3/context.json
 outputs:
 - html
 - iiif-manifest
@@ -41,7 +43,6 @@ tags:
   - 1941
   - NS-Deutschland
   - Deutsch
-iiifcontext: http://iiif.io/api/presentation/3/context.json
 resources:
 - src: "front.jpg"
   name: front

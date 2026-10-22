@@ -1,23 +1,24 @@
 ---
 title: Was sagt die Teddypolizei?
 date: 2021-08-01T17:21:11+02:00
-iiif:
-  manifest: ./manifest.json
-  structure:
-    - label: {de: [Umschlag]}
-      page: front
-    - label: {de: [Liebe Jungen und Mädel!]}
-      page: page001
-    - label: {de: [Immerzu hört man von Kindern … (Beginn der Verserzählung)]}
-      page: page002
-    - label: {de: [Verkehrszeichen-Tafel (Anhang mit Impressum)]}
-      page: page030
+params:
+  iiif:
+    manifest: ./manifest.json
+    structure:
+      - label: {de: [Umschlag]}
+        page: front
+      - label: {de: [Liebe Jungen und Mädel!]}
+        page: page001
+      - label: {de: [Immerzu hört man von Kindern … (Beginn der Verserzählung)]}
+        page: page002
+      - label: {de: [Verkehrszeichen-Tafel (Anhang mit Impressum)]}
+        page: page030
+  iiifcontext: http://iiif.io/api/presentation/3/context.json
+  year: 1960
 outputs:
 - html
 - iiif-manifest
-iiifcontext: http://iiif.io/api/presentation/3/context.json
 description: '"Was sagt die Teddypolizei? Augen auf in der Puppenstadt" von Rauthgundis von Freier und Günther Rohde, erschienen ca. 1960 bei Wildhagen, Hamburg. <a class="worldcat" href="http://www.worldcat.org/oclc/254386194">&nbsp;</a>'
-year: 1960
 tags:
   - 1960
   - BRD

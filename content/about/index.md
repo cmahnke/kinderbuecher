@@ -1,8 +1,9 @@
 ---
 title: Über dieses Blog
 slug: about
-displayinlist: false
-metaPage: true
+params:
+  displayinlist: false
+  metaPage: true
 ---
 
 Kinderbücher sind auch immer ein Spiegel der Gesellschaft, genauer, der Werte und Vorstellungen, die eine Gesellschaft ihren Kindern vorleben möchte. Dabei ist es egal, ob dies absichtlich (z.B. in Form von Propaganda oder Werbung) oder eher durch das eigene Gefangensein im jeweiligen Zeitgeist da beides aus unserer heutigen Perspektive leicht zu unterstellen ist.
@@ -16,7 +17,6 @@ Diese Seite wurde mit [Hugo](https://gohugo.io/) generiert, das Theme basiert au
 Als Schriftarten kommen [Open Sans](https://fonts.google.com/specimen/Open+Sans#about), [Cormorant](http://www.github.com/CatharsisFonts/Cormorant) und [Montserrat](https://github.com/JulietaUla/Montserrat) zum Einsatz.
 
 Die folgenden JavaScript und CSS Frameworks werden benutzt:
-* [jQuery](https://jquery.com/)
 * [normalize.css](https://necolas.github.io/normalize.css/) (Version 7, direkt eingebunden)
 
 Die Nachbearbeitung der Digitalisate wurde mit [ScanTailor Advanced](https://github.com/4lex4/scantailor-advanced) durchgeführt.

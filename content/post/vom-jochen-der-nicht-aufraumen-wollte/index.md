@@ -2,34 +2,35 @@
 title: Vom Jochen, der nicht aufräumen wollte
 date: 2021-12-01T17:21:11+01:00
 description: '"Vom Jochen, der nicht aufräumen wollte" von Edith Bergner, illustriert von Ingeborg Meyer-Rey, 3. Auflage, erschienen 1959 im Kinderbuchverlag, Berlin. <a class="worldcat" href="http://www.worldcat.org/oclc/254943864">&nbsp;</a>'
-year: 1959
+params:
+  year: 1959
+  iiif:
+    manifest: ./manifest.json
+    structure:
+      - label: {de: [Umschlag]}
+        page: front
+      - label: {de: [Vorsatz]}
+        page: front-verso
+      - label: {de: ['Vom Jochen, der nicht aufräumen wollte']}
+        page: title
+      - label: {de: ['Bildseite (ohne Text): Die Spielsachen machen sich auf den Weg']}
+        page: page008
+      - label: {de: ['Bildseite (ohne Text): Ankunft der Spielsachen bei den Nachbarskindern']}
+        page: page011
+      - label: {de: ['Bildseite (ohne Text): Die Kinder räumen die reparierten Spielsachen ins Regal']}
+        page: page024
+      - label: {de: [Nachsatz]}
+        page: end-recto
+      - label: {de: [Rückendeckel]}
+        page: end
+  iiifcontext: http://iiif.io/api/presentation/3/context.json
 tags:
   - 1959
   - DDR
   - Deutsch
-iiif:
-  manifest: ./manifest.json
-  structure:
-    - label: {de: [Umschlag]}
-      page: front
-    - label: {de: [Vorsatz]}
-      page: front-verso
-    - label: {de: ['Vom Jochen, der nicht aufräumen wollte']}
-      page: title
-    - label: {de: ['Bildseite (ohne Text): Die Spielsachen machen sich auf den Weg']}
-      page: page008
-    - label: {de: ['Bildseite (ohne Text): Ankunft der Spielsachen bei den Nachbarskindern']}
-      page: page011
-    - label: {de: ['Bildseite (ohne Text): Die Kinder räumen die reparierten Spielsachen ins Regal']}
-      page: page024
-    - label: {de: [Nachsatz]}
-      page: end-recto
-    - label: {de: [Rückendeckel]}
-      page: end
 outputs:
 - html
 - iiif-manifest
-iiifcontext: http://iiif.io/api/presentation/3/context.json
 resources:
 - src: "front.jpg"
   name: front

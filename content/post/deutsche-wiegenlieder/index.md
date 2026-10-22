@@ -1,157 +1,158 @@
 ---
 title: Deutsche Wiegenlieder
 date: 2020-08-05T19:36:07+02:00
-iiif:
-  manifest: ./manifest.json
-  baseURL: https://static.projektemacher.org/kinderbuecher/post/deutsche-wiegenlieder/
-  structure:
-    - label: {de: [Umschlag]}
-      page: front
-    - label: {de: [Vorsatz]}
-      page: front-verso
-    - label: {de: [Vorsatz]}
-      page: front-recto
-    - label: {de: [Deutsche Wiegenlieder — In Wort und Weise ausgewählt von Hans Fraungruber]}
-      page: page001
-    - label: {de: [Vorwort.]}
-      page: page002
-    - label: {de: ['Volkslied. — Schlaf, mein kleines']}
-      page: page005
-    - label: {de: ['Volkslied. — Eia popela, das Süpplein']}
-      page: page006
-    - label: {de: ['Carl Maria von Weber (1786–1826). — Schlaf, Herzensblümchen']}
-      page: page007
-    - label: {de: [Mährisches Volkslied. — Kindla mei]}
-      page: page009
-    - label: {de: ['Altes Volkslied. — Auf dem Berge, da weht']}
-      page: page010
-    - label: {de: [Steirisches Volkslied. — Heia pupela]}
-      page: page012
-    - label: {de: ['Volkslied. — Schlaf, Kindlein, schlaf! Vor']}
-      page: page013
-    - label: {de: [Karl Hunterfeld (1794–1859). — Alles still in süßer Ruh]}
-      page: page014
-    - label: {de: ['Volkslied. — Bählämmchen, Bock']}
-      page: page015
-    - label: {de: ['Joh. Brahms (1833–1897) nach einer Volksweise. — Guten Abend, gut Nacht']}
-      page: page016
-    - label: {de: [Volkslied. — Heidt pupedit]}
-      page: page018
-    - label: {de: [Nordböhmisches Volkslied.]}
-      page: page019
-    - label: {de: ['Volksweise (1800). — Eia, Herzenskindchen']}
-      page: page020
-    - label: {de: [Robert Schumann (1810–1856). — Wenn fromme Kinder]}
-      page: page022
-    - label: {de: ['Volkslied. — Schlaf, Kindchen, balde, die']}
-      page: page023
-    - label: {de: ['Franz Schubert (1797–1826). — Schlafe, schlafe, holder süßer']}
-      page: page024
-    - label: {de: [Volkslied. — Buko von Halberstadt]}
-      page: page026
-    - label: {de: ['[Ganzseitige Illustration: Bischof — zu „Buko von Halberstadt“]']}
-      page: page027
-    - label: {de: ['Volkslied. — Schlaf! Kindchen, balde']}
-      page: page028
-    - label: {de: ['[Ganzseitige Illustration: neun Vignetten, Bildunterschrift „Der kleine Toni!“]']}
-      page: page030
-    - label: {de: ['Volkslied. — Schlaf, Kindlein, schlaf! Der']}
-      page: page031
-    - label: {de: ['Franz Jolef Reiter (1835–1888). — Hütche hei, huttche hei']}
-      page: page033
-    - label: {de: ['Volkslied. — Schlaf, Kindchen, also wohl']}
-      page: page034
-    - label: {de: ['Volkslied. — Schlaf, Kindchen, schlafe']}
-      page: page036
-    - label: {de: ['Volksweise. — Kindlein, laß dich küssen']}
-      page: page037
-    - label: {de: ['Volkslied. — Heidt, bubedit in guata Ruah']}
-      page: page039
-    - label: {de: [Volkslied. — Ich hab mir mein Kindel]}
-      page: page041
-    - label: {de: ['Volkslied. — Schlaf, du süße Kleine']}
-      page: page042
-    - label: {de: ['[Ganzseitige Illustration: Figurengruppe unter Baum]']}
-      page: page043
-    - label: {de: ['Volksweise. — Schlaf, mein Kind, schlaf ein']}
-      page: page044
-    - label: {de: ['Nach C. M. von Weber (1786–1826). — Eia popela, schließ lieber als']}
-      page: page046
-    - label: {de: ['Volkslied. — Eia beia, Wiegenstroh']}
-      page: page047
-    - label: {de: ['Volksweise. — Schlafe, Kindlein, hold und']}
-      page: page048
-    - label: {de: ['Volkslied. — Schlaf, Kindlein, feste']}
-      page: page050
-    - label: {de: [Volkslied. — Kindlein zart von guater Art]}
-      page: page051
-    - label: {de: ['Volkslied. — Schlaf, mein Kindchen, lieben']}
-      page: page053
-    - label: {de: ['Volkslied. — Schlaf, Kindelein, schlaf']}
-      page: page054
-    - label: {de: [Volksweise. — Die Nacht hat geöffnet]}
-      page: page055
-    - label: {de: ['[Ganzseitige Illustration: Burg]']}
-      page: page056
-    - label: {de: ['[Ganzseitige Illustration: Burglandschaft]']}
-      page: page057
-    - label: {de: [Kindelein lustig fein! (Hans Fraungruber)]}
-      page: page059
-    - label: {de: ['Volkslied. — Still, still, stille its herrn']}
-      page: page060
-    - label: {de: ['W. A. Mozart (1756–1791). — Schlafe, mein Prinzchen']}
-      page: page060
-    - label: {de: ['[Ganzseitige Illustration: Reiterzüge in drei Bildern]']}
-      page: page063
-    - label: {de: ['[Ganzseitige Illustration: sechs Musikanten]']}
-      page: page064
-    - label: {de: [Volkslied. — Es kommen sechs Propheten]}
-      page: page065
-    - label: {de: ['Volksstümliche Weise. — Mein Kindlein, schlaf ein']}
-      page: page066
-    - label: {de: ['Nach einem alten Krippenliede. — Still, still, still']}
-      page: page068
-    - label: {de: ['[Ganzseitige Illustration: O-Initiale mit Reitern]']}
-      page: page070
-    - label: {de: ['Volkslied. — Eia, wärn wir da']}
-      page: page071
-    - label: {de: ['Volkslied. — Schlaf, mei Schatz']}
-      page: page072
-    - label: {de: ['Geistliches Wiegenlied (17. Jahrhundert). — Vom Himmel hoch, o Engel']}
-      page: page073
-    - label: {de: ['Volkslied. — Schlaf, Kindchen, süße']}
-      page: page076
-    - label: {de: ['Volkslied. — Gut Nacht, gut Nacht']}
-      page: page078
-    - label: {de: [Engelbert Humperdinck (1854–…). — Es schaukeln die Winde]}
-      page: page080
-    - label: {de: ['Volkslied. — Stille, stille, kein Geräusch']}
-      page: page083
-    - label: {de: ['[Ganzseitige Illustration: „Lasset die Kindlein zu mir kommen“]']}
-      page: page084
-    - label: {de: ['Geistliches Wiegenlied (15. Jahrhdt.). — Ach, lieber Herre Jesu Christ']}
-      page: page085
-    - label: {de: ['Volksweise. — Schlaf, du kleine Seele']}
-      page: page086
-    - label: {de: ['[Ganzseitige Illustration: vier Rinderbilder]']}
-      page: page088
-    - label: {de: ['Volkslied. — Schlaf, Kindlein, schlaf, im']}
-      page: page089
-    - label: {de: ['Fr. Curschmann. — Schlaf, Kindchen, balde, die']}
-      page: page090
-    - label: {de: [Inhaltsverzeichnis]}
-      page: page093
-    - label: {de: [Nachsatz]}
-      page: end-verso
-    - label: {de: [Nachsatz]}
-      page: end-recto
-    - label: {de: [Rückendeckel]}
-      page: back
-year: 1909
+params:
+  iiif:
+    manifest: ./manifest.json
+    baseURL: https://static.projektemacher.org/kinderbuecher/post/deutsche-wiegenlieder/
+    structure:
+      - label: {de: [Umschlag]}
+        page: front
+      - label: {de: [Vorsatz]}
+        page: front-verso
+      - label: {de: [Vorsatz]}
+        page: front-recto
+      - label: {de: [Deutsche Wiegenlieder — In Wort und Weise ausgewählt von Hans Fraungruber]}
+        page: page001
+      - label: {de: [Vorwort.]}
+        page: page002
+      - label: {de: ['Volkslied. — Schlaf, mein kleines']}
+        page: page005
+      - label: {de: ['Volkslied. — Eia popela, das Süpplein']}
+        page: page006
+      - label: {de: ['Carl Maria von Weber (1786–1826). — Schlaf, Herzensblümchen']}
+        page: page007
+      - label: {de: [Mährisches Volkslied. — Kindla mei]}
+        page: page009
+      - label: {de: ['Altes Volkslied. — Auf dem Berge, da weht']}
+        page: page010
+      - label: {de: [Steirisches Volkslied. — Heia pupela]}
+        page: page012
+      - label: {de: ['Volkslied. — Schlaf, Kindlein, schlaf! Vor']}
+        page: page013
+      - label: {de: [Karl Hunterfeld (1794–1859). — Alles still in süßer Ruh]}
+        page: page014
+      - label: {de: ['Volkslied. — Bählämmchen, Bock']}
+        page: page015
+      - label: {de: ['Joh. Brahms (1833–1897) nach einer Volksweise. — Guten Abend, gut Nacht']}
+        page: page016
+      - label: {de: [Volkslied. — Heidt pupedit]}
+        page: page018
+      - label: {de: [Nordböhmisches Volkslied.]}
+        page: page019
+      - label: {de: ['Volksweise (1800). — Eia, Herzenskindchen']}
+        page: page020
+      - label: {de: [Robert Schumann (1810–1856). — Wenn fromme Kinder]}
+        page: page022
+      - label: {de: ['Volkslied. — Schlaf, Kindchen, balde, die']}
+        page: page023
+      - label: {de: ['Franz Schubert (1797–1826). — Schlafe, schlafe, holder süßer']}
+        page: page024
+      - label: {de: [Volkslied. — Buko von Halberstadt]}
+        page: page026
+      - label: {de: ['[Ganzseitige Illustration: Bischof — zu „Buko von Halberstadt“]']}
+        page: page027
+      - label: {de: ['Volkslied. — Schlaf! Kindchen, balde']}
+        page: page028
+      - label: {de: ['[Ganzseitige Illustration: neun Vignetten, Bildunterschrift „Der kleine Toni!“]']}
+        page: page030
+      - label: {de: ['Volkslied. — Schlaf, Kindlein, schlaf! Der']}
+        page: page031
+      - label: {de: ['Franz Jolef Reiter (1835–1888). — Hütche hei, huttche hei']}
+        page: page033
+      - label: {de: ['Volkslied. — Schlaf, Kindchen, also wohl']}
+        page: page034
+      - label: {de: ['Volkslied. — Schlaf, Kindchen, schlafe']}
+        page: page036
+      - label: {de: ['Volksweise. — Kindlein, laß dich küssen']}
+        page: page037
+      - label: {de: ['Volkslied. — Heidt, bubedit in guata Ruah']}
+        page: page039
+      - label: {de: [Volkslied. — Ich hab mir mein Kindel]}
+        page: page041
+      - label: {de: ['Volkslied. — Schlaf, du süße Kleine']}
+        page: page042
+      - label: {de: ['[Ganzseitige Illustration: Figurengruppe unter Baum]']}
+        page: page043
+      - label: {de: ['Volksweise. — Schlaf, mein Kind, schlaf ein']}
+        page: page044
+      - label: {de: ['Nach C. M. von Weber (1786–1826). — Eia popela, schließ lieber als']}
+        page: page046
+      - label: {de: ['Volkslied. — Eia beia, Wiegenstroh']}
+        page: page047
+      - label: {de: ['Volksweise. — Schlafe, Kindlein, hold und']}
+        page: page048
+      - label: {de: ['Volkslied. — Schlaf, Kindlein, feste']}
+        page: page050
+      - label: {de: [Volkslied. — Kindlein zart von guater Art]}
+        page: page051
+      - label: {de: ['Volkslied. — Schlaf, mein Kindchen, lieben']}
+        page: page053
+      - label: {de: ['Volkslied. — Schlaf, Kindelein, schlaf']}
+        page: page054
+      - label: {de: [Volksweise. — Die Nacht hat geöffnet]}
+        page: page055
+      - label: {de: ['[Ganzseitige Illustration: Burg]']}
+        page: page056
+      - label: {de: ['[Ganzseitige Illustration: Burglandschaft]']}
+        page: page057
+      - label: {de: [Kindelein lustig fein! (Hans Fraungruber)]}
+        page: page059
+      - label: {de: ['Volkslied. — Still, still, stille its herrn']}
+        page: page060
+      - label: {de: ['W. A. Mozart (1756–1791). — Schlafe, mein Prinzchen']}
+        page: page060
+      - label: {de: ['[Ganzseitige Illustration: Reiterzüge in drei Bildern]']}
+        page: page063
+      - label: {de: ['[Ganzseitige Illustration: sechs Musikanten]']}
+        page: page064
+      - label: {de: [Volkslied. — Es kommen sechs Propheten]}
+        page: page065
+      - label: {de: ['Volksstümliche Weise. — Mein Kindlein, schlaf ein']}
+        page: page066
+      - label: {de: ['Nach einem alten Krippenliede. — Still, still, still']}
+        page: page068
+      - label: {de: ['[Ganzseitige Illustration: O-Initiale mit Reitern]']}
+        page: page070
+      - label: {de: ['Volkslied. — Eia, wärn wir da']}
+        page: page071
+      - label: {de: ['Volkslied. — Schlaf, mei Schatz']}
+        page: page072
+      - label: {de: ['Geistliches Wiegenlied (17. Jahrhundert). — Vom Himmel hoch, o Engel']}
+        page: page073
+      - label: {de: ['Volkslied. — Schlaf, Kindchen, süße']}
+        page: page076
+      - label: {de: ['Volkslied. — Gut Nacht, gut Nacht']}
+        page: page078
+      - label: {de: [Engelbert Humperdinck (1854–…). — Es schaukeln die Winde]}
+        page: page080
+      - label: {de: ['Volkslied. — Stille, stille, kein Geräusch']}
+        page: page083
+      - label: {de: ['[Ganzseitige Illustration: „Lasset die Kindlein zu mir kommen“]']}
+        page: page084
+      - label: {de: ['Geistliches Wiegenlied (15. Jahrhdt.). — Ach, lieber Herre Jesu Christ']}
+        page: page085
+      - label: {de: ['Volksweise. — Schlaf, du kleine Seele']}
+        page: page086
+      - label: {de: ['[Ganzseitige Illustration: vier Rinderbilder]']}
+        page: page088
+      - label: {de: ['Volkslied. — Schlaf, Kindlein, schlaf, im']}
+        page: page089
+      - label: {de: ['Fr. Curschmann. — Schlaf, Kindchen, balde, die']}
+        page: page090
+      - label: {de: [Inhaltsverzeichnis]}
+        page: page093
+      - label: {de: [Nachsatz]}
+        page: end-verso
+      - label: {de: [Nachsatz]}
+        page: end-recto
+      - label: {de: [Rückendeckel]}
+        page: back
+  year: 1909
+  iiifcontext: http://iiif.io/api/presentation/3/context.json
 outputs:
 - html
 - iiif-manifest
-iiifcontext: http://iiif.io/api/presentation/3/context.json
 description: 'Dieses Vorsatzpapier ist aus dem Buch "Deutsche Wiegenlieder" von Hans Fraungruber, erschienen ca. 1909 im Verlag Gerlach und Wiedling, Wien und Leipzig, entnommen.  <a class="worldcat" href="http://www.worldcat.org/oclc/256761549">&nbsp;</a>'
 tags:
   - 1909

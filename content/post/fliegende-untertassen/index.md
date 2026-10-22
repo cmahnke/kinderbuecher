@@ -2,34 +2,35 @@
 title: Fliegende Untertassen
 date: 2022-04-01T17:21:11+01:00
 description: '"Fliegende Untertassen" von Rolf Strehl, erschienen ca. 1953 - 1955 bei Oldenkott, Rees. <a class="worldcat" href="http://www.worldcat.org/oclc/918095658">&nbsp;</a>'
-year: 1953
-iiif:
-  manifest: ./manifest.json
-  structure:
-    - label: {de: [Umschlag]}
-      page: front
-    - label: {de: [Vorsatz]}
-      page: front-verso
-    - label: {de: ['Rolf Strehl: Fliegende Untertassen — Ein Geheimnis geistert um die Welt']}
-      page: page001
-    - label: {de: [Vorwort]}
-      page: page003
-    - label: {de: [Werden die „Untertassen“ wirklich von Lebewesen gesteuert …]}
-      page: page009
-    - label: {de: [Würden Lebewesen von anderen Sternen eine Landung auf unserer Erde vorbereiten …]}
-      page: page019
-    - label: {de: ['Eine Panik brach in New York aus, als die Rundfunkhörer 1937 ahnungslos ihr Radio einschalteten …']}
-      page: page029
-    - label: {de: [Ein Raumschiff von der Erde landet auf einem anderen Planeten …]}
-      page: page039
-    - label: {de: [Nachsatz]}
-      page: end-recto
-    - label: {de: [Rückendeckel]}
-      page: back
+params:
+  year: 1953
+  iiif:
+    manifest: ./manifest.json
+    structure:
+      - label: {de: [Umschlag]}
+        page: front
+      - label: {de: [Vorsatz]}
+        page: front-verso
+      - label: {de: ['Rolf Strehl: Fliegende Untertassen — Ein Geheimnis geistert um die Welt']}
+        page: page001
+      - label: {de: [Vorwort]}
+        page: page003
+      - label: {de: [Werden die „Untertassen“ wirklich von Lebewesen gesteuert …]}
+        page: page009
+      - label: {de: [Würden Lebewesen von anderen Sternen eine Landung auf unserer Erde vorbereiten …]}
+        page: page019
+      - label: {de: ['Eine Panik brach in New York aus, als die Rundfunkhörer 1937 ahnungslos ihr Radio einschalteten …']}
+        page: page029
+      - label: {de: [Ein Raumschiff von der Erde landet auf einem anderen Planeten …]}
+        page: page039
+      - label: {de: [Nachsatz]}
+        page: end-recto
+      - label: {de: [Rückendeckel]}
+        page: back
+  iiifcontext: http://iiif.io/api/presentation/3/context.json
 outputs:
 - html
 - iiif-manifest
-iiifcontext: http://iiif.io/api/presentation/3/context.json
 tags:
   - 1953
   - BRD

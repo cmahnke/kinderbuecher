@@ -1,30 +1,31 @@
 ---
 title: Kleines Volk
 date: 2021-07-01T17:21:11+02:00
-iiif:
-  manifest: ./manifest.json
-  structure:
-    - label: {de: [Umschlag]}
-      page: front
-    - label: {de: [Bummelklaus]}
-      page: page002
-    - label: {de: [Der Prinz]}
-      page: page004
-    - label: {de: [Inge reißt aus]}
-      page: page006
-    - label: {de: [Wenn Kinder nicht brav zu Bett gehen]}
-      page: page008
-    - label: {de: ['Ute läßt''s schneien, mitten im Sommer']}
-      page: page010
-    - label: {de: [Die Geschichte vom ungeduldigen Rosinchen!]}
-      page: page012
-    - label: {de: [Michel und die Stelzen]}
-      page: page014
-    - label: {de: [Rückendeckel]}
-      page: back
-iiifcontext: http://iiif.io/api/presentation/3/context.json
+params:
+  iiif:
+    manifest: ./manifest.json
+    structure:
+      - label: {de: [Umschlag]}
+        page: front
+      - label: {de: [Bummelklaus]}
+        page: page002
+      - label: {de: [Der Prinz]}
+        page: page004
+      - label: {de: [Inge reißt aus]}
+        page: page006
+      - label: {de: [Wenn Kinder nicht brav zu Bett gehen]}
+        page: page008
+      - label: {de: ['Ute läßt''s schneien, mitten im Sommer']}
+        page: page010
+      - label: {de: [Die Geschichte vom ungeduldigen Rosinchen!]}
+        page: page012
+      - label: {de: [Michel und die Stelzen]}
+        page: page014
+      - label: {de: [Rückendeckel]}
+        page: back
+  iiifcontext: http://iiif.io/api/presentation/3/context.json
+  year: 1955
 description: '"Bummelklaus und andere Geschichten" von verschiedenen Autoren, erschienen ca. 1955 bei Scholz-Mainz, Wiesbaden. <a class="worldcat" href="http://www.worldcat.org/oclc/73285674">&nbsp;</a>'
-year: 1955
 outputs:
 - html
 - iiif-manifest

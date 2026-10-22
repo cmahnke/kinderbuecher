@@ -1,124 +1,125 @@
 ---
 title: Ein Fabelbuch
 date: 2021-05-01T17:21:11+02:00
-iiif:
-  manifest: ./manifest.json
-  structure:
-    - label: {de: [Umschlag]}
-      page: front
-    - label: {de: [Ein Fabelbuch]}
-      page: page004
-    - label: {de: [Inhaltsverzeichnis]}
-      page: page006
-    - label: {de: [Die Fabeln von Ethel führen als Motto eine Geißel]}
-      page: page009
-    - label: {de: [Maikäfer und Spinne]}
-      page: page011
-    - label: {de: [Der Marabu]}
-      page: page013
-    - label: {de: [Der junge Hund]}
-      page: page015
-    - label: {de: [Der Affe und die Kinder]}
-      page: page017
-    - label: {de: [Im Hühnerhof]}
-      page: page019
-    - label: {de: [Im Karpfenteich]}
-      page: page023
-    - label: {de: ['Fuchs, Wolf und Luchs']}
-      page: page025
-    - label: {de: [Der Mistkäfer]}
-      page: page027
-    - label: {de: [Tiger und Iltis]}
-      page: page029
-    - label: {de: [Das Schneiderlein und der Tod]}
-      page: page032
-    - label: {de: [Der Pudelhund]}
-      page: page035
-    - label: {de: [Das Nilpferd]}
-      page: page037
-    - label: {de: [Adler und Marder]}
-      page: page039
-    - label: {de: [Des Rabbi Kuh]}
-      page: page041
-    - label: {de: [Der Turmfalke und die Gänse.]}
-      page: page043
-    - label: {de: [Der Turmfalke und die Gänse]}
-      page: page045
-    - label: {de: [Der Bandwurm]}
-      page: page047
-    - label: {de: [Der Löwe von S. Marco]}
-      page: page050
-    - label: {de: [Der alte Magier]}
-      page: page051
-    - label: {de: [Der Igel und die Stachelschweine]}
-      page: page053
-    - label: {de: [Turmhahn und Blitzableiter]}
-      page: page055
-    - label: {de: [Kröte und Libelle.]}
-      page: page057
-    - label: {de: [Kröte und Libelle]}
-      page: page059
-    - label: {de: [Igel und Kaninchen]}
-      page: page060
-    - label: {de: [Die Reiher]}
-      page: page062
-    - label: {de: [Die Hammelheerde.]}
-      page: page063
-    - label: {de: [Hahn und Rabe]}
-      page: page065
-    - label: {de: [Der Esel im Walde.]}
-      page: page067
-    - label: {de: [Der Esel im Walde]}
-      page: page069
-    - label: {de: [Die Hundeakademie]}
-      page: page070
-    - label: {de: [Stichling und Unke]}
-      page: page074
-    - label: {de: [Jesus und der tote Hund]}
-      page: page076
-    - label: {de: [Die Hirsche und die Rehe]}
-      page: page078
-    - label: {de: [Der Pächter und sein Lamm.]}
-      page: page079
-    - label: {de: [Der Pächter und sein Lamm]}
-      page: page081
-    - label: {de: [Taube und Elster]}
-      page: page083
-    - label: {de: [Die alte Hyäne]}
-      page: page086
-    - label: {de: [Ohrwurm und Fliege]}
-      page: page088
-    - label: {de: [Die Wurzelmännchen]}
-      page: page090
-    - label: {de: [Viri obscuri]}
-      page: page092
-    - label: {de: [Die Gottesanbeterin]}
-      page: page093
-    - label: {de: [Brigitte]}
-      page: page095
-    - label: {de: [Der Frühstückstisch.]}
-      page: page097
-    - label: {de: [Esel und Wolf]}
-      page: page100
-    - label: {de: [Im Schweinestall.]}
-      page: page103
-    - label: {de: [Im Schweinestall]}
-      page: page105
-    - label: {de: [Floh und Wanze]}
-      page: page107
-    - label: {de: [Der Reisende und der Fels]}
-      page: page108
-    - label: {de: [Der alte Fuchs]}
-      page: page111
-    - label: {de: [Die Ratten]}
-      page: page113
-    - label: {de: [Rückendeckel]}
-      page: end
+params:
+  iiif:
+    manifest: ./manifest.json
+    structure:
+      - label: {de: [Umschlag]}
+        page: front
+      - label: {de: [Ein Fabelbuch]}
+        page: page004
+      - label: {de: [Inhaltsverzeichnis]}
+        page: page006
+      - label: {de: [Die Fabeln von Ethel führen als Motto eine Geißel]}
+        page: page009
+      - label: {de: [Maikäfer und Spinne]}
+        page: page011
+      - label: {de: [Der Marabu]}
+        page: page013
+      - label: {de: [Der junge Hund]}
+        page: page015
+      - label: {de: [Der Affe und die Kinder]}
+        page: page017
+      - label: {de: [Im Hühnerhof]}
+        page: page019
+      - label: {de: [Im Karpfenteich]}
+        page: page023
+      - label: {de: ['Fuchs, Wolf und Luchs']}
+        page: page025
+      - label: {de: [Der Mistkäfer]}
+        page: page027
+      - label: {de: [Tiger und Iltis]}
+        page: page029
+      - label: {de: [Das Schneiderlein und der Tod]}
+        page: page032
+      - label: {de: [Der Pudelhund]}
+        page: page035
+      - label: {de: [Das Nilpferd]}
+        page: page037
+      - label: {de: [Adler und Marder]}
+        page: page039
+      - label: {de: [Des Rabbi Kuh]}
+        page: page041
+      - label: {de: [Der Turmfalke und die Gänse.]}
+        page: page043
+      - label: {de: [Der Turmfalke und die Gänse]}
+        page: page045
+      - label: {de: [Der Bandwurm]}
+        page: page047
+      - label: {de: [Der Löwe von S. Marco]}
+        page: page050
+      - label: {de: [Der alte Magier]}
+        page: page051
+      - label: {de: [Der Igel und die Stachelschweine]}
+        page: page053
+      - label: {de: [Turmhahn und Blitzableiter]}
+        page: page055
+      - label: {de: [Kröte und Libelle.]}
+        page: page057
+      - label: {de: [Kröte und Libelle]}
+        page: page059
+      - label: {de: [Igel und Kaninchen]}
+        page: page060
+      - label: {de: [Die Reiher]}
+        page: page062
+      - label: {de: [Die Hammelheerde.]}
+        page: page063
+      - label: {de: [Hahn und Rabe]}
+        page: page065
+      - label: {de: [Der Esel im Walde.]}
+        page: page067
+      - label: {de: [Der Esel im Walde]}
+        page: page069
+      - label: {de: [Die Hundeakademie]}
+        page: page070
+      - label: {de: [Stichling und Unke]}
+        page: page074
+      - label: {de: [Jesus und der tote Hund]}
+        page: page076
+      - label: {de: [Die Hirsche und die Rehe]}
+        page: page078
+      - label: {de: [Der Pächter und sein Lamm.]}
+        page: page079
+      - label: {de: [Der Pächter und sein Lamm]}
+        page: page081
+      - label: {de: [Taube und Elster]}
+        page: page083
+      - label: {de: [Die alte Hyäne]}
+        page: page086
+      - label: {de: [Ohrwurm und Fliege]}
+        page: page088
+      - label: {de: [Die Wurzelmännchen]}
+        page: page090
+      - label: {de: [Viri obscuri]}
+        page: page092
+      - label: {de: [Die Gottesanbeterin]}
+        page: page093
+      - label: {de: [Brigitte]}
+        page: page095
+      - label: {de: [Der Frühstückstisch.]}
+        page: page097
+      - label: {de: [Esel und Wolf]}
+        page: page100
+      - label: {de: [Im Schweinestall.]}
+        page: page103
+      - label: {de: [Im Schweinestall]}
+        page: page105
+      - label: {de: [Floh und Wanze]}
+        page: page107
+      - label: {de: [Der Reisende und der Fels]}
+        page: page108
+      - label: {de: [Der alte Fuchs]}
+        page: page111
+      - label: {de: [Die Ratten]}
+        page: page113
+      - label: {de: [Rückendeckel]}
+        page: end
+  iiifcontext: http://iiif.io/api/presentation/3/context.json
+  year: 1901
 outputs:
 - html
 - iiif-manifest
-iiifcontext: http://iiif.io/api/presentation/3/context.json
-year: 1901
 description: '"Ein Fabelbuch" von Etzel und Ewers, erschienen 1901 bei A. Langen, München. <a class="worldcat" href="http://www.worldcat.org/oclc/459440697">&nbsp;</a>'
 tags:
   - 1901
