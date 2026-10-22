@@ -1,0 +1,51 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended"
+  ],
+  "platform": "github",
+  "autodiscover": true,
+  "autodiscoverFilter": [
+    "cmahnke/projektemacher-base",
+    "cmahnke/backsteinexpressionismus",
+    "cmahnke/blaufusstoelpel",
+    "cmahnke/briefsteller",
+    "cmahnke/christianmahnke",
+    "cmahnke/diapraesentation",
+    "cmahnke/flohmarktfunde",
+    "cmahnke/flugzeugbesteck",
+    "cmahnke/haesslicheplastiktiereundzeugs",
+    "cmahnke/kinderbuecher",
+    "cmahnke/kleiderbuegel",
+    "cmahnke/kraehenbeisser",
+    "cmahnke/labs.projektemacher.org",
+    "cmahnke/merch.projektemacher",
+    "cmahnke/never-built",
+    "cmahnke/plastikwarenfabrik",
+    "cmahnke/projektemacher",
+    "cmahnke/ric-unknownartist",
+    "cmahnke/schatten",
+    "cmahnke/schriftmuster",
+    "cmahnke/vintagereality",
+    "cmahnke/vorsatzpapier",
+    "cmahnke/wilmabraeuner",
+    "cmahnke/xn--h-zfa.xyz",
+    "cmahnke/yaapb"
+  ],
+  "enabledManagers": ["custom.regex"],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "description": "Automatically update HUGO_VERSION in GitHub Actions workflows",
+      "managerFilePatterns": [
+        "/^\\.github/workflows/[^/]+\\.ya?ml$/"
+      ],
+      "matchStrings": [
+        "HUGO_VERSION:\\s*[\"']?(?<currentValue>[\\w.-]+)[\"']?"
+      ],
+      "datasourceTemplate": "github-releases",
+      "depNameTemplate": "gohugoio/hugo",
+      "versioningTemplate": "semver"
+    }
+  ]
+}
