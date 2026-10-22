@@ -1,5 +1,5 @@
 <!doctype html>
-<html {{ with site.Language.Lang -}} lang="{{ . }}" {{- end }}>
+<html {{ with site.Language.Name -}} lang="{{ . }}" {{- end }}>
 {{ partial "head" . }}
 {{- $class := "" }}
 {{- with .Page.File -}}
