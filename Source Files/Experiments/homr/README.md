@@ -233,7 +233,10 @@ manifest is modeled natively, and it carries **no staff data at all**:
 - no metadata of its own: the OMR run information (status, confidence) lives
   in the TEI files' `<application>` header element, next to the staff
   geometry it describes
-- `behavior: ["paged"]` marks the sequential book pages
+- `behavior: ["paged"]` marks the sequential book pages — the default; the
+  viewer opens the detail view as a double-page spread like an opened book
+  (`generate_manifest.py --single` instead generates
+  `behavior: ["individuals"]`, the single-page presentation)
 
 The staff regions live only in the TEI files: each `<zone type="staff">` is
 the region of one detected staff on its page canvas (pointed at via the
@@ -260,6 +263,10 @@ outside this viewer.
 
 Select a score page and use the player panel:
 
+- **Pages** — with TIFY's double-page mode on, the panel gains a **Page**
+  dropdown listing the two shown pages; tapping or clicking one of the shown
+  pages plays it (deliberately without any visual indicator). The score,
+  staff regions and highlights follow the selected page.
 - **Play / Pause / Stop / Tempo** — plays the page's MusicXML via Web Audio.
   Every detected staff gets its own track row, all on by default (the page
   sounds as written): each staff can be muted individually and gets its own
@@ -281,7 +288,9 @@ Select a score page and use the player panel:
 ## Playback / highlighting details
 
 - The score stack is the `@projektemacher/tify-plugin-musicxml` TIFY plugin
-  (installed from npm, version 0.2.0). Its `src/musicxml-timeline.ts` parses each `score-partwise`
+  (installed from npm, ≥ 0.3.0 for the double-page page selector; during
+  development a linked tify-plugins checkout is aliased in
+  `vite.config.ts`). Its `src/musicxml-timeline.ts` parses each `score-partwise`
   MusicXML into a note timeline, tracking `<print new-system>` to assign
   notes to physical staff systems; `src/note-map.ts` maps a played note to
   page coordinates using homr's staff

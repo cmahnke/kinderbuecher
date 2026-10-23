@@ -37,8 +37,10 @@ export interface CreateTifyOptions {
 
 export interface AttachMusicxmlOptions {
   panelEl: HTMLElement
-  tei?: string
-  musicxml?: string
+  /** TEI URL/raw XML, or a per-page resolver (1-based page → URL/raw XML). */
+  tei?: string | ((page: number) => string | undefined)
+  /** MusicXML URL/raw XML, or a per-page resolver; wins over the TEI-embedded score. */
+  musicxml?: string | ((page: number) => string | undefined)
   showScoreOverlay?: boolean
   showHighlights?: boolean
   regionOverlay?: {
@@ -62,7 +64,10 @@ export function createTify(options: CreateTifyOptions): Tify {
   return new Tify({
     container: options.container,
     manifestUrl: options.manifestUrl,
-    language: options.language,
+    // only override when set: spreading `language: undefined` would clobber
+    // TIFY's default ('en'), breaking its header (localize throws without a
+    // language — no double-page toggle, no pagination)
+    ...(options.language !== undefined && { language: options.language }),
     pages: options.pages,
     translationsDirUrl: '/tify/translations/',
   })

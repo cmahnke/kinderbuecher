@@ -25,9 +25,15 @@ OMR metadata.
 The referenced files must exist under public/ mirroring the URL paths; the
 generator verifies this and fails loudly otherwise.
 
+By default the manifest marks the canvases as sequential book pages
+(IIIF Presentation 3 top-level "behavior": ["paged"]) — clients honoring
+that (e.g. TIFY) open a double-page spread like an opened book. Pass
+--single to generate a single-page presentation instead
+("behavior": ["individuals"]).
+
 Inputs:  data/results.json (homr detection) + public/<name>/info.json
 Usage:   python3 scripts/generate_manifest.py [-i data/results.json] [-o public/manifest.json]
-         [--base-url https://.../]
+         [--base-url https://.../] [--single]
 """
 
 from __future__ import annotations
@@ -82,6 +88,12 @@ def main() -> None:
     parser.add_argument("--base-url", default=DEFAULT_BASE_URL, help="base URL for all IIIF URIs")
     parser.add_argument(
         "--label", default="Score pages (kinderbücher)", help="manifest label (book title)"
+    )
+    parser.add_argument(
+        "--single",
+        action="store_true",
+        help="generate a single-page presentation (behavior 'individuals') "
+        "instead of the default book-like paged view",
     )
     args = parser.parse_args()
 
@@ -223,18 +235,27 @@ def main() -> None:
             print(f"ERROR: {f}", file=sys.stderr)
         sys.exit(1)
 
+    # Book-like presentation by default: sequential book pages that
+    # paged-capable clients ("paged") open as a double-page spread.
+    # --single encodes the one-canvas-per-view presentation instead
+    # (TIFY disables its double-page toggle for "individuals").
+    behavior = ["individuals"] if args.single else ["paged"]
+
     manifest = {
         "@context": "http://iiif.io/api/presentation/3/context.json",
         "id": abs_url(base, "manifest.json"),
         "type": "Manifest",
         "label": {"en": [args.label]},
-        "behavior": ["paged"],
+        "behavior": behavior,
         "items": items,
     }
     os.makedirs(public, exist_ok=True)
     with open(out_path, "w", encoding="utf-8") as fh:
         json.dump(manifest, fh, indent=2)
-    print(f"Wrote {out_path} ({len(items)} canvases, base {base})")
+    print(
+        f"Wrote {out_path} ({len(items)} canvases, base {base}, "
+        f"behavior {'single-page' if args.single else 'book-like (paged)'})"
+    )
 
 
 if __name__ == "__main__":

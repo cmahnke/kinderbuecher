@@ -20,6 +20,9 @@ interface ManifestCanvas {
 
 interface ManifestJson {
   id?: string
+  /** IIIF Presentation 3 top-level behaviors; the viewer keys the
+   * double-page detail view off "paged" (see generate_manifest.py). */
+  behavior?: string[]
   items?: ManifestCanvas[]
 }
 
@@ -107,8 +110,16 @@ function toPageResult(
  * and maps its canvases into the page data the overview grid renders. `url`
  * is the manifest to load — one per book (see the book selector in main.ts);
  * the embedded TIFY detail view loads the same manifest itself.
+ *
+ * `doubleSided` mirrors TIFY's paged-default rule: manifests declaring the
+ * top-level "paged" behavior open the detail view as a book-like spread.
  */
-export async function loadPages(url = '/manifest.json'): Promise<PageResult[]> {
+export interface LoadedManifest {
+  pages: PageResult[]
+  doubleSided: boolean
+}
+
+export async function loadPages(url = '/manifest.json'): Promise<LoadedManifest> {
   const resp = await fetch(url)
   if (!resp.ok) {
     throw new Error(`Failed to load manifest: ${resp.status} ${resp.statusText}`)
@@ -121,6 +132,7 @@ export async function loadPages(url = '/manifest.json'): Promise<PageResult[]> {
   const canvases = manifest.items ?? []
   const localDir = new URL(url, window.location.href).pathname.replace(/[^/]*$/, '')
   const resolve = makeResolver(manifest.id, localDir)
+  const doubleSided = (manifest.behavior ?? []).includes('paged')
 
   const pages: PageResult[] = []
   for (const canvas of canvases) {
@@ -128,5 +140,5 @@ export async function loadPages(url = '/manifest.json'): Promise<PageResult[]> {
     if (page) pages.push(page)
   }
   if (pages.length === 0) throw new Error('Manifest contains no page canvases')
-  return pages
+  return { pages, doubleSided }
 }

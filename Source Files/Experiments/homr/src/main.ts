@@ -4,7 +4,7 @@ import '@projektemacher/tify-plugin-core/style.css'
 import '@projektemacher/tify-plugin-musicxml/musicxml.css'
 import type Tify from 'tify'
 import type { MusicXmlPlugin } from '@projektemacher/tify-plugin-musicxml'
-import type { PageResult } from './manifest'
+import type { LoadedManifest, PageResult } from './manifest'
 import { loadPages } from './manifest'
 import { attachMusicxml, createTify } from './tify-musicxml'
 
@@ -85,6 +85,8 @@ function showDetail(
   container: HTMLElement,
   pageIndex: number,
   manifestUrl: string,
+  pages: PageResult[],
+  doubleSided: boolean,
 ): { dispose: () => void } | null {
   container.innerHTML = ''
 
@@ -126,9 +128,30 @@ function showDetail(
     plugin = await attachMusicxml(tify, {
       panelEl: panelHost,
       // the TEI/MusicXML ids in the manifest point at the deployment host;
-      // pass the resolver-localized TEI so the plugin fetches same-origin
-      tei: page.homr?.tei,
+      // resolve every page's copy so the plugin fetches same-origin — also
+      // when a double-page spread switches to the facing page
+      tei: (n: number) => pages[n - 1]?.homr?.tei,
+      musicxml: (n: number) => pages[n - 1]?.homr?.musicxml,
     })
+    if (doubleSided) {
+      // The panel is attached BEFORE the spread opens: the plugin keeps the
+      // page it already plays (the selected one) when TIFY's page selection
+      // changes (toggleDoublePage(true) applies TIFY's own facing-page
+      // logic — parity, first/last page, non-paged canvases — so the spread
+      // parity is not duplicated here). Toggling before the attach would
+      // instead make the plugin start on the spread's first page.
+      //
+      // TIFY maps the final even page to a facing page of 0 (no left
+      // neighbor); that [0, n] spread with n > 1 crashes TIFY's overlay
+      // update (it positions the "0" slot against the page-1 tile source,
+      // which is not loaded then) — so the last page stays single.
+      const pageNumber = pageIndex + 1
+      const degenerateSpread = pageNumber === pages.length && pageNumber % 2 === 0
+      if (!degenerateSpread) {
+        await tify.ready
+        tify.toggleDoublePage(true)
+      }
+    }
     if (import.meta.env.DEV) {
       ;(window as unknown as Record<string, unknown>).__tify = tify
     }
@@ -209,15 +232,17 @@ async function main(): Promise<void> {
     grid.innerHTML = ''
     detail.innerHTML = '<p class="placeholder">Select a page to view details</p>'
 
-    let pages: PageResult[]
+    let loaded: LoadedManifest
     try {
-      pages = await loadPages(manifestUrl)
+      loaded = await loadPages(manifestUrl)
     } catch (err) {
       const msg = err instanceof Error ? err.message : String(err)
       console.error(msg)
       grid.innerHTML = `<div class="error"><p class="error-text">${msg}</p></div>`
       return
     }
+    const pages = loaded.pages
+    const { doubleSided } = loaded
 
     const scoreCount = pages.filter((p) => p.hasScore).length
     if (countLine)
@@ -229,7 +254,7 @@ async function main(): Promise<void> {
         closeDetail()
         grid.querySelectorAll('.thumb.selected').forEach((el) => el.classList.remove('selected'))
         thumb.classList.add('selected')
-        activeDetail = showDetail(page, detail, index, manifestUrl)
+        activeDetail = showDetail(page, detail, index, manifestUrl, pages, doubleSided)
       }
       thumb.addEventListener('click', activate)
       thumb.addEventListener('keydown', (e: KeyboardEvent) => {

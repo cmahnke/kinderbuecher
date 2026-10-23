@@ -468,4 +468,75 @@ test.describe('Score Page Viewer', () => {
     await expect(page.locator('.error')).toBeVisible({ timeout: 5000 })
     await expect(page.locator('.error')).toContainText('Failed to load manifest')
   })
+
+  test('double-page spread: dropdown and clicks select which page plays', async ({ page }) => {
+    const teiFetches: string[] = []
+    page.on('request', (req) => {
+      if (req.url().includes('/tei/page')) teiFetches.push(req.url())
+    })
+
+    await page.goto('/')
+    await page.locator('.thumb').filter({ hasText: 'page006' }).click()
+    const detail = page.locator('#detail')
+    // the paged manifest opens page006 as the book-like spread
+    // [page006, page007]: the selector lists both shown pages (option
+    // values are canvas numbers, which include the book's back/front
+    // covers) and the score stays on the selected page — page006's three
+    // staff regions
+    await expect(detail.locator('.player-controls').first()).toBeVisible({ timeout: 30_000 })
+    const select = detail.locator('.player-page')
+    await expect(select).toBeVisible({ timeout: 30_000 })
+    await expect(select.locator('option')).toHaveCount(2)
+    const optionByLabel = (label: string) => select.locator('option').filter({ hasText: label })
+    const page6 = await optionByLabel('page006').getAttribute('value')
+    const page7 = await optionByLabel('page007').getAttribute('value')
+    await expect(select).toHaveValue(page6 ?? '')
+    await expect(detail.locator('.region-overlay .staff-region')).toHaveCount(3, {
+      timeout: 30_000,
+    })
+    // page006's first staff zone (ulx=3087)
+    await expect(detail.locator('.region-overlay .staff-region').first()).toHaveAttribute(
+      'x',
+      '3087',
+    )
+
+    // dropdown: play the facing page — its TEI loads, its regions replace
+    // page006's (page007's first zone starts at ulx=1552)
+    await select.selectOption({ label: 'page007' })
+    await expect(select).toHaveValue(page7 ?? '')
+    await expect(detail.locator('.region-overlay .staff-region').first()).toHaveAttribute(
+      'x',
+      '1552',
+      { timeout: 30_000 },
+    )
+    expect(teiFetches.some((url) => url.includes('page007.tei.xml'))).toBe(true)
+
+    // clicking a shown page plays it (deliberately without indicators);
+    // the click lands on page006's half, clear of the docked panel
+    const canvas = detail.locator('.openseadragon-canvas').first()
+    const box = await canvas.boundingBox()
+    await canvas.click({ position: { x: (box?.width ?? 0) * 0.3, y: (box?.height ?? 0) / 2 } })
+    await expect(select).toHaveValue(page6 ?? '', { timeout: 30_000 })
+    await expect(detail.locator('.region-overlay .staff-region').first()).toHaveAttribute(
+      'x',
+      '3087',
+      { timeout: 30_000 },
+    )
+
+    // clicking the already-playing page re-syncs nothing: the player stays
+    // on page006. The plugin's own panel re-renders may refetch the current
+    // page's TEI, but never another one — a switch to the facing page would
+    // fetch page007's TEI a second time.
+    await expect(select).toHaveValue(page6 ?? '', { timeout: 30_000 })
+    await canvas.click({ position: { x: (box?.width ?? 0) * 0.3, y: (box?.height ?? 0) / 2 } })
+    await page.waitForTimeout(1200)
+    await expect(select).toHaveValue(page6 ?? '')
+    expect(teiFetches.filter((url) => url.includes('page007.tei.xml')).length).toBe(1)
+
+    // the TIFY header toggle returns to single-page mode: the selector
+    // disappears, the player keeps rendering the current page
+    await page.locator('button[title="Toggle double-page"]').click()
+    await expect(detail.locator('.player-page')).toHaveCount(0, { timeout: 30_000 })
+    await expect(detail.locator('.player-controls').first()).toBeVisible()
+  })
 })
