@@ -3,6 +3,8 @@
   "extends": [
     "config:recommended"
   ],
+  "gitAuthor": "Projektemacher Bot <renovate@projektemacher.org>",
+  "assignees": ["cmahnke"],
   "platform": "github",
   "autodiscover": true,
   "autodiscoverFilter": [
