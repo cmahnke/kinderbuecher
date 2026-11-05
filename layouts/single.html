@@ -8,7 +8,7 @@
             <div class="book-about">
                 <h2 class="book-about-heading">{{ i18n "aboutTheNeu" }} {{ i18n "book" }}</h2>
                 <div class="book-about-text">
-                    {{- .Params.description | markdownify -}}
+                    {{- .Description | markdownify -}}
                 </div>
             </div>
         {{- end -}}
